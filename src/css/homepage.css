@@ -46,15 +46,87 @@
     padding: 0;
 }
 
+.nav-menu > li {
+    position: relative;
+}
+
 .nav-menu a {
     color: var(--brand-navy);
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 0.95rem;
+    display: block;
 }
 
 .nav-menu a:hover {
+    color: var(--brand-teal);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    position: relative;
+    padding-right: 1.25rem;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    font-size: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--brand-white);
+    border: 1px solid var(--brand-light-blue);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0 0 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1.5rem;
+    color: var(--brand-navy);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--brand-cyan);
     color: var(--brand-teal);
 }
 
@@ -788,6 +860,20 @@ section h3 {
     .nav-menu {
         gap: 1rem;
         font-size: 0.875rem;
+    }
+
+    .dropdown-menu {
+        left: auto;
+        right: 0;
+        transform: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        transform: translateY(0);
+    }
+
+    .dropdown-toggle {
+        padding-right: 1rem;
     }
 
     .cta-group {
