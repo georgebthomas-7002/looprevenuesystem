@@ -1,0 +1,39 @@
+/* Responsive Design */
+
+/* Mobile First Approach */
+
+/* Tablets and up */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 60px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* Mobile Specific */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
