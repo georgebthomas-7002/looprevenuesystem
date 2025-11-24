@@ -864,6 +864,285 @@ section h3 {
 }
 
 /* ===================================
+   IMPLEMENTATION PAGE SPECIFIC
+   =================================== */
+
+.content-section {
+    padding: 4rem 0;
+    background-color: var(--brand-white);
+}
+
+.content-section.alt-bg {
+    background-color: var(--brand-cyan);
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-wrapper h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.content-wrapper h3 {
+    text-align: left;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--brand-navy);
+}
+
+.content-wrapper h4 {
+    text-align: left;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--brand-blue);
+    font-size: 1.25rem;
+}
+
+.content-wrapper h5 {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: var(--brand-teal);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.content-wrapper p {
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.content-wrapper ul {
+    margin: 1rem 0 1.5rem 2rem;
+    line-height: 1.8;
+}
+
+.content-wrapper ol {
+    margin: 1rem 0 1.5rem 2rem;
+    line-height: 1.8;
+}
+
+.content-wrapper li {
+    margin-bottom: 0.75rem;
+}
+
+.callout-box {
+    background-color: var(--brand-light-blue);
+    border-left: 4px solid var(--brand-teal);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+}
+
+.callout-box p {
+    margin: 0;
+    font-size: 1.125rem;
+    color: var(--brand-navy);
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.tool-item {
+    background-color: var(--brand-white);
+    padding: 1rem;
+    border-radius: 6px;
+    border: 2px solid var(--brand-light-blue);
+    text-align: center;
+    font-weight: 500;
+    color: var(--brand-navy);
+}
+
+.stage-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stage-card-compact {
+    background-color: var(--brand-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid var(--brand-light-blue);
+}
+
+.stage-card-compact h4 {
+    color: var(--brand-teal);
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+}
+
+.stage-card-compact p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.process-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.process-list li {
+    padding: 0.75rem 0;
+    font-size: 1.125rem;
+    color: var(--brand-navy);
+}
+
+.tech-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    margin: 2rem 0;
+    list-style: none;
+    padding: 0;
+}
+
+.tech-list li {
+    background-color: var(--brand-white);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--brand-light-blue);
+}
+
+.stage-detail {
+    background-color: var(--brand-white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 2px solid var(--brand-light-blue);
+}
+
+.before-after {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.before, .after {
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.before {
+    background-color: rgba(246, 86, 37, 0.1);
+    border-left: 4px solid var(--brand-orange);
+}
+
+.after {
+    background-color: rgba(2, 131, 147, 0.1);
+    border-left: 4px solid var(--brand-teal);
+}
+
+.before h4, .after h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.definition-list {
+    margin: 1.5rem 0;
+}
+
+.definition-list dt {
+    font-weight: 600;
+    color: var(--brand-navy);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.definition-list dd {
+    margin-left: 1.5rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.deliverable {
+    background-color: var(--brand-cyan);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-weight: 500;
+}
+
+.mistakes-wins {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.mistakes, .quick-win {
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.mistakes {
+    background-color: rgba(246, 86, 37, 0.05);
+    border: 2px solid rgba(246, 86, 37, 0.2);
+}
+
+.quick-win {
+    background-color: rgba(2, 131, 147, 0.05);
+    border: 2px solid rgba(2, 131, 147, 0.2);
+}
+
+.mistakes h4, .quick-win h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.formula {
+    background-color: var(--brand-navy);
+    color: var(--brand-white);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 1rem;
+    margin: 1rem 0;
+    display: block;
+}
+
+.system-roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.role-card {
+    background-color: var(--brand-white);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--brand-teal);
+}
+
+.role-card h5 {
+    color: var(--brand-teal);
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+}
+
+.role-card p {
+    margin-bottom: 0.75rem;
+}
+
+.role-card .example {
+    font-style: italic;
+    color: var(--brand-blue);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ===================================
    RESPONSIVE ADJUSTMENTS
    =================================== */
 
