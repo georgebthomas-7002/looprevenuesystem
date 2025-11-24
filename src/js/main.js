@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function init() {
     // Initialize loop animation mouse tracking
     initLoopAnimation();
+
+    // Initialize theme toggle
+    initThemeToggle();
 }
 
 /**
@@ -75,6 +78,40 @@ function initLoopAnimation() {
             circle.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${moveX * 0.5}deg)`;
         });
     });
+}
+
+/**
+ * Theme toggle functionality
+ */
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    if (!themeToggle) return;
+
+    // Check for saved theme preference or default to 'light'
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+}
+
+/**
+ * Update theme toggle icon
+ */
+function updateThemeIcon(theme) {
+    const icon = document.querySelector('.theme-toggle-icon');
+    if (!icon) return;
+
+    icon.textContent = theme === 'dark' ? '☀️' : '🌙';
 }
 
 /**
