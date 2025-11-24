@@ -6,10 +6,23 @@
 }
 
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
+    /* Brand Colors */
+    --brand-navy: #142d63;
+    --brand-teal: #028393;
+    --brand-peach: #faaa68;
+    --brand-orange: #f65625;
+    --brand-blue: #3D5A80;
+    --brand-light-blue: #98C1D9;
+    --brand-cyan: #E0FBFC;
+    --brand-white: #ffffff;
+    --brand-black: #000000;
+
+    /* Primary Theme Colors */
+    --primary-color: var(--brand-teal);
+    --secondary-color: var(--brand-navy);
+    --accent-color: var(--brand-orange);
     --text-color: #333;
-    --bg-color: #ffffff;
+    --bg-color: var(--brand-white);
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
