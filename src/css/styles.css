@@ -17,13 +17,50 @@
     --brand-white: #ffffff;
     --brand-black: #000000;
 
+    /* Light Mode (Default) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #E0FBFC;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #6a6a6a;
+    --border-color: #e0e0e0;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.08);
+    --overlay-bg: rgba(0, 0, 0, 0.05);
+
     /* Primary Theme Colors */
     --primary-color: var(--brand-teal);
     --secondary-color: var(--brand-navy);
     --accent-color: var(--brand-orange);
-    --text-color: #333;
-    --bg-color: var(--brand-white);
+    --text-color: var(--text-primary);
+    --bg-color: var(--bg-primary);
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --bg-primary: #0a1628;
+    --bg-secondary: #132440;
+    --bg-tertiary: #1a3250;
+    --text-primary: #f0f0f0;
+    --text-secondary: #d0d0d0;
+    --text-tertiary: #a0a0a0;
+    --border-color: #2a4060;
+    --card-bg: #132440;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --overlay-bg: rgba(255, 255, 255, 0.05);
+    --text-color: var(--text-primary);
+    --bg-color: var(--bg-primary);
+}
+
+/* Smooth transitions for theme switching */
+body,
+.site-header,
+.card,
+.hero,
+section {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
