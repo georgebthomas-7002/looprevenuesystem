@@ -1,0 +1,20 @@
+{
+  "name": "modern-website",
+  "version": "1.0.0",
+  "description": "A modern website boilerplate",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Open index.html in your browser'",
+    "test": "echo 'No tests configured yet'"
+  },
+  "keywords": [
+    "website",
+    "boilerplate",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {}
+}
