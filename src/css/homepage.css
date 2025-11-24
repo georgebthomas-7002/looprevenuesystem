@@ -1,0 +1,809 @@
+/* Homepage Specific Styles */
+
+/* ===================================
+   HEADER & NAVIGATION
+   =================================== */
+
+.site-header {
+    background-color: var(--brand-white);
+    border-bottom: 1px solid var(--brand-cyan);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: var(--brand-navy);
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: var(--brand-navy);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-menu a:hover {
+    color: var(--brand-teal);
+}
+
+.nav-menu .nav-cta {
+    background-color: var(--brand-teal);
+    color: var(--brand-white);
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu .nav-cta:hover {
+    background-color: var(--brand-blue);
+    color: var(--brand-white);
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero {
+    background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-blue) 100%);
+    color: var(--brand-white);
+    padding: 6rem 0 8rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(2, 131, 147, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(152, 193, 217, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.hero .subheadline {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    color: var(--brand-cyan);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--brand-orange);
+    color: var(--brand-white);
+    border-color: var(--brand-orange);
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-peach);
+    border-color: var(--brand-peach);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(246, 86, 37, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--brand-white);
+    border-color: var(--brand-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--brand-white);
+    color: var(--brand-navy);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--brand-teal);
+    border-color: var(--brand-teal);
+}
+
+.btn-outline:hover {
+    background-color: var(--brand-teal);
+    color: var(--brand-white);
+}
+
+.reassurance {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--brand-light-blue);
+    margin-top: 2rem;
+}
+
+/* ===================================
+   SECTIONS
+   =================================== */
+
+section {
+    padding: 5rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--brand-navy);
+    font-weight: 700;
+    text-align: center;
+}
+
+section h3 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--brand-blue);
+    font-weight: 600;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--brand-teal);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--brand-blue);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.section-closing {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 3rem auto 0;
+    color: var(--brand-blue);
+    font-weight: 500;
+}
+
+/* ===================================
+   PROBLEM SECTION
+   =================================== */
+
+.problem-section {
+    background-color: var(--brand-cyan);
+}
+
+.problem-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.problem-item {
+    background-color: var(--brand-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--brand-orange);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.problem-item strong {
+    color: var(--brand-navy);
+}
+
+.solution-intro {
+    background-color: var(--brand-white);
+    padding: 3rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.value-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.value-list li {
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+    font-size: 1.125rem;
+    color: var(--brand-navy);
+    font-weight: 500;
+}
+
+.value-list li::before {
+    content: '→';
+    position: absolute;
+    left: 1rem;
+    color: var(--brand-teal);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* ===================================
+   WHAT IS LOOP SECTION
+   =================================== */
+
+.what-is-loop {
+    background-color: var(--brand-white);
+}
+
+.loop-stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.stage-card {
+    background: linear-gradient(135deg, var(--brand-light-blue) 0%, var(--brand-cyan) 100%);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stage-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.stage-card h3 {
+    color: var(--brand-navy);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.stage-card p {
+    color: var(--brand-navy);
+    line-height: 1.6;
+}
+
+/* ===================================
+   HUBSPOT LOOP SECTION
+   =================================== */
+
+.hubspot-loop {
+    background: linear-gradient(to bottom, var(--brand-white) 0%, var(--brand-cyan) 100%);
+}
+
+.org-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.org-list li {
+    padding: 0.75rem;
+    font-size: 1.125rem;
+    color: var(--brand-navy);
+    font-weight: 500;
+}
+
+.team-benefits {
+    background-color: var(--brand-white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin: 3rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.team-benefits h3 {
+    color: var(--brand-teal);
+    text-align: center;
+}
+
+.team-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.team-benefits ul li {
+    padding: 0.75rem 0 0.75rem 2rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.team-benefits ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--brand-teal);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* ===================================
+   LOOPS SECTION
+   =================================== */
+
+.loops-section {
+    background-color: var(--brand-white);
+}
+
+.loop-card {
+    background-color: var(--brand-white);
+    border: 2px solid var(--brand-light-blue);
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.loop-card:hover {
+    border-color: var(--brand-teal);
+    box-shadow: 0 8px 24px rgba(2, 131, 147, 0.15);
+}
+
+.loop-card h3 {
+    color: var(--brand-navy);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.loop-tagline {
+    font-size: 1.25rem;
+    color: var(--brand-teal);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.loop-details {
+    margin: 2rem 0;
+}
+
+.loop-details ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    line-height: 1.8;
+}
+
+.loop-details li {
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.result {
+    background-color: var(--brand-cyan);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--brand-teal);
+}
+
+/* ===================================
+   CORE BELIEFS SECTION
+   =================================== */
+
+.core-beliefs {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-navy) 100%);
+    color: var(--brand-white);
+}
+
+.core-beliefs h2,
+.core-beliefs .lead,
+.core-beliefs p {
+    color: var(--brand-white);
+}
+
+.core-beliefs .section-closing {
+    color: var(--brand-light-blue);
+}
+
+.beliefs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.belief-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.belief-card:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+.belief-card h3 {
+    color: var(--brand-peach);
+    margin-bottom: 1rem;
+}
+
+.belief-card p {
+    color: var(--brand-cyan);
+    line-height: 1.6;
+}
+
+/* ===================================
+   WHO FOR SECTION
+   =================================== */
+
+.who-for {
+    background-color: var(--brand-cyan);
+}
+
+.for-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.for-you,
+.not-for-you {
+    background-color: var(--brand-white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.for-you {
+    border-top: 4px solid var(--brand-teal);
+}
+
+.not-for-you {
+    border-top: 4px solid var(--brand-orange);
+}
+
+.for-you h3,
+.not-for-you h3 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.for-you ul,
+.not-for-you ul {
+    list-style: none;
+    padding: 0;
+}
+
+.for-you ul li,
+.not-for-you ul li {
+    padding: 0.75rem 0 0.75rem 2rem;
+    position: relative;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.for-you ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--brand-teal);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.not-for-you ul li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--brand-orange);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* ===================================
+   HOW IT WORKS SECTION
+   =================================== */
+
+.how-it-works {
+    background-color: var(--brand-white);
+}
+
+.steps {
+    margin: 3rem 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    background-color: var(--brand-white);
+    border: 2px solid var(--brand-light-blue);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    border-color: var(--brand-teal);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.step h3 {
+    color: var(--brand-navy);
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.step ul {
+    margin: 1rem 0 1rem 1.5rem;
+    line-height: 1.8;
+}
+
+.step li {
+    margin-bottom: 0.5rem;
+}
+
+.step-result {
+    background-color: var(--brand-cyan);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    color: var(--brand-navy);
+}
+
+/* ===================================
+   FAQ SECTION
+   =================================== */
+
+.faq {
+    background-color: var(--brand-cyan);
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+
+.faq-item {
+    background-color: var(--brand-white);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.faq-item h3 {
+    color: var(--brand-navy);
+    text-align: left;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.faq-item p {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===================================
+   FINAL CTA SECTION
+   =================================== */
+
+.final-cta {
+    background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+    color: var(--brand-white);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.final-cta h2 {
+    color: var(--brand-white);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.final-cta .lead {
+    color: var(--brand-cyan);
+    margin-bottom: 2.5rem;
+}
+
+.final-cta .cta-group {
+    margin-bottom: 2rem;
+}
+
+.small-print {
+    font-size: 0.95rem;
+    color: var(--brand-light-blue);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+.site-footer {
+    background-color: var(--brand-navy);
+    color: var(--brand-light-blue);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    color: var(--brand-white);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: var(--brand-light-blue);
+    font-style: italic;
+}
+
+.footer-links h4 {
+    color: var(--brand-white);
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--brand-light-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--brand-peach);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--brand-blue);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--brand-light-blue);
+    margin: 0;
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .subheadline {
+        font-size: 1.125rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    section h3 {
+        font-size: 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.875rem;
+    }
+
+    .cta-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .loop-stages,
+    .beliefs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .for-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .loop-card,
+    .step {
+        padding: 2rem;
+    }
+}
