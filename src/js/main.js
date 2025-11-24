@@ -12,8 +12,34 @@ document.addEventListener('DOMContentLoaded', () => {
  * Initialize the application
  */
 function init() {
-    // Initialize loop animation mouse tracking
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Initialize loop animation mouse tracking (if elements exist)
     initLoopAnimation();
+}
+
+/**
+ * Scroll Animations using Intersection Observer
+ */
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.fade-in-up');
+    animatedElements.forEach(el => observer.observe(el));
 }
 
 /**
