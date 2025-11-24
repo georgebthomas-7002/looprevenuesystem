@@ -837,6 +837,33 @@ section h3 {
 }
 
 /* ===================================
+   LOOPS PAGE SPECIFIC
+   =================================== */
+
+.loop-detail-section {
+    padding: 3rem 0;
+    background-color: var(--brand-white);
+}
+
+.loop-detail-section:nth-child(even) {
+    background-color: var(--brand-cyan);
+}
+
+.loop-detail-section .loop-card {
+    margin-bottom: 0;
+}
+
+.loop-detail-section .loop-card h2 {
+    text-align: left;
+    font-size: 2rem;
+    color: var(--brand-navy);
+}
+
+.loop-detail-section .btn-primary {
+    margin-top: 1rem;
+}
+
+/* ===================================
    RESPONSIVE ADJUSTMENTS
    =================================== */
 
