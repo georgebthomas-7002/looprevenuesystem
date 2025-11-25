@@ -46,11 +46,62 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container">
-                <h1>Welcome to Your Website</h1>
-                <p class="hero-subtitle">Build something amazing with this clean boilerplate</p>
-                <a href="#contact" class="btn btn-primary">Get Started</a>
+        <section id="home" class="hero hero-home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-headline">RUN YOUR WHOLE REVENUE ENGINE ON ONE SIMPLE SYSTEM</h1>
+                    <p class="hero-subheadline">The Loop Revenue System turns your scattered tools, teams, and content into one connected operating system for revenue, built on HubSpot and designed to keep your work human, helpful, and AI assisted in all the right ways.</p>
+                    <div class="hero-buttons">
+                        <a href="/loops" class="btn btn-primary btn-hero">Explore the Loops</a>
+                        <a href="/implementation" class="btn btn-secondary btn-hero">See How Implementation Works</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="loop-animation">
+                        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Loop path -->
+                            <path id="loopPath" d="M 200 50 Q 300 100, 300 200 Q 300 300, 200 350 Q 100 300, 100 200 Q 100 100, 200 50 Z"
+                                  fill="none" stroke="url(#loopGradient)" stroke-width="3" opacity="0.3"/>
+
+                            <!-- Gradient for the loop -->
+                            <defs>
+                                <linearGradient id="loopGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#028393;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#3D5A80;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#028393;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Animated dot -->
+                            <circle r="6" fill="#f65625">
+                                <animateMotion dur="8s" repeatCount="indefinite">
+                                    <mpath href="#loopPath"/>
+                                </animateMotion>
+                            </circle>
+
+                            <!-- Four stage icons -->
+                            <g class="stage-icon" transform="translate(200, 50)">
+                                <circle r="25" fill="#028393" opacity="0.9"/>
+                                <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600">Marketing</text>
+                            </g>
+
+                            <g class="stage-icon" transform="translate(300, 200)">
+                                <circle r="25" fill="#3D5A80" opacity="0.9"/>
+                                <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600">Sales</text>
+                            </g>
+
+                            <g class="stage-icon" transform="translate(200, 350)">
+                                <circle r="25" fill="#f65625" opacity="0.9"/>
+                                <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600">Service</text>
+                            </g>
+
+                            <g class="stage-icon" transform="translate(100, 200)">
+                                <circle r="25" fill="#faaa68" opacity="0.9"/>
+                                <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600">Other</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </section>
 
