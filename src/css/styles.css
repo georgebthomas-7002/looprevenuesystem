@@ -141,22 +141,102 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: var(--primary-color);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: var(--spacing-md);
+    align-items: center;
+}
+
+.nav-menu > li {
+    position: relative;
 }
 
 .nav-menu a {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    display: block;
 }
 
 .nav-menu a:hover {
     color: var(--primary-color);
+}
+
+/* Dropdown Navigation */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--brand-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    min-width: 200px;
+    padding: 0.5rem 0;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    list-style: none;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1.25rem;
+    color: var(--text-color);
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--brand-cyan);
+    color: var(--primary-color);
+}
+
+/* Active/Current Page Indicator */
+.nav-menu a.active {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 /* ========================================
@@ -273,6 +353,34 @@ a:hover {
         flex-direction: column;
         gap: var(--spacing-sm);
         text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu > li {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid var(--border-color);
+        border-radius: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown.open .dropdown-menu {
+        max-height: 500px;
+    }
+
+    .dropdown-toggle::after {
+        margin-left: auto;
     }
 
     .hero h1 {
