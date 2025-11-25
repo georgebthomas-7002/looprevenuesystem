@@ -74,5 +74,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Scroll reveal animation for problem cards
+const observeCards = () => {
+    const cards = document.querySelectorAll('.fade-in-on-scroll');
+
+    if (cards.length === 0) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add delay based on card position
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 150);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+};
+
+// Initialize scroll reveal when DOM is loaded
+document.addEventListener('DOMContentLoaded', observeCards);
+
 // Console log to confirm script is loaded
 console.log('Loop Revenue System website loaded successfully!');
