@@ -39,5 +39,40 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Dropdown menu functionality for mobile
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+
+        if (toggle) {
+            toggle.addEventListener('click', (e) => {
+                // On mobile (small screens), toggle the dropdown
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+
+                    // Close other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('open');
+                        }
+                    });
+                }
+            });
+        }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('open');
+            });
+        }
+    });
+});
+
 // Console log to confirm script is loaded
-console.log('Website boilerplate loaded successfully!');
+console.log('Loop Revenue System website loaded successfully!');
