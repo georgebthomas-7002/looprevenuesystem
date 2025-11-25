@@ -555,6 +555,164 @@ a:hover {
 }
 
 /* ========================================
+   What Section - Loop Revenue System
+   ======================================== */
+.what-section {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.what-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.what-content {
+    padding-right: 40px;
+}
+
+.what-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--brand-navy);
+    letter-spacing: -0.01em;
+}
+
+.what-intro {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.stage-block {
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.stage-block.active {
+    border-left-color: var(--brand-teal);
+    padding-left: 2rem;
+    background-color: rgba(224, 251, 252, 0.3);
+    margin-left: -1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.stage-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.stage-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--brand-teal);
+    color: var(--brand-white);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.stage-block[data-stage="express"] .stage-number {
+    background-color: #028393;
+}
+
+.stage-block[data-stage="tailor"] .stage-number {
+    background-color: #3D5A80;
+}
+
+.stage-block[data-stage="amplify"] .stage-number {
+    background-color: #f65625;
+}
+
+.stage-block[data-stage="evolve"] .stage-number {
+    background-color: #faaa68;
+}
+
+.stage-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.what-closing {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: rgba(2, 131, 147, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid var(--brand-teal);
+}
+
+.what-visual {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.loop-diagram {
+    width: 100%;
+    max-width: 450px;
+    filter: drop-shadow(0 4px 20px rgba(2, 131, 147, 0.1));
+}
+
+.loop-diagram svg {
+    width: 100%;
+    height: auto;
+}
+
+.diagram-stage {
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.diagram-stage .stage-circle {
+    transition: all 0.4s ease;
+}
+
+.diagram-stage.active .stage-circle {
+    opacity: 0.8 !important;
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.diagram-stage.active circle:not(.stage-circle) {
+    stroke-width: 4;
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+.diagram-stage.active text {
+    font-weight: 800;
+}
+
+/* ========================================
    Cards & Grid
    ======================================== */
 .grid {
@@ -729,6 +887,71 @@ a:hover {
 
     .problem-card {
         padding: 1.5rem;
+    }
+
+    /* What Section Responsive */
+    .what-section {
+        padding: 60px 0;
+    }
+
+    .what-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .what-content {
+        padding-right: 0;
+    }
+
+    .what-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .what-intro {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .stage-block {
+        margin-bottom: 2rem;
+        padding-left: 1rem;
+    }
+
+    .stage-block.active {
+        padding-left: 1.5rem;
+    }
+
+    .stage-title {
+        font-size: 1.4rem;
+    }
+
+    .stage-number {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .stage-block p {
+        font-size: 1.05rem;
+    }
+
+    .what-closing {
+        font-size: 1.05rem;
+        padding: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    .what-visual {
+        position: static;
+        order: -1;
+        padding-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .loop-diagram {
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .grid {
