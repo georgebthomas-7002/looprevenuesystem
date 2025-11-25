@@ -26,9 +26,20 @@
     <link rel="stylesheet" href="/src/css/global-nav.css">
 
     <title>Loop Revenue System - Run Your Whole Revenue Engine On One Simple System</title>
+    <link rel="stylesheet" href="/src/css/theme-switcher.css">
 </head>
 
 <body>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher-toggle" id="theme-toggle">
+        <span class="theme-icon"></span>
+    </div>
+    <div class="theme-switcher-panel" id="theme-panel">
+        <h3>Choose Theme</h3>
+        <button class="theme-option active" data-theme="light"> Light Mode</button>
+        <button class="theme-option" data-theme="dark"> Dark Mode</button>
+    </div>
+
     <!-- Header -->
     <header class="site-header">
         <nav class="container">
@@ -445,6 +456,7 @@
     <!-- Scripts -->
     <script src="/src/js/utils.js"></script>
     <script src="/src/js/main.js"></script>
+    <script src="/src/js/theme-switcher.js"></script>
 </body>
 
 </html>
