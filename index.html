@@ -171,22 +171,84 @@
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="section section-alt">
-            <div class="container">
-                <h2>Services</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3>Service One</h3>
-                        <p>Description of your first service</p>
+        <!-- What Is The Loop Revenue System Section -->
+        <section id="what-is-loop" class="what-section">
+            <div class="what-container">
+                <div class="what-content">
+                    <h2 class="what-title">WHAT IS THE LOOP REVENUE SYSTEM?</h2>
+
+                    <p class="what-intro">The Loop Revenue System is a four stage operating system that sits on top of HubSpot and guides how your teams plan, ship, and improve everything that touches revenue—campaigns, workflows, content, deals, support tickets, product roadmap, and more. Each stage has a clear goal. All four stages connect in a loop.</p>
+
+                    <div class="stage-block" data-stage="express">
+                        <h3 class="stage-title"><span class="stage-number">1.</span> Express</h3>
+                        <p>You work with one of our highly-trained coaches to get clarity on how your revenue engine actually runs today—not how it should run according to a consultant framework, but how it truly works for the humans inside your business. We map out your customer journeys, your team roles, and your HubSpot setup. We document where the best work is happening, where the gaps are, and what you want revenue to feel like six months from now. All of this gets expressed in plain language and captured in shared tools.</p>
                     </div>
-                    <div class="card">
-                        <h3>Service Two</h3>
-                        <p>Description of your second service</p>
+
+                    <div class="stage-block" data-stage="tailor">
+                        <h3 class="stage-title"><span class="stage-number">2.</span> Tailor</h3>
+                        <p>Our team then customizes the system to fit your actual business. We clean up your HubSpot portal, create or refine the key customer journeys, build out repeatable workflows, set up the reports you will actually use, and configure the AI tools that make sense for your team and your voice. We do not hand you a one-size-fits-all template. We build you a living system that reflects how you want to grow and matches the way your humans like to work.</p>
                     </div>
-                    <div class="card">
-                        <h3>Service Three</h3>
-                        <p>Description of your third service</p>
+
+                    <div class="stage-block" data-stage="amplify">
+                        <h3 class="stage-title"><span class="stage-number">3.</span> Amplify</h3>
+                        <p>Once your team is running smoothly on the Loop, the focus shifts to doing more of what is working. We help you create better content, improve conversion at key journey moments, refine messaging for higher-intent prospects, and build out your service playbooks so customers get consistent help. This is where your best humans shine and where AI becomes a genuine productivity multiplier instead of a buzzword. The Loop gives you a structure to test, learn, and scale without adding chaos.</p>
+                    </div>
+
+                    <div class="stage-block" data-stage="evolve">
+                        <h3 class="stage-title"><span class="stage-number">4.</span> Evolve</h3>
+                        <p>As your business changes—new product lines, new markets, team turnover, shifts in customer behavior—the Loop evolves with you. We meet regularly to review what is working, update workflows and journeys, adjust HubSpot properties, train new team members, and make sure the system keeps serving the humans instead of becoming another rigid thing to maintain. This is not a one-time implementation. It is an operating rhythm that grows as you do.</p>
+                    </div>
+
+                    <p class="what-closing">These four stages repeat. As you finish Evolve, you loop back to Express and start again with fresh context. That is how you turn scattered effort into compounding results.</p>
+                </div>
+
+                <div class="what-visual">
+                    <div class="loop-diagram">
+                        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Loop path -->
+                            <path id="whatLoopPath" d="M 200 50 Q 300 100, 300 200 Q 300 300, 200 350 Q 100 300, 100 200 Q 100 100, 200 50 Z"
+                                  fill="none" stroke="#E0FBFC" stroke-width="4"/>
+
+                            <!-- Stage circles -->
+                            <g class="diagram-stage" id="stage-express" data-stage="express">
+                                <circle cx="200" cy="50" r="45" fill="#028393" opacity="0.2" class="stage-circle"/>
+                                <circle cx="200" cy="50" r="40" fill="none" stroke="#028393" stroke-width="3"/>
+                                <text x="200" y="45" text-anchor="middle" fill="#028393" font-size="14" font-weight="700">EXPRESS</text>
+                                <text x="200" y="62" text-anchor="middle" fill="#028393" font-size="28" font-weight="700">1</text>
+                            </g>
+
+                            <g class="diagram-stage" id="stage-tailor" data-stage="tailor">
+                                <circle cx="300" cy="200" r="45" fill="#3D5A80" opacity="0.2" class="stage-circle"/>
+                                <circle cx="300" cy="200" r="40" fill="none" stroke="#3D5A80" stroke-width="3"/>
+                                <text x="300" y="195" text-anchor="middle" fill="#3D5A80" font-size="14" font-weight="700">TAILOR</text>
+                                <text x="300" y="212" text-anchor="middle" fill="#3D5A80" font-size="28" font-weight="700">2</text>
+                            </g>
+
+                            <g class="diagram-stage" id="stage-amplify" data-stage="amplify">
+                                <circle cx="200" cy="350" r="45" fill="#f65625" opacity="0.2" class="stage-circle"/>
+                                <circle cx="200" cy="350" r="40" fill="none" stroke="#f65625" stroke-width="3"/>
+                                <text x="200" y="345" text-anchor="middle" fill="#f65625" font-size="14" font-weight="700">AMPLIFY</text>
+                                <text x="200" y="362" text-anchor="middle" fill="#f65625" font-size="28" font-weight="700">3</text>
+                            </g>
+
+                            <g class="diagram-stage" id="stage-evolve" data-stage="evolve">
+                                <circle cx="100" cy="200" r="45" fill="#faaa68" opacity="0.2" class="stage-circle"/>
+                                <circle cx="100" cy="200" r="40" fill="none" stroke="#faaa68" stroke-width="3"/>
+                                <text x="100" y="195" text-anchor="middle" fill="#faaa68" font-size="14" font-weight="700">EVOLVE</text>
+                                <text x="100" y="212" text-anchor="middle" fill="#faaa68" font-size="28" font-weight="700">4</text>
+                            </g>
+
+                            <!-- Directional arrows -->
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#98C1D9" opacity="0.6"/>
+                                </marker>
+                            </defs>
+                            <path d="M 235 65 L 265 120" stroke="#98C1D9" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.5"/>
+                            <path d="M 285 235 L 235 315" stroke="#98C1D9" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.5"/>
+                            <path d="M 165 335 L 135 280" stroke="#98C1D9" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.5"/>
+                            <path d="M 115 165 L 165 85" stroke="#98C1D9" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.5"/>
+                        </svg>
                     </div>
                 </div>
             </div>

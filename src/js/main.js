@@ -106,5 +106,47 @@ const observeCards = () => {
 // Initialize scroll reveal when DOM is loaded
 document.addEventListener('DOMContentLoaded', observeCards);
 
+// Loop diagram stage highlighting based on scroll position
+const observeStages = () => {
+    const stageBlocks = document.querySelectorAll('.stage-block');
+    const diagramStages = document.querySelectorAll('.diagram-stage');
+
+    if (stageBlocks.length === 0 || diagramStages.length === 0) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const stage = entry.target.getAttribute('data-stage');
+
+                // Remove active class from all stages
+                stageBlocks.forEach(block => block.classList.remove('active'));
+                diagramStages.forEach(diagramStage => diagramStage.classList.remove('active'));
+
+                // Add active class to current stage
+                entry.target.classList.add('active');
+
+                // Find and activate corresponding diagram stage
+                const correspondingDiagram = document.getElementById(`stage-${stage}`);
+                if (correspondingDiagram) {
+                    correspondingDiagram.classList.add('active');
+                }
+            }
+        });
+    }, observerOptions);
+
+    stageBlocks.forEach(block => {
+        observer.observe(block);
+    });
+};
+
+// Initialize stage observation when DOM is loaded
+document.addEventListener('DOMContentLoaded', observeStages);
+
 // Console log to confirm script is loaded
 console.log('Loop Revenue System website loaded successfully!');
