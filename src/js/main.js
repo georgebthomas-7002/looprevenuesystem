@@ -1,122 +1,43 @@
 /**
  * Main JavaScript file
+ * Add your custom JavaScript here
  */
 
-// DOM Ready
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Website loaded successfully!');
-    init();
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
 
-/**
- * Initialize the application
- */
-function init() {
-    // Initialize scroll animations
-    initScrollAnimations();
-    
-    // Initialize loop animation mouse tracking (if elements exist)
-    initLoopAnimation();
-}
+// Add active class to navigation on scroll
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
-/**
- * Scroll Animations using Intersection Observer
- */
-function initScrollAnimations() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
-
-    const animatedElements = document.querySelectorAll('.fade-in-up');
-    animatedElements.forEach(el => observer.observe(el));
-}
-
-/**
- * Loop animation mouse tracking
- */
-function initLoopAnimation() {
-    const heroSection = document.getElementById('hero-section');
-    const loopAnimation = document.getElementById('loop-animation');
-    const loopCircles = document.querySelectorAll('.loop-circle');
-
-    if (!heroSection || !loopAnimation || loopCircles.length === 0) {
-        return;
-    }
-
-    let isHovering = false;
-
-    // Mouse enter - activate interactive mode
-    heroSection.addEventListener('mouseenter', () => {
-        isHovering = true;
-        loopAnimation.classList.add('interactive');
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+        }
     });
 
-    // Mouse leave - deactivate interactive mode
-    heroSection.addEventListener('mouseleave', () => {
-        isHovering = false;
-        loopAnimation.classList.remove('interactive');
-
-        // Reset circles to their original positions
-        loopCircles.forEach(circle => {
-            circle.style.transform = '';
-        });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
     });
+});
 
-    // Mouse move - make circles follow cursor
-    heroSection.addEventListener('mousemove', (e) => {
-        if (!isHovering) return;
-
-        const rect = heroSection.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-
-        loopCircles.forEach((circle, index) => {
-            const rect = circle.getBoundingClientRect();
-            const circleX = rect.left + rect.width / 2 - heroSection.getBoundingClientRect().left;
-            const circleY = rect.top + rect.height / 2 - heroSection.getBoundingClientRect().top;
-
-            // Calculate distance from mouse
-            const deltaX = mouseX - circleX;
-            const deltaY = mouseY - circleY;
-
-            // Different follow strengths for each circle (0.05 to 0.15)
-            const followStrength = 0.05 + (index * 0.015);
-
-            // Calculate new position
-            const moveX = deltaX * followStrength;
-            const moveY = deltaY * followStrength;
-
-            // Apply transform
-            circle.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${moveX * 0.5}deg)`;
-        });
-    });
-}
-
-/**
- * Example utility function
- */
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Export functions if using modules
-// export { init, debounce };
+// Console log to confirm script is loaded
+console.log('Website boilerplate loaded successfully!');
