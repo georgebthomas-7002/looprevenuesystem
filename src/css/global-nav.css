@@ -14,17 +14,36 @@
 }
 
 /* Header Styles */
+/* Global Navigation Styles with User's Color Palette */
+
+:root {
+    /* User's Brand Colors */
+    --brand-navy: #142d63;
+    --brand-teal: #028393;
+    --brand-peach: #faaa68;
+    --brand-orange: #f65625;
+    --brand-blue: #3D5A80;
+    --brand-light-blue: #98C1D9;
+    --brand-cyan: #E0FBFC;
+    --brand-white: #ffffff;
+    --brand-black: #000;
+}
+
+/* Header Styles */
 .site-header {
     background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-blue) 100%);
     border-bottom: 2px solid var(--brand-teal);
     box-shadow: 0 4px 20px rgba(20, 45, 99, 0.3);
 }
 
+/* Logo darkening for light mode */
 .logo h2 {
-    background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-light-blue) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #0f172a;
+    /* dark text for light mode */
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: inherit;
 }
 
 .nav-right {
@@ -33,10 +52,13 @@
     gap: 2rem;
 }
 
+/* Ensure vertical centering and equal padding for menu and buttons */
 .nav-menu {
     display: flex;
     gap: 3rem;
     align-items: center;
+    padding: 0.5rem 0;
+    /* equal top/bottom padding */
 }
 
 .nav-menu>li {
@@ -122,9 +144,9 @@
     padding-left: 2rem;
 }
 
-/* CTA Button */
+/* Solid background for CTA button, no gradient */
 .nav-cta {
-    background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-orange) 100%);
+    background: var(--brand-teal);
     padding: 0.6rem 1.5rem !important;
     border-radius: 50px;
     color: var(--brand-white) !important;
