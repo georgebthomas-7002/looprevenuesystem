@@ -59,46 +59,73 @@
                 <div class="hero-visual">
                     <div class="loop-animation">
                         <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Loop path -->
-                            <path id="loopPath" d="M 200 50 Q 300 100, 300 200 Q 300 300, 200 350 Q 100 300, 100 200 Q 100 100, 200 50 Z"
-                                  fill="none" stroke="url(#loopGradient)" stroke-width="3" opacity="0.3"/>
-
-                            <!-- Gradient for the loop -->
+                            <!-- Blur filter for soft effect -->
                             <defs>
-                                <linearGradient id="loopGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#028393;stop-opacity:1" />
-                                    <stop offset="50%" style="stop-color:#3D5A80;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#028393;stop-opacity:1" />
+                                <filter id="softBlur">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
+                                </filter>
+
+                                <!-- Animated gradient that shifts colors -->
+                                <linearGradient id="breathingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#028393;stop-opacity:0.6">
+                                        <animate attributeName="stop-color"
+                                                 values="#028393; #3D5A80; #faaa68; #028393"
+                                                 dur="12s"
+                                                 repeatCount="indefinite"/>
+                                    </stop>
+                                    <stop offset="50%" style="stop-color:#3D5A80;stop-opacity:0.7">
+                                        <animate attributeName="stop-color"
+                                                 values="#3D5A80; #faaa68; #028393; #3D5A80"
+                                                 dur="12s"
+                                                 repeatCount="indefinite"/>
+                                    </stop>
+                                    <stop offset="100%" style="stop-color:#faaa68;stop-opacity:0.6">
+                                        <animate attributeName="stop-color"
+                                                 values="#faaa68; #028393; #3D5A80; #faaa68"
+                                                 dur="12s"
+                                                 repeatCount="indefinite"/>
+                                    </stop>
                                 </linearGradient>
                             </defs>
 
-                            <!-- Animated dot -->
-                            <circle r="6" fill="#f65625">
-                                <animateMotion dur="8s" repeatCount="indefinite">
-                                    <mpath href="#loopPath"/>
-                                </animateMotion>
-                            </circle>
+                            <!-- Abstract loop ribbon - infinity/figure-8 shape -->
+                            <path d="M 200 200 Q 120 120, 120 180 Q 120 240, 200 200 Q 280 160, 280 220 Q 280 280, 200 200 Z"
+                                  fill="url(#breathingGradient)"
+                                  stroke="none"
+                                  filter="url(#softBlur)"
+                                  opacity="0.8">
+                                <!-- Subtle breathing scale animation -->
+                                <animateTransform
+                                    attributeName="transform"
+                                    type="scale"
+                                    values="1; 1.05; 1"
+                                    dur="8s"
+                                    repeatCount="indefinite"
+                                    additive="sum"
+                                    calcMode="spline"
+                                    keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                                    keyTimes="0; 0.5; 1"/>
+                            </path>
 
-                            <!-- Four stage icons -->
-                            <g class="stage-icon" transform="translate(200, 50)">
-                                <circle r="25" fill="#028393" opacity="0.9"/>
-                                <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600">Marketing</text>
-                            </g>
-
-                            <g class="stage-icon" transform="translate(300, 200)">
-                                <circle r="25" fill="#3D5A80" opacity="0.9"/>
-                                <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600">Sales</text>
-                            </g>
-
-                            <g class="stage-icon" transform="translate(200, 350)">
-                                <circle r="25" fill="#f65625" opacity="0.9"/>
-                                <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600">Service</text>
-                            </g>
-
-                            <g class="stage-icon" transform="translate(100, 200)">
-                                <circle r="25" fill="#faaa68" opacity="0.9"/>
-                                <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600">Other</text>
-                            </g>
+                            <!-- Additional flowing loop for depth -->
+                            <ellipse cx="200" cy="200" rx="100" ry="150"
+                                     fill="none"
+                                     stroke="url(#breathingGradient)"
+                                     stroke-width="30"
+                                     filter="url(#softBlur)"
+                                     opacity="0.4"
+                                     transform="rotate(45 200 200)">
+                                <!-- Slow rotation for meditative effect -->
+                                <animateTransform
+                                    attributeName="transform"
+                                    type="rotate"
+                                    values="45 200 200; 50 200 200; 45 200 200"
+                                    dur="16s"
+                                    repeatCount="indefinite"
+                                    calcMode="spline"
+                                    keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                                    keyTimes="0; 0.5; 1"/>
+                            </ellipse>
                         </svg>
                     </div>
                 </div>
