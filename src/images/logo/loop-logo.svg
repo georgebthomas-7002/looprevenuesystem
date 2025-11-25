@@ -1,0 +1,21 @@
+<svg width="250" height="100" viewBox="0 0 250 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left teal loop -->
+  <ellipse cx="60" cy="50" rx="45" ry="35" fill="#028393" opacity="0.9"/>
+  <ellipse cx="60" cy="50" rx="30" ry="20" fill="#ffffff"/>
+
+  <!-- Right orange loop -->
+  <ellipse cx="190" cy="50" rx="45" ry="35" fill="#f65625" opacity="0.9"/>
+  <ellipse cx="190" cy="50" rx="30" ry="20" fill="#ffffff"/>
+
+  <!-- Connection curves -->
+  <path d="M 85 35 Q 125 20, 165 35" stroke="#028393" stroke-width="8" fill="none" opacity="0.8"/>
+  <path d="M 85 65 Q 125 80, 165 65" stroke="#f65625" stroke-width="8" fill="none" opacity="0.8"/>
+
+  <!-- Arrows -->
+  <path d="M 160 32 L 170 35 L 160 38" fill="#028393" opacity="0.8"/>
+  <path d="M 90 68 L 80 65 L 90 62" fill="#f65625" opacity="0.8"/>
+
+  <!-- Center dots -->
+  <circle cx="105" cy="50" r="6" fill="#faaa68"/>
+  <circle cx="145" cy="50" r="6" fill="#ffffff"/>
+</svg>
