@@ -435,7 +435,7 @@ a:hover {
    Why Section
    ======================================== */
 .why-section {
-    padding: 100px 0;
+    padding: 120px 0;
     position: relative;
     background-color: var(--bg-primary);
     overflow: hidden;
@@ -549,7 +549,7 @@ a:hover {
    What Section - Loop Revenue System
    ======================================== */
 .what-section {
-    padding: 100px 0;
+    padding: 120px 0;
     background-color: #f8f9fa;
     position: relative;
 }
@@ -701,6 +701,7 @@ a:hover {
 
 .diagram-stage.active text {
     font-weight: 800;
+    fill: white !important;
 }
 
 /* ========================================
