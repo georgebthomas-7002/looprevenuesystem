@@ -1761,7 +1761,7 @@ a:hover {
 .footer-buttons .btn-secondary:hover {
     background-color: var(--brand-white);
     color: var(--brand-teal);
-    border-color: var(--brand-white);
+    border-color: var(--brand-teal);
 }
 
 /* Footer Links */
