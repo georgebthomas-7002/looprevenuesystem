@@ -860,69 +860,65 @@ a:hover {
 
 /* Enhanced card styles defined in Enhanced AI Card section */
 
-/* AI/Human Balance Graphic */
-.balance-container {
+/* AI/Human Balance Equation - Modern Card Design */
+.balance-equation {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 2.5rem;
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.balance-circle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+/* Component Cards (AI & Human) */
+.equation-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
 }
 
-.balance-circle svg {
-    width: 140px;
-    height: 140px;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+.equation-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+                0 0 0 2px rgba(2, 131, 147, 0.3) inset;
 }
 
-.ai-circle svg circle,
-.ai-circle svg line {
-    animation: ai-pulse 3s ease-in-out infinite;
+/* Animated glow backgrounds */
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    animation: rotate-glow 8s linear infinite;
+    pointer-events: none;
 }
 
-@keyframes ai-pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.7;
-    }
+.ai-glow {
+    background: radial-gradient(circle, rgba(2, 131, 147, 0.3) 0%, transparent 70%);
 }
 
-.human-circle svg circle,
-.human-circle svg path,
-.human-circle svg line {
-    animation: human-pulse 3s ease-in-out infinite;
-    animation-delay: 0.5s;
+.human-glow {
+    background: radial-gradient(circle, rgba(246, 86, 37, 0.3) 0%, transparent 70%);
 }
 
-@keyframes human-pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.7;
-    }
+.equation-card:hover .card-glow {
+    opacity: 1;
 }
 
-.balance-plus {
-    margin: 1rem 0;
-}
-
-.balance-plus svg {
-    width: 80px;
-    height: 80px;
-    animation: rotate-subtle 10s linear infinite;
-}
-
-@keyframes rotate-subtle {
+@keyframes rotate-glow {
     from {
         transform: rotate(0deg);
     }
@@ -931,54 +927,202 @@ a:hover {
     }
 }
 
-.circle-label {
+/* Component Icons */
+.component-icon {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.5rem;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
+    transition: transform 0.4s ease;
+}
+
+.equation-card:hover .component-icon {
+    transform: scale(1.08);
+}
+
+/* Component labels */
+.component-label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(135deg, var(--brand-navy), var(--brand-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.human-card-component .component-label {
+    background: linear-gradient(135deg, var(--brand-orange), var(--brand-peach));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.component-desc {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--brand-blue);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Connector Elements */
+.equation-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.equation-connector svg {
+    width: 70px;
+    height: 70px;
+    animation: pulse-connector 3s ease-in-out infinite;
+}
+
+@keyframes pulse-connector {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* Equals Arrow */
+.equation-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.equation-arrow svg {
+    width: 100px;
+    height: 60px;
+    animation: slide-arrow 2s ease-in-out infinite;
+}
+
+@keyframes slide-arrow {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(8px);
+    }
+}
+
+/* Result Card */
+.equation-result {
+    position: relative;
+    background: linear-gradient(135deg, rgba(2, 131, 147, 0.08) 0%, rgba(61, 90, 128, 0.08) 100%);
+    backdrop-filter: blur(15px);
+    border-radius: 28px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 12px 48px rgba(2, 131, 147, 0.15),
+                0 0 0 2px rgba(2, 131, 147, 0.1) inset;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 1rem;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.equation-result:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 24px 80px rgba(2, 131, 147, 0.25),
+                0 0 0 3px rgba(2, 131, 147, 0.2) inset;
+}
+
+.result-glow {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(2, 131, 147, 0.2) 0%, transparent 50%);
+    animation: rotate-result-glow 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate-result-glow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.result-icon {
+    width: 200px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    filter: drop-shadow(0 8px 24px rgba(2, 131, 147, 0.3));
+    animation: float-trophy 4s ease-in-out infinite;
+}
+
+@keyframes float-trophy {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.result-label {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 0.75rem 0;
+    background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-blue) 50%, var(--brand-orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.result-desc {
     font-size: 1rem;
     font-weight: 600;
-    text-align: center;
+    color: var(--brand-navy);
     margin: 0;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
-.ai-circle .circle-label {
-    color: var(--brand-teal);
-}
-
-.human-circle .circle-label {
-    color: var(--brand-orange);
-}
-
-.balance-result {
-    margin-top: 1.5rem;
-}
-
-.balance-result svg {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-}
-
-/* Desktop layout - side by side */
+/* Desktop layout - horizontal flow */
 @media (min-width: 769px) {
-    .balance-container {
+    .balance-equation {
         flex-direction: row;
-        justify-content: center;
         flex-wrap: wrap;
-        max-width: 500px;
-        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 3rem 2rem;
+        max-width: 900px;
     }
 
-    .balance-circle {
-        flex: 0 0 auto;
+    .equation-card {
+        max-width: 240px;
     }
 
-    .balance-plus {
-        flex: 0 0 auto;
-        margin: 0 1rem;
-        align-self: center;
+    .equation-connector {
+        padding: 0 0.5rem;
     }
 
-    .balance-result {
+    .equation-arrow {
         flex: 0 0 100%;
-        margin-top: 2rem;
+        padding: 1.5rem 0 0.5rem;
+    }
+
+    .equation-result {
+        flex: 0 0 100%;
+        max-width: 500px;
+        margin-top: 0.5rem;
     }
 }
 
@@ -1644,15 +1788,15 @@ a:hover {
 }
 
 .footer-buttons .btn-secondary {
-    background-color: var(--brand-white);
-    border-color: var(--brand-white);
-    color: var(--brand-navy);
+    background-color: var(--brand-teal);
+    border-color: var(--brand-teal);
+    color: var(--brand-white);
 }
 
 .footer-buttons .btn-secondary:hover {
-    background-color: var(--brand-orange);
-    color: var(--brand-white);
-    border-color: var(--brand-orange);
+    background-color: var(--brand-white);
+    color: var(--brand-teal);
+    border-color: var(--brand-white);
 }
 
 /* Footer Links */
@@ -2029,24 +2173,42 @@ a:hover {
        Mobile Performance Optimizations
        ======================================== */
 
-    /* Simplify AI graphic animations on mobile for better performance */
-    .ai-circle svg circle,
-    .ai-circle svg line,
-    .human-circle svg circle,
-    .human-circle svg path,
-    .human-circle svg line,
-    .balance-plus svg {
+    /* Simplify AI equation animations on mobile for better performance */
+    .card-glow,
+    .result-glow {
+        animation: none;
+        opacity: 0.5;
+    }
+
+    .component-icon {
+        width: 140px;
+        height: 140px;
+    }
+
+    .result-icon {
+        width: 160px;
+        height: 80px;
+    }
+
+    .equation-connector svg,
+    .equation-arrow svg {
         animation: none;
     }
 
-    .balance-circle svg {
-        width: 120px;
-        height: 120px;
+    .result-label {
+        font-size: 1.6rem;
     }
 
-    .balance-plus svg {
-        width: 60px;
-        height: 60px;
+    .result-desc {
+        font-size: 0.9rem;
+    }
+
+    .component-label {
+        font-size: 1.2rem;
+    }
+
+    .component-desc {
+        font-size: 0.85rem;
     }
 
     /* Disable parallax on mobile */
