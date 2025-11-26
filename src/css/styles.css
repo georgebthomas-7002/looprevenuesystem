@@ -1152,7 +1152,7 @@ a:hover {
     box-shadow: 0 4px 16px rgba(2, 131, 147, 0.08),
                 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .role-card::before {
