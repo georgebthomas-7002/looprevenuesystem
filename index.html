@@ -130,7 +130,7 @@
         <!-- You Are In The Right Place Section -->
         <section id="you-are-in-the-right-place" class="right-place-section">
             <div class="container">
-                <h2>You Are In The Right Place If You Own Revenue</h2>
+                <h2>You Are in the Right Place if You Own Revenue</h2>
                 <p class="intro-text">You care about revenue, relationships, and repeatable growth. You are tired of seeing marketing, sales, service, and ops pull in different directions.</p>
 
                 <p>You might be a CEO who wants a system that makes revenue more predictable and less reactive. You might own RevOps and feel stuck translating between teams and tools. You might run marketing, sales, or service and feel that your part of the engine works, but the whole machine still jerks and stalls.</p>
@@ -141,15 +141,15 @@
 
                 <div class="role-grid">
                     <div class="role-card">
-                        <h4>For leaders</h4>
+                        <h4>For Leaders</h4>
                         <p>You will learn how to talk about revenue as one system, not separate departments. You will see how to set direction, define shared metrics, and sponsor change without getting lost in tool jargon.</p>
                     </div>
                     <div class="role-card">
-                        <h4>For operators and admins</h4>
+                        <h4>For Operators and Admins</h4>
                         <p>You will get practical guidance on data models, lifecycle stages, automation, and governance. You will see how to connect what the business wants to what the tools actually do.</p>
                     </div>
                     <div class="role-card">
-                        <h4>For marketing, sales, and service teams</h4>
+                        <h4>For Marketing, Sales, and Service Teams</h4>
                         <p>You will find plain language playbooks you can apply in your next campaign, deal cycle, or onboarding sequence, without waiting for a full reorg.</p>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
         <!-- What Is Loop Section -->
         <section id="what-is-loop" class="what-is-loop-section">
             <div class="container">
-                <h2>What Is The Loop Revenue System</h2>
+                <h2>What Is the Loop Revenue System</h2>
 
                 <div class="loop-intro">
                     <p class="intro-text">The Loop Revenue System is a way to run revenue as a continuous loop instead of a one way funnel. It brings four loops together.</p>
@@ -236,7 +236,7 @@
             <div class="container">
                 <div class="ai-grid">
                     <div class="ai-content">
-                        <h2>Built For AI And Humans, Not One Or The Other</h2>
+                        <h2>Built for AI and Humans, Not One or the Other</h2>
                         <p>AI is part of the world your revenue engine now lives in. Ignoring it slows you down. Trusting it blindly puts your customers and your brand at risk.</p>
                         <p class="highlight-text">The Loop Revenue System helps you find the balance.</p>
                         <p>AI can help you research faster, spot patterns in your data, personalize at scale, and keep an eye on your numbers in the background. Humans set the strategy, choose the trade offs, handle exceptions, and build the relationships.</p>
@@ -245,22 +245,88 @@
                         <p class="closing-emphasis">The system comes first. AI and tools serve the system, not the other way around.</p>
                     </div>
                     <div class="ai-visual">
-                        <div class="ai-card">
-                            <div class="ai-card-row">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="20" cy="20" r="18" stroke="#028393" stroke-width="2"/>
-                                    <path d="M12 20h16M20 12v16" stroke="#028393" stroke-width="2"/>
-                                </svg>
-                                <span>AI assists</span>
-                            </div>
-                            <div class="ai-card-row">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="20" cy="12" r="5" fill="#faaa68"/>
-                                    <path d="M10 32c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#faaa68" stroke-width="2"/>
-                                </svg>
-                                <span>Humans decide</span>
-                            </div>
-                        </div>
+                        <svg class="ai-human-graphic" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <!-- Gradient for AI side -->
+                                <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#028393;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#3D5A80;stop-opacity:1" />
+                                </linearGradient>
+                                <!-- Gradient for Human side -->
+                                <linearGradient id="humanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#faaa68;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f65625;stop-opacity:1" />
+                                </linearGradient>
+                                <!-- Connecting gradient -->
+                                <linearGradient id="connectGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#028393;stop-opacity:0.8" />
+                                    <stop offset="50%" style="stop-color:#98C1D9;stop-opacity:0.6" />
+                                    <stop offset="100%" style="stop-color:#faaa68;stop-opacity:0.8" />
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Background circle -->
+                            <circle cx="150" cy="150" r="130" fill="rgba(224, 251, 252, 0.3)" class="ai-bg-circle"/>
+
+                            <!-- AI Brain (left side) -->
+                            <g class="ai-brain">
+                                <!-- Brain outline -->
+                                <path d="M 80 150 Q 80 110, 100 90 Q 120 70, 140 90 Q 145 85, 145 95 Q 145 85, 150 85 Q 155 85, 155 95 Q 155 85, 160 90 Q 180 70, 200 90 Q 220 110, 220 150"
+                                      fill="none" stroke="url(#aiGradient)" stroke-width="3" opacity="0.8"/>
+
+                                <!-- Neural network nodes -->
+                                <circle cx="100" cy="120" r="4" fill="#028393" class="ai-node" style="animation-delay: 0s"/>
+                                <circle cx="120" cy="110" r="4" fill="#028393" class="ai-node" style="animation-delay: 0.2s"/>
+                                <circle cx="140" cy="115" r="4" fill="#028393" class="ai-node" style="animation-delay: 0.4s"/>
+                                <circle cx="160" cy="115" r="4" fill="#028393" class="ai-node" style="animation-delay: 0.6s"/>
+                                <circle cx="180" cy="110" r="4" fill="#028393" class="ai-node" style="animation-delay: 0.8s"/>
+                                <circle cx="200" cy="120" r="4" fill="#028393" class="ai-node" style="animation-delay: 1s"/>
+
+                                <!-- Connecting lines -->
+                                <line x1="100" y1="120" x2="120" y2="110" stroke="#028393" stroke-width="1" opacity="0.4" class="ai-connection"/>
+                                <line x1="120" y1="110" x2="140" y2="115" stroke="#028393" stroke-width="1" opacity="0.4" class="ai-connection"/>
+                                <line x1="140" y1="115" x2="160" y2="115" stroke="#028393" stroke-width="1" opacity="0.4" class="ai-connection"/>
+                                <line x1="160" y1="115" x2="180" y2="110" stroke="#028393" stroke-width="1" opacity="0.4" class="ai-connection"/>
+                                <line x1="180" y1="110" x2="200" y2="120" stroke="#028393" stroke-width="1" opacity="0.4" class="ai-connection"/>
+                            </g>
+
+                            <!-- Human figure (right side) -->
+                            <g class="human-figure">
+                                <!-- Head -->
+                                <circle cx="150" cy="190" r="18" fill="url(#humanGradient)" opacity="0.9"/>
+                                <!-- Body -->
+                                <path d="M 150 208 L 150 250 M 130 230 L 170 230 M 150 250 L 135 280 M 150 250 L 165 280"
+                                      stroke="url(#humanGradient)" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+                            </g>
+
+                            <!-- Connecting flow lines (animated) -->
+                            <g class="connection-flow">
+                                <path d="M 80 150 Q 115 150, 150 170" fill="none" stroke="url(#connectGradient)"
+                                      stroke-width="2" stroke-dasharray="5,5" class="flow-line" opacity="0.6">
+                                    <animate attributeName="stroke-dashoffset" values="0;-10" dur="1.5s" repeatCount="indefinite"/>
+                                </path>
+                                <path d="M 220 150 Q 185 150, 150 170" fill="none" stroke="url(#connectGradient)"
+                                      stroke-width="2" stroke-dasharray="5,5" class="flow-line" opacity="0.6">
+                                    <animate attributeName="stroke-dashoffset" values="0;-10" dur="1.5s" repeatCount="indefinite"/>
+                                </path>
+                            </g>
+
+                            <!-- Labels with icons -->
+                            <g class="ai-label">
+                                <rect x="55" y="155" width="90" height="30" rx="15" fill="rgba(2, 131, 147, 0.15)"/>
+                                <text x="100" y="175" text-anchor="middle" fill="#028393" font-size="14" font-weight="600">AI Assists</text>
+                            </g>
+
+                            <g class="human-label">
+                                <rect x="155" y="155" width="90" height="30" rx="15" fill="rgba(250, 170, 104, 0.15)"/>
+                                <text x="200" y="175" text-anchor="middle" fill="#f65625" font-size="14" font-weight="600">Humans Decide</text>
+                            </g>
+
+                            <!-- Center collaboration icon -->
+                            <circle cx="150" cy="150" r="12" fill="rgba(152, 193, 217, 0.8)" class="collab-center"/>
+                            <path d="M 145 150 L 148 153 L 155 146" stroke="white" stroke-width="2"
+                                  stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -269,20 +335,20 @@
         <!-- How To Use Section -->
         <section id="how-to-use" class="how-to-use-section">
             <div class="container">
-                <h2>How To Use This Site</h2>
+                <h2>How to Use This Site</h2>
                 <p class="intro-text">You do not need to read every page before you act. This site is built so you can move from insight to implementation in short steps.</p>
 
                 <div class="usage-grid">
                     <div class="usage-card">
-                        <h3>Learn the model</h3>
+                        <h3>Learn the Model</h3>
                         <p>If you want the big picture, start by reading about the model itself. That will show you why the Loop Revenue System exists, how it compares to funnels and flywheels, and why it matters now.</p>
                     </div>
                     <div class="usage-card">
-                        <h3>Follow your path</h3>
+                        <h3>Follow Your Path</h3>
                         <p>If you want guidance for your specific role, use the role based path. You will see what to care about, which loops and stages to focus on, and which pages to read in what order.</p>
                     </div>
                     <div class="usage-card">
-                        <h3>Apply and improve</h3>
+                        <h3>Apply and Improve</h3>
                         <p>If you are ready to build, the playbooks and implementation pages will walk you through concrete workflows, metrics, and experiments.</p>
                     </div>
                 </div>
