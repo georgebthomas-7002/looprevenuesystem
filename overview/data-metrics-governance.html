@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Data, Metrics, and Governance - Coming Soon">
+    <meta name="description" content="Data, Metrics, and Governance for the Loop Revenue System. Learn how to build the nervous system behind your revenue loops with the right data foundations, meaningful metrics, and governance habits.">
     <title>Data, Metrics, and Governance - Loop Revenue System</title>
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
@@ -71,27 +71,562 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Coming Soon Section -->
-        <section class="coming-soon-hero">
-            <div class="coming-soon-container">
-                <div class="coming-soon-visual">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="loopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#3D5A80;stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:#028393;stop-opacity:0.8" />
-                            </linearGradient>
-                        </defs>
-                        <rect x="60" y="60" width="30" height="80" fill="#028393" opacity="0.6" rx="4"/>
-                        <rect x="100" y="40" width="30" height="100" fill="#3D5A80" opacity="0.6" rx="4"/>
-                        <rect x="140" y="70" width="30" height="70" fill="#faaa68" opacity="0.6" rx="4"/>
-                        <line x1="40" y1="140" x2="180" y2="140" stroke="url(#loopGrad)" stroke-width="2"/>
+        <!-- Hero Section -->
+        <section id="hero-data-metrics-governance" class="page-hero">
+            <div class="container">
+                <div class="page-hero-grid">
+                    <div class="page-hero-content">
+                        <h1>Data, Metrics, And Governance For The Loop Revenue System</h1>
+                        <h2>The Nervous System Behind Your Revenue Loops</h2>
+                        <p>Loops do not run on good intentions alone. They run on information.</p>
+                        <p>If you want marketing, sales, service, and ops to act like one continuous system, they need to see the same reality. That reality lives in your data, your metrics, and the way you govern decisions.</p>
+                        <p>This page is about that nervous system.</p>
+                        <p>You will not find a giant catalog of KPIs here. Instead, you will get a simple way to think about data foundations, meaningful metrics, and the governance habits that keep the Loop Revenue System healthy as it spins.</p>
+                    </div>
+                    <div class="page-hero-visual">
+                        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="dataLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#028393"/>
+                                    <stop offset="100%" style="stop-color:#3D5A80"/>
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Central data backbone -->
+                            <line x1="160" y1="40" x2="160" y2="280" stroke="url(#dataLineGrad)" stroke-width="4" opacity="0.6"/>
+
+                            <!-- Data nodes on backbone -->
+                            <circle cx="160" cy="80" r="8" fill="#028393"/>
+                            <circle cx="160" cy="140" r="8" fill="#3D5A80"/>
+                            <circle cx="160" cy="200" r="8" fill="#f65625"/>
+                            <circle cx="160" cy="260" r="8" fill="#faaa68"/>
+
+                            <!-- Loop circles connected to backbone -->
+                            <g>
+                                <!-- Marketing -->
+                                <circle cx="70" cy="80" r="45" fill="rgba(2,131,147,0.15)" stroke="#028393" stroke-width="2"/>
+                                <line x1="115" y1="80" x2="152" y2="80" stroke="#028393" stroke-width="2" stroke-dasharray="4,3"/>
+                                <text x="70" y="85" text-anchor="middle" fill="#028393" font-size="11" font-weight="600">MKT</text>
+                            </g>
+
+                            <g>
+                                <!-- Sales -->
+                                <circle cx="250" cy="140" r="45" fill="rgba(61,90,128,0.15)" stroke="#3D5A80" stroke-width="2"/>
+                                <line x1="168" y1="140" x2="205" y2="140" stroke="#3D5A80" stroke-width="2" stroke-dasharray="4,3"/>
+                                <text x="250" y="145" text-anchor="middle" fill="#3D5A80" font-size="11" font-weight="600">SALES</text>
+                            </g>
+
+                            <g>
+                                <!-- Service -->
+                                <circle cx="70" cy="200" r="45" fill="rgba(246,86,37,0.15)" stroke="#f65625" stroke-width="2"/>
+                                <line x1="115" y1="200" x2="152" y2="200" stroke="#f65625" stroke-width="2" stroke-dasharray="4,3"/>
+                                <text x="70" y="205" text-anchor="middle" fill="#f65625" font-size="11" font-weight="600">SERVICE</text>
+                            </g>
+
+                            <g>
+                                <!-- Ops -->
+                                <circle cx="250" cy="260" r="45" fill="rgba(250,170,104,0.15)" stroke="#faaa68" stroke-width="2"/>
+                                <line x1="168" y1="260" x2="205" y2="260" stroke="#faaa68" stroke-width="2" stroke-dasharray="4,3"/>
+                                <text x="250" y="265" text-anchor="middle" fill="#d08a3a" font-size="11" font-weight="600">OPS</text>
+                            </g>
+
+                            <!-- Small metric icons on backbone -->
+                            <rect x="150" y="105" width="20" height="14" rx="2" fill="white" stroke="#142d63" stroke-width="1.5"/>
+                            <rect x="150" y="165" width="20" height="14" rx="2" fill="white" stroke="#142d63" stroke-width="1.5"/>
+                            <rect x="150" y="225" width="20" height="14" rx="2" fill="white" stroke="#142d63" stroke-width="1.5"/>
+
+                            <!-- Label -->
+                            <text x="160" y="305" text-anchor="middle" fill="#142d63" font-size="10" font-weight="600">DATA BACKBONE</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Data Matters -->
+        <section id="why-data-matters" class="content-section">
+            <div class="container">
+                <h2>Why Data And Metrics Matter More In A Loop</h2>
+
+                <div class="stages-why-grid">
+                    <div class="stages-why-content">
+                        <p>In a funnel world, data often shows up as a report at the end of the month. Someone pulls numbers, adds a few arrows, and the team nods or argues for an hour.</p>
+
+                        <p>In a loop world, that is not enough.</p>
+
+                        <p>Loops spin all the time. Marketing runs campaigns. Sales has conversations. Service handles tickets and success plans. Ops keeps the systems humming. Every one of those actions produces signals. If you only look at them once in a while, you miss patterns and react too late.</p>
+
+                        <p>Good data and clear metrics turn those signals into shared understanding.</p>
+
+                        <p>They help you answer questions like:</p>
+
+                        <ul class="question-list">
+                            <li>Are our loops actually moving in the same direction?</li>
+                            <li>Where are we losing energy in the system?</li>
+                            <li>Which changes made things better, and which ones just made noise?</li>
+                        </ul>
+
+                        <p>Without that shared understanding, it is hard to know whether your efforts are helping your business flourish or just keeping everyone busy.</p>
+
+                        <p>Data and metrics are not the goal. They are how you keep score and notice when the system needs care.</p>
+                    </div>
+
+                    <div class="stages-why-visual">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Loop circle -->
+                            <circle cx="150" cy="150" r="100" fill="none" stroke="#98C1D9" stroke-width="3"/>
+
+                            <!-- Arrows showing loop motion -->
+                            <path d="M 150 50 A 100 100 0 0 1 250 150" fill="none" stroke="#028393" stroke-width="3" marker-end="url(#arrowData)"/>
+                            <path d="M 250 150 A 100 100 0 0 1 150 250" fill="none" stroke="#3D5A80" stroke-width="3"/>
+                            <path d="M 150 250 A 100 100 0 0 1 50 150" fill="none" stroke="#f65625" stroke-width="3"/>
+                            <path d="M 50 150 A 100 100 0 0 1 150 50" fill="none" stroke="#faaa68" stroke-width="3"/>
+
+                            <defs>
+                                <marker id="arrowData" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                                    <polygon points="0 0, 8 3, 0 6" fill="#028393"/>
+                                </marker>
+                            </defs>
+
+                            <!-- Data point dots -->
+                            <circle cx="150" cy="50" r="6" fill="#028393"/>
+                            <circle cx="185" cy="65" r="4" fill="#028393" opacity="0.7"/>
+                            <circle cx="215" cy="95" r="4" fill="#028393" opacity="0.7"/>
+                            <circle cx="240" cy="130" r="4" fill="#3D5A80" opacity="0.7"/>
+                            <circle cx="250" cy="150" r="6" fill="#3D5A80"/>
+                            <circle cx="240" cy="180" r="4" fill="#3D5A80" opacity="0.7"/>
+                            <circle cx="215" cy="210" r="4" fill="#f65625" opacity="0.7"/>
+                            <circle cx="180" cy="240" r="4" fill="#f65625" opacity="0.7"/>
+                            <circle cx="150" cy="250" r="6" fill="#f65625"/>
+                            <circle cx="120" cy="240" r="4" fill="#f65625" opacity="0.7"/>
+                            <circle cx="85" cy="210" r="4" fill="#faaa68" opacity="0.7"/>
+                            <circle cx="60" cy="175" r="4" fill="#faaa68" opacity="0.7"/>
+                            <circle cx="50" cy="150" r="6" fill="#faaa68"/>
+                            <circle cx="60" cy="120" r="4" fill="#faaa68" opacity="0.7"/>
+                            <circle cx="85" cy="90" r="4" fill="#028393" opacity="0.7"/>
+                            <circle cx="115" cy="65" r="4" fill="#028393" opacity="0.7"/>
+
+                            <!-- Center -->
+                            <circle cx="150" cy="150" r="30" fill="white" stroke="#142d63" stroke-width="2"/>
+                            <text x="150" y="155" text-anchor="middle" fill="#142d63" font-size="10" font-weight="600">SIGNALS</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Foundations -->
+        <section id="data-foundations" class="content-section content-section-alt">
+            <div class="container">
+                <h2>Data Foundations For The Loop Revenue System</h2>
+
+                <p>At the core of most revenue systems you will find a handful of familiar objects.</p>
+
+                <div class="entity-diagram">
+                    <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Objects -->
+                        <g>
+                            <!-- Contacts -->
+                            <circle cx="70" cy="100" r="40" fill="rgba(2,131,147,0.15)" stroke="#028393" stroke-width="2"/>
+                            <text x="70" y="95" text-anchor="middle" fill="#028393" font-size="11" font-weight="600">Contacts</text>
+                            <text x="70" y="110" text-anchor="middle" fill="#028393" font-size="9">(People)</text>
+                        </g>
+
+                        <g>
+                            <!-- Companies -->
+                            <circle cx="170" cy="100" r="40" fill="rgba(61,90,128,0.15)" stroke="#3D5A80" stroke-width="2"/>
+                            <text x="170" y="95" text-anchor="middle" fill="#3D5A80" font-size="11" font-weight="600">Companies</text>
+                            <text x="170" y="110" text-anchor="middle" fill="#3D5A80" font-size="9">(Accounts)</text>
+                        </g>
+
+                        <g>
+                            <!-- Deals -->
+                            <circle cx="270" cy="100" r="40" fill="rgba(246,86,37,0.15)" stroke="#f65625" stroke-width="2"/>
+                            <text x="270" y="95" text-anchor="middle" fill="#f65625" font-size="11" font-weight="600">Deals</text>
+                            <text x="270" y="110" text-anchor="middle" fill="#f65625" font-size="9">(Revenue)</text>
+                        </g>
+
+                        <g>
+                            <!-- Tickets -->
+                            <circle cx="370" cy="100" r="40" fill="rgba(250,170,104,0.15)" stroke="#faaa68" stroke-width="2"/>
+                            <text x="370" y="95" text-anchor="middle" fill="#d08a3a" font-size="11" font-weight="600">Tickets</text>
+                            <text x="370" y="110" text-anchor="middle" fill="#d08a3a" font-size="9">(Service)</text>
+                        </g>
+
+                        <g>
+                            <!-- Activities -->
+                            <circle cx="450" cy="100" r="40" fill="rgba(152,193,217,0.2)" stroke="#98C1D9" stroke-width="2"/>
+                            <text x="450" y="95" text-anchor="middle" fill="#3D5A80" font-size="11" font-weight="600">Activities</text>
+                            <text x="450" y="110" text-anchor="middle" fill="#3D5A80" font-size="9">(Touches)</text>
+                        </g>
+
+                        <!-- Connection lines -->
+                        <line x1="110" y1="100" x2="130" y2="100" stroke="#028393" stroke-width="2"/>
+                        <line x1="210" y1="100" x2="230" y2="100" stroke="#3D5A80" stroke-width="2"/>
+                        <line x1="310" y1="100" x2="330" y2="100" stroke="#f65625" stroke-width="2"/>
+                        <line x1="410" y1="100" x2="410" y2="100" stroke="#faaa68" stroke-width="2"/>
+
+                        <!-- Top arc connecting all -->
+                        <path d="M 70 60 Q 260 20, 450 60" fill="none" stroke="#142d63" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
                     </svg>
                 </div>
-                <h1 class="coming-soon-title">Data, Metrics, and Governance</h1>
-                <p class="coming-soon-subtitle">Track what matters. Trust the numbers.</p>
-                <p class="coming-soon-text">We're building comprehensive guidance on how to measure Loop performance, establish data governance, and ensure your revenue metrics tell a consistent story across all teams.</p>
-                <a href="/" class="btn btn-primary">Return Home</a>
+
+                <p>You may use different names or extra objects, but the pattern is similar across tools.</p>
+
+                <p>For the Loop Revenue System, the important question is not "Which CRM do we use?" It is "How clearly do these core objects connect across our loops?"</p>
+
+                <p>A few practical principles:</p>
+
+                <ul class="principles-list">
+                    <li>Every contact and company should have a clear place in your lifecycle.</li>
+                    <li>Deals and tickets should link to the contacts and companies involved.</li>
+                    <li>Activities like emails, calls, meetings, and form submissions should roll up so sales, marketing, service, and ops can see the same history.</li>
+                    <li>Key segment fields, such as industry, size, fit, and product usage, should live in shared objects, not in private spreadsheets.</li>
+                </ul>
+
+                <p>When this foundation is in place, it becomes much easier to Express who your best customers are, Tailor how you serve them, Amplify what works, and Evolve based on what you see.</p>
+            </div>
+        </section>
+
+        <!-- Metrics That Matter -->
+        <section id="metrics-that-matter" class="content-section">
+            <div class="container">
+                <h2>Metrics That Matter By Loop And Stage</h2>
+
+                <p>You can track almost anything. That does not mean you should.</p>
+
+                <p>In a loop based system, you care most about metrics that show:</p>
+
+                <ul>
+                    <li>Are we attracting and keeping the right people?</li>
+                    <li>Are our loops passing energy to each other, or losing it?</li>
+                    <li>Are we learning and improving as the loops spin?</li>
+                </ul>
+
+                <p>Here is a short, non exhaustive list to guide your thinking.</p>
+
+                <div class="metrics-grid">
+                    <div class="metrics-card" data-loop="marketing">
+                        <h3>Loop Marketing</h3>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Express</div>
+                            <p>Content engagement from ideal customers, qualified inbound volume.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Tailor</div>
+                            <p>Segment level conversion rates, reply rates by audience.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Amplify</div>
+                            <p>Assisted pipeline from content, channel performance over time.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Evolve</div>
+                            <p>Experiments shipped, wins vs losses, changes based on learnings.</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-card" data-loop="sales">
+                        <h3>Loop Sales</h3>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Express</div>
+                            <p>Opportunity quality, stage definitions, time on best fit deals.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Tailor</div>
+                            <p>Meeting quality, buyer engagement, multi contact involvement.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Amplify</div>
+                            <p>Shared sequences, playbook usage, enablement asset performance.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Evolve</div>
+                            <p>Win rate by segment, sales cycle length, reasons for loss.</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-card" data-loop="service">
+                        <h3>Loop Service</h3>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Express</div>
+                            <p>Onboarding completion, early product usage signals.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Tailor</div>
+                            <p>Time to first value, outcomes by customer segment.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Amplify</div>
+                            <p>Self service usage, help article reuse, community activity.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Evolve</div>
+                            <p>Retention, expansion, reasons for churn.</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-card" data-loop="ops">
+                        <h3>Loop Ops</h3>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Express</div>
+                            <p>Data completeness, lifecycle alignment across teams.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Tailor</div>
+                            <p>Routing accuracy, system response times for key processes.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Amplify</div>
+                            <p>Automation coverage, reduction in manual work.</p>
+                        </div>
+                        <div class="metric-stage">
+                            <div class="metric-stage-label">Evolve</div>
+                            <p>Process adoption, dashboard usage, speed of safe change.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem;">You do not need perfect dashboards to start. Choose a small set of metrics that actually guide decisions. Measure them consistently. Discuss them in the context of loops and stages, not just in isolation.</p>
+            </div>
+        </section>
+
+        <!-- What To Ignore -->
+        <section id="what-to-ignore" class="content-section content-section-light">
+            <div class="container">
+                <h2>Metrics You Can Safely Ignore</h2>
+
+                <p>It is easy to drown in numbers that look impressive but do not change how you act.</p>
+
+                <div class="caution-callout">
+                    <h3>In a loop system, be cautious with:</h3>
+                    <ul>
+                        <li>Vanity counts that never connect to real customers or revenue, such as raw impressions without context.</li>
+                        <li>Isolated conversion rates that hide important stages before and after them.</li>
+                        <li>Department only scorecards that reward local wins while the overall loop suffers.</li>
+                    </ul>
+                </div>
+
+                <p>If a metric does not help you decide what to change in Express, Tailor, Amplify, or Evolve, then it is likely decoration. You can track it, but it should not drive your behavior.</p>
+            </div>
+        </section>
+
+        <!-- Consent, Privacy, and AI -->
+        <section id="consent-privacy-ai" class="content-section content-section-alt">
+            <div class="container">
+                <h2>Consent, Privacy, And Responsible AI</h2>
+
+                <p>Loops run on data about real people. That comes with responsibility.</p>
+
+                <p>Every time you collect, store, and use data, you make a choice about how you treat your customers. The Loop Revenue System assumes you want to build long term relationships, not short term tricks.</p>
+
+                <div class="two-col-principles">
+                    <div class="principle-column respect">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#3D5A80" stroke-width="2">
+                                <circle cx="12" cy="7" r="4"/>
+                                <path d="M5 21v-2a7 7 0 0114 0v2"/>
+                                <path d="M12 14v4"/>
+                            </svg>
+                            Respect The Human
+                        </h3>
+                        <p><strong>Consent comes first.</strong> Make it clear what data you collect, how you use it, and how people can change their preferences. Honor those choices in your tools and your processes.</p>
+                        <p><strong>Use the minimum needed.</strong> You do not need every possible field to Tailor well. Focus on data that helps you be more helpful, not more invasive.</p>
+                    </div>
+
+                    <div class="principle-column care">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#028393" stroke-width="2">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 2v2"/>
+                                <path d="M12 20v2"/>
+                                <path d="M2 12h2"/>
+                                <path d="M20 12h2"/>
+                            </svg>
+                            Use Data With Care
+                        </h3>
+                        <p><strong>Watch for bias.</strong> AI models and humans both bring bias to the table. When you use AI to score leads, predict churn, or suggest next steps, check whether your system is unfairly favoring or excluding certain groups.</p>
+                        <p><strong>Keep humans accountable.</strong> AI can draft, recommend, and score. Humans approve, override, and own the impact.</p>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; font-weight: 500;">Responsible data use is not a compliance form at the end of the process. It is part of how you design Express, Tailor, Amplify, and Evolve.</p>
+            </div>
+        </section>
+
+        <!-- Experiments and Evolve -->
+        <section id="experiments-and-evolve" class="content-section">
+            <div class="container">
+                <h2>Experiments, Test Backlogs, And The Evolve Stage</h2>
+
+                <p>The Evolve stage is where data turns into better loops.</p>
+
+                <p>Without some structure, experimentation quickly becomes random. One person runs a test, another tweaks a workflow, a third changes a message. No one remembers what happened or why.</p>
+
+                <p>A simple experiment habit can change that.</p>
+
+                <div class="experiment-flow">
+                    <div class="experiment-stage" data-stage="ideas">
+                        <div class="experiment-stage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#3D5A80" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="16"/>
+                                <line x1="8" y1="12" x2="16" y2="12"/>
+                            </svg>
+                        </div>
+                        <h4>Ideas</h4>
+                        <p>Capture ideas from every loop with hypothesis and expected metric.</p>
+                    </div>
+
+                    <div class="experiment-stage" data-stage="testing">
+                        <div class="experiment-stage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#f65625" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h4>In Test</h4>
+                        <p>Run small, focused experiments tied to a stage and loop.</p>
+                    </div>
+
+                    <div class="experiment-stage" data-stage="learning">
+                        <div class="experiment-stage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#028393" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <h4>Learning</h4>
+                        <p>Record the outcome. Even failed tests teach you where not to go.</p>
+                    </div>
+
+                    <div class="experiment-stage" data-stage="shipped">
+                        <div class="experiment-stage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#142d63" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <h4>Shipped</h4>
+                        <p>Roll out winners and integrate changes into your loops.</p>
+                    </div>
+                </div>
+
+                <p><strong>Keep a test backlog.</strong> For each idea, write down the hypothesis, the stage and loop it belongs to, the metric you expect to move, and how long you will run it.</p>
+
+                <p><strong>Run small tests, often.</strong> Instead of one giant change that is hard to read, favor smaller, more focused experiments.</p>
+
+                <p><strong>Share what you learn.</strong> When teams gather around real numbers and honest results, they become more curious, less defensive, and more willing to adjust.</p>
+            </div>
+        </section>
+
+        <!-- Governance and Rituals -->
+        <section id="governance-and-rituals" class="content-section content-section-alt">
+            <div class="container">
+                <h2>Governance That Keeps The Loops Aligned</h2>
+
+                <p>Governance sounds heavy, but at its core it is about habits.</p>
+
+                <p>Who meets to review what. How decisions get made. Which changes are allowed, and which need more care. Without some shared rules, your data and processes drift. Different teams make local changes that slowly pull the system apart.</p>
+
+                <p>You do not need a complex committee structure. You need a few consistent rituals.</p>
+
+                <div class="rituals-grid">
+                    <div class="ritual-card">
+                        <h4>Regular Loop Review</h4>
+                        <p>Once a month or quarter, gather representatives from marketing, sales, service, and ops. Look at a shared scorecard. Talk about what is working, what is stuck, and which stage needs attention.</p>
+                    </div>
+
+                    <div class="ritual-card">
+                        <h4>Clear Object Owners</h4>
+                        <p>Someone should own the contact model. Someone should own deals and tickets. Someone should own the main dashboards. Ownership means they care for the integrity of that part of the system.</p>
+                    </div>
+
+                    <div class="ritual-card">
+                        <h4>Simple Change Process</h4>
+                        <p>When someone wants to add a field or adjust an automation: describe the change, link it to a loop and stage, explain what metric it should improve, and note how you will roll it out.</p>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; font-weight: 500;">Governance is not about slowing everything down. It is about making sure changes move you closer to a healthy loop system, not away from it.</p>
+            </div>
+        </section>
+
+        <!-- Maturity and Pitfalls -->
+        <section id="maturity-and-pitfalls" class="content-section">
+            <div class="container">
+                <h2>Simple Maturity Signals And Common Pitfalls</h2>
+
+                <p>You can get a quick feel for your current state by asking how you use data today.</p>
+
+                <div class="maturity-ladder">
+                    <div class="maturity-level" data-level="1">
+                        <div class="maturity-badge">
+                            <div class="maturity-badge-number">1</div>
+                            <div class="maturity-badge-label">Reactive</div>
+                        </div>
+                        <div class="maturity-content">
+                            <h4>Reports at the end of the month</h4>
+                            <p>People argue about whose numbers are right. Changes happen without clear owners or follow through.</p>
+                        </div>
+                    </div>
+
+                    <div class="maturity-level" data-level="2">
+                        <div class="maturity-badge">
+                            <div class="maturity-badge-number">2</div>
+                            <div class="maturity-badge-label">Informed</div>
+                        </div>
+                        <div class="maturity-content">
+                            <h4>Decent dashboards, looked at on purpose</h4>
+                            <p>Some decisions reference data, but loops and stages are not part of the conversation yet.</p>
+                        </div>
+                    </div>
+
+                    <div class="maturity-level" data-level="3">
+                        <div class="maturity-badge">
+                            <div class="maturity-badge-number">3</div>
+                            <div class="maturity-badge-label">Loop Aware</div>
+                        </div>
+                        <div class="maturity-content">
+                            <h4>Metrics discussed in the language of stages</h4>
+                            <p>Teams keep a shared test backlog. Governance rituals exist and actually happen. Data is a tool for better questions, not a weapon.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Watch out for common pitfalls:</h3>
+
+                <ul class="pitfalls-list">
+                    <li>Chasing perfect data instead of useful data.</li>
+                    <li>Adding new metrics every time something goes wrong.</li>
+                    <li>Letting each department define its own lifecycle with no shared view.</li>
+                    <li>Automating broken processes instead of fixing them.</li>
+                </ul>
+
+                <p style="text-align: center; margin-top: 2rem; font-weight: 500;">The goal is progress, not perfection. Make the loops slightly more honest and connected each cycle.</p>
+            </div>
+        </section>
+
+        <!-- Next Steps CTA -->
+        <section id="data-next-steps" class="cta-section">
+            <div class="container">
+                <h2>How To Put Data, Metrics, And Governance To Work</h2>
+
+                <p>You do not need to rebuild your entire data stack to support the Loop Revenue System. You can start small and still see real movement.</p>
+
+                <p style="margin-bottom: 2.5rem;">Pick one loop and one stage. Clarify which data points matter most there. Agree on two or three metrics you will watch together. Add one simple governance habit that makes it easier to keep that part of the system clean.</p>
+
+                <div class="cta-buttons">
+                    <a href="/playbooks/system" class="btn btn-primary btn-large">System Playbooks</a>
+                    <a href="/resources/templates-checklists" class="btn btn-secondary btn-large">Templates And Checklists</a>
+                </div>
+
+                <div class="next-page-links">
+                    <p><strong>See how data and metrics show up in each stage:</strong> <a href="/playbooks/system">System Playbooks</a></p>
+                    <p><strong>Templates for data and change management:</strong> <a href="/resources/templates-checklists">Templates And Checklists</a></p>
+                    <p><strong>Exercises to run with your team:</strong> <a href="/resources/workshops-exercises">Workshops And Exercises</a></p>
+                </div>
+
+                <p class="cta-note">Use this page as your reference when questions about measurement, data, or change come up. The more your team sees data, metrics, and governance as part of the loop, not an afterthought, the easier it becomes to build a system that helps your business flourish.</p>
             </div>
         </section>
     </main>
@@ -99,11 +634,81 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2024 Loop Revenue System. All rights reserved.</p>
-            <p style="margin-top: 0.5rem;">
-                <a href="/privacy" style="color: var(--brand-light-blue); margin: 0 1rem;">Privacy Policy</a>
-                <a href="/terms" style="color: var(--brand-light-blue); margin: 0 1rem;">Terms of Use</a>
-            </p>
+            <div class="footer-grid">
+                <!-- Footer CTA -->
+                <div class="footer-cta">
+                    <h3>Ready to build your Loop Revenue System?</h3>
+                    <p>Start with the model or jump straight to your role-based path.</p>
+                    <div class="footer-buttons">
+                        <a href="/overview/loop-revenue-system" class="btn btn-primary">Learn the Model</a>
+                        <a href="/roles/start-here" class="btn btn-secondary">Start Here</a>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Overview</h4>
+                        <ul>
+                            <li><a href="/overview/loop-revenue-system">What Is the Loop Revenue System</a></li>
+                            <li><a href="/overview/stages">Stages: Express, Tailor, Amplify, Evolve</a></li>
+                            <li><a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>The Four Loops</h4>
+                        <ul>
+                            <li><a href="/loops">Four Loops Overview</a></li>
+                            <li><a href="/loops/marketing">Loop Marketing</a></li>
+                            <li><a href="/loops/sales">Loop Sales</a></li>
+                            <li><a href="/loops/service">Loop Service</a></li>
+                            <li><a href="/loops/ops">Loop Ops</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Playbooks</h4>
+                        <ul>
+                            <li><a href="/playbooks/system">System Playbooks</a></li>
+                            <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
+                            <li><a href="/playbooks/no-hubspot">No HubSpot Implementation</a></li>
+                            <li><a href="/playbooks/ai-and-humans">AI and Humans</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>By Role</h4>
+                        <ul>
+                            <li><a href="/roles/start-here">Start Here</a></li>
+                            <li><a href="/roles/leadership-revops">Leadership and RevOps</a></li>
+                        </ul>
+                        <h4 style="margin-top: 2rem;">Resources</h4>
+                        <ul>
+                            <li><a href="/resources/templates-checklists">Templates and Checklists</a></li>
+                            <li><a href="/resources/prompts-workflows">Prompts and Workflows</a></li>
+                            <li><a href="/resources/case-studies">Case Studies</a></li>
+                            <li><a href="/resources/faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <a href="/">
+                        <img src="/src/images/logo/Loop-Revenue-logo-white.png" alt="Loop Revenue System" />
+                    </a>
+                </div>
+                <p class="footer-tagline">One system. Four loops. Continuous learning.</p>
+                <p class="footer-copyright">&copy; 2024 Loop Revenue System. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="/terms">Terms of Use</a>
+                </div>
+            </div>
         </div>
     </footer>
 
