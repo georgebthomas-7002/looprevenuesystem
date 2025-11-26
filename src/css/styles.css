@@ -1788,15 +1788,15 @@ a:hover {
 }
 
 .footer-buttons .btn-secondary {
-    background-color: var(--brand-white);
-    border-color: var(--brand-white);
-    color: var(--brand-navy);
+    background-color: var(--brand-teal);
+    border-color: var(--brand-teal);
+    color: var(--brand-white);
 }
 
 .footer-buttons .btn-secondary:hover {
-    background-color: var(--brand-orange);
-    color: var(--brand-white);
-    border-color: var(--brand-orange);
+    background-color: var(--brand-white);
+    color: var(--brand-teal);
+    border-color: var(--brand-white);
 }
 
 /* Footer Links */
