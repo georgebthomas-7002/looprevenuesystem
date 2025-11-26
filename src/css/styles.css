@@ -935,81 +935,49 @@ a:hover {
 
 /* Next Steps CTA Section */
 .next-steps-section {
-    background: var(--brand-navy);
-    padding: 80px 0;
+    background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+    padding: 60px 0;
     color: var(--brand-white);
+    text-align: center;
 }
 
 .next-steps-section h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 2.25rem;
+    font-weight: 700;
     line-height: 1.2;
     color: var(--brand-white);
-    margin-bottom: 1.5rem;
-    text-align: center;
+    margin-bottom: 0.75rem;
 }
 
-.next-steps-section .intro-text {
+.cta-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.simple-cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-large {
+    padding: 18px 40px;
+    font-size: 1.15rem;
+    min-width: 220px;
+}
+
+.simple-cta-buttons .btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--brand-white);
     color: var(--brand-white);
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
-    opacity: 0.95;
 }
 
-.emphasis-text {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--brand-white);
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.cta-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto 2.5rem;
-}
-
-.cta-card {
-    background: var(--brand-white);
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    text-align: center;
-}
-
-.cta-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--brand-navy);
-    margin-bottom: 1rem;
-}
-
-.cta-card p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-}
-
-.cta-card .btn {
-    width: 100%;
-    padding: 14px 24px;
-    font-size: 1.05rem;
-    font-weight: 600;
-}
-
-.closing-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--brand-white);
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto;
-    opacity: 0.9;
+.simple-cta-buttons .btn-secondary:hover {
+    background-color: var(--brand-white);
+    color: var(--brand-teal);
 }
 
 /* Animations */
@@ -1550,20 +1518,26 @@ a:hover {
 
     /* Next Steps Section Responsive */
     .next-steps-section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     .next-steps-section h2 {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
     }
 
-    .cta-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .cta-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
-    .cta-card {
-        padding: 2rem;
+    .simple-cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-large {
+        width: 100%;
+        min-width: auto;
     }
 
     /* Footer Responsive */
