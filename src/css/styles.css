@@ -795,10 +795,16 @@ a:hover {
 }
 
 .ai-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 60px;
-    align-items: start;
+    align-items: center;
+}
+
+.ai-content {
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
 }
 
 .ai-content h2 {
@@ -835,7 +841,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 2rem;
+    width: 100%;
 }
 
 /* AI card content styles */
@@ -2077,16 +2083,11 @@ a:hover {
     }
 
     .ai-grid {
-        grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .ai-content h2 {
         font-size: 1.8rem;
-    }
-
-    .ai-visual {
-        padding-top: 0;
     }
 
     /* How To Use Section Responsive */
