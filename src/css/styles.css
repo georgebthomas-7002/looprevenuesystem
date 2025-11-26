@@ -1186,11 +1186,159 @@ a:hover {
    Footer
    ======================================== */
 .site-footer {
-    background-color: var(--secondary-color);
+    background: linear-gradient(to bottom, var(--brand-navy) 0%, #0a1a3a 100%);
     color: var(--brand-white);
-    padding: var(--spacing-md) 0;
+    padding: 80px 0 40px;
+    margin-top: 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Footer CTA */
+.footer-cta {
     text-align: center;
-    margin-top: var(--spacing-xl);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.footer-cta h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.footer-cta p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-buttons .btn {
+    min-width: 200px;
+}
+
+.footer-buttons .btn-secondary {
+    background-color: transparent;
+    border-color: var(--brand-white);
+    color: var(--brand-white);
+}
+
+.footer-buttons .btn-secondary:hover {
+    background-color: var(--brand-white);
+    color: var(--brand-navy);
+}
+
+/* Footer Links */
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 20px;
+}
+
+.footer-column h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brand-white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--brand-teal);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-column ul li a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.footer-column ul li a:hover {
+    color: var(--brand-white);
+    transform: translateX(4px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+    opacity: 0.9;
+}
+
+.footer-tagline {
+    font-size: 1.1rem;
+    color: var(--brand-teal);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--brand-white);
+    text-decoration: underline;
+}
+
+.footer-legal span {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 /* ========================================
@@ -1416,6 +1564,44 @@ a:hover {
 
     .cta-card {
         padding: 2rem;
+    }
+
+    /* Footer Responsive */
+    .site-footer {
+        padding: 60px 0 30px;
+    }
+
+    .footer-cta h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-cta p {
+        font-size: 1rem;
+    }
+
+    .footer-buttons {
+        flex-direction: column;
+    }
+
+    .footer-buttons .btn {
+        width: 100%;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-column h4 {
+        font-size: 0.95rem;
+    }
+
+    .footer-logo img {
+        height: 40px;
+    }
+
+    .footer-tagline {
+        font-size: 1rem;
     }
 
     .grid {
