@@ -74,37 +74,106 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Scroll reveal animation for problem cards
-const observeCards = () => {
-    const cards = document.querySelectorAll('.fade-in-on-scroll');
+// Modern scroll reveal animation with Intersection Observer
+const initScrollAnimations = () => {
+    // Animate sections on scroll
+    const sections = document.querySelectorAll('.hero-section, .right-place-section, .what-is-loop-section, .ai-humans-section, .how-to-use-section');
 
-    if (cards.length === 0) return;
+    sections.forEach(section => {
+        section.classList.add('scroll-reveal');
+    });
 
+    // Animate cards with stagger effect
+    const cardContainers = [
+        { selector: '.role-grid .role-card', stagger: 100 },
+        { selector: '.stages-grid .stage-card', stagger: 150 },
+        { selector: '.usage-grid .usage-card', stagger: 100 }
+    ];
+
+    cardContainers.forEach(container => {
+        const cards = document.querySelectorAll(container.selector);
+        cards.forEach((card, index) => {
+            card.classList.add('scroll-reveal-card');
+            card.style.transitionDelay = `${index * container.stagger}ms`;
+        });
+    });
+
+    // Intersection Observer for scroll animations
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add delay based on card position
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, index * 150);
-                observer.unobserve(entry.target);
+                entry.target.classList.add('is-visible');
+                // Keep observing for sections to allow re-animation if needed
             }
         });
     }, observerOptions);
 
-    cards.forEach(card => {
-        observer.observe(card);
+    // Observe all scroll-reveal elements
+    document.querySelectorAll('.scroll-reveal, .scroll-reveal-card').forEach(element => {
+        observer.observe(element);
     });
 };
 
-// Initialize scroll reveal when DOM is loaded
-document.addEventListener('DOMContentLoaded', observeCards);
+// Button ripple effect
+const addButtonRipple = () => {
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+};
+
+// Parallax effect for hero section
+const initParallax = () => {
+    const hero = document.querySelector('.hero-section');
+    if (!hero) return;
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroContent = hero.querySelector('.hero-content');
+        const heroVisual = hero.querySelector('.hero-visual');
+
+        if (heroContent && scrolled < hero.offsetHeight) {
+            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            heroContent.style.opacity = 1 - (scrolled / hero.offsetHeight) * 0.8;
+        }
+
+        if (heroVisual && scrolled < hero.offsetHeight) {
+            heroVisual.style.transform = `translateY(${scrolled * 0.2}px) scale(${1 - scrolled / hero.offsetHeight * 0.2})`;
+        }
+    });
+};
+
+// Initialize all modern enhancements
+document.addEventListener('DOMContentLoaded', () => {
+    initScrollAnimations();
+    addButtonRipple();
+    initParallax();
+});
 
 // Loop diagram stage highlighting based on scroll position
 const observeStages = () => {
