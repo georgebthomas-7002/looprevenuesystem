@@ -2224,3 +2224,671 @@ a:hover {
         max-width: 350px;
     }
 }
+
+/* ========================================
+   What Is Loop Revenue System Page
+   ======================================== */
+
+/* Page Hero Section */
+.page-hero {
+    padding: 100px 0 80px;
+    background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 60%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(2, 131, 147, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.page-hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.page-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--brand-navy);
+    margin-bottom: 1.5rem;
+}
+
+.page-hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--brand-blue);
+    margin-bottom: 2rem;
+}
+
+.page-hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.25rem;
+}
+
+.page-hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-hero-visual svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+/* Content Section Base */
+.content-section {
+    padding: 80px 0;
+}
+
+.content-section-alt {
+    background: var(--brand-cyan);
+}
+
+.content-section-light {
+    background: linear-gradient(to bottom, var(--brand-white) 0%, rgba(224, 251, 252, 0.3) 100%);
+}
+
+.content-section h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--brand-navy);
+    margin-bottom: 1.5rem;
+}
+
+.content-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--brand-navy);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.content-section h3:first-of-type {
+    margin-top: 0;
+}
+
+.content-section p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.25rem;
+}
+
+.content-section ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.content-section ul li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.content-section ul li::marker {
+    color: var(--brand-teal);
+}
+
+/* Problem List */
+.problem-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.problem-list li {
+    padding: 1rem 1rem 1rem 3rem;
+    margin-bottom: 0.75rem;
+    background: rgba(246, 86, 37, 0.05);
+    border-left: 3px solid var(--brand-orange);
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+
+.problem-list li::before {
+    content: '!';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--brand-orange);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Funnel vs Loop Diagram Container */
+.comparison-diagram {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+    max-width: 700px;
+}
+
+.diagram-item {
+    text-align: center;
+}
+
+.diagram-item svg {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.diagram-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brand-navy);
+}
+
+/* System Overview Diagram */
+.system-diagram-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.system-diagram-container svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 20px rgba(2, 131, 147, 0.15));
+}
+
+/* Four Loops Grid */
+.loops-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.loop-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.loop-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.loop-card[data-loop="marketing"]::before {
+    background: var(--brand-teal);
+}
+
+.loop-card[data-loop="sales"]::before {
+    background: var(--brand-orange);
+}
+
+.loop-card[data-loop="service"]::before {
+    background: var(--brand-peach);
+}
+
+.loop-card[data-loop="ops"]::before {
+    background: var(--brand-blue);
+}
+
+.loop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(2, 131, 147, 0.18);
+}
+
+.loop-card h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.loop-card p {
+    margin-bottom: 0;
+}
+
+.loop-card p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* Stages Timeline */
+.stages-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    position: relative;
+}
+
+.stages-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-teal), var(--brand-blue), var(--brand-orange), var(--brand-peach));
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.stage-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.stage-node-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.stage-node:nth-child(1) .stage-node-icon {
+    background: var(--brand-teal);
+}
+
+.stage-node:nth-child(2) .stage-node-icon {
+    background: var(--brand-blue);
+}
+
+.stage-node:nth-child(3) .stage-node-icon {
+    background: var(--brand-orange);
+}
+
+.stage-node:nth-child(4) .stage-node-icon {
+    background: var(--brand-peach);
+}
+
+.stage-node-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--brand-navy);
+}
+
+/* Stage Descriptions */
+.stages-descriptions {
+    margin-top: 3rem;
+}
+
+.stage-description {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    border-left: 4px solid transparent;
+}
+
+.stage-description[data-stage="express"] {
+    border-left-color: var(--brand-teal);
+}
+
+.stage-description[data-stage="tailor"] {
+    border-left-color: var(--brand-blue);
+}
+
+.stage-description[data-stage="amplify"] {
+    border-left-color: var(--brand-orange);
+}
+
+.stage-description[data-stage="evolve"] {
+    border-left-color: var(--brand-peach);
+}
+
+.stage-description h3 {
+    margin-top: 0;
+}
+
+.stage-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Bowtie Diagram */
+.bowtie-diagram-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.bowtie-diagram-container svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Insights List */
+.insights-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.insights-list li {
+    padding: 1rem 1rem 1rem 3.5rem;
+    margin-bottom: 1rem;
+    background: rgba(2, 131, 147, 0.05);
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid rgba(2, 131, 147, 0.1);
+}
+
+.insights-list li::before {
+    content: '→';
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brand-teal);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Two Column Layout */
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.column-card {
+    padding: 2rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.column-card h3 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.column-card h3 svg {
+    width: 28px;
+    height: 28px;
+}
+
+.column-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.column-card.ai-column {
+    border: 2px solid rgba(2, 131, 147, 0.3);
+    box-shadow: 0 8px 32px rgba(2, 131, 147, 0.1);
+}
+
+.column-card.human-column {
+    border: 2px solid rgba(246, 86, 37, 0.3);
+    box-shadow: 0 8px 32px rgba(246, 86, 37, 0.1);
+}
+
+/* Comparison Cards */
+.comparison-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.comparison-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--brand-light-blue);
+}
+
+.comparison-card h3 {
+    margin-top: 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--brand-light-blue);
+}
+
+/* Role Cards Grid */
+.role-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.role-card-small {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(152, 193, 217, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.role-card-small:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(2, 131, 147, 0.15);
+    border-color: var(--brand-teal);
+}
+
+.role-card-small h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-bottom: 0.75rem;
+}
+
+.role-card-small p {
+    font-size: 0.95rem;
+    margin: 0;
+    color: var(--brand-blue);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-blue) 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.cta-section .btn-primary {
+    background: var(--brand-orange);
+    border-color: var(--brand-orange);
+}
+
+.cta-section .btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.cta-section .btn-secondary::after {
+    background: white;
+}
+
+.cta-section .btn-secondary:hover {
+    color: var(--brand-navy);
+}
+
+.cta-note {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Next Page Links */
+.next-page-links {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next-page-links p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.next-page-links p:last-child {
+    margin-bottom: 0;
+}
+
+.next-page-links a {
+    color: var(--brand-cyan);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.next-page-links a:hover {
+    color: white;
+}
+
+/* Responsive for Loop Revenue System Page */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 60px 0;
+    }
+
+    .page-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .page-hero-content h2 {
+        font-size: 1.25rem;
+    }
+
+    .page-hero-visual {
+        order: -1;
+    }
+
+    .page-hero-visual svg {
+        max-width: 250px;
+    }
+
+    .content-section {
+        padding: 60px 0;
+    }
+
+    .content-section h2 {
+        font-size: 1.75rem;
+    }
+
+    .comparison-diagram {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .loops-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stages-timeline {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .stages-timeline::before {
+        display: none;
+    }
+
+    .two-column-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .role-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
