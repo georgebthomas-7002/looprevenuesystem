@@ -118,9 +118,25 @@
                             <!-- Bottom Left - Ops -->
                             <circle cx="120" cy="220" r="90" fill="url(#opsGradient)" stroke="#faaa68" stroke-width="3" class="venn-circle"/>
 
-                            <!-- Central overlap indicator -->
-                            <circle cx="170" cy="170" r="12" fill="rgba(152, 193, 217, 0.8)" stroke="#98C1D9" stroke-width="2"/>
-                            <circle cx="170" cy="170" r="6" fill="#98C1D9"/>
+                            <!-- Central overlap indicator - Human Avatar -->
+                            <g transform="translate(170, 170)">
+                                <!-- Background circle -->
+                                <circle cx="0" cy="0" r="20" fill="rgba(255, 255, 255, 0.95)" stroke="#028393" stroke-width="2.5"/>
+
+                                <!-- Human icon - head -->
+                                <circle cx="0" cy="-5" r="5" fill="#028393"/>
+
+                                <!-- Human icon - body/shoulders -->
+                                <path d="M -8 8 Q -8 0, 0 0 Q 8 0, 8 8"
+                                      fill="none"
+                                      stroke="#028393"
+                                      stroke-width="2.5"
+                                      stroke-linecap="round"/>
+
+                                <!-- Arms -->
+                                <line x1="-8" y1="8" x2="-11" y2="12" stroke="#028393" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="8" y1="8" x2="11" y2="12" stroke="#028393" stroke-width="2.5" stroke-linecap="round"/>
+                            </g>
 
                             <!-- Labels with backgrounds for better readability -->
                             <g>
