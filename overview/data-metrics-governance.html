@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Loop Service - Coming Soon">
-    <title>Loop Service - Loop Revenue System</title>
+    <meta name="description" content="Data, Metrics, and Governance - Coming Soon">
+    <title>Data, Metrics, and Governance - Loop Revenue System</title>
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
     <link rel="stylesheet" href="/src/css/styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header class="site-header">
         <div class="container">
             <nav class="nav">
-                <div class="logo"><a href="/"><img src="/src/images/logo/Loop-Revenue-System-Logo-400.png" alt="Loop Revenue System" /></a></div>
+                <div class="logo">
+                    <a href="/">
+                        <img src="/src/images/logo/Loop-Revenue-System-Logo-400.png" alt="Loop Revenue System" />
+                    </a>
+                </div>
                 <ul class="nav-menu">
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Overview</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Overview</a>
                         <ul class="dropdown-menu">
                             <li><a href="/overview/loop-revenue-system">What Is the Loop Revenue System</a></li>
                             <li><a href="/overview/stages">Stages: Express, Tailor, Amplify, Evolve</a></li>
                             <li><a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="/loops" class="dropdown-toggle">Loops</a>
+                    <li class="dropdown">
+                        <a href="/loops" class="dropdown-toggle">Loops</a>
                         <ul class="dropdown-menu">
                             <li><a href="/loops">Four Loops Overview</a></li>
                             <li><a href="/loops/marketing">Loop Marketing</a></li>
@@ -31,7 +38,8 @@
                             <li><a href="/loops/ops">Loop Ops</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Playbooks</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Playbooks</a>
                         <ul class="dropdown-menu">
                             <li><a href="/playbooks/system">System Playbooks</a></li>
                             <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
@@ -39,13 +47,15 @@
                             <li><a href="/playbooks/ai-and-humans">AI and Humans</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Roles</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Roles</a>
                         <ul class="dropdown-menu">
                             <li><a href="/roles/start-here">Start Here</a></li>
                             <li><a href="/roles/leadership-revops">Leadership and RevOps</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Resources</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Resources</a>
                         <ul class="dropdown-menu">
                             <li><a href="/resources/templates-checklists">Templates and Checklists</a></li>
                             <li><a href="/resources/prompts-workflows">Prompts and Workflows</a></li>
@@ -58,28 +68,35 @@
             </nav>
         </div>
     </header>
+
+    <!-- Main Content -->
     <main>
+        <!-- Coming Soon Section -->
         <section class="coming-soon-hero">
             <div class="coming-soon-container">
                 <div class="coming-soon-visual">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="svGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f65625;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#faaa68;stop-opacity:1" />
+                            <linearGradient id="loopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3D5A80;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#028393;stop-opacity:0.8" />
                             </linearGradient>
                         </defs>
-                        <circle cx="100" cy="100" r="50" fill="none" stroke="url(#svGrad)" stroke-width="6" opacity="0.7"/>
-                        <path d="M 100 80 Q 80 100, 100 120 Q 120 100, 100 80" fill="#f65625" opacity="0.6"/>
+                        <rect x="60" y="60" width="30" height="80" fill="#028393" opacity="0.6" rx="4"/>
+                        <rect x="100" y="40" width="30" height="100" fill="#3D5A80" opacity="0.6" rx="4"/>
+                        <rect x="140" y="70" width="30" height="70" fill="#faaa68" opacity="0.6" rx="4"/>
+                        <line x1="40" y1="140" x2="180" y2="140" stroke="url(#loopGrad)" stroke-width="2"/>
                     </svg>
                 </div>
-                <h1 class="coming-soon-title">Loop Service</h1>
-                <p class="coming-soon-subtitle">Support, retain, and grow your customer base.</p>
-                <p class="coming-soon-text">Learn how service teams use the Loop to turn customer support into retention opportunities, feedback into product improvements, and happy customers into advocates.</p>
+                <h1 class="coming-soon-title">Data, Metrics, and Governance</h1>
+                <p class="coming-soon-subtitle">Track what matters. Trust the numbers.</p>
+                <p class="coming-soon-text">We're building comprehensive guidance on how to measure Loop performance, establish data governance, and ensure your revenue metrics tell a consistent story across all teams.</p>
                 <a href="/" class="btn btn-primary">Return Home</a>
             </div>
         </section>
     </main>
+
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2024 Loop Revenue System. All rights reserved.</p>
@@ -89,6 +106,7 @@
             </p>
         </div>
     </footer>
+
     <script src="/src/js/main.js"></script>
 </body>
 </html>
