@@ -1152,7 +1152,7 @@ a:hover {
     box-shadow: 0 4px 16px rgba(2, 131, 147, 0.08),
                 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .role-card::before {
@@ -1246,19 +1246,29 @@ a:hover {
     filter: drop-shadow(0 10px 30px rgba(2, 131, 147, 0.2));
 }
 
-/* Subtle glow animation for SVG circles */
-.hero-visual svg circle {
-    animation: subtle-glow 4s ease-in-out infinite;
+/* Subtle pulse animation for Venn diagram circles */
+.hero-visual svg .venn-circle {
+    animation: venn-pulse 4s ease-in-out infinite;
 }
 
-@keyframes subtle-glow {
+.hero-visual svg .venn-circle:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.hero-visual svg .venn-circle:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.hero-visual svg .venn-circle:nth-child(4) {
+    animation-delay: 3s;
+}
+
+@keyframes venn-pulse {
     0%, 100% {
-        opacity: 0.3;
-        filter: drop-shadow(0 0 0 transparent);
+        opacity: 0.7;
     }
     50% {
-        opacity: 0.5;
-        filter: drop-shadow(0 0 8px rgba(2, 131, 147, 0.4));
+        opacity: 0.9;
     }
 }
 
