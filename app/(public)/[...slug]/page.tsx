@@ -46,6 +46,9 @@ export default async function DynamicPage({ params }: PageProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://looprevenuesystem.com'
   const faqItems = page.faqItems as unknown as { question: string; answer: string }[] | null
 
+  // Check if page has any content sections
+  const hasContent = sections.length > 0
+
   return (
     <>
       <JsonLd
@@ -60,7 +63,37 @@ export default async function DynamicPage({ params }: PageProps) {
           ...(faqItems ? [generateFaqSchema(faqItems)] : []),
         ].filter(Boolean)}
       />
-      <SectionRenderer sections={sections} />
+
+      {/* Page Header */}
+      <section className="section-padding bg-bg-alt border-b border-border-light">
+        <div className="container-content">
+          <div className="max-w-3xl">
+            <h1 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight text-text-primary mb-4">
+              {page.title}
+            </h1>
+            {page.description && (
+              <p className="font-body text-xl text-text-secondary leading-relaxed">
+                {page.description}
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Page Content */}
+      {hasContent ? (
+        <SectionRenderer sections={sections} />
+      ) : (
+        <section className="section-padding">
+          <div className="container-content">
+            <div className="max-w-3xl mx-auto text-center py-12">
+              <p className="text-text-muted">
+                This page is being updated. Check back soon for content.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   )
 }
