@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FileText, BookOpen, Mic, Plus } from 'lucide-react'
+import { SeedButton } from '@/components/admin/SeedButton'
 
 async function getStats() {
   try {
@@ -92,6 +93,7 @@ export default async function AdminDashboard() {
             <Plus className="w-4 h-4" />
             New Episode
           </Link>
+          <SeedButton />
         </div>
       </div>
 
