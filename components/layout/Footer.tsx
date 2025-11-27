@@ -50,6 +50,16 @@ const defaultColumns: FooterColumn[] = [
       { label: 'Leadership and RevOps', href: '/roles/leadership-revops' },
     ],
   },
+  {
+    title: 'Resources',
+    links: [
+      { label: 'Templates and Checklists', href: '/resources/templates-checklists' },
+      { label: 'Prompts and Workflows', href: '/resources/prompts-workflows' },
+      { label: 'Case Studies', href: '/resources/case-studies' },
+      { label: 'Workshops and Exercises', href: '/resources/workshops-exercises' },
+      { label: 'FAQ', href: '/resources/faq' },
+    ],
+  },
 ]
 
 export function Footer({ columns = defaultColumns }: FooterProps) {
@@ -83,7 +93,7 @@ export function Footer({ columns = defaultColumns }: FooterProps) {
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
           {columns.map((column) => (
             <div key={column.title}>
               <h4 className="font-body text-sm font-semibold uppercase tracking-wider text-white/50 mb-4">
