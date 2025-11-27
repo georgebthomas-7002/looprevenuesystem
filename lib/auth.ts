@@ -10,6 +10,8 @@ async function verifyPassword(password: string, hashedPassword: string): Promise
 }
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
+  debug: process.env.NODE_ENV === 'development',
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -19,7 +21,7 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error('Please enter email and password')
+          return null
         }
 
         // First, check against environment variables (simple auth for v1)
@@ -42,13 +44,13 @@ export const authOptions: NextAuthOptions = {
           })
 
           if (!user) {
-            throw new Error('Invalid email or password')
+            return null
           }
 
           const isValid = await verifyPassword(credentials.password, user.password)
 
           if (!isValid) {
-            throw new Error('Invalid email or password')
+            return null
           }
 
           return {
