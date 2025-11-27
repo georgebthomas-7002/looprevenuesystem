@@ -59,7 +59,7 @@ export async function PUT(
     // Build sections with body content
     const sections = data.body
       ? [{ type: 'content', body: data.body }]
-      : existing.sections
+      : (existing.sections as unknown[]) || []
 
     // Update page
     const page = await prisma.page.update({
@@ -68,7 +68,7 @@ export async function PUT(
         slug: data.slug,
         title: data.title,
         description: data.description,
-        sections: sections,
+        sections: sections as object[],
         status: data.status,
         showInMainNav: data.showInMainNav,
         showInFooterNav: data.showInFooterNav,
