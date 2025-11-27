@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { prisma } from '@/lib/prisma'
 import { FileText, BookOpen, Mic, Plus } from 'lucide-react'
 
 async function getStats() {
   try {
+    const { prisma } = await import('@/lib/prisma')
     const [pageCount, blogCount, podcastCount] = await Promise.all([
       prisma.page.count(),
       prisma.blogPost.count(),

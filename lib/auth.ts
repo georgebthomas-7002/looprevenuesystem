@@ -1,6 +1,5 @@
 import { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { prisma } from './prisma'
 
 // Simple password comparison (in production, use bcrypt)
 async function verifyPassword(password: string, hashedPassword: string): Promise<boolean> {
@@ -37,8 +36,10 @@ export const authOptions: NextAuthOptions = {
           }
         }
 
-        // If not matching env vars, check database
+        // If not matching env vars, try database (only if available)
         try {
+          // Dynamic import to avoid connection errors at startup
+          const { prisma } = await import('./prisma')
           const user = await prisma.user.findUnique({
             where: { email: credentials.email },
           })
