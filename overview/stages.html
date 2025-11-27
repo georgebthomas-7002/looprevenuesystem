@@ -8,9 +8,713 @@
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
     <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/design-system.css">
+    <style>
+        /* =============================================
+           STAGES OVERVIEW - EDITORIAL REDESIGN
+           ============================================= */
+
+        .stages-page {
+            background: var(--color-bg);
+        }
+
+        /* Stage Colors */
+        :root {
+            --stage-express: #028393;
+            --stage-tailor: #D97706;
+            --stage-amplify: #DC2626;
+            --stage-evolve: #3D5A80;
+        }
+
+        /* Hero Section */
+        .st-hero {
+            padding: var(--space-9) 0 var(--space-8);
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .st-hero-container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: var(--space-8);
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .st-hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .st-hero-content h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 4vw, var(--text-5xl));
+            font-weight: 500;
+            line-height: var(--leading-tight);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .st-hero-subtitle {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-style: italic;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-6);
+        }
+
+        .st-hero-text {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            line-height: var(--leading-loose);
+        }
+
+        .st-hero-text p {
+            margin-bottom: var(--space-4);
+        }
+
+        /* Stage Journey Visual */
+        .st-journey-visual {
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .st-journey-visual svg {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Stage Journey Timeline */
+        .st-journey-section {
+            padding: var(--space-8) 0;
+            background: var(--color-bg-alt);
+        }
+
+        .st-journey-container {
+            max-width: var(--content-wide);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .st-journey-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            padding: var(--space-6) 0;
+        }
+
+        .st-journey-timeline::before {
+            content: "";
+            position: absolute;
+            top: 52px;
+            left: 80px;
+            right: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--stage-express) 0%, var(--stage-tailor) 33%, var(--stage-amplify) 66%, var(--stage-evolve) 100%);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .st-journey-timeline {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-6);
+            }
+
+            .st-journey-timeline::before {
+                top: 52px;
+                left: 50%;
+                width: 3px;
+                height: calc(100% - 104px);
+                transform: translateX(-50%);
+                background: linear-gradient(180deg, var(--stage-express) 0%, var(--stage-tailor) 33%, var(--stage-amplify) 66%, var(--stage-evolve) 100%);
+            }
+        }
+
+        .st-journey-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+            cursor: pointer;
+            transition: transform var(--duration) var(--ease-out);
+        }
+
+        .st-journey-node:hover {
+            transform: translateY(-4px);
+        }
+
+        .st-journey-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            transition: all var(--duration) var(--ease-out);
+        }
+
+        .st-journey-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .st-journey-node.express .st-journey-icon {
+            background: rgba(2, 131, 147, 0.15);
+            border: 3px solid var(--stage-express);
+            color: var(--stage-express);
+        }
+
+        .st-journey-node.tailor .st-journey-icon {
+            background: rgba(217, 119, 6, 0.15);
+            border: 3px solid var(--stage-tailor);
+            color: var(--stage-tailor);
+        }
+
+        .st-journey-node.amplify .st-journey-icon {
+            background: rgba(220, 38, 38, 0.15);
+            border: 3px solid var(--stage-amplify);
+            color: var(--stage-amplify);
+        }
+
+        .st-journey-node.evolve .st-journey-icon {
+            background: rgba(61, 90, 128, 0.15);
+            border: 3px solid var(--stage-evolve);
+            color: var(--stage-evolve);
+        }
+
+        .st-journey-node:hover .st-journey-icon {
+            transform: scale(1.05);
+        }
+
+        .st-journey-label {
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            margin-bottom: var(--space-2);
+        }
+
+        .st-journey-node.express .st-journey-label { color: var(--stage-express); }
+        .st-journey-node.tailor .st-journey-label { color: var(--stage-tailor); }
+        .st-journey-node.amplify .st-journey-label { color: var(--stage-amplify); }
+        .st-journey-node.evolve .st-journey-label { color: var(--stage-evolve); }
+
+        .st-journey-desc {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            max-width: 160px;
+            line-height: var(--leading-relaxed);
+        }
+
+        /* Section Styling */
+        .st-section {
+            padding: var(--space-9) 0;
+        }
+
+        .st-section:nth-child(even) {
+            background: var(--color-bg-alt);
+        }
+
+        .st-container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .st-section-title {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-weight: 500;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-6);
+        }
+
+        .st-content-block {
+            max-width: 720px;
+        }
+
+        .st-content-block p {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            line-height: var(--leading-loose);
+            margin-bottom: var(--space-4);
+        }
+
+        /* Stage Detail Sections */
+        .st-stage-section {
+            padding: var(--space-9) 0;
+        }
+
+        .st-stage-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-5);
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .st-stage-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .st-stage-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .st-stage-section.express .st-stage-icon {
+            background: rgba(2, 131, 147, 0.15);
+            color: var(--stage-express);
+        }
+
+        .st-stage-section.tailor .st-stage-icon {
+            background: rgba(217, 119, 6, 0.15);
+            color: var(--stage-tailor);
+        }
+
+        .st-stage-section.amplify .st-stage-icon {
+            background: rgba(220, 38, 38, 0.15);
+            color: var(--stage-amplify);
+        }
+
+        .st-stage-section.evolve .st-stage-icon {
+            background: rgba(61, 90, 128, 0.15);
+            color: var(--stage-evolve);
+        }
+
+        .st-stage-title {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .st-stage-subtitle {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-top: var(--space-1);
+        }
+
+        /* Stage Cards Grid */
+        .st-stage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-5);
+            margin-top: var(--space-6);
+        }
+
+        @media (max-width: 768px) {
+            .st-stage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .st-stage-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            border: 1px solid var(--color-border-light);
+            border-top: 4px solid;
+        }
+
+        .st-stage-card.express { border-top-color: var(--stage-express); }
+        .st-stage-card.tailor { border-top-color: var(--stage-tailor); }
+        .st-stage-card.amplify { border-top-color: var(--stage-amplify); }
+        .st-stage-card.evolve { border-top-color: var(--stage-evolve); }
+
+        .st-stage-card h4 {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .st-stage-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--space-4);
+        }
+
+        .st-stage-card ul li {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+            line-height: var(--leading-relaxed);
+            padding: var(--space-2) 0;
+            padding-left: var(--space-4);
+            position: relative;
+        }
+
+        .st-stage-card ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 2px;
+            background: var(--color-text-muted);
+        }
+
+        .st-stage-card .summary {
+            font-family: var(--font-display);
+            font-size: var(--text-sm);
+            font-style: italic;
+            color: var(--color-text-primary);
+            padding-top: var(--space-3);
+            border-top: 1px solid var(--color-border-light);
+        }
+
+        /* AI Table */
+        .st-ai-section {
+            padding: var(--space-9) 0;
+            background: var(--color-bg-alt);
+        }
+
+        .st-ai-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+            margin-top: var(--space-7);
+        }
+
+        @media (max-width: 1024px) {
+            .st-ai-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .st-ai-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .st-ai-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            border: 1px solid var(--color-border-light);
+        }
+
+        .st-ai-card-header {
+            text-align: center;
+            padding-bottom: var(--space-4);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .st-ai-card-header h4 {
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+        }
+
+        .st-ai-card.express .st-ai-card-header h4 { color: var(--stage-express); }
+        .st-ai-card.tailor .st-ai-card-header h4 { color: var(--stage-tailor); }
+        .st-ai-card.amplify .st-ai-card-header h4 { color: var(--stage-amplify); }
+        .st-ai-card.evolve .st-ai-card-header h4 { color: var(--stage-evolve); }
+
+        .st-ai-row {
+            margin-bottom: var(--space-4);
+        }
+
+        .st-ai-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .st-ai-row h5 {
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-2);
+        }
+
+        .st-ai-row p {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+            line-height: var(--leading-relaxed);
+        }
+
+        .st-ai-note {
+            text-align: center;
+            margin-top: var(--space-7);
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        /* Health Check Section */
+        .st-health-section {
+            padding: var(--space-9) 0;
+            background: var(--color-bg);
+        }
+
+        .st-health-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        @media (max-width: 768px) {
+            .st-health-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .st-health-card {
+            background: var(--color-bg-alt);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            border-left: 4px solid;
+        }
+
+        .st-health-card.express { border-left-color: var(--stage-express); }
+        .st-health-card.tailor { border-left-color: var(--stage-tailor); }
+        .st-health-card.amplify { border-left-color: var(--stage-amplify); }
+        .st-health-card.evolve { border-left-color: var(--stage-evolve); }
+
+        .st-health-card h4 {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+            margin-bottom: var(--space-3);
+        }
+
+        .st-health-card.express h4 { color: var(--stage-express); }
+        .st-health-card.tailor h4 { color: var(--stage-tailor); }
+        .st-health-card.amplify h4 { color: var(--stage-amplify); }
+        .st-health-card.evolve h4 { color: var(--stage-evolve); }
+
+        .st-health-card p {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            font-style: italic;
+            color: var(--color-text-primary);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* Stages in Action Section */
+        .st-action-section {
+            padding: var(--space-9) 0;
+            background: var(--color-bg-alt);
+        }
+
+        .st-action-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+            margin-top: var(--space-7);
+        }
+
+        @media (max-width: 1024px) {
+            .st-action-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .st-action-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .st-action-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            border: 1px solid var(--color-border-light);
+            text-decoration: none;
+            transition: all var(--duration) var(--ease-out);
+            display: block;
+        }
+
+        .st-action-card:hover {
+            border-color: var(--color-border-dark);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+
+        .st-action-card h4 {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+        }
+
+        .st-action-card.marketing h4 { color: var(--color-loop-marketing); }
+        .st-action-card.sales h4 { color: var(--color-loop-sales); }
+        .st-action-card.service h4 { color: var(--color-loop-service); }
+        .st-action-card.ops h4 { color: var(--color-loop-ops); }
+
+        .st-action-card p {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-4);
+        }
+
+        .st-action-card span {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .st-action-card span::after {
+            content: ">";
+            transition: transform var(--duration) var(--ease-out);
+        }
+
+        .st-action-card:hover span::after {
+            transform: translateX(4px);
+        }
+
+        /* Navigation Footer */
+        .st-navigation {
+            padding: var(--space-9) 0;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border-light);
+        }
+
+        .st-navigation-container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .st-navigation-header {
+            text-align: center;
+            margin-bottom: var(--space-7);
+        }
+
+        .st-navigation-header h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-weight: 500;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-3);
+        }
+
+        .st-navigation-header p {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: var(--leading-relaxed);
+        }
+
+        .st-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-5);
+        }
+
+        @media (max-width: 768px) {
+            .st-nav-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .st-nav-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-6);
+            text-align: center;
+        }
+
+        .st-nav-card h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-3);
+        }
+
+        .st-nav-card p {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-5);
+            line-height: var(--leading-relaxed);
+        }
+
+        .st-nav-btn {
+            display: inline-block;
+            padding: var(--space-3) var(--space-5);
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            background: var(--color-text-primary);
+            color: var(--color-text-inverse);
+            transition: all var(--duration) var(--ease-out);
+        }
+
+        .st-nav-btn:hover {
+            opacity: 0.9;
+        }
+
+        .st-nav-btn--secondary {
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 2px solid var(--color-text-primary);
+        }
+
+        .st-nav-btn--secondary:hover {
+            background: var(--color-text-primary);
+            color: var(--color-text-inverse);
+            opacity: 1;
+        }
+
+        .st-final-note {
+            text-align: center;
+            margin-top: var(--space-7);
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-style: italic;
+            color: var(--color-text-secondary);
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="site-header">
         <div class="container">
             <nav class="nav">
@@ -69,226 +773,162 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
+    <main class="stages-page">
         <!-- Hero Section -->
-        <section id="stages-hero" class="ds-hero">
-            <div class="container">
-                <div class="ds-hero-content">
-                    <h1>The Four Stages Of The Loop Revenue System</h1>
-                    <h2>One Simple Pattern For Every Loop In Your Revenue Engine</h2>
-                    <div class="ds-hero-text">
-                        <p>Every part of your go to market engine faces the same questions.</p>
-                        <p>Who are we for? How do we show up? How do we make this personal? How do we scale what works? How do we learn from what happened?</p>
-                        <p>The Loop Revenue System answers those questions with four stages that repeat inside every loop. Express, Tailor, Amplify, and Evolve give you a common language for the work marketing, sales, service, and ops all do, even when their day to day tasks look very different.</p>
-                        <p>This page is your guide to those stages. Once you understand them, you can look at any part of your revenue engine and say, "Here is what Express looks like for us. Here is where Tailor breaks. Here is how Amplify helps. Here is how we Evolve."</p>
+        <section class="st-hero">
+            <div class="st-hero-container">
+                <div class="st-hero-content">
+                    <h1>The Four-Stage Rhythm That Repeats In Every Loop</h1>
+                    <p class="st-hero-subtitle">Express, Tailor, Amplify, Evolve - A Pattern For Continuous Learning</p>
+                    <div class="st-hero-text">
+                        <p>Every part of your go to market engine faces the same questions. Who are we for? How do we show up? How do we make this personal? How do we scale what works? How do we learn from what happened?</p>
+                        <p>The Loop Revenue System answers those questions with four stages that repeat inside every loop. Once you understand them, you can look at any part of your revenue engine with fresh eyes.</p>
                     </div>
                 </div>
-                <div class="ds-hero-visual">
-                    <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                <div class="st-journey-visual">
+                    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Outer Ring -->
+                        <circle cx="150" cy="150" r="130" fill="none" stroke="url(#ringGrad)" stroke-width="3" opacity="0.3"/>
+
+                        <!-- Stage Nodes -->
+                        <circle cx="150" cy="30" r="24" fill="rgba(2,131,147,0.2)" stroke="#028393" stroke-width="2"/>
+                        <text x="150" y="26" text-anchor="middle" fill="#028393" font-size="8" font-weight="600">EXPRESS</text>
+                        <text x="150" y="38" text-anchor="middle" fill="#028393" font-size="12" font-weight="700">E</text>
+
+                        <circle cx="270" cy="150" r="24" fill="rgba(217,119,6,0.2)" stroke="#D97706" stroke-width="2"/>
+                        <text x="270" y="146" text-anchor="middle" fill="#D97706" font-size="8" font-weight="600">TAILOR</text>
+                        <text x="270" y="158" text-anchor="middle" fill="#D97706" font-size="12" font-weight="700">T</text>
+
+                        <circle cx="150" cy="270" r="24" fill="rgba(220,38,38,0.2)" stroke="#DC2626" stroke-width="2"/>
+                        <text x="150" y="266" text-anchor="middle" fill="#DC2626" font-size="8" font-weight="600">AMPLIFY</text>
+                        <text x="150" y="278" text-anchor="middle" fill="#DC2626" font-size="12" font-weight="700">A</text>
+
+                        <circle cx="30" cy="150" r="24" fill="rgba(61,90,128,0.2)" stroke="#3D5A80" stroke-width="2"/>
+                        <text x="30" y="146" text-anchor="middle" fill="#3D5A80" font-size="8" font-weight="600">EVOLVE</text>
+                        <text x="30" y="158" text-anchor="middle" fill="#3D5A80" font-size="12" font-weight="700">E</text>
+
+                        <!-- Connecting Arrows -->
                         <defs>
-                            <linearGradient id="stageRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#028393"/>
-                                <stop offset="33%" style="stop-color:#faaa68"/>
-                                <stop offset="66%" style="stop-color:#f65625"/>
+                                <stop offset="33%" style="stop-color:#D97706"/>
+                                <stop offset="66%" style="stop-color:#DC2626"/>
                                 <stop offset="100%" style="stop-color:#3D5A80"/>
                             </linearGradient>
-                        </defs>
-
-                        <!-- Outer ring -->
-                        <circle cx="160" cy="160" r="140" fill="none" stroke="url(#stageRingGrad)" stroke-width="4" opacity="0.3"/>
-
-                        <!-- Stage nodes -->
-                        <g>
-                            <!-- Express - Top -->
-                            <circle cx="160" cy="30" r="28" fill="rgba(2,131,147,0.2)" stroke="#028393" stroke-width="3"/>
-                            <text x="160" y="26" text-anchor="middle" fill="#028393" font-size="9" font-weight="700">EXPRESS</text>
-                            <text x="160" y="38" text-anchor="middle" fill="#028393" font-size="16">E</text>
-
-                            <!-- Tailor - Right -->
-                            <circle cx="290" cy="160" r="28" fill="rgba(250,170,104,0.2)" stroke="#faaa68" stroke-width="3"/>
-                            <text x="290" y="156" text-anchor="middle" fill="#d08a3a" font-size="9" font-weight="700">TAILOR</text>
-                            <text x="290" y="170" text-anchor="middle" fill="#d08a3a" font-size="16">T</text>
-
-                            <!-- Amplify - Bottom -->
-                            <circle cx="160" cy="290" r="28" fill="rgba(246,86,37,0.2)" stroke="#f65625" stroke-width="3"/>
-                            <text x="160" y="286" text-anchor="middle" fill="#f65625" font-size="9" font-weight="700">AMPLIFY</text>
-                            <text x="160" y="300" text-anchor="middle" fill="#f65625" font-size="16">A</text>
-
-                            <!-- Evolve - Left -->
-                            <circle cx="30" cy="160" r="28" fill="rgba(61,90,128,0.2)" stroke="#3D5A80" stroke-width="3"/>
-                            <text x="30" y="156" text-anchor="middle" fill="#3D5A80" font-size="9" font-weight="700">EVOLVE</text>
-                            <text x="30" y="170" text-anchor="middle" fill="#3D5A80" font-size="16">E</text>
-                        </g>
-
-                        <!-- Connecting arrows -->
-                        <defs>
-                            <marker id="arrowExp" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                                <polygon points="0 0, 8 3, 0 6" fill="#faaa68"/>
+                            <marker id="arr1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" fill="#D97706"/>
                             </marker>
-                            <marker id="arrowTail" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                                <polygon points="0 0, 8 3, 0 6" fill="#f65625"/>
+                            <marker id="arr2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" fill="#DC2626"/>
                             </marker>
-                            <marker id="arrowAmp" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                                <polygon points="0 0, 8 3, 0 6" fill="#3D5A80"/>
+                            <marker id="arr3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" fill="#3D5A80"/>
                             </marker>
-                            <marker id="arrowEvo" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                                <polygon points="0 0, 8 3, 0 6" fill="#028393"/>
+                            <marker id="arr4" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <polygon points="0 0, 6 3, 0 6" fill="#028393"/>
                             </marker>
                         </defs>
 
-                        <!-- Curved arrows between stages -->
-                        <path d="M 185 40 Q 250 60, 265 135" fill="none" stroke="#faaa68" stroke-width="2" marker-end="url(#arrowExp)" opacity="0.7"/>
-                        <path d="M 275 185 Q 250 250, 185 275" fill="none" stroke="#f65625" stroke-width="2" marker-end="url(#arrowTail)" opacity="0.7"/>
-                        <path d="M 135 280 Q 70 260, 45 185" fill="none" stroke="#3D5A80" stroke-width="2" marker-end="url(#arrowAmp)" opacity="0.7"/>
-                        <path d="M 45 135 Q 70 70, 135 45" fill="none" stroke="#028393" stroke-width="2" marker-end="url(#arrowEvo)" opacity="0.7"/>
+                        <path d="M170 45 Q220 70, 248 128" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arr1)" opacity="0.7"/>
+                        <path d="M253 172 Q230 220, 172 252" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#arr2)" opacity="0.7"/>
+                        <path d="M128 255 Q80 230, 52 172" fill="none" stroke="#3D5A80" stroke-width="2" marker-end="url(#arr3)" opacity="0.7"/>
+                        <path d="M47 128 Q70 80, 128 52" fill="none" stroke="#028393" stroke-width="2" marker-end="url(#arr4)" opacity="0.7"/>
 
-                        <!-- Center label -->
-                        <circle cx="160" cy="160" r="45" fill="rgba(255,255,255,0.95)" stroke="#142d63" stroke-width="2"/>
-                        <text x="160" y="155" text-anchor="middle" fill="#142d63" font-size="11" font-weight="700">CONTINUOUS</text>
-                        <text x="160" y="170" text-anchor="middle" fill="#142d63" font-size="11" font-weight="700">LOOP</text>
+                        <!-- Center -->
+                        <circle cx="150" cy="150" r="35" fill="rgba(255,255,255,0.95)" stroke="#1E1E1E" stroke-width="1.5"/>
+                        <text x="150" y="145" text-anchor="middle" fill="#1E1E1E" font-size="9" font-weight="600">CONTINUOUS</text>
+                        <text x="150" y="158" text-anchor="middle" fill="#1E1E1E" font-size="9" font-weight="600">LEARNING</text>
                     </svg>
                 </div>
             </div>
         </section>
 
-        <!-- Why Stages Matter -->
-        <section id="stages-why-matter" class="ds-section">
-            <div class="container">
-                <h2>Why Stages Matter More Than Departments</h2>
-
-                <div class="stages-why-grid">
-                    <div class="stages-why-content">
-                        <p>Most companies organize around departments. Marketing over here, sales over there, service at the end, ops in the background. Each team uses its own playbook, tools, and vocabulary.</p>
-
-                        <p>The result is familiar. Work feels busy, but not always aligned. Hand offs between teams feel clunky. It is hard to tell if a problem is a marketing issue, a sales issue, a service issue, or a tool issue.</p>
-
-                        <p>Stages give you a different way to see the work.</p>
-
-                        <p>Express, Tailor, Amplify, and Evolve sit above the org chart. They describe what needs to happen for revenue to grow in a healthy way, no matter who does it.</p>
-
-                        <p>When you look at your business by stage, you can ask cleaner questions.</p>
-
-                        <p>Are we clear enough in Express? Are we truly tailoring or just segmenting by job title? Are we amplifying the right things, or just adding more noise? Are we evolving, or repeating the same motions and hoping for different results?</p>
-
-                        <p>Those questions guide better decisions than "Should this live in marketing or sales?"</p>
-                    </div>
-
-                    <div class="stages-why-visual">
-                        <svg viewBox="0 0 350 300" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Four loops at bottom -->
-                            <circle cx="80" cy="220" r="40" fill="rgba(2,131,147,0.15)" stroke="#028393" stroke-width="2"/>
-                            <circle cx="150" cy="220" r="40" fill="rgba(61,90,128,0.15)" stroke="#3D5A80" stroke-width="2"/>
-                            <circle cx="220" cy="220" r="40" fill="rgba(246,86,37,0.15)" stroke="#f65625" stroke-width="2"/>
-                            <circle cx="290" cy="220" r="40" fill="rgba(250,170,104,0.15)" stroke="#faaa68" stroke-width="2"/>
-
-                            <text x="80" y="225" text-anchor="middle" fill="#028393" font-size="10" font-weight="600">MKT</text>
-                            <text x="150" y="225" text-anchor="middle" fill="#3D5A80" font-size="10" font-weight="600">SALES</text>
-                            <text x="220" y="225" text-anchor="middle" fill="#f65625" font-size="10" font-weight="600">SERVICE</text>
-                            <text x="290" y="225" text-anchor="middle" fill="#faaa68" font-size="10" font-weight="600">OPS</text>
-
-                            <!-- Stages layer on top -->
-                            <rect x="30" y="50" width="290" height="100" rx="12" fill="rgba(224,251,252,0.5)" stroke="#98C1D9" stroke-width="2"/>
-
-                            <text x="175" y="80" text-anchor="middle" fill="#142d63" font-size="12" font-weight="700">STAGES (Shared Pattern)</text>
-
-                            <!-- Stage indicators -->
-                            <circle cx="80" cy="115" r="18" fill="#028393" opacity="0.8"/>
-                            <text x="80" y="120" text-anchor="middle" fill="white" font-size="9" font-weight="600">E</text>
-
-                            <circle cx="140" cy="115" r="18" fill="#faaa68" opacity="0.8"/>
-                            <text x="140" y="120" text-anchor="middle" fill="white" font-size="9" font-weight="600">T</text>
-
-                            <circle cx="200" cy="115" r="18" fill="#f65625" opacity="0.8"/>
-                            <text x="200" y="120" text-anchor="middle" fill="white" font-size="9" font-weight="600">A</text>
-
-                            <circle cx="260" cy="115" r="18" fill="#3D5A80" opacity="0.8"/>
-                            <text x="260" y="120" text-anchor="middle" fill="white" font-size="9" font-weight="600">E</text>
-
-                            <!-- Connecting lines -->
-                            <line x1="80" y1="150" x2="80" y2="180" stroke="#028393" stroke-width="2" stroke-dasharray="4,3"/>
-                            <line x1="150" y1="150" x2="150" y2="180" stroke="#3D5A80" stroke-width="2" stroke-dasharray="4,3"/>
-                            <line x1="220" y1="150" x2="220" y2="180" stroke="#f65625" stroke-width="2" stroke-dasharray="4,3"/>
-                            <line x1="290" y1="150" x2="290" y2="180" stroke="#faaa68" stroke-width="2" stroke-dasharray="4,3"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Four Stages Overview -->
-        <section id="stages-overview" class="ds-section-alt">
-            <div class="container">
-                <h2>The Four Stages At A Glance</h2>
-
-                <div class="ds-grid-2">
-                    <div class="ds-card">
-                        <div class="stage-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#028393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Stage Journey Timeline -->
+        <section class="st-journey-section">
+            <div class="st-journey-container">
+                <div class="st-journey-timeline">
+                    <a href="#express" class="st-journey-node express">
+                        <div class="st-journey-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                             </svg>
                         </div>
-                        <h3>Express</h3>
-                        <p>Define how you show up in the market. Decide who you serve, what problems you solve, how you speak, and what your process looks like.</p>
-                    </div>
+                        <span class="st-journey-label">Express</span>
+                        <p class="st-journey-desc">Define how you show up. Decide who you serve and what you stand for.</p>
+                    </a>
 
-                    <div class="ds-card">
-                        <div class="stage-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#faaa68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="#tailor" class="st-journey-node tailor">
+                        <div class="st-journey-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                                 <circle cx="8.5" cy="7" r="4"/>
                                 <rect x="14" y="11" width="7" height="7" rx="1"/>
                             </svg>
                         </div>
-                        <h3>Tailor</h3>
-                        <p>Adjust your clear expression for real people, accounts, and situations. Use data and empathy to make every touch feel relevant and human.</p>
-                    </div>
+                        <span class="st-journey-label">Tailor</span>
+                        <p class="st-journey-desc">Adjust for real people. Use data and empathy to make every touch human.</p>
+                    </a>
 
-                    <div class="ds-card">
-                        <div class="stage-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#f65625" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="2"/>
-                                <circle cx="12" cy="12" r="6" opacity="0.6"/>
-                                <circle cx="12" cy="12" r="10" opacity="0.3"/>
+                    <a href="#amplify" class="st-journey-node amplify">
+                        <div class="st-journey-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <circle cx="12" cy="12" r="7" opacity="0.5"/>
+                                <circle cx="12" cy="12" r="11" opacity="0.3"/>
                             </svg>
                         </div>
-                        <h3>Amplify</h3>
-                        <p>Scale what works. Repurpose strong ideas, share winning plays, and use automation to extend your reach without losing your voice.</p>
-                    </div>
+                        <span class="st-journey-label">Amplify</span>
+                        <p class="st-journey-desc">Scale what works. Repurpose strong ideas without losing your voice.</p>
+                    </a>
 
-                    <div class="ds-card">
-                        <div class="stage-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#3D5A80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9v-9m0-9a9 9 0 0 0-9 9m9-9v9"/>
+                    <a href="#evolve" class="st-journey-node evolve">
+                        <div class="st-journey-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9v-9"/>
                             </svg>
                         </div>
-                        <h3>Evolve</h3>
-                        <p>Learn and adjust. Read the results, listen to feedback, and make changes so the next cycle is more aligned and effective.</p>
-                    </div>
+                        <span class="st-journey-label">Evolve</span>
+                        <p class="st-journey-desc">Learn and adjust. Read the results and change for the next cycle.</p>
+                    </a>
                 </div>
+            </div>
+        </section>
 
-                <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: var(--brand-navy); font-weight: 500;">Each stage matters on its own. Together, they form a simple loop you can use to diagnose and improve any part of your revenue system.</p>
+        <!-- Why Stages Matter -->
+        <section class="st-section">
+            <div class="st-container">
+                <h2 class="st-section-title">Why Stages Matter More Than Departments</h2>
+                <div class="st-content-block">
+                    <p>Most companies organize around departments. Marketing over here, sales over there, service at the end, ops in the background. Each team uses its own playbook, tools, and vocabulary.</p>
+                    <p>The result is familiar. Work feels busy, but not always aligned. Hand offs between teams feel clunky. It is hard to tell if a problem is a marketing issue, a sales issue, a service issue, or a tool issue.</p>
+                    <p>Stages give you a different way to see the work. Express, Tailor, Amplify, and Evolve sit above the org chart. They describe what needs to happen for revenue to grow in a healthy way, no matter who does it.</p>
+                    <p>When you look at your business by stage, you can ask cleaner questions: Are we clear enough in Express? Are we truly tailoring or just segmenting by job title? Are we amplifying the right things, or just adding more noise?</p>
+                </div>
             </div>
         </section>
 
         <!-- Express Across Loops -->
-        <section id="express-across-loops" class="ds-section">
-            <div class="container">
-                <div class="stage-header">
-                    <div class="stage-header-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#028393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <section id="express" class="st-stage-section express">
+            <div class="st-container">
+                <div class="st-stage-header">
+                    <div class="st-stage-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                         </svg>
                     </div>
-                    <h2>Express Across Marketing, Sales, Service, And Ops</h2>
+                    <div>
+                        <h2 class="st-stage-title">Express</h2>
+                        <p class="st-stage-subtitle">Define How You Show Up In The Market</p>
+                    </div>
                 </div>
 
-                <h3>What Express Really Does</h3>
-                <p>Express gives shape and direction to your work. It is where you answer key questions about identity, focus, and process before you try to personalize, automate, or optimize anything.</p>
-                <p>If Express is fuzzy, everything that follows feels noisy. Teams pull in different directions because they hold different pictures in their heads of what "good" looks like.</p>
+                <div class="st-content-block">
+                    <p>Express gives shape and direction to your work. It is where you answer key questions about identity, focus, and process before you try to personalize, automate, or optimize anything.</p>
+                    <p>If Express is fuzzy, everything that follows feels noisy. Teams pull in different directions because they hold different pictures in their heads of what "good" looks like.</p>
+                </div>
 
-                <div class="ds-grid-2">
-                    <div class="ds-stage-card express">
+                <div class="st-stage-grid">
+                    <div class="st-stage-card express">
                         <h4>Express In Loop Marketing</h4>
                         <ul>
                             <li>A clear point of view about your market and the problems you help solve.</li>
@@ -299,7 +939,7 @@
                         <p class="summary">When marketing Express is strong, the content and campaigns feel like they come from one confident voice.</p>
                     </div>
 
-                    <div class="ds-stage-card express">
+                    <div class="st-stage-card express">
                         <h4>Express In Loop Sales</h4>
                         <ul>
                             <li>A clearly defined sales process with meaningful stages.</li>
@@ -310,7 +950,7 @@
                         <p class="summary">When sales Express is strong, deals move more smoothly and reps know how to show up in conversations.</p>
                     </div>
 
-                    <div class="ds-stage-card express">
+                    <div class="st-stage-card express">
                         <h4>Express In Loop Service</h4>
                         <ul>
                             <li>A clear service philosophy for how you support and educate customers.</li>
@@ -321,7 +961,7 @@
                         <p class="summary">When service Express is strong, customers feel like they know what to expect after they buy.</p>
                     </div>
 
-                    <div class="ds-stage-card express">
+                    <div class="st-stage-card express">
                         <h4>Express In Loop Ops</h4>
                         <ul>
                             <li>Agreed lifecycle stages and status definitions across the business.</li>
@@ -336,36 +976,39 @@
         </section>
 
         <!-- Tailor Across Loops -->
-        <section id="tailor-across-loops" class="ds-section-alt">
-            <div class="container">
-                <div class="stage-header">
-                    <div class="stage-header-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#faaa68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <section id="tailor" class="st-stage-section tailor">
+            <div class="st-container">
+                <div class="st-stage-header">
+                    <div class="st-stage-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                             <circle cx="8.5" cy="7" r="4"/>
                             <rect x="14" y="11" width="7" height="7" rx="1"/>
                         </svg>
                     </div>
-                    <h2>Tailor Across Marketing, Sales, Service, And Ops</h2>
+                    <div>
+                        <h2 class="st-stage-title">Tailor</h2>
+                        <p class="st-stage-subtitle">Adjust Your Clear Expression For Real People</p>
+                    </div>
                 </div>
 
-                <h3>What Tailor Really Does</h3>
-                <p>Tailor turns a clear plan into a human experience.</p>
-                <p>It uses data, context, and empathy to answer questions like: "What does this person need right now?" and "What would be most helpful in this moment?"</p>
-                <p>Tailor is where personalization lives, but personalization is not the whole story. The goal is not to use as many tokens as possible. The goal is to make sure the person on the other side feels understood and supported.</p>
+                <div class="st-content-block">
+                    <p>Tailor turns a clear plan into a human experience. It uses data, context, and empathy to answer questions like: "What does this person need right now?" and "What would be most helpful in this moment?"</p>
+                    <p>The goal is not to use as many tokens as possible. The goal is to make sure the person on the other side feels understood and supported.</p>
+                </div>
 
-                <div class="ds-grid-2">
-                    <div class="ds-stage-card tailor">
+                <div class="st-stage-grid">
+                    <div class="st-stage-card tailor">
                         <h4>Tailor In Loop Marketing</h4>
                         <ul>
                             <li>Segmenting by real behavior and needs, not just job title and industry.</li>
                             <li>Adjusting content, offers, and timing based on where someone is in their journey.</li>
                             <li>Speaking in the language your customers actually use, not internal jargon.</li>
                         </ul>
-                        <p class="summary">When marketing Tailor is strong, your content feels like it was written for someone specific, even when you send it to thousands of people.</p>
+                        <p class="summary">When marketing Tailor is strong, your content feels like it was written for someone specific, even when you send it to thousands.</p>
                     </div>
 
-                    <div class="ds-stage-card tailor">
+                    <div class="st-stage-card tailor">
                         <h4>Tailor In Loop Sales</h4>
                         <ul>
                             <li>Researching accounts and contacts instead of running the same script every time.</li>
@@ -375,7 +1018,7 @@
                         <p class="summary">When sales Tailor is strong, buyers feel listened to and guided, not pitched at.</p>
                     </div>
 
-                    <div class="ds-stage-card tailor">
+                    <div class="st-stage-card tailor">
                         <h4>Tailor In Loop Service</h4>
                         <ul>
                             <li>Responding with full context from the customer's history and setup.</li>
@@ -385,7 +1028,7 @@
                         <p class="summary">When service Tailor is strong, customers feel known. They do not have to repeat their story in every interaction.</p>
                     </div>
 
-                    <div class="ds-stage-card tailor">
+                    <div class="st-stage-card tailor">
                         <h4>Tailor In Loop Ops</h4>
                         <ul>
                             <li>Configuring fields, pipelines, and routing rules that match your actual process.</li>
@@ -399,25 +1042,29 @@
         </section>
 
         <!-- Amplify Across Loops -->
-        <section id="amplify-across-loops" class="ds-section">
-            <div class="container">
-                <div class="stage-header">
-                    <div class="stage-header-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#f65625" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="2"/>
-                            <circle cx="12" cy="12" r="6" opacity="0.6"/>
-                            <circle cx="12" cy="12" r="10" opacity="0.3"/>
+        <section id="amplify" class="st-stage-section amplify">
+            <div class="st-container">
+                <div class="st-stage-header">
+                    <div class="st-stage-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <circle cx="12" cy="12" r="7" opacity="0.5"/>
+                            <circle cx="12" cy="12" r="11" opacity="0.3"/>
                         </svg>
                     </div>
-                    <h2>Amplify Across Marketing, Sales, Service, And Ops</h2>
+                    <div>
+                        <h2 class="st-stage-title">Amplify</h2>
+                        <p class="st-stage-subtitle">Scale What Works Without Losing Your Voice</p>
+                    </div>
                 </div>
 
-                <h3>What Amplify Really Does</h3>
-                <p>Amplify takes what is working and helps it reach further.</p>
-                <p>The goal is not more noise. It is more of the right signal, shared in more places, with more consistency. Amplify turns individual wins into shared assets.</p>
+                <div class="st-content-block">
+                    <p>Amplify takes what is working and helps it reach further. The goal is not more noise. It is more of the right signal, shared in more places, with more consistency.</p>
+                    <p>Amplify turns individual wins into shared assets.</p>
+                </div>
 
-                <div class="ds-grid-2">
-                    <div class="ds-stage-card amplify">
+                <div class="st-stage-grid">
+                    <div class="st-stage-card amplify">
                         <h4>Amplify In Loop Marketing</h4>
                         <ul>
                             <li>Turning one strong article or video into many smaller assets.</li>
@@ -427,7 +1074,7 @@
                         <p class="summary">When marketing Amplify is strong, your best ideas do not die as single posts or campaigns.</p>
                     </div>
 
-                    <div class="ds-stage-card amplify">
+                    <div class="st-stage-card amplify">
                         <h4>Amplify In Loop Sales</h4>
                         <ul>
                             <li>Capturing winning email templates, call flows, and talk tracks.</li>
@@ -437,17 +1084,17 @@
                         <p class="summary">When sales Amplify is strong, you do not depend on a few all star reps. The whole team gains from what works.</p>
                     </div>
 
-                    <div class="ds-stage-card amplify">
+                    <div class="st-stage-card amplify">
                         <h4>Amplify In Loop Service</h4>
                         <ul>
                             <li>Turning repeated questions into knowledge base articles and videos.</li>
                             <li>Using in app guidance or email to share solutions before issues appear.</li>
                             <li>Building communities or forums where customers help each other.</li>
                         </ul>
-                        <p class="summary">When service Amplify is strong, your support team is not the only source of answers. Helpful knowledge lives where customers need it.</p>
+                        <p class="summary">When service Amplify is strong, your support team is not the only source of answers.</p>
                     </div>
 
-                    <div class="ds-stage-card amplify">
+                    <div class="st-stage-card amplify">
                         <h4>Amplify In Loop Ops</h4>
                         <ul>
                             <li>Using automation and integrations to cut manual work.</li>
@@ -461,23 +1108,27 @@
         </section>
 
         <!-- Evolve Across Loops -->
-        <section id="evolve-across-loops" class="ds-section-alt">
-            <div class="container">
-                <div class="stage-header">
-                    <div class="stage-header-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#3D5A80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9v-9m0-9a9 9 0 0 0-9 9m9-9v9"/>
+        <section id="evolve" class="st-stage-section evolve">
+            <div class="st-container">
+                <div class="st-stage-header">
+                    <div class="st-stage-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9v-9"/>
                         </svg>
                     </div>
-                    <h2>Evolve Across Marketing, Sales, Service, And Ops</h2>
+                    <div>
+                        <h2 class="st-stage-title">Evolve</h2>
+                        <p class="st-stage-subtitle">Learn And Adjust So The Next Cycle Is Better</p>
+                    </div>
                 </div>
 
-                <h3>What Evolve Really Does</h3>
-                <p>Evolve is where the system actually becomes a loop.</p>
-                <p>It is the stage where you stop and ask, "What did we learn?" and "What will we change next time?" Without Evolve, you stay busy but stuck. With Evolve, every cycle teaches you something.</p>
+                <div class="st-content-block">
+                    <p>Evolve is where the system actually becomes a loop. It is the stage where you stop and ask, "What did we learn?" and "What will we change next time?"</p>
+                    <p>Without Evolve, you stay busy but stuck. With Evolve, every cycle teaches you something.</p>
+                </div>
 
-                <div class="ds-grid-2">
-                    <div class="ds-stage-card evolve">
+                <div class="st-stage-grid">
+                    <div class="st-stage-card evolve">
                         <h4>Evolve In Loop Marketing</h4>
                         <ul>
                             <li>Reviewing channel and content performance regularly.</li>
@@ -487,7 +1138,7 @@
                         <p class="summary">When marketing Evolve is strong, your strategy and creative do not stay stuck in last year's assumptions.</p>
                     </div>
 
-                    <div class="ds-stage-card evolve">
+                    <div class="st-stage-card evolve">
                         <h4>Evolve In Loop Sales</h4>
                         <ul>
                             <li>Studying win and loss patterns and sharing the findings.</li>
@@ -497,7 +1148,7 @@
                         <p class="summary">When sales Evolve is strong, your process keeps pace with your market and your buyers.</p>
                     </div>
 
-                    <div class="ds-stage-card evolve">
+                    <div class="st-stage-card evolve">
                         <h4>Evolve In Loop Service</h4>
                         <ul>
                             <li>Tracking satisfaction, retention, and reasons for churn.</li>
@@ -507,7 +1158,7 @@
                         <p class="summary">When service Evolve is strong, your customers help you design a better experience.</p>
                     </div>
 
-                    <div class="ds-stage-card evolve">
+                    <div class="st-stage-card evolve">
                         <h4>Evolve In Loop Ops</h4>
                         <ul>
                             <li>Watching system level metrics like conversion rates, cycle time, and data quality.</li>
@@ -520,109 +1171,184 @@
             </div>
         </section>
 
-        <!-- AI And Humans By Stage -->
-        <section id="ai-and-humans-by-stage" class="ds-section">
-            <div class="container">
-                <h2>AI And Humans At Each Stage</h2>
+        <!-- AI And Humans Section -->
+        <section class="st-ai-section">
+            <div class="st-container">
+                <h2 class="st-section-title">AI And Humans At Each Stage</h2>
+                <div class="st-content-block">
+                    <p>AI does not replace the stages. It supports them. Use AI where it adds speed and reach. Keep humans responsible for direction, judgment, and care.</p>
+                </div>
 
-                <p>AI does not replace the stages. It supports them.</p>
-                <p>Here is a simple way to think about it.</p>
+                <div class="st-ai-grid">
+                    <div class="st-ai-card express">
+                        <div class="st-ai-card-header">
+                            <h4>Express</h4>
+                        </div>
+                        <div class="st-ai-row">
+                            <h5>AI Can Help</h5>
+                            <p>Summarize research, customer feedback, and call transcripts.</p>
+                        </div>
+                        <div class="st-ai-row">
+                            <h5>Humans Lead</h5>
+                            <p>Decide what the information means and what you stand for.</p>
+                        </div>
+                    </div>
 
-                <table class="ai-humans-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Express</th>
-                            <th>Tailor</th>
-                            <th>Amplify</th>
-                            <th>Evolve</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>AI Can Help</td>
-                            <td>Summarize research, customer feedback, and call transcripts.</td>
-                            <td>Suggest segments, recommend content, and draft personalized messages.</td>
-                            <td>Repurpose content, manage distribution, and keep automations running.</td>
-                            <td>Scan large data sets, flag trends, and surface anomalies.</td>
-                        </tr>
-                        <tr>
-                            <td>Humans Lead</td>
-                            <td>Decide what the information means and what you stand for.</td>
-                            <td>Set the rules, approve sensitive communication, and protect privacy.</td>
-                            <td>Choose what deserves amplification and watch for overload.</td>
-                            <td>Decide which patterns matter and what changes to make.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <div class="st-ai-card tailor">
+                        <div class="st-ai-card-header">
+                            <h4>Tailor</h4>
+                        </div>
+                        <div class="st-ai-row">
+                            <h5>AI Can Help</h5>
+                            <p>Suggest segments, recommend content, and draft personalized messages.</p>
+                        </div>
+                        <div class="st-ai-row">
+                            <h5>Humans Lead</h5>
+                            <p>Set the rules, approve sensitive communication, and protect privacy.</p>
+                        </div>
+                    </div>
 
-                <p style="text-align: center; margin-top: 2rem; font-weight: 600; color: var(--brand-navy);">Use AI where it adds speed and reach. Keep humans responsible for direction, judgment, and care.</p>
+                    <div class="st-ai-card amplify">
+                        <div class="st-ai-card-header">
+                            <h4>Amplify</h4>
+                        </div>
+                        <div class="st-ai-row">
+                            <h5>AI Can Help</h5>
+                            <p>Repurpose content, manage distribution, and keep automations running.</p>
+                        </div>
+                        <div class="st-ai-row">
+                            <h5>Humans Lead</h5>
+                            <p>Choose what deserves amplification and watch for overload.</p>
+                        </div>
+                    </div>
+
+                    <div class="st-ai-card evolve">
+                        <div class="st-ai-card-header">
+                            <h4>Evolve</h4>
+                        </div>
+                        <div class="st-ai-row">
+                            <h5>AI Can Help</h5>
+                            <p>Scan large data sets, flag trends, and surface anomalies.</p>
+                        </div>
+                        <div class="st-ai-row">
+                            <h5>Humans Lead</h5>
+                            <p>Decide which patterns matter and what changes to make.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="st-ai-note">The stages get faster and smarter with AI, but they stay human led.</p>
             </div>
         </section>
 
         <!-- Stage Health Check -->
-        <section id="stage-health-check" class="ds-section-alt">
-            <div class="container">
-                <h2>A Simple Stage Health Check</h2>
+        <section class="st-health-section">
+            <div class="st-container">
+                <h2 class="st-section-title">A Simple Stage Health Check</h2>
+                <div class="st-content-block">
+                    <p>You do not need a complex scorecard to see where your stages need attention. A few honest questions go a long way.</p>
+                </div>
 
-                <p>You do not need a complex scorecard to see where your stages need attention. A few honest questions go a long way.</p>
-
-                <div class="ds-grid-2">
-                    <div class="ds-callout">
+                <div class="st-health-grid">
+                    <div class="st-health-card express">
                         <h4>For Express</h4>
                         <p>Can everyone explain who we serve, what we promise, and how we work in a simple way?</p>
                     </div>
 
-                    <div class="ds-callout">
+                    <div class="st-health-card tailor">
                         <h4>For Tailor</h4>
                         <p>Do our messages and actions feel specific to real people, or could they go to anyone?</p>
                     </div>
 
-                    <div class="ds-callout">
+                    <div class="st-health-card amplify">
                         <h4>For Amplify</h4>
                         <p>Do we reuse and share what works, or do good ideas die in one channel or with one person?</p>
                     </div>
 
-                    <div class="ds-callout">
+                    <div class="st-health-card evolve">
                         <h4>For Evolve</h4>
                         <p>Do we regularly look at results, talk about what they mean, and change our approach?</p>
                     </div>
                 </div>
 
-                <p style="text-align: center; margin-top: 2rem;">If you answer "not really" to any of those, that is your stage to focus on first. You do not have to fix everything at once. Improving one weak stage often unlocks progress across the others.</p>
+                <div class="st-content-block" style="margin-top: var(--space-6); text-align: center;">
+                    <p>If you answer "not really" to any of those, that is your stage to focus on first. Improving one weak stage often unlocks progress across the others.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Next Steps CTA -->
-        <section id="stages-next-steps" class="ds-cta-banner">
-            <div class="container">
-                <h2>How To Use The Stages In Your Own World</h2>
-
-                <p>Now that you know the four stages, you can look at any part of your revenue engine and see it with fresh eyes.</p>
-
-                <p style="margin-bottom: 2.5rem;">Pick one loop, like marketing or sales. Walk through the stages: How clear is our Express? How human is our Tailor? How intentional is our Amplify? How honest and regular is our Evolve? Then choose one small improvement to make in the next month.</p>
-
-                <div class="cta-buttons">
-                    <a href="/loops" class="btn btn-primary btn-large">Loops In Practice</a>
-                    <a href="/playbooks/system" class="btn btn-secondary btn-large">System Playbooks</a>
+        <!-- Stages In Action -->
+        <section class="st-action-section">
+            <div class="st-container">
+                <h2 class="st-section-title">Stages In Action - Explore Each Loop</h2>
+                <div class="st-content-block">
+                    <p>These stages apply differently in each loop. See how Express, Tailor, Amplify, and Evolve come to life:</p>
                 </div>
 
-                <div class="next-page-links">
-                    <p><strong>See how stages look inside each loop:</strong> <a href="/loops">Loops In Practice</a></p>
-                    <p><strong>Ready-made checklists by stage:</strong> <a href="/playbooks/system">System Playbooks</a></p>
-                    <p><strong>Bring others along:</strong> <a href="/roles/start-here">Start Here - Role Based Paths</a></p>
+                <div class="st-action-grid">
+                    <a href="/loops/marketing" class="st-action-card marketing">
+                        <h4>Stages In Marketing</h4>
+                        <p>Learn how the stages shape content, campaigns, and audience understanding.</p>
+                        <span>Explore Loop Marketing</span>
+                    </a>
+
+                    <a href="/loops/sales" class="st-action-card sales">
+                        <h4>Stages In Sales</h4>
+                        <p>See how the stages guide qualification, discovery, and deal progression.</p>
+                        <span>Explore Loop Sales</span>
+                    </a>
+
+                    <a href="/loops/service" class="st-action-card service">
+                        <h4>Stages In Service</h4>
+                        <p>Discover how the stages improve onboarding, support, and customer success.</p>
+                        <span>Explore Loop Service</span>
+                    </a>
+
+                    <a href="/loops/ops" class="st-action-card ops">
+                        <h4>Stages In Ops</h4>
+                        <p>Understand how the stages connect data, tools, and process design.</p>
+                        <span>Explore Loop Ops</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Footer -->
+        <section class="st-navigation">
+            <div class="st-navigation-container">
+                <div class="st-navigation-header">
+                    <h2>Where To Go Next</h2>
+                    <p>Now that you know the four stages, you can look at any part of your revenue engine and see it with fresh eyes. Pick one loop, walk through the stages, then choose one small improvement.</p>
                 </div>
 
-                <p class="cta-note">Use the stages as a shared language. Let the loops spin. Watch what you learn each time they come around again.</p>
+                <div class="st-nav-grid">
+                    <div class="st-nav-card">
+                        <h3>See The Four Loops</h3>
+                        <p>Understand how Marketing, Sales, Service, and Ops work as interconnected loops.</p>
+                        <a href="/loops" class="st-nav-btn">Four Loops Overview</a>
+                    </div>
+
+                    <div class="st-nav-card">
+                        <h3>Find Plays By Stage</h3>
+                        <p>Ready-made checklists and actions organized by stage and loop.</p>
+                        <a href="/playbooks/system" class="st-nav-btn">System Playbooks</a>
+                    </div>
+
+                    <div class="st-nav-card">
+                        <h3>Bring Others Along</h3>
+                        <p>Help your team find their path through the Loop Revenue System.</p>
+                        <a href="/roles/start-here" class="st-nav-btn st-nav-btn--secondary">Start Here</a>
+                    </div>
+                </div>
+
+                <p class="st-final-note">Use the stages as a shared language. Let the loops spin. Watch what you learn each time they come around again.</p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Footer CTA -->
                 <div class="footer-cta">
                     <h3>Ready to build your Loop Revenue System?</h3>
                     <p>Start with the model or jump straight to your role-based path.</p>
@@ -631,8 +1357,6 @@
                         <a href="/roles/start-here" class="btn btn-secondary">Start Here</a>
                     </div>
                 </div>
-
-                <!-- Footer Links -->
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Overview</h4>
@@ -642,7 +1366,6 @@
                             <li><a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a></li>
                         </ul>
                     </div>
-
                     <div class="footer-column">
                         <h4>The Four Loops</h4>
                         <ul>
@@ -653,7 +1376,6 @@
                             <li><a href="/loops/ops">Loop Ops</a></li>
                         </ul>
                     </div>
-
                     <div class="footer-column">
                         <h4>Playbooks</h4>
                         <ul>
@@ -663,7 +1385,6 @@
                             <li><a href="/playbooks/ai-and-humans">AI and Humans</a></li>
                         </ul>
                     </div>
-
                     <div class="footer-column">
                         <h4>By Role</h4>
                         <ul>
@@ -680,8 +1401,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="footer-logo">
                     <a href="/">

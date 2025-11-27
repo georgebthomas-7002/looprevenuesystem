@@ -8,958 +8,584 @@
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
     <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/design-system.css">
     <style>
         /* =============================================
-           START HERE PAGE - WORLD-CLASS REDESIGN
+           START HERE PAGE - EDITORIAL + LUXURY REDESIGN
            ============================================= */
+
+        /* Page Background */
+        .start-here-page {
+            background: var(--color-bg);
+        }
 
         /* Hero Section */
         .sh-hero {
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--brand-navy) 0%, #1a3a6e 50%, var(--brand-teal) 100%);
-            overflow: hidden;
+            padding: var(--space-9) 0 var(--space-8);
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border-light);
         }
 
-        .sh-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(2, 131, 147, 0.3) 0%, transparent 70%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        .sh-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: linear-gradient(to top, #fff 0%, transparent 100%);
-            z-index: 1;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
-        }
-
-        .sh-hero-content {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            padding: 4rem 0;
-        }
-
-        .sh-hero-text {
-            color: white;
+        .sh-hero-inner {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+            text-align: center;
         }
 
         .sh-hero-label {
             display: inline-block;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: var(--tracking-widest);
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-4);
         }
 
         .sh-hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
-        }
-
-        .sh-hero h2 {
-            font-size: 1.75rem;
-            font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            color: var(--brand-light-blue);
-        }
-
-        .sh-hero-intro {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-
-        .sh-questions {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-
-        .sh-questions span {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, var(--text-6xl));
             font-weight: 500;
-            font-size: 1.05rem;
+            line-height: var(--leading-tight);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
+            letter-spacing: var(--tracking-tight);
         }
 
-        .sh-questions span::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--brand-peach);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .sh-hero-note {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            margin-top: 1.5rem;
-        }
-
-        /* Role Wheel */
-        .sh-role-wheel {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .sh-wheel-container {
-            position: relative;
-            width: 420px;
-            height: 420px;
-        }
-
-        .sh-wheel-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 140px;
-            height: 140px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        .sh-wheel-center span {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--brand-navy);
-            font-weight: 600;
-        }
-
-        .sh-wheel-center strong {
-            font-size: 2rem;
-            color: var(--brand-teal);
-            font-weight: 700;
-        }
-
-        .sh-role-item {
-            position: absolute;
-            width: 110px;
-            height: 110px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            border: 3px solid transparent;
-        }
-
-        .sh-role-item:hover {
-            transform: scale(1.15);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-        }
-
-        .sh-role-item .role-icon {
-            font-size: 1.75rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .sh-role-item .role-name {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--brand-navy);
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            line-height: 1.2;
-            padding: 0 0.5rem;
-        }
-
-        /* Position roles in a circle */
-        .sh-role-item:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); border-color: var(--brand-teal); }
-        .sh-role-item:nth-child(2) { top: 12%; right: 5%; border-color: var(--brand-blue); }
-        .sh-role-item:nth-child(3) { top: 50%; right: -8%; transform: translateY(-50%); border-color: var(--brand-teal); }
-        .sh-role-item:nth-child(4) { bottom: 12%; right: 5%; border-color: var(--brand-orange); }
-        .sh-role-item:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); border-color: var(--brand-peach); }
-        .sh-role-item:nth-child(6) { bottom: 12%; left: 5%; border-color: var(--brand-blue); }
-        .sh-role-item:nth-child(7) { top: 50%; left: -8%; transform: translateY(-50%); border-color: var(--brand-light-blue); }
-
-        .sh-role-item:nth-child(1):hover { transform: translateX(-50%) scale(1.15); }
-        .sh-role-item:nth-child(3):hover { transform: translateY(-50%) scale(1.15); }
-        .sh-role-item:nth-child(5):hover { transform: translateX(-50%) scale(1.15); }
-        .sh-role-item:nth-child(7):hover { transform: translateY(-50%) scale(1.15); }
-
-        /* How To Use Section */
-        .sh-howto {
-            padding: 6rem 0;
-            background: #fff;
-            position: relative;
-        }
-
-        .sh-section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .sh-section-header h2 {
-            font-size: 2.5rem;
-            color: var(--brand-navy);
-            margin-bottom: 1rem;
-        }
-
-        .sh-section-header p {
-            font-size: 1.15rem;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        .sh-howto-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .sh-howto-content h3 {
-            font-size: 1.4rem;
-            color: var(--brand-navy);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .sh-howto-content h3::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: var(--brand-teal);
-            border-radius: 2px;
-        }
-
-        .sh-howto-content p {
-            color: #444;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-
-        .sh-path-points {
-            background: linear-gradient(135deg, var(--brand-cyan) 0%, #f0fafa 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-left: 4px solid var(--brand-teal);
-        }
-
-        .sh-path-points h4 {
-            color: var(--brand-navy);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .sh-path-points ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sh-path-points li {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 0.75rem 0;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        .sh-path-points li::before {
-            content: '';
-            width: 24px;
-            height: 24px;
-            background: var(--brand-teal);
-            border-radius: 50%;
-            flex-shrink: 0;
-            margin-top: 2px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-            background-size: 14px;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        /* Quick Links Sidebar */
-        .sh-quick-nav {
-            position: sticky;
-            top: 100px;
-            background: white;
-            border-radius: 24px;
-            padding: 2rem;
-            box-shadow: 0 10px 50px rgba(20, 45, 99, 0.1);
-            border: 1px solid rgba(152, 193, 217, 0.3);
-        }
-
-        .sh-quick-nav h4 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--brand-teal);
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--brand-cyan);
-        }
-
-        .sh-quick-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sh-quick-nav li {
-            margin-bottom: 0.5rem;
-        }
-
-        .sh-quick-nav a {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.85rem 1rem;
-            border-radius: 12px;
-            color: var(--brand-navy);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .sh-quick-nav a:hover {
-            background: var(--brand-cyan);
-            color: var(--brand-teal);
-            transform: translateX(4px);
-        }
-
-        .sh-quick-nav .nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .sh-quick-nav .nav-dot.ceo { background: var(--brand-teal); }
-        .sh-quick-nav .nav-dot.revops { background: var(--brand-blue); }
-        .sh-quick-nav .nav-dot.marketing { background: var(--brand-teal); }
-        .sh-quick-nav .nav-dot.sales { background: var(--brand-orange); }
-        .sh-quick-nav .nav-dot.service { background: var(--brand-peach); }
-        .sh-quick-nav .nav-dot.admins { background: var(--brand-blue); }
-        .sh-quick-nav .nav-dot.manyhats { background: var(--brand-light-blue); }
-
-        /* Role Sections */
-        .sh-roles {
-            background: linear-gradient(180deg, #fff 0%, var(--brand-cyan) 100%);
-            padding: 2rem 0 6rem;
-        }
-
-        .sh-roles-intro {
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        .sh-roles-intro h2 {
-            font-size: 2.5rem;
-            color: var(--brand-navy);
-            margin-bottom: 1rem;
-        }
-
-        .sh-roles-intro p {
-            font-size: 1.15rem;
-            color: #555;
+        .sh-hero-subtitle {
+            font-family: var(--font-body);
+            font-size: var(--text-lg);
+            color: var(--color-text-secondary);
             max-width: 600px;
             margin: 0 auto;
+            line-height: var(--leading-relaxed);
         }
 
-        .sh-role-section {
-            padding: 3rem 0;
+        /* Role Selector Grid */
+        .sh-roles-section {
+            padding: var(--space-8) 0;
+            background: var(--color-bg);
         }
 
-        .sh-role-card {
-            background: white;
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(20, 45, 99, 0.12);
+        .sh-roles-container {
+            max-width: var(--content-wide);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .sh-roles-grid {
             display: grid;
-            grid-template-columns: 280px 1fr;
-            min-height: 500px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
         }
 
-        .sh-role-card.reverse {
-            grid-template-columns: 1fr 280px;
+        @media (max-width: 1024px) {
+            .sh-roles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .sh-role-sidebar {
-            padding: 3rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
+        @media (max-width: 640px) {
+            .sh-roles-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .sh-role-card[data-role="ceo"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-teal) 0%, #026d7a 100%); }
-        .sh-role-card[data-role="revops"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-blue) 0%, #2d4660 100%); }
-        .sh-role-card[data-role="marketing"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-teal) 0%, #026d7a 100%); }
-        .sh-role-card[data-role="sales"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-orange) 0%, #d44a20 100%); }
-        .sh-role-card[data-role="service"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-peach) 0%, #e8954f 100%); }
-        .sh-role-card[data-role="admins"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-blue) 0%, #2d4660 100%); }
-        .sh-role-card[data-role="many-hats"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-light-blue) 0%, #7aafc9 100%); }
+        /* Role Card */
+        .sh-role-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius);
+            padding: var(--space-5);
+            cursor: pointer;
+            transition: all var(--duration) var(--ease-out);
+            text-decoration: none;
+            display: block;
+        }
+
+        .sh-role-card:hover {
+            border-color: var(--color-text-primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .sh-role-card.active {
+            border-color: var(--color-text-primary);
+            box-shadow: var(--shadow-md);
+        }
 
         .sh-role-icon {
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
+            font-size: 1.75rem;
+            margin-bottom: var(--space-3);
+            opacity: 0.9;
         }
 
-        .sh-role-sidebar h2 {
-            color: white;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            margin-bottom: 1rem;
+        .sh-role-title {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-2);
+            line-height: var(--leading-snug);
         }
 
-        .sh-role-tagline {
-            color: rgba(255,255,255,0.9);
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .sh-role-hook {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* Many Hats spans 2 columns on desktop */
+        .sh-role-card--wide {
+            grid-column: span 1;
+        }
+
+        @media (min-width: 1025px) {
+            .sh-roles-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Role Detail Sections */
+        .sh-role-details {
+            background: var(--color-bg-alt);
+            padding: var(--space-8) 0;
+        }
+
+        .sh-role-details-container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .sh-role-detail {
+            display: none;
+        }
+
+        .sh-role-detail.active {
+            display: block;
+            animation: fadeIn var(--duration-slow) var(--ease-out);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sh-role-detail-header {
+            margin-bottom: var(--space-7);
+            padding-bottom: var(--space-6);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .sh-role-detail-title {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-3);
+        }
+
+        .sh-role-detail-tagline {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
             font-style: italic;
+            color: var(--color-text-secondary);
         }
 
-        .sh-role-main {
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
+        .sh-role-detail-intro {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            line-height: var(--leading-loose);
+            max-width: 720px;
+            margin-bottom: var(--space-6);
         }
 
-        .sh-role-card.reverse .sh-role-sidebar {
-            order: 2;
+        .sh-role-detail-intro p {
+            margin-bottom: var(--space-3);
         }
 
-        .sh-role-intro-text {
-            color: #444;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .sh-role-intro-text p {
-            margin-bottom: 0.75rem;
-        }
-
-        .sh-role-intro-text p:last-child {
+        .sh-role-detail-intro p:last-child {
             margin-bottom: 0;
         }
 
-        .sh-path-section h3 {
-            font-size: 1.15rem;
-            color: var(--brand-navy);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        /* Quick Path and First Move Layout */
+        .sh-detail-layout {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: var(--space-8);
+            align-items: start;
         }
 
-        .sh-path-section h3::before {
-            content: '';
-            width: 20px;
-            height: 3px;
-            border-radius: 2px;
+        @media (max-width: 1024px) {
+            .sh-detail-layout {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
         }
 
-        .sh-role-card[data-role="ceo"] .sh-path-section h3::before { background: var(--brand-teal); }
-        .sh-role-card[data-role="revops"] .sh-path-section h3::before { background: var(--brand-blue); }
-        .sh-role-card[data-role="marketing"] .sh-path-section h3::before { background: var(--brand-teal); }
-        .sh-role-card[data-role="sales"] .sh-path-section h3::before { background: var(--brand-orange); }
-        .sh-role-card[data-role="service"] .sh-path-section h3::before { background: var(--brand-peach); }
-        .sh-role-card[data-role="admins"] .sh-path-section h3::before { background: var(--brand-blue); }
-        .sh-role-card[data-role="many-hats"] .sh-path-section h3::before { background: var(--brand-light-blue); }
+        /* Quick Path */
+        .sh-quick-path {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: var(--space-6);
+            border: 1px solid var(--color-border-light);
+        }
+
+        .sh-quick-path-title {
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            letter-spacing: var(--tracking-wider);
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-5);
+        }
 
         .sh-path-list {
             list-style: none;
             padding: 0;
-            margin: 0 0 2rem;
+            margin: 0;
             counter-reset: path-counter;
         }
 
-        .sh-path-list > li {
+        .sh-path-item {
             counter-increment: path-counter;
             display: flex;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid #f0f0f0;
-            position: relative;
+            gap: var(--space-4);
+            padding: var(--space-4) 0;
+            border-bottom: 1px solid var(--color-border-light);
         }
 
-        .sh-path-list > li:last-child {
+        .sh-path-item:last-child {
             border-bottom: none;
+            padding-bottom: 0;
         }
 
-        .sh-path-list > li::before {
-            content: counter(path-counter);
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
+        .sh-path-item:first-child {
+            padding-top: 0;
+        }
+
+        .sh-path-number {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
+            width: 28px;
+            height: 28px;
+            background: var(--color-text-primary);
+            color: var(--color-text-inverse);
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 600;
             flex-shrink: 0;
-            color: white;
         }
 
-        .sh-role-card[data-role="ceo"] .sh-path-list > li::before { background: var(--brand-teal); }
-        .sh-role-card[data-role="revops"] .sh-path-list > li::before { background: var(--brand-blue); }
-        .sh-role-card[data-role="marketing"] .sh-path-list > li::before { background: var(--brand-teal); }
-        .sh-role-card[data-role="sales"] .sh-path-list > li::before { background: var(--brand-orange); }
-        .sh-role-card[data-role="service"] .sh-path-list > li::before { background: var(--brand-peach); }
-        .sh-role-card[data-role="admins"] .sh-path-list > li::before { background: var(--brand-blue); }
-        .sh-role-card[data-role="many-hats"] .sh-path-list > li::before { background: var(--brand-light-blue); }
-
-        .sh-path-list .path-content {
+        .sh-path-content {
             flex: 1;
         }
 
-        .sh-path-list .path-content strong {
-            color: var(--brand-navy);
-            display: block;
-            margin-bottom: 0.25rem;
-            font-size: 0.95rem;
+        .sh-path-label {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
         }
 
-        .sh-path-list .path-content span,
-        .sh-path-list .path-content p {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin: 0;
+        .sh-path-desc {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: var(--leading-relaxed);
         }
 
-        .sh-path-list .path-content a {
-            color: var(--brand-teal);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .sh-path-list .path-content a:hover {
+        .sh-path-desc a {
+            color: var(--color-text-primary);
             text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            transition: opacity var(--duration) var(--ease-out);
         }
 
-        .sh-path-list .path-content ul {
+        .sh-path-desc a:hover {
+            opacity: 0.7;
+        }
+
+        .sh-path-links {
             list-style: none;
             padding: 0;
-            margin: 0.5rem 0 0;
+            margin: var(--space-2) 0 0;
         }
 
-        .sh-path-list .path-content ul li {
-            padding: 0.3rem 0;
-            padding-left: 1rem;
-            position: relative;
-            font-size: 0.9rem;
-            color: #555;
+        .sh-path-links li {
+            padding: var(--space-1) 0;
         }
 
-        .sh-path-list .path-content ul li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--brand-teal);
+        .sh-path-links li::before {
+            content: ">";
+            margin-right: var(--space-2);
+            color: var(--color-text-muted);
         }
 
-        /* First Move Box */
+        /* First Move Card */
         .sh-first-move {
-            margin-top: auto;
-            border-radius: 20px;
-            padding: 1.75rem;
-            position: relative;
-            overflow: hidden;
+            background: var(--color-bg-cream);
+            border-radius: var(--radius-md);
+            padding: var(--space-6);
+            border-left: 4px solid var(--color-text-primary);
         }
 
-        .sh-role-card[data-role="ceo"] .sh-first-move { background: linear-gradient(135deg, rgba(2, 131, 147, 0.1) 0%, rgba(2, 131, 147, 0.05) 100%); border: 1px solid rgba(2, 131, 147, 0.2); }
-        .sh-role-card[data-role="revops"] .sh-first-move { background: linear-gradient(135deg, rgba(61, 90, 128, 0.1) 0%, rgba(61, 90, 128, 0.05) 100%); border: 1px solid rgba(61, 90, 128, 0.2); }
-        .sh-role-card[data-role="marketing"] .sh-first-move { background: linear-gradient(135deg, rgba(2, 131, 147, 0.1) 0%, rgba(2, 131, 147, 0.05) 100%); border: 1px solid rgba(2, 131, 147, 0.2); }
-        .sh-role-card[data-role="sales"] .sh-first-move { background: linear-gradient(135deg, rgba(246, 86, 37, 0.1) 0%, rgba(246, 86, 37, 0.05) 100%); border: 1px solid rgba(246, 86, 37, 0.2); }
-        .sh-role-card[data-role="service"] .sh-first-move { background: linear-gradient(135deg, rgba(250, 170, 104, 0.15) 0%, rgba(250, 170, 104, 0.05) 100%); border: 1px solid rgba(250, 170, 104, 0.3); }
-        .sh-role-card[data-role="admins"] .sh-first-move { background: linear-gradient(135deg, rgba(61, 90, 128, 0.1) 0%, rgba(61, 90, 128, 0.05) 100%); border: 1px solid rgba(61, 90, 128, 0.2); }
-        .sh-role-card[data-role="many-hats"] .sh-first-move { background: linear-gradient(135deg, rgba(152, 193, 217, 0.2) 0%, rgba(152, 193, 217, 0.05) 100%); border: 1px solid rgba(152, 193, 217, 0.3); }
-
-        .sh-first-move h3 {
-            font-size: 1rem;
+        .sh-first-move-title {
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            letter-spacing: var(--tracking-wider);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: var(--space-2);
         }
 
-        .sh-role-card[data-role="ceo"] .sh-first-move h3 { color: var(--brand-teal); }
-        .sh-role-card[data-role="revops"] .sh-first-move h3 { color: var(--brand-blue); }
-        .sh-role-card[data-role="marketing"] .sh-first-move h3 { color: var(--brand-teal); }
-        .sh-role-card[data-role="sales"] .sh-first-move h3 { color: var(--brand-orange); }
-        .sh-role-card[data-role="service"] .sh-first-move h3 { color: #c47f3a; }
-        .sh-role-card[data-role="admins"] .sh-first-move h3 { color: var(--brand-blue); }
-        .sh-role-card[data-role="many-hats"] .sh-first-move h3 { color: var(--brand-blue); }
-
-        .sh-first-move h3::before {
-            content: '→';
-            font-size: 1.2rem;
+        .sh-first-move-title::before {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 2px;
+            background: var(--color-text-primary);
         }
 
-        .sh-first-move p {
-            color: #444;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 0.75rem;
+        .sh-first-move-content {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            line-height: var(--leading-loose);
         }
 
-        .sh-first-move p:last-child {
+        .sh-first-move-content p {
+            margin-bottom: var(--space-3);
+        }
+
+        .sh-first-move-content p:last-child {
             margin-bottom: 0;
         }
 
-        .sh-first-move em {
-            color: var(--brand-navy);
+        .sh-first-move-content em {
+            font-family: var(--font-display);
             font-style: italic;
+            color: var(--color-text-primary);
         }
 
-        .sh-first-move a {
-            color: var(--brand-teal);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .sh-first-move a:hover {
+        .sh-first-move-content a {
+            color: var(--color-text-primary);
             text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
         }
 
-        /* Wrap Up Section */
-        .sh-wrapup {
-            padding: 6rem 0;
-            background: white;
+        /* Back to Roles Link */
+        .sh-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            text-decoration: none;
+            margin-top: var(--space-6);
+            padding: var(--space-2) 0;
+            transition: color var(--duration) var(--ease-out);
         }
 
-        .sh-wrapup-header {
+        .sh-back-link:hover {
+            color: var(--color-text-primary);
+        }
+
+        .sh-back-link::before {
+            content: "<";
+        }
+
+        /* Bottom Navigation Section */
+        .sh-navigation {
+            padding: var(--space-9) 0;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border-light);
+        }
+
+        .sh-navigation-container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .sh-navigation-header {
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto 4rem;
+            margin-bottom: var(--space-7);
         }
 
-        .sh-wrapup-header h2 {
-            font-size: 2.5rem;
-            color: var(--brand-navy);
-            margin-bottom: 1rem;
+        .sh-navigation-title {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-weight: 500;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-3);
         }
 
-        .sh-wrapup-header p {
-            font-size: 1.15rem;
-            color: #555;
-            line-height: 1.7;
+        .sh-navigation-subtitle {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
         }
 
+        /* Path Cards Grid */
         .sh-paths-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
+            gap: var(--space-5);
+            margin-bottom: var(--space-8);
+        }
+
+        @media (max-width: 768px) {
+            .sh-paths-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .sh-path-card {
-            background: white;
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 40px rgba(20, 45, 99, 0.08);
-            border: 1px solid rgba(152, 193, 217, 0.2);
-            transition: all 0.3s ease;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius);
+            padding: var(--space-6);
+            transition: all var(--duration) var(--ease-out);
         }
 
         .sh-path-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(20, 45, 99, 0.12);
+            border-color: var(--color-border-dark);
+            box-shadow: var(--shadow-sm);
         }
 
         .sh-path-card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: var(--space-4);
+            opacity: 0.85;
         }
 
-        .sh-path-card:nth-child(1) .sh-path-card-icon { background: linear-gradient(135deg, var(--brand-teal) 0%, #026d7a 100%); }
-        .sh-path-card:nth-child(2) .sh-path-card-icon { background: linear-gradient(135deg, var(--brand-blue) 0%, #2d4660 100%); }
-        .sh-path-card:nth-child(3) .sh-path-card-icon { background: linear-gradient(135deg, var(--brand-orange) 0%, #d44a20 100%); }
-
-        .sh-path-card h4 {
-            font-size: 1.2rem;
-            color: var(--brand-navy);
-            margin-bottom: 1.25rem;
+        .sh-path-card-title {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
         }
 
-        .sh-path-card ul {
+        .sh-path-card-links {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .sh-path-card ul li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #f0f0f0;
+        .sh-path-card-links li {
+            padding: var(--space-2) 0;
+            border-bottom: 1px solid var(--color-border-light);
         }
 
-        .sh-path-card ul li:last-child {
+        .sh-path-card-links li:last-child {
             border-bottom: none;
         }
 
-        .sh-path-card ul li a {
-            color: var(--brand-teal);
+        .sh-path-card-links a {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: all 0.2s ease;
+            gap: var(--space-2);
+            transition: all var(--duration) var(--ease-out);
         }
 
-        .sh-path-card ul li a::before {
-            content: '→';
+        .sh-path-card-links a::before {
+            content: ">";
+            color: var(--color-text-muted);
             opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.2s ease;
+            transform: translateX(-8px);
+            transition: all var(--duration) var(--ease-out);
         }
 
-        .sh-path-card ul li a:hover {
-            color: var(--brand-navy);
+        .sh-path-card-links a:hover {
+            color: var(--color-text-primary);
         }
 
-        .sh-path-card ul li a:hover::before {
+        .sh-path-card-links a:hover::before {
             opacity: 1;
             transform: translateX(0);
         }
 
         /* Final CTA */
         .sh-final-cta {
-            background: linear-gradient(135deg, var(--brand-navy) 0%, #1a3a6e 50%, var(--brand-teal) 100%);
-            border-radius: 32px;
-            padding: 4rem;
+            background: var(--color-text-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
             text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
+            color: var(--color-text-inverse);
         }
 
-        .sh-final-cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(255,255,255,0.1) 0%, transparent 70%);
-        }
-
-        .sh-final-cta h4 {
-            font-size: 0.85rem;
+        .sh-final-cta-label {
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            letter-spacing: var(--tracking-widest);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            opacity: 0.8;
+            opacity: 0.7;
+            margin-bottom: var(--space-5);
         }
 
-        .sh-final-cta .cta-choices {
+        .sh-choices {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
             flex-wrap: wrap;
         }
 
-        .sh-final-cta .choice {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 1.25rem 2rem;
-            border-radius: 16px;
-            font-size: 1.25rem;
-            font-weight: 700;
-            border: 1px solid rgba(255,255,255,0.2);
+        .sh-choice {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-3) var(--space-5);
+            border-radius: var(--radius);
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: 600;
         }
 
-        .sh-final-cta p {
-            font-size: 1.15rem;
-            line-height: 1.8;
+        .sh-final-text {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            line-height: var(--leading-loose);
             max-width: 700px;
             margin: 0 auto;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
+            opacity: 0.9;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .sh-hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .sh-wheel-container {
-                width: 350px;
-                height: 350px;
-            }
-
-            .sh-role-item {
-                width: 90px;
-                height: 90px;
-            }
-
-            .sh-role-item .role-icon {
-                font-size: 1.5rem;
-            }
-
-            .sh-role-item .role-name {
-                font-size: 0.6rem;
-            }
-
-            .sh-role-card {
-                grid-template-columns: 1fr;
-            }
-
-            .sh-role-card.reverse {
-                grid-template-columns: 1fr;
-            }
-
-            .sh-role-sidebar {
-                padding: 2.5rem;
-            }
-
-            .sh-role-card.reverse .sh-role-sidebar {
-                order: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .sh-hero {
-                min-height: auto;
-                padding: 3rem 0 6rem;
-            }
-
-            .sh-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .sh-hero h2 {
-                font-size: 1.25rem;
-            }
-
-            .sh-wheel-container {
-                width: 300px;
-                height: 300px;
-            }
-
-            .sh-wheel-center {
-                width: 100px;
-                height: 100px;
-            }
-
-            .sh-wheel-center strong {
-                font-size: 1.5rem;
-            }
-
-            .sh-role-item {
-                width: 70px;
-                height: 70px;
-            }
-
-            .sh-role-item .role-icon {
-                font-size: 1.25rem;
-                margin-bottom: 0;
-            }
-
-            .sh-role-item .role-name {
-                font-size: 0.5rem;
-            }
-
-            .sh-howto-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sh-quick-nav {
-                position: static;
-            }
-
-            .sh-paths-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sh-final-cta {
-                padding: 3rem 2rem;
-            }
-
-            .sh-final-cta .cta-choices {
-                flex-direction: column;
-                gap: 1rem;
-            }
+        /* Scroll to top on role select */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -1022,277 +648,256 @@
         </div>
     </header>
 
-    <main>
+    <main class="start-here-page">
         <!-- Hero Section -->
         <section class="sh-hero">
-            <div class="container">
-                <div class="sh-hero-content">
-                    <div class="sh-hero-text">
-                        <span class="sh-hero-label">Find Your Path</span>
-                        <h1>Start Here</h1>
-                        <h2>Pick Your Role. Pick Your Next Step.</h2>
-                        <p class="sh-hero-intro">The Loop Revenue System has a lot of depth. You do not need all of it at once.</p>
-                        <p class="sh-hero-intro">This page helps you answer three questions fast.</p>
-                        <div class="sh-questions">
-                            <span>Am I in the right place?</span>
-                            <span>How does this help someone in my role?</span>
-                            <span>What should I read and do first?</span>
-                        </div>
-                        <p class="sh-hero-note">Scroll until you see yourself. Then follow a simple path of two or three pages and one small action. You can always come back here and choose another path when you are ready.</p>
+            <div class="sh-hero-inner">
+                <span class="sh-hero-label">Find Your Path</span>
+                <h1>Pick Your Role.<br>Find Your Path.</h1>
+                <p class="sh-hero-subtitle">Get started without overwhelm. Choose your role below and follow a simple path of two or three pages and one small action.</p>
+            </div>
+        </section>
+
+        <!-- Role Selector Grid -->
+        <section class="sh-roles-section">
+            <div class="sh-roles-container">
+                <div class="sh-roles-grid">
+                    <div class="sh-role-card" data-role="ceo" onclick="selectRole('ceo')">
+                        <div class="sh-role-icon">&#128188;</div>
+                        <h3 class="sh-role-title">CEOs, Founders, And Owners</h3>
+                        <p class="sh-role-hook">You care about revenue that is healthy, predictable, and human.</p>
                     </div>
-                    <div class="sh-role-wheel">
-                        <div class="sh-wheel-container">
-                            <a href="#start-here-ceo" class="sh-role-item">
-                                <span class="role-icon">&#128188;</span>
-                                <span class="role-name">CEO / Founder</span>
-                            </a>
-                            <a href="#start-here-revops" class="sh-role-item">
-                                <span class="role-icon">&#9881;</span>
-                                <span class="role-name">RevOps</span>
-                            </a>
-                            <a href="#start-here-marketing" class="sh-role-item">
-                                <span class="role-icon">&#128226;</span>
-                                <span class="role-name">Marketing</span>
-                            </a>
-                            <a href="#start-here-sales" class="sh-role-item">
-                                <span class="role-icon">&#128200;</span>
-                                <span class="role-name">Sales</span>
-                            </a>
-                            <a href="#start-here-service" class="sh-role-item">
-                                <span class="role-icon">&#128591;</span>
-                                <span class="role-name">Service / CX</span>
-                            </a>
-                            <a href="#start-here-admins" class="sh-role-item">
-                                <span class="role-icon">&#128295;</span>
-                                <span class="role-name">Admins / CRM</span>
-                            </a>
-                            <a href="#start-here-many-hats" class="sh-role-item">
-                                <span class="role-icon">&#127913;</span>
-                                <span class="role-name">Many Hats</span>
-                            </a>
-                            <div class="sh-wheel-center">
-                                <span>Roles</span>
-                                <strong>7</strong>
-                            </div>
-                        </div>
+
+                    <div class="sh-role-card" data-role="revops" onclick="selectRole('revops')">
+                        <div class="sh-role-icon">&#9881;</div>
+                        <h3 class="sh-role-title">RevOps And Revenue Operations Leaders</h3>
+                        <p class="sh-role-hook">You sit in the middle of everything.</p>
+                    </div>
+
+                    <div class="sh-role-card" data-role="marketing" onclick="selectRole('marketing')">
+                        <div class="sh-role-icon">&#128226;</div>
+                        <h3 class="sh-role-title">Marketing Leaders And Teams</h3>
+                        <p class="sh-role-hook">You are the voice and signal of the business.</p>
+                    </div>
+
+                    <div class="sh-role-card" data-role="sales" onclick="selectRole('sales')">
+                        <div class="sh-role-icon">&#128200;</div>
+                        <h3 class="sh-role-title">Sales Leaders And Teams</h3>
+                        <p class="sh-role-hook">You live where decisions are made.</p>
+                    </div>
+
+                    <div class="sh-role-card" data-role="service" onclick="selectRole('service')">
+                        <div class="sh-role-icon">&#128591;</div>
+                        <h3 class="sh-role-title">Service And Customer Experience Leaders</h3>
+                        <p class="sh-role-hook">You live closest to the customer's real experience.</p>
+                    </div>
+
+                    <div class="sh-role-card" data-role="admins" onclick="selectRole('admins')">
+                        <div class="sh-role-icon">&#128295;</div>
+                        <h3 class="sh-role-title">Admins, CRM Owners, And HubSpot Super Admins</h3>
+                        <p class="sh-role-hook">You are the quiet backbone.</p>
+                    </div>
+
+                    <div class="sh-role-card sh-role-card--wide" data-role="many-hats" onclick="selectRole('many-hats')">
+                        <div class="sh-role-icon">&#127913;</div>
+                        <h3 class="sh-role-title">I Wear Many Hats</h3>
+                        <p class="sh-role-hook">You might be the owner, marketer, seller, and support rep, all before lunch.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- How To Use Section -->
-        <section class="sh-howto">
-            <div class="container">
-                <div class="sh-section-header">
-                    <h2>How To Use This Page</h2>
-                    <p>Two simple approaches to find your starting point</p>
-                </div>
-                <div class="sh-howto-grid">
-                    <div class="sh-howto-content">
-                        <h3>Choose Your Approach</h3>
-                        <p>You can use this page in two ways.</p>
-                        <p>You can skim the role cards and jump into the one that feels closest to your world.</p>
-                        <p>You can also scan the suggested learning paths and decide which one fits the problem you are trying to solve right now.</p>
+        <!-- Role Detail Sections -->
+        <section id="role-details" class="sh-role-details">
+            <div class="sh-role-details-container">
 
-                        <div class="sh-path-points">
-                            <h4>The paths are short on purpose. Each one points to:</h4>
-                            <ul>
-                                <li>A high level "what is this?" page.</li>
-                                <li>One loop or stage page that matches your role.</li>
-                                <li>One practical page to help you act, not just understand.</li>
-                            </ul>
+                <!-- CEO Detail -->
+                <div id="detail-ceo" class="sh-role-detail">
+                    <div class="sh-role-detail-header">
+                        <h2 class="sh-role-detail-title">For CEOs, Founders, And Owners</h2>
+                        <p class="sh-role-detail-tagline">You care about revenue that is healthy, predictable, and human.</p>
+                    </div>
+
+                    <div class="sh-role-detail-intro">
+                        <p>You want marketing, sales, service, and ops to stop pulling against each other. You want fewer surprises, clearer dashboards, and a way to talk about the whole system without drowning in jargon.</p>
+                        <p>The Loop Revenue System gives you a shared language and a simple model to rally your leaders around.</p>
+                    </div>
+
+                    <div class="sh-detail-layout">
+                        <div class="sh-quick-path">
+                            <h3 class="sh-quick-path-title">Your Quick Path</h3>
+                            <ol class="sh-path-list">
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">1</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Get the big picture</div>
+                                        <p class="sh-path-desc">Read <a href="/overview/loop-revenue-system">What Is The Loop Revenue System</a> for a clear, non technical overview.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">2</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">See how the parts connect</div>
+                                        <p class="sh-path-desc">Read <a href="/loops">Four Loops Overview</a> to understand how Marketing, Sales, Service, and Ops act as loops.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">3</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Learn the rhythm</div>
+                                        <p class="sh-path-desc">Skim <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> to see the four stage pattern that repeats in every loop.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">4</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Decide where to focus</div>
+                                        <p class="sh-path-desc">Read the loop page that matches your biggest pain:</p>
+                                        <ul class="sh-path-links">
+                                            <li><a href="/loops/sales">Pipeline and growth: Loop Sales</a></li>
+                                            <li><a href="/loops/marketing">Demand and message: Loop Marketing</a></li>
+                                            <li><a href="/loops/service">Retention and churn: Loop Service</a></li>
+                                            <li><a href="/loops/ops">Data and stack sprawl: Loop Ops</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
 
-                        <p>You do not have to be exact. If you lead more than one area, pick the path that feels most urgent, then come back for another.</p>
-                    </div>
-                    <div class="sh-quick-nav">
-                        <h4>Quick Links To Roles</h4>
-                        <ul>
-                            <li><a href="#start-here-ceo"><span class="nav-dot ceo"></span>CEO / Founder / Owner</a></li>
-                            <li><a href="#start-here-revops"><span class="nav-dot revops"></span>RevOps / Revenue Operations</a></li>
-                            <li><a href="#start-here-marketing"><span class="nav-dot marketing"></span>Marketing Leaders And Teams</a></li>
-                            <li><a href="#start-here-sales"><span class="nav-dot sales"></span>Sales Leaders And Teams</a></li>
-                            <li><a href="#start-here-service"><span class="nav-dot service"></span>Service / CX Leaders And Teams</a></li>
-                            <li><a href="#start-here-admins"><span class="nav-dot admins"></span>Admins / CRM / HubSpot Owners</a></li>
-                            <li><a href="#start-here-many-hats"><span class="nav-dot manyhats"></span>I Wear Many Hats</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Role Sections -->
-        <section class="sh-roles">
-            <div class="container">
-                <div class="sh-roles-intro">
-                    <h2>Find Your Role Below</h2>
-                    <p>Each card includes your quick path and your first move to get started</p>
-                </div>
-
-                <!-- CEO Section -->
-                <div id="start-here-ceo" class="sh-role-section">
-                    <div class="sh-role-card" data-role="ceo">
-                        <div class="sh-role-sidebar">
-                            <div class="sh-role-icon">&#128188;</div>
-                            <h2>For CEOs, Founders, And Owners</h2>
-                            <p class="sh-role-tagline">You care about revenue that is healthy, predictable, and human.</p>
-                        </div>
-                        <div class="sh-role-main">
-                            <div class="sh-role-intro-text">
-                                <p>You want marketing, sales, service, and ops to stop pulling against each other. You want fewer surprises, clearer dashboards, and a way to talk about the whole system without drowning in jargon.</p>
-                                <p>The Loop Revenue System gives you a shared language and a simple model to rally your leaders around.</p>
-                            </div>
-                            <div class="sh-path-section">
-                                <h3>Your Quick Path</h3>
-                                <ol class="sh-path-list">
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Get the big picture:</strong>
-                                            <span>Read <a href="/overview/loop-revenue-system">What Is The Loop Revenue System</a> for a clear, non technical overview.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>See how the parts connect:</strong>
-                                            <span>Read <a href="/loops/four-loops">Four Loops Overview</a> to understand how Marketing, Sales, Service, and Ops act as loops.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Learn the rhythm:</strong>
-                                            <span>Skim <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> to see the four stage pattern that repeats in every loop.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Decide where to focus:</strong>
-                                            <p>Read the loop page that matches your biggest pain:</p>
-                                            <ul>
-                                                <li>Pipeline and growth: <a href="/loops/sales">Loop Sales</a></li>
-                                                <li>Demand and message: <a href="/loops/marketing">Loop Marketing</a></li>
-                                                <li>Retention and churn: <a href="/loops/service">Loop Service</a></li>
-                                                <li>Data and stack sprawl: <a href="/loops/ops">Loop Ops</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="sh-first-move">
-                                <h3>Your First Move</h3>
+                        <div class="sh-first-move">
+                            <h3 class="sh-first-move-title">Your First Move</h3>
+                            <div class="sh-first-move-content">
                                 <p>Ask your leadership team one question in your next meeting:</p>
                                 <p><em>"If we had to pick one loop and one stage to improve this quarter, which would do the most to help our customers and our revenue flourish?"</em></p>
                                 <p>Write down the answer. Then use the <a href="/playbooks/system">System Playbooks</a> page to choose one small play in that loop and stage.</p>
                             </div>
                         </div>
                     </div>
+
+                    <a href="#" class="sh-back-link" onclick="clearRole(); return false;">Choose a different role</a>
                 </div>
 
-                <!-- RevOps Section -->
-                <div id="start-here-revops" class="sh-role-section">
-                    <div class="sh-role-card reverse" data-role="revops">
-                        <div class="sh-role-sidebar">
-                            <div class="sh-role-icon">&#9881;</div>
-                            <h2>For RevOps And Revenue Operations Leaders</h2>
-                            <p class="sh-role-tagline">You sit in the middle of everything.</p>
+                <!-- RevOps Detail -->
+                <div id="detail-revops" class="sh-role-detail">
+                    <div class="sh-role-detail-header">
+                        <h2 class="sh-role-detail-title">For RevOps And Revenue Operations Leaders</h2>
+                        <p class="sh-role-detail-tagline">You sit in the middle of everything.</p>
+                    </div>
+
+                    <div class="sh-role-detail-intro">
+                        <p>People bring you problems that sound like "the CRM is wrong," "we need a new tool," or "we can not see what is happening." You want a way to design the system with intent, not just react to tickets.</p>
+                        <p>The Loop Revenue System gives you a blueprint for process, data, and tooling across the whole revenue engine.</p>
+                    </div>
+
+                    <div class="sh-detail-layout">
+                        <div class="sh-quick-path">
+                            <h3 class="sh-quick-path-title">Your Quick Path</h3>
+                            <ol class="sh-path-list">
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">1</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Anchor in the model</div>
+                                        <p class="sh-path-desc">Read <a href="/loops">Four Loops Overview</a> to see the loops you support.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">2</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">See your loop</div>
+                                        <p class="sh-path-desc">Read <a href="/loops/ops">Loop Ops</a> with a pen in hand. Mark everywhere you recognize your day to day reality.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">3</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Understand the stages</div>
+                                        <p class="sh-path-desc">Read <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and note which stage your current projects support.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">4</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Connect to systems</div>
+                                        <p class="sh-path-desc">Depending on your stack, go to:</p>
+                                        <ul class="sh-path-links">
+                                            <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
+                                            <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">5</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Tighten the foundation</div>
+                                        <p class="sh-path-desc">Read <a href="/overview/data-metrics-governance">Data, Metrics, And Governance</a> for guardrails you can apply.</p>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
-                        <div class="sh-role-main">
-                            <div class="sh-role-intro-text">
-                                <p>People bring you problems that sound like "the CRM is wrong," "we need a new tool," or "we can not see what is happening." You want a way to design the system with intent, not just react to tickets.</p>
-                                <p>The Loop Revenue System gives you a blueprint for process, data, and tooling across the whole revenue engine.</p>
-                            </div>
-                            <div class="sh-path-section">
-                                <h3>Your Quick Path</h3>
-                                <ol class="sh-path-list">
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Anchor in the model:</strong>
-                                            <span>Read <a href="/loops/four-loops">Four Loops Overview</a> to see the loops you support.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>See your loop:</strong>
-                                            <span>Read <a href="/loops/ops">Loop Ops</a> with a pen in hand. Mark everywhere you recognize your day to day reality.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Understand the stages:</strong>
-                                            <span>Read <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and note which stage your current projects support.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Connect to systems:</strong>
-                                            <p>Depending on your stack, go to:</p>
-                                            <ul>
-                                                <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
-                                                <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Tighten the foundation:</strong>
-                                            <span>Read <a href="/overview/data-metrics-governance">Data, Metrics, And Governance</a> for guardrails you can apply.</span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="sh-first-move">
-                                <h3>Your First Move</h3>
+
+                        <div class="sh-first-move">
+                            <h3 class="sh-first-move-title">Your First Move</h3>
+                            <div class="sh-first-move-content">
                                 <p>Pick one flow to clean up, such as inbound leads or closed won to onboarding.</p>
                                 <p>Map it against the four stages in a quick doc. Then open <a href="/playbooks/system">System Playbooks</a> and choose one play in Express and one in Tailor for that flow.</p>
                                 <p>Use that to define your next small project instead of another random "CRM fix."</p>
                             </div>
                         </div>
                     </div>
+
+                    <a href="#" class="sh-back-link" onclick="clearRole(); return false;">Choose a different role</a>
                 </div>
 
-                <!-- Marketing Section -->
-                <div id="start-here-marketing" class="sh-role-section">
-                    <div class="sh-role-card" data-role="marketing">
-                        <div class="sh-role-sidebar">
-                            <div class="sh-role-icon">&#128226;</div>
-                            <h2>For Marketing Leaders And Teams</h2>
-                            <p class="sh-role-tagline">You are the voice and signal of the business.</p>
+                <!-- Marketing Detail -->
+                <div id="detail-marketing" class="sh-role-detail">
+                    <div class="sh-role-detail-header">
+                        <h2 class="sh-role-detail-title">For Marketing Leaders And Teams</h2>
+                        <p class="sh-role-detail-tagline">You are the voice and signal of the business.</p>
+                    </div>
+
+                    <div class="sh-role-detail-intro">
+                        <p>You juggle campaigns, content, channels, and requests from every direction. You want your work to feel connected, not scattered. You want clear handoffs with sales and honest expectations for service.</p>
+                        <p>The Loop Revenue System helps you treat marketing as a loop that learns, instead of a campaign calendar that never ends.</p>
+                    </div>
+
+                    <div class="sh-detail-layout">
+                        <div class="sh-quick-path">
+                            <h3 class="sh-quick-path-title">Your Quick Path</h3>
+                            <ol class="sh-path-list">
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">1</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Get the system view</div>
+                                        <p class="sh-path-desc">Read <a href="/loops">Four Loops Overview</a> to see how marketing feeds and learns from other loops.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">2</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Go deep on your loop</div>
+                                        <p class="sh-path-desc">Read <a href="/loops/marketing">Loop Marketing</a> slowly. This is your home base.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">3</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Learn the stages in your context</div>
+                                        <p class="sh-path-desc">Revisit <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and connect each stage to your current work.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">4</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Turn ideas into plays</div>
+                                        <p class="sh-path-desc">Go to <a href="/playbooks/system">System Playbooks</a> and focus first on the Express and Tailor plays for Loop Marketing.</p>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
-                        <div class="sh-role-main">
-                            <div class="sh-role-intro-text">
-                                <p>You juggle campaigns, content, channels, and requests from every direction. You want your work to feel connected, not scattered. You want clear handoffs with sales and honest expectations for service.</p>
-                                <p>The Loop Revenue System helps you treat marketing as a loop that learns, instead of a campaign calendar that never ends.</p>
-                            </div>
-                            <div class="sh-path-section">
-                                <h3>Your Quick Path</h3>
-                                <ol class="sh-path-list">
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Get the system view:</strong>
-                                            <span>Read <a href="/loops/four-loops">Four Loops Overview</a> to see how marketing feeds and learns from other loops.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Go deep on your loop:</strong>
-                                            <span>Read <a href="/loops/marketing">Loop Marketing</a> slowly. This is your home base.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Learn the stages in your context:</strong>
-                                            <span>Revisit <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and connect each stage to your current work.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Turn ideas into plays:</strong>
-                                            <span>Go to <a href="/playbooks/system">System Playbooks</a> and focus first on the Express and Tailor plays for Loop Marketing.</span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="sh-first-move">
-                                <h3>Your First Move</h3>
+
+                        <div class="sh-first-move">
+                            <h3 class="sh-first-move-title">Your First Move</h3>
+                            <div class="sh-first-move-content">
                                 <p>Choose one audience you care about.</p>
                                 <p>Use the Express and Tailor sections of <a href="/loops/marketing">Loop Marketing</a> to write a one page brief that describes:</p>
                                 <p>Who they are. What they are trying to solve. What you want to express to them right now.</p>
@@ -1300,52 +905,60 @@
                             </div>
                         </div>
                     </div>
+
+                    <a href="#" class="sh-back-link" onclick="clearRole(); return false;">Choose a different role</a>
                 </div>
 
-                <!-- Sales Section -->
-                <div id="start-here-sales" class="sh-role-section">
-                    <div class="sh-role-card reverse" data-role="sales">
-                        <div class="sh-role-sidebar">
-                            <div class="sh-role-icon">&#128200;</div>
-                            <h2>For Sales Leaders And Teams</h2>
-                            <p class="sh-role-tagline">You live where decisions are made.</p>
+                <!-- Sales Detail -->
+                <div id="detail-sales" class="sh-role-detail">
+                    <div class="sh-role-detail-header">
+                        <h2 class="sh-role-detail-title">For Sales Leaders And Teams</h2>
+                        <p class="sh-role-detail-tagline">You live where decisions are made.</p>
+                    </div>
+
+                    <div class="sh-role-detail-intro">
+                        <p>You feel pressure from every side: more pipeline, better win rates, shorter cycles. You want to spend more time helping good fit buyers, less time wrestling tools or chasing noise leads.</p>
+                        <p>The Loop Revenue System helps you see sales as a repeatable learning loop, not a series of unrelated deals.</p>
+                    </div>
+
+                    <div class="sh-detail-layout">
+                        <div class="sh-quick-path">
+                            <h3 class="sh-quick-path-title">Your Quick Path</h3>
+                            <ol class="sh-path-list">
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">1</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">See your place in the system</div>
+                                        <p class="sh-path-desc">Read <a href="/loops">Four Loops Overview</a> to understand how sales depends on marketing, service, and ops.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">2</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Go deep on your loop</div>
+                                        <p class="sh-path-desc">Read <a href="/loops/sales">Loop Sales</a> and note where your current process matches or fights this picture.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">3</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Learn the stages from a sales angle</div>
+                                        <p class="sh-path-desc">Skim <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> with "our sales motion" in mind.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">4</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Turn that into action</div>
+                                        <p class="sh-path-desc">On <a href="/playbooks/system">System Playbooks</a>, focus first on Express and Tailor plays for Loop Sales.</p>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
-                        <div class="sh-role-main">
-                            <div class="sh-role-intro-text">
-                                <p>You feel pressure from every side: more pipeline, better win rates, shorter cycles. You want to spend more time helping good fit buyers, less time wrestling tools or chasing noise leads.</p>
-                                <p>The Loop Revenue System helps you see sales as a repeatable learning loop, not a series of unrelated deals.</p>
-                            </div>
-                            <div class="sh-path-section">
-                                <h3>Your Quick Path</h3>
-                                <ol class="sh-path-list">
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>See your place in the system:</strong>
-                                            <span>Read <a href="/loops/four-loops">Four Loops Overview</a> to understand how sales depends on marketing, service, and ops.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Go deep on your loop:</strong>
-                                            <span>Read <a href="/loops/sales">Loop Sales</a> and note where your current process matches or fights this picture.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Learn the stages from a sales angle:</strong>
-                                            <span>Skim <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> with "our sales motion" in mind.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Turn that into action:</strong>
-                                            <span>On <a href="/playbooks/system">System Playbooks</a>, focus first on Express and Tailor plays for Loop Sales.</span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="sh-first-move">
-                                <h3>Your First Move</h3>
+
+                        <div class="sh-first-move">
+                            <h3 class="sh-first-move-title">Your First Move</h3>
+                            <div class="sh-first-move-content">
                                 <p>Pick one segment or deal type where you want better outcomes.</p>
                                 <p>Use the Express section of <a href="/loops/sales">Loop Sales</a> to clarify what "good fit" looks like there. Then change one thing:</p>
                                 <p>Your entry criteria for that stage. Your discovery questions. Or your reason codes in the CRM.</p>
@@ -1353,52 +966,60 @@
                             </div>
                         </div>
                     </div>
+
+                    <a href="#" class="sh-back-link" onclick="clearRole(); return false;">Choose a different role</a>
                 </div>
 
-                <!-- Service Section -->
-                <div id="start-here-service" class="sh-role-section">
-                    <div class="sh-role-card" data-role="service">
-                        <div class="sh-role-sidebar">
-                            <div class="sh-role-icon">&#128591;</div>
-                            <h2>For Service And Customer Experience Leaders</h2>
-                            <p class="sh-role-tagline">You live closest to the customer's real experience.</p>
+                <!-- Service Detail -->
+                <div id="detail-service" class="sh-role-detail">
+                    <div class="sh-role-detail-header">
+                        <h2 class="sh-role-detail-title">For Service And Customer Experience Leaders</h2>
+                        <p class="sh-role-detail-tagline">You live closest to the customer's real experience.</p>
+                    </div>
+
+                    <div class="sh-role-detail-intro">
+                        <p>You see where promises match reality and where they do not. You handle tension when things go wrong. You want fewer avoidable issues, better handoffs, and more time for meaningful work.</p>
+                        <p>The Loop Revenue System helps you turn support and success into a loop of learning that feeds the whole business.</p>
+                    </div>
+
+                    <div class="sh-detail-layout">
+                        <div class="sh-quick-path">
+                            <h3 class="sh-quick-path-title">Your Quick Path</h3>
+                            <ol class="sh-path-list">
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">1</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">See the system's back half</div>
+                                        <p class="sh-path-desc">Read <a href="/loops">Four Loops Overview</a> and pay special attention to how Loop Service connects to marketing, sales, and ops.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">2</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Deep dive on your loop</div>
+                                        <p class="sh-path-desc">Read <a href="/loops/service">Loop Service</a> and compare it to how your team operates today.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">3</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Add the stage lens</div>
+                                        <p class="sh-path-desc">Review <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and jot down examples of each stage in your current service motion.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">4</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Move toward playbooks</div>
+                                        <p class="sh-path-desc">On <a href="/playbooks/system">System Playbooks</a>, focus on Tailor and Amplify plays for Loop Service first.</p>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
-                        <div class="sh-role-main">
-                            <div class="sh-role-intro-text">
-                                <p>You see where promises match reality and where they do not. You handle tension when things go wrong. You want fewer avoidable issues, better handoffs, and more time for meaningful work.</p>
-                                <p>The Loop Revenue System helps you turn support and success into a loop of learning that feeds the whole business.</p>
-                            </div>
-                            <div class="sh-path-section">
-                                <h3>Your Quick Path</h3>
-                                <ol class="sh-path-list">
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>See the system's back half:</strong>
-                                            <span>Read <a href="/loops/four-loops">Four Loops Overview</a> and pay special attention to how Loop Service connects to marketing, sales, and ops.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Deep dive on your loop:</strong>
-                                            <span>Read <a href="/loops/service">Loop Service</a> and compare it to how your team operates today.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Add the stage lens:</strong>
-                                            <span>Review <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and jot down examples of each stage in your current service motion.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Move toward playbooks:</strong>
-                                            <span>On <a href="/playbooks/system">System Playbooks</a>, focus on Tailor and Amplify plays for Loop Service first.</span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="sh-first-move">
-                                <h3>Your First Move</h3>
+
+                        <div class="sh-first-move">
+                            <h3 class="sh-first-move-title">Your First Move</h3>
+                            <div class="sh-first-move-content">
                                 <p>Pick one recurring customer issue.</p>
                                 <p>Use the Tailor and Amplify sections of <a href="/loops/service">Loop Service</a> to ask:</p>
                                 <p>Are we tailoring how we respond based on who this affects? Have we amplified a good answer into a reusable resource?</p>
@@ -1406,56 +1027,64 @@
                             </div>
                         </div>
                     </div>
+
+                    <a href="#" class="sh-back-link" onclick="clearRole(); return false;">Choose a different role</a>
                 </div>
 
-                <!-- Admins Section -->
-                <div id="start-here-admins" class="sh-role-section">
-                    <div class="sh-role-card reverse" data-role="admins">
-                        <div class="sh-role-sidebar">
-                            <div class="sh-role-icon">&#128295;</div>
-                            <h2>For Admins, CRM Owners, And HubSpot Super Admins</h2>
-                            <p class="sh-role-tagline">You are the quiet backbone.</p>
+                <!-- Admins Detail -->
+                <div id="detail-admins" class="sh-role-detail">
+                    <div class="sh-role-detail-header">
+                        <h2 class="sh-role-detail-title">For Admins, CRM Owners, And HubSpot Super Admins</h2>
+                        <p class="sh-role-detail-tagline">You are the quiet backbone.</p>
+                    </div>
+
+                    <div class="sh-role-detail-intro">
+                        <p>People come to you when fields are missing, workflows misfire, or reports do not add up. You want fewer random requests, more clear requirements, and a way to design the system instead of only patching it.</p>
+                        <p>The Loop Revenue System helps you connect technical work to business outcomes across loops and stages.</p>
+                    </div>
+
+                    <div class="sh-detail-layout">
+                        <div class="sh-quick-path">
+                            <h3 class="sh-quick-path-title">Your Quick Path</h3>
+                            <ol class="sh-path-list">
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">1</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Understand the loops you support</div>
+                                        <p class="sh-path-desc">Read <a href="/loops">Four Loops Overview</a> to see the big picture.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">2</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">See your loop</div>
+                                        <p class="sh-path-desc">Read <a href="/loops/ops">Loop Ops</a> through the lens of your admin work.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">3</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Connect to tools</div>
+                                        <p class="sh-path-desc">Depending on your stack, go to:</p>
+                                        <ul class="sh-path-links">
+                                            <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
+                                            <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">4</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Anchor in governance</div>
+                                        <p class="sh-path-desc">Read <a href="/overview/data-metrics-governance">Data, Metrics, And Governance</a> and note what you already do and what is missing.</p>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
-                        <div class="sh-role-main">
-                            <div class="sh-role-intro-text">
-                                <p>People come to you when fields are missing, workflows misfire, or reports do not add up. You want fewer random requests, more clear requirements, and a way to design the system instead of only patching it.</p>
-                                <p>The Loop Revenue System helps you connect technical work to business outcomes across loops and stages.</p>
-                            </div>
-                            <div class="sh-path-section">
-                                <h3>Your Quick Path</h3>
-                                <ol class="sh-path-list">
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Understand the loops you support:</strong>
-                                            <span>Read <a href="/loops/four-loops">Four Loops Overview</a> to see the big picture.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>See your loop:</strong>
-                                            <span>Read <a href="/loops/ops">Loop Ops</a> through the lens of your admin work.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Connect to tools:</strong>
-                                            <p>Depending on your stack, go to:</p>
-                                            <ul>
-                                                <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
-                                                <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Anchor in governance:</strong>
-                                            <span>Read <a href="/overview/data-metrics-governance">Data, Metrics, And Governance</a> and note what you already do and what is missing.</span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="sh-first-move">
-                                <h3>Your First Move</h3>
+
+                        <div class="sh-first-move">
+                            <h3 class="sh-first-move-title">Your First Move</h3>
+                            <div class="sh-first-move-content">
                                 <p>Pick one area where people constantly ask you for manual fixes, such as lead routing, data cleaning, or reporting.</p>
                                 <p>Use <a href="/playbooks/system">System Playbooks</a> and <a href="/loops/ops">Loop Ops</a> to ask:</p>
                                 <p>Which loop and stage does this really belong to? What small change in Express, Tailor, or Amplify could prevent these tickets?</p>
@@ -1463,89 +1092,100 @@
                             </div>
                         </div>
                     </div>
+
+                    <a href="#" class="sh-back-link" onclick="clearRole(); return false;">Choose a different role</a>
                 </div>
 
-                <!-- Many Hats Section -->
-                <div id="start-here-many-hats" class="sh-role-section">
-                    <div class="sh-role-card" data-role="many-hats">
-                        <div class="sh-role-sidebar">
-                            <div class="sh-role-icon">&#127913;</div>
-                            <h2>For "I Wear Many Hats" Roles</h2>
-                            <p class="sh-role-tagline">You might be the owner, marketer, seller, and support rep, all before lunch.</p>
+                <!-- Many Hats Detail -->
+                <div id="detail-many-hats" class="sh-role-detail">
+                    <div class="sh-role-detail-header">
+                        <h2 class="sh-role-detail-title">For "I Wear Many Hats" Roles</h2>
+                        <p class="sh-role-detail-tagline">You might be the owner, marketer, seller, and support rep, all before lunch.</p>
+                    </div>
+
+                    <div class="sh-role-detail-intro">
+                        <p>You do not have time for complex frameworks. You want a simple way to see your revenue engine and make better choices with the time and tools you already have.</p>
+                        <p>The Loop Revenue System can help you without adding layers of complexity.</p>
+                    </div>
+
+                    <div class="sh-detail-layout">
+                        <div class="sh-quick-path">
+                            <h3 class="sh-quick-path-title">Your Quick Path</h3>
+                            <ol class="sh-path-list">
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">1</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Get the simplest picture</div>
+                                        <p class="sh-path-desc">Read <a href="/overview/loop-revenue-system">What Is The Loop Revenue System</a> and stop there for a moment.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">2</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Learn the stages in simple terms</div>
+                                        <p class="sh-path-desc">Read <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and think about how each stage shows up in your week.</p>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">3</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Choose one primary loop</div>
+                                        <p class="sh-path-desc">Right now, what matters most?</p>
+                                        <ul class="sh-path-links">
+                                            <li><a href="/loops/marketing">Getting more of the right people to you: Loop Marketing</a></li>
+                                            <li><a href="/loops/sales">Closing more good fit deals: Loop Sales</a></li>
+                                            <li><a href="/loops/service">Keeping customers happy and around: Loop Service</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sh-path-item">
+                                    <span class="sh-path-number">4</span>
+                                    <div class="sh-path-content">
+                                        <div class="sh-path-label">Find one play you can actually run</div>
+                                        <p class="sh-path-desc">Go to <a href="/playbooks/system">System Playbooks</a> and choose a single play that feels light enough to start this month.</p>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
-                        <div class="sh-role-main">
-                            <div class="sh-role-intro-text">
-                                <p>You do not have time for complex frameworks. You want a simple way to see your revenue engine and make better choices with the time and tools you already have.</p>
-                                <p>The Loop Revenue System can help you without adding layers of complexity.</p>
-                            </div>
-                            <div class="sh-path-section">
-                                <h3>Your Quick Path</h3>
-                                <ol class="sh-path-list">
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Get the simplest picture:</strong>
-                                            <span>Read <a href="/overview/loop-revenue-system">What Is The Loop Revenue System</a> and stop there for a moment.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Learn the stages in simple terms:</strong>
-                                            <span>Read <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and think about how each stage shows up in your week.</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Choose one primary loop:</strong>
-                                            <p>Right now, what matters most?</p>
-                                            <ul>
-                                                <li>Getting more of the right people to you: <a href="/loops/marketing">Loop Marketing</a></li>
-                                                <li>Closing more good fit deals: <a href="/loops/sales">Loop Sales</a></li>
-                                                <li>Keeping customers happy and around: <a href="/loops/service">Loop Service</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="path-content">
-                                            <strong>Find one play you can actually run:</strong>
-                                            <span>Go to <a href="/playbooks/system">System Playbooks</a> and choose a single play that feels light enough to start this month.</span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="sh-first-move">
-                                <h3>Your First Move</h3>
+
+                        <div class="sh-first-move">
+                            <h3 class="sh-first-move-title">Your First Move</h3>
+                            <div class="sh-first-move-content">
                                 <p>Write down your answer to two questions:</p>
                                 <p><em>Which loop is my biggest lever right now?</em><br><em>Which stage feels the most broken or unclear?</em></p>
                                 <p>That is your starting point. Pick one play that matches it. Run it in a small way. You can come back for more once you see the first bit of progress.</p>
                             </div>
                         </div>
                     </div>
+
+                    <a href="#" class="sh-back-link" onclick="clearRole(); return false;">Choose a different role</a>
                 </div>
+
             </div>
         </section>
 
-        <!-- Wrap Up Section -->
-        <section class="sh-wrapup">
-            <div class="container">
-                <div class="sh-wrapup-header">
-                    <h2>Your Next Step From Here</h2>
-                    <p>You do not need to memorize the whole Loop Revenue System to start using it. Pick one of these paths now.</p>
+        <!-- Bottom Navigation Section -->
+        <section class="sh-navigation">
+            <div class="sh-navigation-container">
+                <div class="sh-navigation-header">
+                    <h2 class="sh-navigation-title">Your Next Step From Here</h2>
+                    <p class="sh-navigation-subtitle">You do not need to memorize the whole Loop Revenue System to start using it. Pick one of these paths now.</p>
                 </div>
 
                 <div class="sh-paths-grid">
                     <div class="sh-path-card">
                         <div class="sh-path-card-icon">&#128218;</div>
-                        <h4>Understand The Model</h4>
-                        <ul>
+                        <h3 class="sh-path-card-title">Understand The Model</h3>
+                        <ul class="sh-path-card-links">
                             <li><a href="/overview/loop-revenue-system">What Is The Loop Revenue System</a></li>
-                            <li><a href="/loops/four-loops">Four Loops Overview</a></li>
+                            <li><a href="/loops">Four Loops Overview</a></li>
                             <li><a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a></li>
                         </ul>
                     </div>
                     <div class="sh-path-card">
                         <div class="sh-path-card-icon">&#128736;</div>
-                        <h4>Design Or Clean Up Your System</h4>
-                        <ul>
+                        <h3 class="sh-path-card-title">Design Or Clean Up Your System</h3>
+                        <ul class="sh-path-card-links">
                             <li><a href="/overview/data-metrics-governance">Data, Metrics, And Governance</a></li>
                             <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
                             <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
@@ -1553,8 +1193,8 @@
                     </div>
                     <div class="sh-path-card">
                         <div class="sh-path-card-icon">&#128640;</div>
-                        <h4>Act With Your Team</h4>
-                        <ul>
+                        <h3 class="sh-path-card-title">Act With Your Team</h3>
+                        <ul class="sh-path-card-links">
                             <li><a href="/playbooks/system">System Playbooks</a></li>
                             <li><a href="/resources/templates-checklists">Templates And Checklists</a></li>
                             <li><a href="/resources/workshops-exercises">Workshops And Exercises</a></li>
@@ -1563,13 +1203,13 @@
                 </div>
 
                 <div class="sh-final-cta">
-                    <h4>Last Thought</h4>
-                    <div class="cta-choices">
-                        <span class="choice">Choose one loop.</span>
-                        <span class="choice">Choose one stage.</span>
-                        <span class="choice">Choose one play.</span>
+                    <div class="sh-final-cta-label">Last Thought</div>
+                    <div class="sh-choices">
+                        <span class="sh-choice">Choose one loop.</span>
+                        <span class="sh-choice">Choose one stage.</span>
+                        <span class="sh-choice">Choose one play.</span>
                     </div>
-                    <p>Run it. Learn from it. Then let that learning guide what you do next, so your team, your customers, and your revenue can all move toward something that feels a lot more like flourishing.</p>
+                    <p class="sh-final-text">Run it. Learn from it. Then let that learning guide what you do next, so your team, your customers, and your revenue can all move toward something that feels a lot more like flourishing.</p>
                 </div>
             </div>
         </section>
@@ -1648,5 +1288,76 @@
     </footer>
 
     <script src="/src/js/main.js"></script>
+    <script>
+        // Role selection functionality
+        function selectRole(role) {
+            // Remove active state from all cards
+            document.querySelectorAll('.sh-role-card').forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Add active state to selected card
+            const selectedCard = document.querySelector(`[data-role="${role}"]`);
+            if (selectedCard) {
+                selectedCard.classList.add('active');
+            }
+
+            // Hide all detail sections
+            document.querySelectorAll('.sh-role-detail').forEach(detail => {
+                detail.classList.remove('active');
+            });
+
+            // Show selected detail
+            const detail = document.getElementById(`detail-${role}`);
+            if (detail) {
+                detail.classList.add('active');
+                // Scroll to detail section
+                setTimeout(() => {
+                    document.getElementById('role-details').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            }
+        }
+
+        function clearRole() {
+            // Remove active state from all cards
+            document.querySelectorAll('.sh-role-card').forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Hide all detail sections
+            document.querySelectorAll('.sh-role-detail').forEach(detail => {
+                detail.classList.remove('active');
+            });
+
+            // Scroll back to role grid
+            document.querySelector('.sh-roles-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Check for hash on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const roleMap = {
+                    '#start-here-ceo': 'ceo',
+                    '#start-here-revops': 'revops',
+                    '#start-here-marketing': 'marketing',
+                    '#start-here-sales': 'sales',
+                    '#start-here-service': 'service',
+                    '#start-here-admins': 'admins',
+                    '#start-here-many-hats': 'many-hats'
+                };
+                const role = roleMap[hash];
+                if (role) {
+                    setTimeout(() => selectRole(role), 300);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
