@@ -26,12 +26,18 @@ export default async function EditPagePage({
   }
 
   // Transform page data for the editor
+  // sections is stored as an array: [{ type: 'content', body: '...' }]
+  const sectionsArray = page.sections as Array<{ type?: string; body?: string }> | null
+  const bodyContent = sectionsArray && sectionsArray.length > 0 && sectionsArray[0]?.body
+    ? sectionsArray[0].body
+    : ''
+
   const pageData = {
     id: page.id,
     slug: page.slug,
     title: page.title,
     description: page.description,
-    body: (page.sections as unknown as { body?: string })?.body || '',
+    body: bodyContent,
     status: page.status,
     showInMainNav: page.showInMainNav,
     showInFooterNav: page.showInFooterNav,
