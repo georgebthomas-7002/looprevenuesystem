@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import { getPageBySlug } from '@/lib/content/queries'
-import { SectionRenderer } from '@/components/blocks/SectionRenderer'
 import { JsonLd, generateWebPageSchema, generateOrganizationSchema } from '@/lib/seo'
 import { generateMetadata as genMeta } from '@/lib/seo/metadata'
-import type { Section } from '@/lib/content/sections'
 import type { Metadata } from 'next'
 import { cn } from '@/lib/utils/cn'
 
@@ -481,11 +479,8 @@ function DefaultHomePage() {
 
 export default async function HomePage() {
   // Try to fetch home page from CMS (slug is empty string for home)
+  // We only use CMS for SEO metadata - the home page always renders designed components
   const page = await getPageBySlug('')
-
-  // If page has sections from CMS, use those; otherwise use default
-  const hasCmsContent = page?.sections && Array.isArray(page.sections) && page.sections.length > 0
-  const sections = hasCmsContent ? (page.sections as unknown as Section[]) : null
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://looprevenuesystem.com'
 
@@ -503,7 +498,8 @@ export default async function HomePage() {
           }),
         ]}
       />
-      {sections ? <SectionRenderer sections={sections} /> : <DefaultHomePage />}
+      {/* Home page always uses designed components - CMS sections are ignored */}
+      <DefaultHomePage />
     </>
   )
 }
