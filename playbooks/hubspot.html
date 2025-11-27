@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HubSpot Implementation - Coming Soon">
+    <meta name="description" content="HubSpot Implementation - Use HubSpot to support your loops with clear mapping of loops and stages to HubSpot hubs, objects, and tools.">
     <title>HubSpot Implementation - Loop Revenue System</title>
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
@@ -58,28 +58,447 @@
             </nav>
         </div>
     </header>
+
     <main>
-        <section class="coming-soon-hero">
-            <div class="coming-soon-container">
-                <div class="coming-soon-visual">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="hsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#028393;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#3D5A80;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="100" cy="100" r="60" fill="url(#hsGrad)" opacity="0.3"/>
-                        <path d="M 70 100 L 90 120 L 130 80" stroke="#028393" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+        <!-- Hero Section -->
+        <section class="ds-hero">
+            <div class="container">
+                <div class="ds-grid-asymmetric">
+                    <div class="ds-hero-content">
+                        <h1>HubSpot Implementation For The Loop Revenue System</h1>
+                        <h2>Use HubSpot To Support Your Loops, Not Replace Your System</h2>
+                        <div class="ds-hero-text">
+                            <p>The Loop Revenue System gives you the model. HubSpot gives you a place to run it.</p>
+                            <p>This page will not sell you on HubSpot. It assumes you already use HubSpot or you are seriously considering it. Our goal here is simple. Show you how to map the Loop Revenue System into HubSpot in a way that is clear, practical, and safe.</p>
+                            <p>You will see how loops and stages line up with hubs, objects, and tools. You will see a simple implementation roadmap. You will also see common pitfalls so you can avoid turning a powerful platform into a messy maze.</p>
+                            <p style="font-weight: 500;">Keep this in mind as you read: the system comes first. HubSpot exists to help that system come to life.</p>
+                        </div>
+                    </div>
+                    <div class="ds-hero-visual">
+                        <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Central loop connection -->
+                            <circle cx="140" cy="100" r="60" fill="none" stroke="#98C1D9" stroke-width="2" stroke-dasharray="8,4"/>
+
+                            <!-- Contacts -->
+                            <circle cx="70" cy="60" r="25" fill="rgba(2,131,147,0.1)" stroke="#028393" stroke-width="2"/>
+                            <text x="70" y="58" text-anchor="middle" fill="#028393" font-size="8" font-weight="600">Contacts</text>
+                            <text x="70" y="68" text-anchor="middle" fill="#028393" font-size="7">People</text>
+
+                            <!-- Deals -->
+                            <circle cx="210" cy="60" r="25" fill="rgba(246,86,37,0.1)" stroke="#f65625" stroke-width="2"/>
+                            <text x="210" y="58" text-anchor="middle" fill="#f65625" font-size="8" font-weight="600">Deals</text>
+                            <text x="210" y="68" text-anchor="middle" fill="#f65625" font-size="7">Sales</text>
+
+                            <!-- Tickets -->
+                            <circle cx="210" cy="140" r="25" fill="rgba(250,170,104,0.1)" stroke="#faaa68" stroke-width="2"/>
+                            <text x="210" y="138" text-anchor="middle" fill="#faaa68" font-size="8" font-weight="600">Tickets</text>
+                            <text x="210" y="148" text-anchor="middle" fill="#faaa68" font-size="7">Service</text>
+
+                            <!-- Companies -->
+                            <circle cx="70" cy="140" r="25" fill="rgba(61,90,128,0.1)" stroke="#3D5A80" stroke-width="2"/>
+                            <text x="70" y="138" text-anchor="middle" fill="#3D5A80" font-size="8" font-weight="600">Companies</text>
+                            <text x="70" y="148" text-anchor="middle" fill="#3D5A80" font-size="7">Accounts</text>
+
+                            <!-- Center label -->
+                            <circle cx="140" cy="100" r="22" fill="#028393"/>
+                            <text x="140" y="97" text-anchor="middle" fill="white" font-size="7" font-weight="600">HubSpot</text>
+                            <text x="140" y="107" text-anchor="middle" fill="white" font-size="6">CRM</text>
+
+                            <!-- Connection lines -->
+                            <line x1="95" y1="70" x2="118" y2="90" stroke="#98C1D9" stroke-width="1.5"/>
+                            <line x1="185" y1="70" x2="162" y2="90" stroke="#98C1D9" stroke-width="1.5"/>
+                            <line x1="185" y1="130" x2="162" y2="110" stroke="#98C1D9" stroke-width="1.5"/>
+                            <line x1="95" y1="130" x2="118" y2="110" stroke="#98C1D9" stroke-width="1.5"/>
+                        </svg>
+                    </div>
                 </div>
-                <h1 class="coming-soon-title">HubSpot Implementation</h1>
-                <p class="coming-soon-subtitle">Built on HubSpot. Powered by the Loop.</p>
-                <p class="coming-soon-text">Learn how to implement the Loop Revenue System using HubSpot as your foundation, with guidance on portal setup, workflows, properties, and integration.</p>
-                <a href="/" class="btn btn-primary">Return Home</a>
+            </div>
+        </section>
+
+        <!-- HubSpot's Role Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>HubSpot's Role In The Loop Revenue System</h2>
+                    <p>HubSpot is a platform. The Loop Revenue System is a way of working.</p>
+                </div>
+
+                <p>The model tells you to treat revenue as four loops that share four stages. The system playbooks tell you what to do at each stage. HubSpot is where you store the data, run the workflows, send the emails, log the calls, and see the results.</p>
+                <p>That means you do not start your design with "What can HubSpot do?"<br>
+                You start with "What should our loops and stages do?"</p>
+                <p>Then you ask, "Which HubSpot tools can support that?"</p>
+
+                <div class="ds-callout">
+                    <h4>System vs Platform</h4>
+                    <p>Used this way, HubSpot becomes: the shared CRM where contacts, companies, deals, tickets, and custom objects live; the marketing engine for content, email, forms, and nurture; the sales workspace for deals, sequences, calls, and tasks; the service console for tickets, knowledge base, and customer communications; and the operations layer for data quality, integrations, workflows, and reporting.</p>
+                </div>
+
+                <p>Used any other way, you risk building clever automation on top of a fuzzy system.</p>
+            </div>
+        </section>
+
+        <!-- Building Blocks Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Core HubSpot Building Blocks For The Loops</h2>
+                    <p>Before you plug loops and stages into HubSpot, it helps to see the main pieces.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-card">
+                        <h4>Core CRM Objects</h4>
+                        <ul>
+                            <li>Contacts (people)</li>
+                            <li>Companies (accounts or organizations)</li>
+                            <li>Deals (opportunities)</li>
+                            <li>Tickets (support and service work)</li>
+                            <li>Custom objects (subscriptions, locations, assets)</li>
+                        </ul>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Key Structural Elements</h4>
+                        <ul>
+                            <li>Properties (fields)</li>
+                            <li>Pipelines and stages (deals, tickets, custom objects)</li>
+                            <li>Lists and segments</li>
+                            <li>Teams, users, and permissions</li>
+                        </ul>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Automation And Engagement Tools</h4>
+                        <ul>
+                            <li>Workflows</li>
+                            <li>Sequences</li>
+                            <li>Forms and CTAs</li>
+                            <li>Marketing emails and campaigns</li>
+                            <li>Playbooks and task queues</li>
+                            <li>Inbox, chat, and calling</li>
+                        </ul>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Reporting And Operations Tools</h4>
+                        <ul>
+                            <li>Dashboards and reports</li>
+                            <li>Data quality tools</li>
+                            <li>Integration settings and data sync</li>
+                            <li>Web analytics and events</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="ds-mt-2">You do not need all of this on day one. You do need to know that these are the Lego bricks you will use to build each loop and stage.</p>
+            </div>
+        </section>
+
+        <!-- Mapping Loops to Hubs Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Mapping Loops To HubSpot Hubs</h2>
+                    <p>Loop Marketing, Loop Sales, Loop Service, and Loop Ops all live inside the same CRM. Each loop leans on a different set of hubs and tools.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-card-featured marketing">
+                        <h3>Loop Marketing In HubSpot</h3>
+                        <p>Loop Marketing primarily uses:</p>
+                        <ul>
+                            <li>Marketing Hub and Content/CMS tools</li>
+                            <li>Contacts, companies, and lists for audiences</li>
+                            <li>Forms, CTAs, landing pages, and website pages</li>
+                            <li>Marketing emails, campaigns, and ads</li>
+                            <li>Workflows for nurture and lifecycle movement</li>
+                            <li>Reports for performance by source, segment, and asset</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #666;">Your Express work shows up in positioning, content pillars, and lifecycle definitions. Tailor shows up in segments, smart content, and nurture flows. Amplify shows up in multi-channel campaigns and repurposed content. Evolve shows up in your reports, experiments, and changes to assets and flows.</p>
+                    </div>
+
+                    <div class="ds-card-featured sales">
+                        <h3>Loop Sales In HubSpot</h3>
+                        <p>Loop Sales primarily uses:</p>
+                        <ul>
+                            <li>Sales Hub</li>
+                            <li>Contacts, companies, and deals in pipelines</li>
+                            <li>Sequences, tasks, and calling</li>
+                            <li>Playbooks and deal views</li>
+                            <li>Documents and quotes</li>
+                            <li>Reports for pipeline, win rate, and cycles</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #666;">Express work shows up in deal stages, properties, and playbooks. Tailor appears in custom views, sequences, and notes. Amplify appears in shared templates and playbooks. Evolve appears in win loss reporting and pipeline analysis.</p>
+                    </div>
+
+                    <div class="ds-card-featured service">
+                        <h3>Loop Service In HubSpot</h3>
+                        <p>Loop Service primarily uses:</p>
+                        <ul>
+                            <li>Service Hub</li>
+                            <li>Tickets and ticket pipelines</li>
+                            <li>Inbox, chat, and calling</li>
+                            <li>Knowledge base</li>
+                            <li>Customer feedback tools</li>
+                            <li>Reports for ticket volume, response times, and customer outcomes</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #666;">Express work appears in ticket categories, SLAs, and service journeys. Tailor appears in contextual views and routing. Amplify appears in knowledge base and canned replies linked to real answers. Evolve appears in feedback analysis and changes to product and process.</p>
+                    </div>
+
+                    <div class="ds-card-featured ops">
+                        <h3>Loop Ops In HubSpot</h3>
+                        <p>Loop Ops primarily uses:</p>
+                        <ul>
+                            <li>Operations Hub</li>
+                            <li>CRM settings for objects, properties, and pipelines</li>
+                            <li>Data quality tools and property validation</li>
+                            <li>Workflows and data automation</li>
+                            <li>Integrations and data sync</li>
+                            <li>Dashboards and cross loop reporting</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #666;">Express work appears in lifecycle design and data model. Tailor appears in property configuration, routing rules, and permissions. Amplify appears in re-usable workflows and integrations. Evolve appears in how you maintain, simplify, and adjust the system over time.</p>
+                    </div>
+                </div>
+
+                <p class="ds-mt-2">You can run all of this with a single Super Admin, but it works far better when each loop has clear operational partners.</p>
+            </div>
+        </section>
+
+        <!-- Mapping Stages Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Mapping Stages To HubSpot</h2>
+                    <p>The four stages show up inside HubSpot in predictable ways.</p>
+                </div>
+
+                <div class="ds-stage-card express ds-mb-2">
+                    <h3>Express In HubSpot</h3>
+                    <p>Express is about definitions. In HubSpot, Express work includes:</p>
+                    <ul>
+                        <li>Defining lifecycle stages and lead statuses</li>
+                        <li>Designing deal and ticket pipelines with clear stage criteria</li>
+                        <li>Agreeing on core properties for ICP, segments, and product fit</li>
+                        <li>Setting naming conventions for campaigns, workflows, and reports</li>
+                        <li>Creating shared playbooks for discovery, onboarding, and support</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666;">This is the architecture that everything else relies on.</p>
+                </div>
+
+                <div class="ds-stage-card tailor ds-mb-2">
+                    <h3>Tailor In HubSpot</h3>
+                    <p>Tailor is about context and segmentation. In HubSpot, Tailor work includes:</p>
+                    <ul>
+                        <li>Building active lists for meaningful segments (industry, role, behavior)</li>
+                        <li>Using rules for lead scoring and routing that match your system</li>
+                        <li>Configuring smart content on pages and emails</li>
+                        <li>Creating role based views for sales and service teams</li>
+                        <li>Using personalization tokens where they actually help</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666;">Tailor is where you turn generic flows into journeys that feel human.</p>
+                </div>
+
+                <div class="ds-stage-card amplify ds-mb-2">
+                    <h3>Amplify In HubSpot</h3>
+                    <p>Amplify is about scale. In HubSpot, Amplify work includes:</p>
+                    <ul>
+                        <li>Setting up nurture workflows and lifecycle updates</li>
+                        <li>Running multi channel campaigns with shared goals and tracking</li>
+                        <li>Rolling out sequences, templates, and playbooks across teams</li>
+                        <li>Automating manual steps like task creation, notifications, and field updates</li>
+                        <li>Integrating tools so data and actions stay in sync</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666;">Amplify is where you let the system handle what humans should not have to do manually.</p>
+                </div>
+
+                <div class="ds-stage-card evolve">
+                    <h3>Evolve In HubSpot</h3>
+                    <p>Evolve is about learning. In HubSpot, Evolve work includes:</p>
+                    <ul>
+                        <li>Building dashboards that show loop and stage health, not just isolated metrics</li>
+                        <li>Running controlled experiments with content, sequences, and workflows</li>
+                        <li>Reviewing win loss reports, ticket categories, and customer feedback</li>
+                        <li>Tracking data quality and adoption over time</li>
+                        <li>Retiring unused fields, workflows, and assets</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666;">Evolve is where you make sure your HubSpot portal does not become a museum of old ideas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Roadmap Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>A Simple HubSpot Implementation Roadmap For The Loops</h2>
+                    <p>You can apply the Loop Revenue System with HubSpot in many ways. This is a simple, practical path.</p>
+                </div>
+
+                <div class="ds-numbered-list">
+                    <li>
+                        <div class="list-content">
+                            <strong>Phase 1 - Foundations</strong>
+                            <p>Focus on:</p>
+                            <ul style="margin: 0.5rem 0 0 1.25rem;">
+                                <li>Cleaning and deduplicating contacts and companies.</li>
+                                <li>Defining lifecycle stages that match your loops.</li>
+                                <li>Designing core deal and ticket pipelines.</li>
+                                <li>Standardizing a small set of critical properties (ICP, segment, product, status).</li>
+                                <li>Setting up basic dashboards for each loop and for leadership.</li>
+                            </ul>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">At this stage, you treat HubSpot as a shared source of truth. You are not racing to automate everything yet.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Phase 2 - Stage Based Configuration</strong>
+                            <p>Once the foundation is stable, run small projects by stage.</p>
+                            <p><strong>For Express:</strong> Align lifecycle, stages, and core properties with your Express decisions. Build playbooks and templates that reflect your messaging and process.</p>
+                            <p><strong>For Tailor:</strong> Configure key segments and routing rules. Create smart content in a few high impact places. Build role based views for reps and agents.</p>
+                            <p><strong>For Amplify:</strong> Add nurture workflows and sequences where you see repeatable patterns. Repurpose strong content across channels in Marketing Hub. Automate routine assignments and updates for deals and tickets.</p>
+                            <p><strong>For Evolve:</strong> Tune dashboards so they reflect loop and stage metrics. Build simple reports for experiments and win loss tracking. Start a small backlog of system changes driven by data and feedback.</p>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">You do not need to touch every loop at once. Pick the one that will unlock the most value.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Phase 3 - Experiments And Governance</strong>
+                            <p>As the basics settle, shift into a steady rhythm.</p>
+                            <ul style="margin: 0.5rem 0 0 1.25rem;">
+                                <li>Run experiments inside HubSpot using the System Playbooks.</li>
+                                <li>Keep a shared change backlog tied to loops and stages.</li>
+                                <li>Hold regular reviews where you look at dashboards and decide which changes to make.</li>
+                                <li>Retire or simplify workflows, properties, and assets that no longer fit the design.</li>
+                            </ul>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">The goal is not a "finished implementation." The goal is a live system that keeps learning.</p>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>HubSpot AI Inside A Hybrid Loop Team</h2>
+                    <p>HubSpot has built in AI capabilities that fit naturally into the Loop Revenue System, as long as you keep humans in charge.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar">
+                            <h3>AI Can Assist When You</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Draft marketing copy from an existing Express brief or content pillar.</li>
+                                <li>Summarize sales and service notes so the next person sees the story fast.</li>
+                                <li>Suggest subject lines, snippets, or call notes.</li>
+                                <li>Flag anomalies in performance, like sudden drops in engagement or spikes in tickets.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar blue">
+                            <h3>Humans Must Lead When You</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Decide what your loops and stages are trying to achieve.</li>
+                                <li>Choose what data is fair and ethical to use for personalization.</li>
+                                <li>Approve or edit AI generated content that faces customers.</li>
+                                <li>Decide how to respond when AI surfaces patterns or risks.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="ds-mt-2" style="font-weight: 600;">Treat HubSpot AI as an extra set of hands, not an extra brain. The system and its values still come from your team.</p>
+            </div>
+        </section>
+
+        <!-- Governance Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Governance And Common Pitfalls In A HubSpot Portal</h2>
+                    <p>HubSpot can support a beautiful system. It can also magnify chaos if you skip governance.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-highlight-box">
+                        <h4>Helpful Habits</h4>
+                        <ul>
+                            <li>One clear owner for CRM architecture and data quality.</li>
+                            <li>Documented rules for new properties, pipelines, and workflows.</li>
+                            <li>Regular portal cleanups where you retire unused assets.</li>
+                            <li>Shared dashboards for leadership and loops, not private, conflicting views.</li>
+                            <li>Simple training for new team members on how to use HubSpot inside the loops.</li>
+                        </ul>
+                    </div>
+                    <div class="ds-highlight-box orange">
+                        <h4>Common Pitfalls</h4>
+                        <ul>
+                            <li>Letting every team create its own lifecycle and pipelines without alignment.</li>
+                            <li>Adding fields for every new idea and never removing old ones.</li>
+                            <li>Building workflows without clear owners or success metrics.</li>
+                            <li>Allowing too many Super Admins without clear responsibilities.</li>
+                            <li>Treating HubSpot as "the project" instead of part of a larger system.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="ds-mt-2"><strong>A good rule:</strong> if people say "we do not trust our HubSpot data," the problem is governance, not just tools.</p>
+            </div>
+        </section>
+
+        <!-- No HubSpot Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>How This Relates To The "No HubSpot" Path</h2>
+                    <p>The Loop Revenue System works with or without HubSpot.</p>
+                </div>
+
+                <p>This page focuses on "with HubSpot" because many teams want concrete help mapping loops and stages into a specific platform. The principles stay the same if you use another CRM, service desk, or marketing platform.</p>
+                <p>If you do not use HubSpot yet, or use HubSpot for only one part of your stack, or want to see how the system looks in a more tool agnostic way, use the companion page:</p>
+
+                <div class="ds-callout ds-mt-2 ds-mb-2">
+                    <h4>Not Using HubSpot?</h4>
+                    <p>You can move between these paths as your stack changes. The model does not change. Only the implementation details do.</p>
+                    <a href="/playbooks/no-hubspot" class="btn btn-secondary">View No HubSpot Implementation</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps Section -->
+        <section class="ds-cta-banner">
+            <div class="container">
+                <h2>Where To Go Next</h2>
+                <p>If you are using HubSpot today, you already have part of the puzzle. Now you can decide how intentional you want to be.</p>
+
+                <div class="ds-grid-3 ds-mt-2">
+                    <div class="ds-card">
+                        <h4>System Playbooks</h4>
+                        <p>Get concrete plays to run inside HubSpot by stage and loop.</p>
+                        <a href="/playbooks/system" class="btn btn-primary">View Playbooks</a>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Data, Metrics & Governance</h4>
+                        <p>Design HubSpot with better data, metrics, and change habits.</p>
+                        <a href="/overview/data-metrics-governance" class="btn btn-secondary">View Guide</a>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Templates & Resources</h4>
+                        <p>Practical tools to support your HubSpot work.</p>
+                        <a href="/resources/templates-checklists" class="btn btn-secondary">View Resources</a>
+                    </div>
+                </div>
+
+                <p class="ds-mt-3 ds-text-center" style="font-size: 1.1rem; font-weight: 500;">Choose one loop, one stage, and one part of HubSpot to improve. Make a small change. Watch what happens. Let that learning guide the next move.</p>
+                <p class="ds-text-center" style="margin-top: 1rem;">The more your HubSpot portal reflects the Loop Revenue System, the easier it becomes for your whole organization to act like one connected revenue team, built to help your customers and your business flourish.</p>
             </div>
         </section>
     </main>
+
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2024 Loop Revenue System. All rights reserved.</p>

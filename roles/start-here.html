@@ -8,21 +8,981 @@
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
     <link rel="stylesheet" href="/src/css/styles.css">
+    <style>
+        /* =============================================
+           START HERE PAGE - WORLD-CLASS REDESIGN
+           ============================================= */
+
+        /* Hero Section */
+        .sh-hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--brand-navy) 0%, #1a3a6e 50%, var(--brand-teal) 100%);
+            overflow: hidden;
+        }
+
+        .sh-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(2, 131, 147, 0.3) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .sh-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, #fff 0%, transparent 100%);
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        .sh-hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .sh-hero-text {
+            color: white;
+        }
+
+        .sh-hero-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sh-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .sh-hero h2 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            color: var(--brand-light-blue);
+        }
+
+        .sh-hero-intro {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .sh-questions {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .sh-questions span {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .sh-questions span::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--brand-peach);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .sh-hero-note {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-top: 1.5rem;
+        }
+
+        /* Role Wheel */
+        .sh-role-wheel {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sh-wheel-container {
+            position: relative;
+            width: 420px;
+            height: 420px;
+        }
+
+        .sh-wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .sh-wheel-center span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-navy);
+            font-weight: 600;
+        }
+
+        .sh-wheel-center strong {
+            font-size: 2rem;
+            color: var(--brand-teal);
+            font-weight: 700;
+        }
+
+        .sh-role-item {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            border: 3px solid transparent;
+        }
+
+        .sh-role-item:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        .sh-role-item .role-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .sh-role-item .role-name {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+            padding: 0 0.5rem;
+        }
+
+        /* Position roles in a circle */
+        .sh-role-item:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); border-color: var(--brand-teal); }
+        .sh-role-item:nth-child(2) { top: 12%; right: 5%; border-color: var(--brand-blue); }
+        .sh-role-item:nth-child(3) { top: 50%; right: -8%; transform: translateY(-50%); border-color: var(--brand-teal); }
+        .sh-role-item:nth-child(4) { bottom: 12%; right: 5%; border-color: var(--brand-orange); }
+        .sh-role-item:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); border-color: var(--brand-peach); }
+        .sh-role-item:nth-child(6) { bottom: 12%; left: 5%; border-color: var(--brand-blue); }
+        .sh-role-item:nth-child(7) { top: 50%; left: -8%; transform: translateY(-50%); border-color: var(--brand-light-blue); }
+
+        .sh-role-item:nth-child(1):hover { transform: translateX(-50%) scale(1.15); }
+        .sh-role-item:nth-child(3):hover { transform: translateY(-50%) scale(1.15); }
+        .sh-role-item:nth-child(5):hover { transform: translateX(-50%) scale(1.15); }
+        .sh-role-item:nth-child(7):hover { transform: translateY(-50%) scale(1.15); }
+
+        /* How To Use Section */
+        .sh-howto {
+            padding: 6rem 0;
+            background: #fff;
+            position: relative;
+        }
+
+        .sh-section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .sh-section-header h2 {
+            font-size: 2.5rem;
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+        }
+
+        .sh-section-header p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .sh-howto-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .sh-howto-content h3 {
+            font-size: 1.4rem;
+            color: var(--brand-navy);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .sh-howto-content h3::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--brand-teal);
+            border-radius: 2px;
+        }
+
+        .sh-howto-content p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .sh-path-points {
+            background: linear-gradient(135deg, var(--brand-cyan) 0%, #f0fafa 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--brand-teal);
+        }
+
+        .sh-path-points h4 {
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .sh-path-points ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sh-path-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .sh-path-points li::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: var(--brand-teal);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+            background-size: 14px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Quick Links Sidebar */
+        .sh-quick-nav {
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 10px 50px rgba(20, 45, 99, 0.1);
+            border: 1px solid rgba(152, 193, 217, 0.3);
+        }
+
+        .sh-quick-nav h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-teal);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--brand-cyan);
+        }
+
+        .sh-quick-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sh-quick-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sh-quick-nav a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            color: var(--brand-navy);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .sh-quick-nav a:hover {
+            background: var(--brand-cyan);
+            color: var(--brand-teal);
+            transform: translateX(4px);
+        }
+
+        .sh-quick-nav .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .sh-quick-nav .nav-dot.ceo { background: var(--brand-teal); }
+        .sh-quick-nav .nav-dot.revops { background: var(--brand-blue); }
+        .sh-quick-nav .nav-dot.marketing { background: var(--brand-teal); }
+        .sh-quick-nav .nav-dot.sales { background: var(--brand-orange); }
+        .sh-quick-nav .nav-dot.service { background: var(--brand-peach); }
+        .sh-quick-nav .nav-dot.admins { background: var(--brand-blue); }
+        .sh-quick-nav .nav-dot.manyhats { background: var(--brand-light-blue); }
+
+        /* Role Sections */
+        .sh-roles {
+            background: linear-gradient(180deg, #fff 0%, var(--brand-cyan) 100%);
+            padding: 2rem 0 6rem;
+        }
+
+        .sh-roles-intro {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .sh-roles-intro h2 {
+            font-size: 2.5rem;
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+        }
+
+        .sh-roles-intro p {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sh-role-section {
+            padding: 3rem 0;
+        }
+
+        .sh-role-card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(20, 45, 99, 0.12);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 500px;
+        }
+
+        .sh-role-card.reverse {
+            grid-template-columns: 1fr 280px;
+        }
+
+        .sh-role-sidebar {
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .sh-role-card[data-role="ceo"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-teal) 0%, #026d7a 100%); }
+        .sh-role-card[data-role="revops"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-blue) 0%, #2d4660 100%); }
+        .sh-role-card[data-role="marketing"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-teal) 0%, #026d7a 100%); }
+        .sh-role-card[data-role="sales"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-orange) 0%, #d44a20 100%); }
+        .sh-role-card[data-role="service"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-peach) 0%, #e8954f 100%); }
+        .sh-role-card[data-role="admins"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-blue) 0%, #2d4660 100%); }
+        .sh-role-card[data-role="many-hats"] .sh-role-sidebar { background: linear-gradient(180deg, var(--brand-light-blue) 0%, #7aafc9 100%); }
+
+        .sh-role-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .sh-role-sidebar h2 {
+            color: white;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .sh-role-tagline {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .sh-role-main {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sh-role-card.reverse .sh-role-sidebar {
+            order: 2;
+        }
+
+        .sh-role-intro-text {
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sh-role-intro-text p {
+            margin-bottom: 0.75rem;
+        }
+
+        .sh-role-intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .sh-path-section h3 {
+            font-size: 1.15rem;
+            color: var(--brand-navy);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sh-path-section h3::before {
+            content: '';
+            width: 20px;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        .sh-role-card[data-role="ceo"] .sh-path-section h3::before { background: var(--brand-teal); }
+        .sh-role-card[data-role="revops"] .sh-path-section h3::before { background: var(--brand-blue); }
+        .sh-role-card[data-role="marketing"] .sh-path-section h3::before { background: var(--brand-teal); }
+        .sh-role-card[data-role="sales"] .sh-path-section h3::before { background: var(--brand-orange); }
+        .sh-role-card[data-role="service"] .sh-path-section h3::before { background: var(--brand-peach); }
+        .sh-role-card[data-role="admins"] .sh-path-section h3::before { background: var(--brand-blue); }
+        .sh-role-card[data-role="many-hats"] .sh-path-section h3::before { background: var(--brand-light-blue); }
+
+        .sh-path-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+            counter-reset: path-counter;
+        }
+
+        .sh-path-list > li {
+            counter-increment: path-counter;
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+        }
+
+        .sh-path-list > li:last-child {
+            border-bottom: none;
+        }
+
+        .sh-path-list > li::before {
+            content: counter(path-counter);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            color: white;
+        }
+
+        .sh-role-card[data-role="ceo"] .sh-path-list > li::before { background: var(--brand-teal); }
+        .sh-role-card[data-role="revops"] .sh-path-list > li::before { background: var(--brand-blue); }
+        .sh-role-card[data-role="marketing"] .sh-path-list > li::before { background: var(--brand-teal); }
+        .sh-role-card[data-role="sales"] .sh-path-list > li::before { background: var(--brand-orange); }
+        .sh-role-card[data-role="service"] .sh-path-list > li::before { background: var(--brand-peach); }
+        .sh-role-card[data-role="admins"] .sh-path-list > li::before { background: var(--brand-blue); }
+        .sh-role-card[data-role="many-hats"] .sh-path-list > li::before { background: var(--brand-light-blue); }
+
+        .sh-path-list .path-content {
+            flex: 1;
+        }
+
+        .sh-path-list .path-content strong {
+            color: var(--brand-navy);
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .sh-path-list .path-content span,
+        .sh-path-list .path-content p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .sh-path-list .path-content a {
+            color: var(--brand-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sh-path-list .path-content a:hover {
+            text-decoration: underline;
+        }
+
+        .sh-path-list .path-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0;
+        }
+
+        .sh-path-list .path-content ul li {
+            padding: 0.3rem 0;
+            padding-left: 1rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .sh-path-list .path-content ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--brand-teal);
+        }
+
+        /* First Move Box */
+        .sh-first-move {
+            margin-top: auto;
+            border-radius: 20px;
+            padding: 1.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sh-role-card[data-role="ceo"] .sh-first-move { background: linear-gradient(135deg, rgba(2, 131, 147, 0.1) 0%, rgba(2, 131, 147, 0.05) 100%); border: 1px solid rgba(2, 131, 147, 0.2); }
+        .sh-role-card[data-role="revops"] .sh-first-move { background: linear-gradient(135deg, rgba(61, 90, 128, 0.1) 0%, rgba(61, 90, 128, 0.05) 100%); border: 1px solid rgba(61, 90, 128, 0.2); }
+        .sh-role-card[data-role="marketing"] .sh-first-move { background: linear-gradient(135deg, rgba(2, 131, 147, 0.1) 0%, rgba(2, 131, 147, 0.05) 100%); border: 1px solid rgba(2, 131, 147, 0.2); }
+        .sh-role-card[data-role="sales"] .sh-first-move { background: linear-gradient(135deg, rgba(246, 86, 37, 0.1) 0%, rgba(246, 86, 37, 0.05) 100%); border: 1px solid rgba(246, 86, 37, 0.2); }
+        .sh-role-card[data-role="service"] .sh-first-move { background: linear-gradient(135deg, rgba(250, 170, 104, 0.15) 0%, rgba(250, 170, 104, 0.05) 100%); border: 1px solid rgba(250, 170, 104, 0.3); }
+        .sh-role-card[data-role="admins"] .sh-first-move { background: linear-gradient(135deg, rgba(61, 90, 128, 0.1) 0%, rgba(61, 90, 128, 0.05) 100%); border: 1px solid rgba(61, 90, 128, 0.2); }
+        .sh-role-card[data-role="many-hats"] .sh-first-move { background: linear-gradient(135deg, rgba(152, 193, 217, 0.2) 0%, rgba(152, 193, 217, 0.05) 100%); border: 1px solid rgba(152, 193, 217, 0.3); }
+
+        .sh-first-move h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sh-role-card[data-role="ceo"] .sh-first-move h3 { color: var(--brand-teal); }
+        .sh-role-card[data-role="revops"] .sh-first-move h3 { color: var(--brand-blue); }
+        .sh-role-card[data-role="marketing"] .sh-first-move h3 { color: var(--brand-teal); }
+        .sh-role-card[data-role="sales"] .sh-first-move h3 { color: var(--brand-orange); }
+        .sh-role-card[data-role="service"] .sh-first-move h3 { color: #c47f3a; }
+        .sh-role-card[data-role="admins"] .sh-first-move h3 { color: var(--brand-blue); }
+        .sh-role-card[data-role="many-hats"] .sh-first-move h3 { color: var(--brand-blue); }
+
+        .sh-first-move h3::before {
+            content: '→';
+            font-size: 1.2rem;
+        }
+
+        .sh-first-move p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .sh-first-move p:last-child {
+            margin-bottom: 0;
+        }
+
+        .sh-first-move em {
+            color: var(--brand-navy);
+            font-style: italic;
+        }
+
+        .sh-first-move a {
+            color: var(--brand-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sh-first-move a:hover {
+            text-decoration: underline;
+        }
+
+        /* Wrap Up Section */
+        .sh-wrapup {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .sh-wrapup-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .sh-wrapup-header h2 {
+            font-size: 2.5rem;
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+        }
+
+        .sh-wrapup-header p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .sh-paths-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .sh-path-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(20, 45, 99, 0.08);
+            border: 1px solid rgba(152, 193, 217, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .sh-path-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(20, 45, 99, 0.12);
+        }
+
+        .sh-path-card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sh-path-card:nth-child(1) .sh-path-card-icon { background: linear-gradient(135deg, var(--brand-teal) 0%, #026d7a 100%); }
+        .sh-path-card:nth-child(2) .sh-path-card-icon { background: linear-gradient(135deg, var(--brand-blue) 0%, #2d4660 100%); }
+        .sh-path-card:nth-child(3) .sh-path-card-icon { background: linear-gradient(135deg, var(--brand-orange) 0%, #d44a20 100%); }
+
+        .sh-path-card h4 {
+            font-size: 1.2rem;
+            color: var(--brand-navy);
+            margin-bottom: 1.25rem;
+        }
+
+        .sh-path-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sh-path-card ul li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .sh-path-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .sh-path-card ul li a {
+            color: var(--brand-teal);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .sh-path-card ul li a::before {
+            content: '→';
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.2s ease;
+        }
+
+        .sh-path-card ul li a:hover {
+            color: var(--brand-navy);
+        }
+
+        .sh-path-card ul li a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Final CTA */
+        .sh-final-cta {
+            background: linear-gradient(135deg, var(--brand-navy) 0%, #1a3a6e 50%, var(--brand-teal) 100%);
+            border-radius: 32px;
+            padding: 4rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sh-final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .sh-final-cta h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .sh-final-cta .cta-choices {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .sh-final-cta .choice {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.25rem 2rem;
+            border-radius: 16px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sh-final-cta p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sh-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .sh-wheel-container {
+                width: 350px;
+                height: 350px;
+            }
+
+            .sh-role-item {
+                width: 90px;
+                height: 90px;
+            }
+
+            .sh-role-item .role-icon {
+                font-size: 1.5rem;
+            }
+
+            .sh-role-item .role-name {
+                font-size: 0.6rem;
+            }
+
+            .sh-role-card {
+                grid-template-columns: 1fr;
+            }
+
+            .sh-role-card.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .sh-role-sidebar {
+                padding: 2.5rem;
+            }
+
+            .sh-role-card.reverse .sh-role-sidebar {
+                order: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sh-hero {
+                min-height: auto;
+                padding: 3rem 0 6rem;
+            }
+
+            .sh-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .sh-hero h2 {
+                font-size: 1.25rem;
+            }
+
+            .sh-wheel-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .sh-wheel-center {
+                width: 100px;
+                height: 100px;
+            }
+
+            .sh-wheel-center strong {
+                font-size: 1.5rem;
+            }
+
+            .sh-role-item {
+                width: 70px;
+                height: 70px;
+            }
+
+            .sh-role-item .role-icon {
+                font-size: 1.25rem;
+                margin-bottom: 0;
+            }
+
+            .sh-role-item .role-name {
+                font-size: 0.5rem;
+            }
+
+            .sh-howto-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sh-quick-nav {
+                position: static;
+            }
+
+            .sh-paths-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sh-final-cta {
+                padding: 3rem 2rem;
+            }
+
+            .sh-final-cta .cta-choices {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
         <div class="container">
             <nav class="nav">
-                <div class="logo"><a href="/"><img src="/src/images/logo/Loop-Revenue-System-Logo-400.png" alt="Loop Revenue System" /></a></div>
+                <div class="logo">
+                    <a href="/">
+                        <img src="/src/images/logo/Loop-Revenue-System-Logo-400.png" alt="Loop Revenue System" />
+                    </a>
+                </div>
                 <ul class="nav-menu">
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Overview</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Overview</a>
                         <ul class="dropdown-menu">
                             <li><a href="/overview/loop-revenue-system">What Is the Loop Revenue System</a></li>
                             <li><a href="/overview/stages">Stages: Express, Tailor, Amplify, Evolve</a></li>
                             <li><a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="/loops" class="dropdown-toggle">Loops</a>
+                    <li class="dropdown">
+                        <a href="/loops" class="dropdown-toggle">Loops</a>
                         <ul class="dropdown-menu">
                             <li><a href="/loops">Four Loops Overview</a></li>
                             <li><a href="/loops/marketing">Loop Marketing</a></li>
@@ -31,7 +991,8 @@
                             <li><a href="/loops/ops">Loop Ops</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Playbooks</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Playbooks</a>
                         <ul class="dropdown-menu">
                             <li><a href="/playbooks/system">System Playbooks</a></li>
                             <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
@@ -39,13 +1000,15 @@
                             <li><a href="/playbooks/ai-and-humans">AI and Humans</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Roles</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Roles</a>
                         <ul class="dropdown-menu">
                             <li><a href="/roles/start-here">Start Here</a></li>
                             <li><a href="/roles/leadership-revops">Leadership and RevOps</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Resources</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Resources</a>
                         <ul class="dropdown-menu">
                             <li><a href="/resources/templates-checklists">Templates and Checklists</a></li>
                             <li><a href="/resources/prompts-workflows">Prompts and Workflows</a></li>
@@ -462,13 +1425,76 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2024 Loop Revenue System. All rights reserved.</p>
-            <p style="margin-top: 0.5rem;">
-                <a href="/privacy" style="color: var(--brand-light-blue); margin: 0 1rem;">Privacy Policy</a>
-                <a href="/terms" style="color: var(--brand-light-blue); margin: 0 1rem;">Terms of Use</a>
-            </p>
+            <div class="footer-grid">
+                <div class="footer-cta">
+                    <h3>Ready to build your Loop Revenue System?</h3>
+                    <p>Start with the model or jump straight to your role-based path.</p>
+                    <div class="footer-buttons">
+                        <a href="/overview/loop-revenue-system" class="btn btn-primary">Learn the Model</a>
+                        <a href="/roles/start-here" class="btn btn-secondary">Start Here</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Overview</h4>
+                        <ul>
+                            <li><a href="/overview/loop-revenue-system">What Is the Loop Revenue System</a></li>
+                            <li><a href="/overview/stages">Stages: Express, Tailor, Amplify, Evolve</a></li>
+                            <li><a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>The Four Loops</h4>
+                        <ul>
+                            <li><a href="/loops">Four Loops Overview</a></li>
+                            <li><a href="/loops/marketing">Loop Marketing</a></li>
+                            <li><a href="/loops/sales">Loop Sales</a></li>
+                            <li><a href="/loops/service">Loop Service</a></li>
+                            <li><a href="/loops/ops">Loop Ops</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Playbooks</h4>
+                        <ul>
+                            <li><a href="/playbooks/system">System Playbooks</a></li>
+                            <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
+                            <li><a href="/playbooks/no-hubspot">No HubSpot Implementation</a></li>
+                            <li><a href="/playbooks/ai-and-humans">AI and Humans</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>By Role</h4>
+                        <ul>
+                            <li><a href="/roles/start-here">Start Here</a></li>
+                            <li><a href="/roles/leadership-revops">Leadership and RevOps</a></li>
+                        </ul>
+                        <h4 style="margin-top: 2rem;">Resources</h4>
+                        <ul>
+                            <li><a href="/resources/templates-checklists">Templates and Checklists</a></li>
+                            <li><a href="/resources/prompts-workflows">Prompts and Workflows</a></li>
+                            <li><a href="/resources/case-studies">Case Studies</a></li>
+                            <li><a href="/resources/faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <a href="/">
+                        <img src="/src/images/logo/Loop-Revenue-logo-white.png" alt="Loop Revenue System" />
+                    </a>
+                </div>
+                <p class="footer-tagline">One system. Four loops. Continuous learning.</p>
+                <p class="footer-copyright">&copy; 2024 Loop Revenue System. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="/terms">Terms of Use</a>
+                </div>
+            </div>
         </div>
     </footer>
+
     <script src="/src/js/main.js"></script>
 </body>
 </html>

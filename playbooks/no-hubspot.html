@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="No HubSpot Implementation - Coming Soon">
+    <meta name="description" content="Implementing the Loop Revenue System without HubSpot - Make your existing stack act like one looped system with any CRM, marketing, sales, and service tools.">
     <title>No HubSpot Implementation - Loop Revenue System</title>
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
@@ -58,22 +58,441 @@
             </nav>
         </div>
     </header>
+
     <main>
-        <section class="coming-soon-hero">
-            <div class="coming-soon-container">
-                <div class="coming-soon-visual">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="60" y="60" width="80" height="80" fill="none" stroke="#3D5A80" stroke-width="6" opacity="0.5" rx="8"/>
-                        <circle cx="100" cy="100" r="25" fill="#028393" opacity="0.6"/>
-                    </svg>
+        <!-- Hero Section -->
+        <section class="ds-hero">
+            <div class="container">
+                <div class="ds-grid-asymmetric">
+                    <div class="ds-hero-content">
+                        <h1>Implementing The Loop Revenue System Without HubSpot</h1>
+                        <h2>Make Your Existing Stack Act Like One Looped System</h2>
+                        <div class="ds-hero-text">
+                            <p>You do not need HubSpot to use the Loop Revenue System.</p>
+                            <p>You might have a different CRM, a separate marketing platform, a help desk, a sales engagement tool, and a pile of spreadsheets. That is normal. This page is here to help you turn what you already have into a system that behaves like four connected loops.</p>
+                            <p>You will see how to map loops and stages to common tool types, not brand names. You will also see a simple roadmap so you can start where you are, not where some ideal stack says you should be.</p>
+                            <p style="font-weight: 500;">The goal is simple. Your tools should help your business and your customers flourish, not pull them in different directions.</p>
+                        </div>
+                    </div>
+                    <div class="ds-hero-visual">
+                        <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Central loop -->
+                            <circle cx="140" cy="100" r="50" fill="none" stroke="#98C1D9" stroke-width="2" stroke-dasharray="8,4"/>
+
+                            <!-- CRM -->
+                            <rect x="115" y="75" width="50" height="50" rx="8" fill="rgba(2,131,147,0.1)" stroke="#028393" stroke-width="2"/>
+                            <text x="140" y="97" text-anchor="middle" fill="#028393" font-size="7" font-weight="600">CRM</text>
+                            <text x="140" y="108" text-anchor="middle" fill="#028393" font-size="6">Core</text>
+
+                            <!-- Email/Marketing -->
+                            <circle cx="60" cy="60" r="22" fill="rgba(250,170,104,0.1)" stroke="#faaa68" stroke-width="2"/>
+                            <text x="60" y="58" text-anchor="middle" fill="#faaa68" font-size="6" font-weight="600">Email</text>
+                            <text x="60" y="67" text-anchor="middle" fill="#faaa68" font-size="5">Marketing</text>
+
+                            <!-- Help Desk -->
+                            <circle cx="220" cy="60" r="22" fill="rgba(61,90,128,0.1)" stroke="#3D5A80" stroke-width="2"/>
+                            <text x="220" y="58" text-anchor="middle" fill="#3D5A80" font-size="6" font-weight="600">Help</text>
+                            <text x="220" y="67" text-anchor="middle" fill="#3D5A80" font-size="5">Desk</text>
+
+                            <!-- Sales Tools -->
+                            <circle cx="60" cy="140" r="22" fill="rgba(246,86,37,0.1)" stroke="#f65625" stroke-width="2"/>
+                            <text x="60" y="138" text-anchor="middle" fill="#f65625" font-size="6" font-weight="600">Sales</text>
+                            <text x="60" y="147" text-anchor="middle" fill="#f65625" font-size="5">Tools</text>
+
+                            <!-- Integrations -->
+                            <circle cx="220" cy="140" r="22" fill="rgba(152,193,217,0.2)" stroke="#98C1D9" stroke-width="2"/>
+                            <text x="220" y="138" text-anchor="middle" fill="#3D5A80" font-size="6" font-weight="600">iPaaS</text>
+                            <text x="220" y="147" text-anchor="middle" fill="#3D5A80" font-size="5">Connect</text>
+
+                            <!-- Connection lines to center -->
+                            <line x1="82" y1="70" x2="115" y2="85" stroke="#98C1D9" stroke-width="1.5"/>
+                            <line x1="198" y1="70" x2="165" y2="85" stroke="#98C1D9" stroke-width="1.5"/>
+                            <line x1="82" y1="130" x2="115" y2="115" stroke="#98C1D9" stroke-width="1.5"/>
+                            <line x1="198" y1="130" x2="165" y2="115" stroke="#98C1D9" stroke-width="1.5"/>
+
+                            <!-- Label -->
+                            <text x="140" y="175" text-anchor="middle" fill="#142d63" font-size="8" font-weight="600">Your Stack</text>
+                        </svg>
+                    </div>
                 </div>
-                <h1 class="coming-soon-title">No HubSpot Implementation</h1>
-                <p class="coming-soon-subtitle">Loop principles. Your existing stack.</p>
-                <p class="coming-soon-text">Adapt the Loop Revenue System to work with your current tools and platforms. Discover how the four-stage framework applies beyond HubSpot.</p>
-                <a href="/" class="btn btn-primary">Return Home</a>
+            </div>
+        </section>
+
+        <!-- Role of Tools Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Tools Support The System. They Are Not The System.</h2>
+                    <p>The Loop Revenue System is a way of seeing and running your revenue engine.</p>
+                </div>
+
+                <p>It gives you four loops: marketing, sales, service, ops. It gives you four stages inside each loop: Express, Tailor, Amplify, Evolve. It gives you system playbooks and data habits.</p>
+                <p>Your tools should support that system.</p>
+                <p>So instead of asking "What can this platform do?" you start by asking:</p>
+                <ul style="margin: 1rem 0 2rem 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">What should our loops do?</li>
+                    <li style="margin-bottom: 0.5rem;">What does each stage need to accomplish?</li>
+                    <li style="margin-bottom: 0.5rem;">What data and actions need to flow between loops?</li>
+                </ul>
+                <p>Once that is clear, you look at your stack and ask "Where can this live?" and "How do these tools need to connect?"</p>
+
+                <div class="ds-callout">
+                    <h4>Model → Playbooks → Tools</h4>
+                    <p>This order matters. If you let the tools define the system, you get workflows that look impressive and feel fragile. If you let the system define the tools, you get workflows that feel simple and useful.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Building Blocks Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Core Building Blocks In A Non HubSpot Stack</h2>
+                    <p>Even without an all in one platform, most stacks share the same basic parts.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-card">
+                        <h4>Core Records</h4>
+                        <ul>
+                            <li>People (contacts, leads, users, subscribers)</li>
+                            <li>Organizations (accounts, companies, customers)</li>
+                            <li>Opportunities (deals, opportunities, quotes, pipeline items)</li>
+                            <li>Support work (tickets, cases, issues)</li>
+                            <li>Custom records (subscriptions, locations, contracts, assets)</li>
+                        </ul>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Common Tool Types</h4>
+                        <ul>
+                            <li>CRM or sales system of record</li>
+                            <li>Marketing email and automation tools</li>
+                            <li>Website and CMS</li>
+                            <li>Sales engagement, dialers, and meeting scheduling</li>
+                            <li>Help desk, ticketing, and chat</li>
+                            <li>Knowledge base or documentation tools</li>
+                            <li>Integration or automation tools (iPaaS)</li>
+                            <li>Spreadsheets and docs for manual processes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="ds-mt-2">Your job is not to replace all of these with one thing. Your job is to decide:</p>
+                <ul style="margin: 1rem 0 2rem 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">Which tool will be the main system of record for people and organizations?</li>
+                    <li style="margin-bottom: 0.5rem;">Where will we track opportunities and support work?</li>
+                    <li style="margin-bottom: 0.5rem;">Where will we manage automations and integrations?</li>
+                    <li style="margin-bottom: 0.5rem;">Where will we report on what the loops are doing?</li>
+                </ul>
+                <p>You can then plug the Loop Revenue System into those choices.</p>
+            </div>
+        </section>
+
+        <!-- Mapping Loops to Tools Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Mapping Loops To Common Tool Types</h2>
+                    <p>You can run each loop with different brands of tools. What matters is that you give each loop a clear home and a way to connect.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-card-featured marketing">
+                        <h3>Loop Marketing Without HubSpot</h3>
+                        <p>Loop Marketing usually lives across:</p>
+                        <ul>
+                            <li>Your CMS and website builder</li>
+                            <li>Your email and marketing automation tool</li>
+                            <li>Your webinar, event, or community platforms</li>
+                            <li>Your SEO and analytics tools</li>
+                            <li>Your ad platforms</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #666;">Marketing still needs the CRM to understand who it is talking to and what happens after someone engages. Connect: Website and forms → CRM contacts. Email and campaigns → CRM activities. Ad and event data → CRM campaigns or custom fields.</p>
+                    </div>
+
+                    <div class="ds-card-featured sales">
+                        <h3>Loop Sales Without HubSpot</h3>
+                        <p>Loop Sales usually lives across:</p>
+                        <ul>
+                            <li>Your CRM</li>
+                            <li>A sales engagement or outbound tool</li>
+                            <li>Your calling and meeting tools</li>
+                            <li>File sharing and proposal tools</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #666;">Sales needs to see marketing and service signals inside that CRM. Connect: Marketing email and web activity → CRM timelines. Support and usage data → account and opportunity records. Calendar and call records → CRM activities.</p>
+                    </div>
+
+                    <div class="ds-card-featured service">
+                        <h3>Loop Service Without HubSpot</h3>
+                        <p>Loop Service usually lives across:</p>
+                        <ul>
+                            <li>Your help desk or ticketing platform</li>
+                            <li>Your chat and inbox tools</li>
+                            <li>Your knowledge base or documentation system</li>
+                            <li>Sometimes your product itself for in-app support</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #666;">Service needs a link back to accounts, contacts, and deals. Connect: Tickets → CRM contacts, companies, and products. Knowledge articles → support categories or tags. Feedback and survey tools → CRM fields or a data store.</p>
+                    </div>
+
+                    <div class="ds-card-featured ops">
+                        <h3>Loop Ops Without HubSpot</h3>
+                        <p>Loop Ops usually lives across:</p>
+                        <ul>
+                            <li>Your CRM admin panel</li>
+                            <li>Your integration and automation platform (iPaaS)</li>
+                            <li>Your data warehouse or reporting tools</li>
+                            <li>Scripts, small utilities, and admin docs</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #666;">Ops needs to see how all tools behave as one system. Connect: Integrations around a central system of record (usually the CRM). Key events and metrics into a shared reporting layer. Admin processes into a clear change log or ticketing process.</p>
+                    </div>
+                </div>
+
+                <p class="ds-mt-2">Your stack can be simple or complex. The loops can still run.</p>
+            </div>
+        </section>
+
+        <!-- Mapping Stages Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Mapping Stages To Generic Tools</h2>
+                    <p>The four stages do not belong to any vendor. They show up in your stack as patterns of work.</p>
+                </div>
+
+                <div class="ds-stage-card express ds-mb-2">
+                    <h3>Express In A Mixed Stack</h3>
+                    <p>Express work shows up as:</p>
+                    <ul>
+                        <li>Strategy docs and messaging guides in docs or project tools</li>
+                        <li>Lifecycle and pipeline definitions embedded in your CRM</li>
+                        <li>Shared slide decks and content pillars in your asset library</li>
+                        <li>Process maps that live in your wiki or whiteboarding tools</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666;">You still need to push some of this into the tools as fields, stages, and tags.</p>
+                </div>
+
+                <div class="ds-stage-card tailor ds-mb-2">
+                    <h3>Tailor In A Mixed Stack</h3>
+                    <p>Tailor work shows up as:</p>
+                    <ul>
+                        <li>Segments and audiences in your email or marketing tool</li>
+                        <li>Views and filters in your CRM for reps and agents</li>
+                        <li>Rules and routing flows in your CRM, help desk, or automation tool</li>
+                        <li>Personalized content blocks where your tools support them</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666;">The important part is that segments and rules line up with your Express definitions.</p>
+                </div>
+
+                <div class="ds-stage-card amplify ds-mb-2">
+                    <h3>Amplify In A Mixed Stack</h3>
+                    <p>Amplify work shows up as:</p>
+                    <ul>
+                        <li>Automation workflows in your marketing and operations tools</li>
+                        <li>Outbound cadences in your sales engagement tool</li>
+                        <li>Playbooks and templates in your docs or enablement tools</li>
+                        <li>In app messages and notifications in your product tools</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666;">You use whatever automation and scheduling your stack offers, as long as it reinforces the loop instead of spamming people.</p>
+                </div>
+
+                <div class="ds-stage-card evolve">
+                    <h3>Evolve In A Mixed Stack</h3>
+                    <p>Evolve work shows up as:</p>
+                    <ul>
+                        <li>Dashboards in BI tools or CRM reports</li>
+                        <li>Win loss analysis in spreadsheets, notes, or simple BI views</li>
+                        <li>Ticket and support patterns in your help desk reports</li>
+                        <li>Experiment logs in docs, boards, or project tools</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666;">You do not need one master dashboard right away. You do need somewhere to look at what happened and decide what to change.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Roadmap Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>A Simple Implementation Roadmap For Mixed Stacks</h2>
+                    <p>You can apply the Loop Revenue System with a non HubSpot stack in three practical steps.</p>
+                </div>
+
+                <div class="ds-numbered-list">
+                    <li>
+                        <div class="list-content">
+                            <strong>Step 1 - Choose Your System Of Record</strong>
+                            <p>Decide where the truth lives.</p>
+                            <p>Pick one system as your main source of truth for people and organizations. For most teams, this is the CRM. Your help desk and marketing tools then connect to it.</p>
+                            <p>In this step, you:</p>
+                            <ul style="margin: 0.5rem 0 0 1.25rem;">
+                                <li>Clean your contact and account data in that system.</li>
+                                <li>Define lifecycle and pipeline stages there first.</li>
+                                <li>Map key fields like ICP, segment, and status.</li>
+                            </ul>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">Everything else can orbit around this.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Step 2 - Run Stage Based Projects</strong>
+                            <p>Instead of "fix the stack," run smaller projects tied to stages.</p>
+                            <p><strong>For Express:</strong> Align lifecycle and stages in your CRM, help desk, and marketing tool with the same words and meanings. Update core templates and scripts so they match your Express decisions.</p>
+                            <p><strong>For Tailor:</strong> Build a small number of meaningful segments in your marketing and CRM tools. Create views and filters for reps and agents that reflect those segments.</p>
+                            <p><strong>For Amplify:</strong> Automate one or two high friction processes end to end, such as inbound lead handling, or closed won to onboarding. Repurpose one great asset across channels.</p>
+                            <p><strong>For Evolve:</strong> Stand up one shared dashboard or report per loop. Start an experiment log and a system change log, even if they are simple docs.</p>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">You do not need fancy. You need consistent.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Step 3 - Run Experiments And Clean Up</strong>
+                            <p>As the model takes hold:</p>
+                            <ul style="margin: 0.5rem 0 0 1.25rem;">
+                                <li>Use the System Playbooks to run experiments in each loop.</li>
+                                <li>Review what works and what breaks.</li>
+                                <li>Shut down tools and workflows that no longer serve the loops.</li>
+                                <li>Consolidate where it reduces friction and confusion.</li>
+                            </ul>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">Your stack may still be multi tool. That is fine. The important part is that it feels like one system to your team and your customers.</p>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>AI And Hybrid Teams In A Non HubSpot Stack</h2>
+                    <p>You can use AI in a non HubSpot stack the same way you use it anywhere else, as a helper.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar">
+                            <h3>AI Tools Can</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Summarize call recordings, ticket threads, and interview notes.</li>
+                                <li>Draft outreach, content, or internal docs from your Express briefs.</li>
+                                <li>Suggest segments or patterns to explore in your data.</li>
+                                <li>Help you prototype new workflows in your automation tool.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar blue">
+                            <h3>Humans Must Still</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Decide what data is ethical to use and how to collect consent.</li>
+                                <li>Approve or edit any AI generated content that faces customers.</li>
+                                <li>Choose which AI suggestions to trust, ignore, or investigate.</li>
+                                <li>Hold responsibility for outcomes inside each loop.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="ds-mt-2" style="font-weight: 600;">Your stack might be a mix of tools. Your AI might be a mix of copilots. The principles stay the same. AI assists. Humans lead.</p>
+            </div>
+        </section>
+
+        <!-- Governance Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Governance And Common Pitfalls In Multi Tool Environments</h2>
+                    <p>Mixed stacks need governance even more than all in one platforms.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-highlight-box peach">
+                        <h4>Habits That Keep Stacks Sane</h4>
+                        <ul>
+                            <li>One clear owner for the CRM and data model.</li>
+                            <li>A simple list of "official" tools for each job, so people know where to work.</li>
+                            <li>A change process for lifecycles, fields, and automations across tools.</li>
+                            <li>Regular integration checks and data quality reviews.</li>
+                            <li>Shared documentation for how data moves between tools.</li>
+                        </ul>
+                    </div>
+                    <div class="ds-highlight-box orange">
+                        <h4>Pitfalls That Turn Stacks Into Chaos</h4>
+                        <ul>
+                            <li>Letting every team pick its own core tools without integration plans.</li>
+                            <li>Duplicating the same records in multiple tools with no link between them.</li>
+                            <li>Running parallel lifecycles or definitions in CRM, help desk, and marketing.</li>
+                            <li>Ignoring integration failures and manual workarounds.</li>
+                            <li>Treating each tool as its own little empire instead of part of one system.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="ds-mt-2"><strong>A good rule:</strong> you do not have to fix everything overnight. You do have to stop making it more complex by accident.</p>
+            </div>
+        </section>
+
+        <!-- HubSpot Comparison Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>How This Relates To The HubSpot Implementation Path</h2>
+                    <p>The Loop Revenue System is neutral about brands.</p>
+                </div>
+
+                <p>If you use HubSpot as your main platform, the HubSpot Implementation page will show you how to map loops and stages directly into that world.</p>
+                <p>If you use another stack today, this page gives you the same model with a different set of examples.</p>
+                <p>You can:</p>
+                <ul style="margin: 1rem 0 2rem 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">Stay on a non HubSpot stack and still use the system fully.</li>
+                    <li style="margin-bottom: 0.5rem;">Move gradually toward a more unified platform later.</li>
+                    <li style="margin-bottom: 0.5rem;">Mix tools, as long as the model, data, and governance stay clear.</li>
+                </ul>
+
+                <div class="ds-callout ds-mt-2 ds-mb-2">
+                    <h4>Using HubSpot?</h4>
+                    <p>If you want to see how the same concepts map when HubSpot is your center of gravity, visit the companion page.</p>
+                    <a href="/playbooks/hubspot" class="btn btn-secondary">View HubSpot Implementation</a>
+                </div>
+
+                <p>Think of these pages as two lenses on the same system.</p>
+            </div>
+        </section>
+
+        <!-- Next Steps Section -->
+        <section class="ds-cta-banner">
+            <div class="container">
+                <h2>Where To Go Next</h2>
+                <p>Your stack is what it is today. That does not stop you from using the Loop Revenue System.</p>
+
+                <div class="ds-grid-3 ds-mt-2">
+                    <div class="ds-card">
+                        <h4>System Playbooks</h4>
+                        <p>Get concrete plays you can run inside any tool.</p>
+                        <a href="/playbooks/system" class="btn btn-primary">View Playbooks</a>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Data, Metrics & Governance</h4>
+                        <p>Tighten your data and change habits around your existing stack.</p>
+                        <a href="/overview/data-metrics-governance" class="btn btn-secondary">View Guide</a>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Workshops & Templates</h4>
+                        <p>Turn this into working sessions with your team.</p>
+                        <a href="/resources/templates-checklists" class="btn btn-secondary">View Resources</a>
+                    </div>
+                </div>
+
+                <p class="ds-mt-3 ds-text-center" style="font-size: 1.1rem; font-weight: 500;">Choose one loop, one stage, and one part of your stack. Make a small change that brings your tools closer to the system you want. Watch what you learn. Then let the loops keep spinning.</p>
+                <p class="ds-text-center" style="margin-top: 1rem;">The tools you use matter less than the way you use them. When your stack serves your loops, your customers and your business have a better chance to flourish.</p>
             </div>
         </section>
     </main>
+
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2024 Loop Revenue System. All rights reserved.</p>

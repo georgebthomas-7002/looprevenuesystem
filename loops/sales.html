@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Loop Sales - Coming Soon">
+    <meta name="description" content="Loop Sales - Turn sales conversations into a learning loop. Learn how to express, tailor, amplify, and evolve your sales process.">
     <title>Loop Sales - Loop Revenue System</title>
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
@@ -58,28 +58,464 @@
             </nav>
         </div>
     </header>
+
     <main>
-        <section class="coming-soon-hero">
-            <div class="coming-soon-container">
-                <div class="coming-soon-visual">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hero Section -->
+        <section class="ds-hero" data-loop="sales">
+            <div class="container">
+                <div class="ds-hero-content">
+                    <div class="ds-hero-text">
+                        <span class="ds-hero-label">Loop</span>
+                        <h1>Loop Sales</h1>
+                        <h2>Turn Sales Conversations Into A Learning Loop</h2>
+                        <p>Loop Sales is not just about "closing deals." It is the loop that turns every buyer conversation into insight, decisions, and better customers for your business.</p>
+                        <p>When Loop Sales runs well, reps know who to focus on, how to help, and when to walk away. Buyers feel guided, not pressured. The rest of the company gets a steady stream of real world feedback from the front lines.</p>
+                        <p>This page shows you how to treat sales as a loop that moves through four stages: Express, Tailor, Amplify, and Evolve.</p>
+                    </div>
+                    <div class="ds-hero-visual">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Outer loop -->
+                            <circle cx="150" cy="150" r="100" fill="none" stroke="#f65625" stroke-width="4" stroke-dasharray="10,5" opacity="0.3">
+                                <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="20s" repeatCount="indefinite"/>
+                            </circle>
+
+                            <!-- Main loop -->
+                            <circle cx="150" cy="150" r="70" fill="rgba(246,86,37,0.08)" stroke="#f65625" stroke-width="4"/>
+
+                            <!-- Labels around the loop -->
+                            <text x="150" y="60" text-anchor="middle" fill="#f65625" font-size="11" font-weight="600">Conversations</text>
+                            <text x="245" y="155" text-anchor="middle" fill="#f65625" font-size="11" font-weight="600">Insight</text>
+                            <text x="150" y="250" text-anchor="middle" fill="#f65625" font-size="11" font-weight="600">Decisions</text>
+                            <text x="55" y="155" text-anchor="middle" fill="#f65625" font-size="11" font-weight="600">Customers</text>
+
+                            <!-- Arrows showing flow -->
+                            <path d="M175 75 L200 100" stroke="#f65625" stroke-width="2" fill="none" marker-end="url(#slarrow)"/>
+                            <path d="M215 175 L190 200" stroke="#f65625" stroke-width="2" fill="none" marker-end="url(#slarrow)"/>
+                            <path d="M125 225 L100 200" stroke="#f65625" stroke-width="2" fill="none" marker-end="url(#slarrow)"/>
+                            <path d="M85 125 L110 100" stroke="#f65625" stroke-width="2" fill="none" marker-end="url(#slarrow)"/>
+
+                            <!-- Center icon - handshake representation -->
+                            <circle cx="150" cy="150" r="25" fill="#f65625"/>
+                            <path d="M138 150 L145 157 L162 143" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+                            <defs>
+                                <marker id="slarrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#f65625"/>
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What It Is Section -->
+        <section class="ds-section">
+            <div class="container">
+                <h2>What Loop Sales Is And Why It Matters</h2>
+                <p>Loop Sales is how you help the right people make clear, confident decisions about working with you.</p>
+                <p>It includes your qualification, discovery, demos, proposals, negotiations, and handoffs. It covers all the moments when buyers decide whether they trust you and whether your solution fits their world.</p>
+                <p>In many companies, sales lives on an island. Reps create their own slides, write their own emails, and carry their own stories. Wins and losses stay inside individual inboxes.</p>
+                <p><strong>Loop Sales changes that.</strong></p>
+                <p>Every call, email, and meeting becomes input. Patterns in questions, objections, and outcomes become shared learning. That learning shapes who you sell to, how you sell, and what you promise. It also shapes what marketing creates, what service prepares for, and what ops connects.</p>
+
+                <div class="before-after-card">
+                    <div class="before-card">
+                        <h4>Old Way</h4>
+                        <p>Individual hero reps working in silos</p>
+                    </div>
+                    <div class="after-card">
+                        <h4>New Way</h4>
+                        <p>A shared sales loop that learns together</p>
+                    </div>
+                </div>
+
+                <p>Sales matters because it sits at the decision point. If you design that point as a loop, not a one-time sprint, your whole revenue system gains clarity.</p>
+            </div>
+        </section>
+
+        <!-- Where It Fits Section -->
+        <section class="ds-section-alt">
+            <div class="container">
+                <h2>Where Loop Sales Fits In The Loop Revenue System</h2>
+                <p>Loop Sales sits between Loop Marketing and Loop Service, with Loop Ops underneath supporting everything.</p>
+                <p>Marketing sends interest, education, and context into the sales loop. Prospects arrive with some understanding of your story and your value.</p>
+                <p>Loop Sales takes that interest and turns it into decisions. Along the way, sales learns which stories land, which promises backfire, and which buyers turn into the best customers.</p>
+
+                <div class="loop-position-diagram">
+                    <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Marketing Loop -->
+                        <ellipse cx="120" cy="120" rx="70" ry="45" fill="rgba(152,193,217,0.1)" stroke="#98C1D9" stroke-width="2"/>
+                        <text x="120" y="115" text-anchor="middle" fill="#3D5A80" font-size="13" font-weight="600">Marketing</text>
+                        <text x="120" y="132" text-anchor="middle" fill="#3D5A80" font-size="10">Attract &amp; Educate</text>
+
+                        <!-- Sales Loop - Highlighted -->
+                        <ellipse cx="300" cy="100" rx="90" ry="60" fill="rgba(246,86,37,0.15)" stroke="#f65625" stroke-width="4"/>
+                        <text x="300" y="90" text-anchor="middle" fill="#f65625" font-size="16" font-weight="700">Sales</text>
+                        <text x="300" y="110" text-anchor="middle" fill="#f65625" font-size="12">Qualify &amp; Decide</text>
+
+                        <!-- Service Loop -->
+                        <ellipse cx="480" cy="120" rx="70" ry="45" fill="rgba(152,193,217,0.1)" stroke="#98C1D9" stroke-width="2"/>
+                        <text x="480" y="115" text-anchor="middle" fill="#3D5A80" font-size="13" font-weight="600">Service</text>
+                        <text x="480" y="132" text-anchor="middle" fill="#3D5A80" font-size="10">Support &amp; Grow</text>
+
+                        <!-- Ops Loop -->
+                        <ellipse cx="300" cy="250" rx="80" ry="35" fill="rgba(152,193,217,0.1)" stroke="#98C1D9" stroke-width="2"/>
+                        <text x="300" y="250" text-anchor="middle" fill="#3D5A80" font-size="13" font-weight="600">Ops</text>
+
+                        <!-- Arrows into Sales -->
+                        <path d="M185 105 L215 95" stroke="#028393" stroke-width="2" fill="none" marker-end="url(#slposarrow)"/>
+                        <text x="185" y="85" fill="#028393" font-size="9">interest &amp; context</text>
+
+                        <!-- Arrows from Sales -->
+                        <path d="M385 95 L415 105" stroke="#f65625" stroke-width="3" fill="none" marker-end="url(#slposarrow2)"/>
+                        <text x="400" y="85" fill="#f65625" font-size="9">customers &amp; context</text>
+
+                        <path d="M300 165 L300 210" stroke="#f65625" stroke-width="2" fill="none" marker-end="url(#slposarrow2)"/>
+                        <text x="320" y="190" fill="#f65625" font-size="9">data &amp; friction</text>
+
+                        <path d="M215 125 L185 135" stroke="#f65625" stroke-width="2" fill="none" marker-end="url(#slposarrow2)"/>
+                        <text x="165" y="155" fill="#f65625" font-size="9">win/loss data</text>
+
+                        <!-- Return arrows -->
+                        <path d="M415 135 L385 145" stroke="#98C1D9" stroke-width="2" stroke-dasharray="4,4" fill="none" marker-end="url(#slreturnarrow)"/>
+                        <path d="M300 215 L300 160" stroke="#98C1D9" stroke-width="2" stroke-dasharray="4,4" fill="none" marker-end="url(#slreturnarrow)"/>
+                        <text x="340" y="200" fill="#3D5A80" font-size="8">signals &amp; learning</text>
+
                         <defs>
-                            <linearGradient id="slGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#3D5A80;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#98C1D9;stop-opacity:1" />
-                            </linearGradient>
+                            <marker id="slposarrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#028393"/>
+                            </marker>
+                            <marker id="slposarrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#f65625"/>
+                            </marker>
+                            <marker id="slreturnarrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#98C1D9"/>
+                            </marker>
                         </defs>
-                        <path d="M 50 100 L 100 50 L 150 100 L 100 150 Z" fill="none" stroke="url(#slGrad)" stroke-width="8" opacity="0.6"/>
-                        <circle cx="100" cy="100" r="15" fill="#3D5A80" opacity="0.8"/>
                     </svg>
                 </div>
-                <h1 class="coming-soon-title">Loop Sales</h1>
-                <p class="coming-soon-subtitle">Convert prospects into customers with clarity.</p>
-                <p class="coming-soon-text">Explore how sales processes, deal stages, and customer conversations work within the Loop to create predictable, repeatable revenue growth.</p>
-                <a href="/" class="btn btn-primary">Return Home</a>
+
+                <p>Sales then passes:</p>
+                <div class="loop-connections" style="border-left-color: #f65625;">
+                    <div class="loop-connection-item" style="border-left-color: #f65625;">
+                        <strong>Sales → Service</strong>
+                        <span>New customers and their context, including goals, risks, and stakeholders.</span>
+                    </div>
+                    <div class="loop-connection-item" style="border-left-color: #f65625;">
+                        <strong>Sales → Marketing</strong>
+                        <span>Reasons for wins and losses, stories from conversations, and segment feedback.</span>
+                    </div>
+                    <div class="loop-connection-item" style="border-left-color: #f65625;">
+                        <strong>Sales → Ops</strong>
+                        <span>Data needs, process friction, and requirements for better tools.</span>
+                    </div>
+                </div>
+
+                <p>Service and ops send signals back. They share which deals experience friction, which segments expand or churn, and where the process breaks. Sales uses those signals in its next Express and Tailor cycles.</p>
+                <p>In a healthy Loop Revenue System, sales is not a black box. It is a loop that others can see, support, and learn from.</p>
+            </div>
+        </section>
+
+        <!-- Inputs and Outputs Section -->
+        <section class="ds-section">
+            <div class="container">
+                <h2>Inputs And Outputs Of Loop Sales</h2>
+                <p>Loop Sales always has something coming in and something going out.</p>
+
+                <div class="io-diagram">
+                    <div class="io-column inputs">
+                        <h4>Key Inputs</h4>
+                        <ul>
+                            <li>Leads, opportunities, and context from marketing</li>
+                            <li>Contact, company, and account data from ops</li>
+                            <li>Product knowledge, content, and proof points from across the business</li>
+                            <li>Feedback from service on which customers succeed or struggle</li>
+                        </ul>
+                    </div>
+                    <div class="io-center">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="40" fill="rgba(246,86,37,0.1)" stroke="#f65625" stroke-width="3"/>
+                            <text x="50" y="42" text-anchor="middle" fill="#f65625" font-size="8" font-weight="600">Loop</text>
+                            <text x="50" y="54" text-anchor="middle" fill="#f65625" font-size="8" font-weight="600">Sales</text>
+                            <text x="50" y="66" text-anchor="middle" fill="#f65625" font-size="7">Stages</text>
+                        </svg>
+                    </div>
+                    <div class="io-column outputs">
+                        <h4>Key Outputs</h4>
+                        <ul>
+                            <li>New customers and expansion deals with clear notes and expectations</li>
+                            <li>Win and loss data broken down by segment, deal type, and reason</li>
+                            <li>Stories and patterns from conversations that marketing can use</li>
+                            <li>Requirements for better tools, data, and processes that ops can support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>Once you see sales as a loop, you stop asking only <strong>"Did we hit quota?"</strong> and start asking <strong>"What did we learn this cycle, and who needs to hear it?"</strong></p>
+            </div>
+        </section>
+
+        <!-- Express Section -->
+        <section class="ds-section-alt ds-stage-card ds-stage-express">
+            <div class="container">
+                <div class="stage-detail-header">
+                    <div class="stage-detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#028393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                        </svg>
+                    </div>
+                    <h2>Express In Loop Sales</h2>
+                </div>
+
+                <h3>Purpose Of Express In Sales</h3>
+                <p>Express is where sales decides how it will show up.</p>
+                <p>It answers simple but powerful questions:</p>
+                <ul class="questions-list">
+                    <li>Who should we spend time with?</li>
+                    <li>How do we define a good-fit opportunity?</li>
+                    <li>What promises are we truly ready to keep?</li>
+                    <li>What steps should a healthy deal pass through?</li>
+                </ul>
+                <p>Without a clear Express stage, every rep builds their own version of "the way we sell." Forecasts wobble, handoffs wobble, and it is hard to tell whether problems are personal or systemic.</p>
+
+                <h3>What Express Work Looks Like</h3>
+                <p>In practice, Express in sales includes:</p>
+                <ul class="stage-work-list">
+                    <li>Defining ideal customer profiles and opportunity fit based on real success data, not just hunches.</li>
+                    <li>Documenting a simple sales process with clear entry and exit criteria for each stage.</li>
+                    <li>Agreeing on discovery questions, talk tracks, and key stories that fit your point of view.</li>
+                    <li>Clarifying which problems you solve well and which you intentionally do not try to solve.</li>
+                </ul>
+                <p>A strong Express stage lets reps be themselves while still following a shared path.</p>
+
+                <h3>How Express Supports Other Loops</h3>
+                <p>When sales Express is strong:</p>
+                <p><strong>Marketing</strong> knows which leads and segments actually convert and can adjust campaigns accordingly.<br>
+                <strong>Service</strong> receives customers who have realistic expectations and clear outcomes.<br>
+                <strong>Ops</strong> knows which fields and lifecycle transitions matter and can automate around them.</p>
+                <p>If your sales loop feels chaotic, Express is often the first place to focus.</p>
+            </div>
+        </section>
+
+        <!-- Tailor Section -->
+        <section class="ds-section ds-stage-card ds-stage-tailor">
+            <div class="container">
+                <div class="stage-detail-header">
+                    <div class="stage-detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#faaa68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h2>Tailor In Loop Sales</h2>
+                </div>
+
+                <h3>Purpose Of Tailor In Sales</h3>
+                <p>Tailor is where sales moves from "our story" to "your story."</p>
+                <p>It is the work of understanding a specific buyer's context, needs, and risks, then adjusting how you guide them through the process.</p>
+                <p>Tailor is the difference between reading a script and having a real conversation.</p>
+
+                <h3>What Tailor Work Looks Like</h3>
+                <p>In Loop Sales, Tailor shows up when you:</p>
+                <ul class="stage-work-list">
+                    <li>Research the account and people before outreach or a meeting.</li>
+                    <li>Ask better questions instead of rushing to a generic demo.</li>
+                    <li>Connect your value to their specific goals, constraints, and language.</li>
+                    <li>Document key details in the CRM so the next interaction starts in the right place.</li>
+                </ul>
+                <p>Tailor is not about promising anything to get a deal done. It is about helping buyers see clearly whether there is a fit and what success would look like.</p>
+
+                <h3>How Tailor Supports Other Loops</h3>
+                <p>When Tailor is strong in sales:</p>
+                <p><strong>Marketing</strong> hears which segments and stories resonate most and can adjust Express and Tailor on their side.<br>
+                <strong>Service</strong> starts relationships with richer context on goals, risks, and stakeholders.<br>
+                <strong>Ops</strong> has cleaner, more complete data to support routing, automation, and reporting.</p>
+                <p>If deals often stall or fall apart late, it is usually a Tailor problem, not just a closing problem.</p>
+            </div>
+        </section>
+
+        <!-- Amplify Section -->
+        <section class="ds-section-alt ds-stage-card ds-stage-amplify">
+            <div class="container">
+                <div class="stage-detail-header">
+                    <div class="stage-detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#f65625" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                            <polyline points="16 6 12 2 8 6"/>
+                            <line x1="12" y1="2" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h2>Amplify In Loop Sales</h2>
+                </div>
+
+                <h3>Purpose Of Amplify In Sales</h3>
+                <p>Amplify is how you spread what works beyond one rep or one deal.</p>
+                <p>In many teams, great moments happen behind closed doors. One rep finds a way to explain a tricky idea, or a new sequence performs well, but it never spreads.</p>
+                <p>Amplify turns those wins into shared plays.</p>
+
+                <h3>What Amplify Work Looks Like</h3>
+                <p>In Loop Sales, Amplify includes:</p>
+                <ul class="stage-work-list">
+                    <li>Capturing winning email templates, call openers, and talk tracks in a shared library.</li>
+                    <li>Building sequences and playbooks that reflect your best work, not just the quickest option.</li>
+                    <li>Collaborating with marketing to turn great explanations into polished assets.</li>
+                    <li>Using tools and enablement to help more reps adopt the same effective motions.</li>
+                </ul>
+                <p>The goal is not to force everyone into a rigid script. It is to give reps a solid toolkit they can adapt.</p>
+
+                <h3>How Amplify Supports Other Loops</h3>
+                <p>When sales Amplify is strong:</p>
+                <p><strong>Marketing</strong> gets clear feedback about which messages and assets enable deals and can amplify those across channels.<br>
+                <strong>Service</strong> receives customers who have heard honest, consistent explanations, which reduces confusion later.<br>
+                <strong>Ops</strong> can see which plays lead to faster cycles and higher win rates and can support them in process and automation.</p>
+                <p>If your best results live with a few "hero reps," Amplify is likely your weak spot.</p>
+            </div>
+        </section>
+
+        <!-- Evolve Section -->
+        <section class="ds-section ds-stage-card ds-stage-evolve">
+            <div class="container">
+                <div class="stage-detail-header">
+                    <div class="stage-detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#3D5A80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                            <polyline points="22 4 12 4 12 4"/>
+                        </svg>
+                    </div>
+                    <h2>Evolve In Loop Sales</h2>
+                </div>
+
+                <h3>Purpose Of Evolve In Sales</h3>
+                <p>Evolve is where Loop Sales actually becomes a loop.</p>
+                <p>It is where you stop and ask, "What did we learn from our last cycle of deals?" Then you change how you qualify, sell, and enable based on those lessons.</p>
+                <p>Without Evolve, sales teams repeat the same motions and blame luck when numbers swing.</p>
+
+                <h3>What Evolve Work Looks Like</h3>
+                <p>In Loop Sales, Evolve includes:</p>
+                <ul class="stage-work-list">
+                    <li>Running simple win-loss reviews that look for patterns by segment, channel, and deal type.</li>
+                    <li>Studying how deals move through stages, where they stall, and where they rush.</li>
+                    <li>Adjusting qualification criteria, discovery questions, and steps based on evidence.</li>
+                    <li>Updating playbooks, training, and coaching with fresh examples, not just old decks.</li>
+                </ul>
+                <p>This work does not need to be heavy. A short, consistent review rhythm can change a lot.</p>
+
+                <h3>How Evolve Supports Other Loops</h3>
+                <p>When Evolve is active in sales:</p>
+                <p><strong>Marketing</strong> gets clear signal on which leads and campaigns produce strong opportunities.<br>
+                <strong>Service</strong> gets better context on which promises and expectations lead to happy customers.<br>
+                <strong>Ops</strong> receives concrete ideas about where process and tooling need to change.</p>
+                <p>If sales meetings talk more about "hustle" than "learning," your Evolve stage is probably underpowered.</p>
+            </div>
+        </section>
+
+        <!-- AI and Humans Section -->
+        <section class="ds-section-alt">
+            <div class="container">
+                <h2>AI And Humans Inside Loop Sales</h2>
+                <p>AI can make Loop Sales faster and more consistent, but it cannot replace human judgment or trust.</p>
+
+                <div class="ai-humans-detail">
+                    <div class="ai-detail-card">
+                        <h4>Where AI Helps</h4>
+                        <ul>
+                            <li>Captures and summarizes call notes so reps can focus on the conversation.</li>
+                            <li>Suggests email drafts, follow-up ideas, and next best actions based on patterns.</li>
+                            <li>Flags at-risk deals based on behavior and pipeline data.</li>
+                            <li>Surfaces common themes in objections, questions, and stalled deals.</li>
+                        </ul>
+                    </div>
+                    <div class="humans-detail-card">
+                        <h4>Where Humans Lead</h4>
+                        <ul>
+                            <li>Decide which opportunities deserve real attention.</li>
+                            <li>Handle sensitive negotiations, risks, and emotions.</li>
+                            <li>Choose which AI suggestions to use, adapt, or ignore.</li>
+                            <li>Hold the line on ethical selling and honest promises.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="font-weight: 600; color: var(--brand-navy); margin-top: 2rem;">Used well, AI does the repetitive work. Humans do the relational work. The loop benefits from both.</p>
+            </div>
+        </section>
+
+        <!-- Metrics and Pitfalls Section -->
+        <section class="ds-section">
+            <div class="container">
+                <h2>Simple Metrics And Common Pitfalls In Loop Sales</h2>
+                <p>You do not need a complicated sales dashboard to run a healthy Loop Sales. You need a few clear signals.</p>
+
+                <div class="metrics-pitfalls-grid">
+                    <div class="signals-card">
+                        <h4>Signals Of A Healthy Sales Loop</h4>
+                        <ul>
+                            <li>How many opportunities match your agreed fit criteria, not just raw counts.</li>
+                            <li>Win rate by segment, not just overall.</li>
+                            <li>Average sales cycle length and where deals stall.</li>
+                            <li>How often shared plays and assets are used and whether they affect outcomes.</li>
+                            <li>Feedback from service on deal quality and expectation match.</li>
+                        </ul>
+                    </div>
+                    <div class="pitfalls-card">
+                        <h4>Patterns That Break The Loop</h4>
+                        <ul>
+                            <li>Chasing activity counts without looking at quality.</li>
+                            <li>Letting every rep define their own stages and fields in the CRM.</li>
+                            <li>Ignoring win-loss data and relying only on anecdotes.</li>
+                            <li>Promising anything to close, which creates pain for service and ruins learning.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;"><strong>A good rule of thumb:</strong> if a metric does not guide changes in Express, Tailor, Amplify, or Evolve, treat it as background noise.</p>
+            </div>
+        </section>
+
+        <!-- Get Started Section -->
+        <section class="ds-cta-banner">
+            <div class="container">
+                <h2>How To Get Started With Loop Sales</h2>
+                <p>You do not need to rebuild your sales org to start treating it like a loop. Start with one slice of your world, like inbound deals from a specific segment, or expansion deals in one product line.</p>
+                <p><strong>Walk that slice through the four stages:</strong></p>
+                <ul class="questions-list">
+                    <li>How clear is our Express for this type of deal?</li>
+                    <li>How well do we Tailor to the people involved?</li>
+                    <li>What are we doing to Amplify what works from these deals?</li>
+                    <li>What have we learned in Evolve and actually changed?</li>
+                </ul>
+                <p>Then make one improvement in each stage and run the loop again.</p>
+
+                <div class="loop-detail-cta-grid">
+                    <div class="cta-card">
+                        <h4>System Playbooks</h4>
+                        <p>Get structured plays by stage for sales and all loops.</p>
+                        <a href="/playbooks/system" class="btn btn-primary">View Playbooks</a>
+                    </div>
+                    <div class="cta-card">
+                        <h4>Role-Based Paths</h4>
+                        <p>Guidance tailored to sales leaders and reps.</p>
+                        <a href="/roles/start-here" class="btn btn-secondary">Start Here</a>
+                    </div>
+                    <div class="cta-card">
+                        <h4>CRM Implementation</h4>
+                        <p>Map Loop Sales into your tools.</p>
+                        <a href="/playbooks/hubspot" class="btn btn-secondary">HubSpot Guide</a>
+                    </div>
+                </div>
+
+                <p style="margin-top: 3rem; font-size: 1.1rem; font-weight: 500; color: var(--brand-navy);">Use Loop Sales to build a sales motion that learns from every conversation, supports the other loops, and helps your business flourish in a way that feels good to your team and your buyers.</p>
             </div>
         </section>
     </main>
+
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2024 Loop Revenue System. All rights reserved.</p>
