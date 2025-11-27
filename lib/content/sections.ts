@@ -35,6 +35,7 @@ export type SectionType =
   | 'stageCards'
   | 'highlightList'
   | 'richText'
+  | 'content' // WYSIWYG editor content from CMS
 
 // ============================================
 // COMMON TYPES
@@ -248,6 +249,12 @@ export interface RichTextProps {
   maxWidth?: 'narrow' | 'default' | 'wide'
 }
 
+// Content section from WYSIWYG editor
+export interface ContentSectionProps {
+  body: string // HTML content from WYSIWYG
+  maxWidth?: 'narrow' | 'default' | 'wide'
+}
+
 // ============================================
 // SECTION PROPS MAP
 // ============================================
@@ -270,6 +277,7 @@ export interface SectionPropsMap {
   stageCards: StageCardsProps
   highlightList: HighlightListProps
   richText: RichTextProps
+  content: ContentSectionProps
 }
 
 // ============================================
@@ -386,5 +394,8 @@ export const sectionTemplates: Record<SectionType, () => Section> = {
   }),
   richText: () => createSection('richText', {
     content: '<p>Your rich text content here.</p>',
+  }),
+  content: () => createSection('content', {
+    body: '<p>Your page content here.</p>',
   }),
 }

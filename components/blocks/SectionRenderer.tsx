@@ -16,6 +16,7 @@ import {
   Hero,
   HeroWithDiagram,
   ContentBlock,
+  RichTextBlock,
   HighlightList,
   ComparisonSection,
   LoopDetailSection,
@@ -44,7 +45,8 @@ const sectionComponents: Record<SectionType, React.ComponentType<any>> = {
   faqSection: FaqSection,
   stageCards: ContentBlock, // Placeholder
   highlightList: HighlightList,
-  richText: ContentBlock, // Placeholder
+  richText: RichTextBlock,
+  content: RichTextBlock, // WYSIWYG content from page editor
 }
 
 interface SectionRendererProps {

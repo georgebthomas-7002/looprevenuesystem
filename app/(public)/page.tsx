@@ -2,8 +2,30 @@ import Link from 'next/link'
 import { getPageBySlug } from '@/lib/content/queries'
 import { SectionRenderer } from '@/components/blocks/SectionRenderer'
 import { JsonLd, generateWebPageSchema, generateOrganizationSchema } from '@/lib/seo'
+import { generateMetadata as genMeta } from '@/lib/seo/metadata'
 import type { Section } from '@/lib/content/sections'
+import type { Metadata } from 'next'
 import { cn } from '@/lib/utils/cn'
+
+// Generate metadata for home page
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPageBySlug('')
+
+  if (page) {
+    return genMeta(page, 'page')
+  }
+
+  // Fallback metadata
+  return {
+    title: 'Loop Revenue System | Build a Revenue System That Learns',
+    description: 'Build a revenue system that learns from every conversation. Turn marketing, sales, service, and ops into one continuous loop.',
+    openGraph: {
+      title: 'Loop Revenue System | Build a Revenue System That Learns',
+      description: 'Build a revenue system that learns from every conversation. Turn marketing, sales, service, and ops into one continuous loop.',
+      type: 'website',
+    },
+  }
+}
 
 // Loop Diagram SVG Component - Four interconnected loops
 function LoopDiagram() {

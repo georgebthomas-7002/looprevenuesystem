@@ -4,6 +4,7 @@
 export { Hero } from './Hero'
 export { HeroWithDiagram } from './HeroWithDiagram'
 export { ContentBlock } from './ContentBlock'
+export { RichTextBlock } from './RichTextBlock'
 export { HighlightList } from './HighlightList'
 export { ComparisonSection } from './ComparisonSection'
 export { LoopDetailSection } from './LoopDetailSection'
