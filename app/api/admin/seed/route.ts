@@ -2,99 +2,8 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 
-// Home page content as HTML for WYSIWYG editor
-const homePageContent = `
-<h2>Build a Revenue System That Learns From Every Conversation</h2>
-
-<p><em>Turn Marketing, Sales, Service, and Ops Into One Continuous Loop</em></p>
-
-<p>The Loop Revenue System helps you run your entire go-to-market engine as one connected, learning system. Instead of separate funnels and handoffs, you get four loops that share data, insights, and responsibility for revenue.</p>
-
-<p>This site teaches you how to build that system in your own world. There is nothing to buy here—just clear explanations, examples, and playbooks you can take back to your team.</p>
-
-<h2>You Are In The Right Place If You Own Revenue</h2>
-
-<p>You care about revenue, relationships, and repeatable growth. You are tired of seeing marketing, sales, service, and ops pull in different directions.</p>
-
-<p>You might be a CEO who wants a system that makes revenue more predictable and less reactive. You might own RevOps and feel stuck translating between teams and tools. You might run marketing, sales, or service and feel that your part of the engine works, but the whole machine still jerks and stalls.</p>
-
-<p>You could be the HubSpot admin or systems builder who lives in the CRM all day and wishes there were a clearer blueprint behind every field, workflow, and dashboard.</p>
-
-<h3>For Leaders</h3>
-<p>Learn how to talk about revenue as one system, not separate departments. Set direction, define shared metrics, and sponsor change without getting lost in tool jargon.</p>
-
-<h3>For Operators &amp; Admins</h3>
-<p>Get practical guidance on data models, lifecycle stages, automation, and governance. Connect what the business wants to what the tools actually do.</p>
-
-<h3>For Team Members</h3>
-<p>Find plain-language playbooks you can apply in your next campaign, deal cycle, or onboarding sequence—without waiting for a full reorg.</p>
-
-<h2>What Is The Loop Revenue System?</h2>
-
-<p>A way to run revenue as a continuous loop instead of a one-way funnel. Four loops work together, each moving through the same four stages.</p>
-
-<h3>The Four Loops</h3>
-<ul>
-  <li><strong>Loop Marketing</strong> — Discovers what to say, who to say it to, and where to show up</li>
-  <li><strong>Loop Sales</strong> — Helps the right people decide with confidence</li>
-  <li><strong>Loop Service</strong> — Keeps customers successful, supported, and ready to stay</li>
-  <li><strong>Loop Ops</strong> — Connects the tools, data, and processes that make this possible</li>
-</ul>
-
-<h3>The Four Stages</h3>
-<ul>
-  <li><strong>Express</strong> — Decide how you show up. Each team gets clear on its strategy, voice, and process.</li>
-  <li><strong>Tailor</strong> — Make it personal and contextual. Stop acting like every contact is the same.</li>
-  <li><strong>Amplify</strong> — Scale what works. Take what is working and help it reach more people.</li>
-  <li><strong>Evolve</strong> — Learn and improve every cycle. Look honestly at what happened and change the system so the next loop is stronger.</li>
-</ul>
-
-<h2>Built For AI And Humans, Not One Or The Other</h2>
-
-<p>AI is part of the world your revenue engine now lives in. Ignoring it slows you down. Trusting it blindly puts your customers and your brand at risk.</p>
-
-<p>The Loop Revenue System helps you find the balance. AI can help you research faster, spot patterns in your data, personalize at scale, and keep an eye on your numbers in the background. Humans set the strategy, choose the trade-offs, handle exceptions, and build the relationships.</p>
-
-<p>This site shows you where AI can safely assist in each stage of each loop, and where a human must stay in the loop.</p>
-
-<blockquote>The system comes first. AI and tools serve the system, not the other way around.</blockquote>
-
-<h2>How To Use This Site</h2>
-
-<p>You do not need to read every page before you act. Move from insight to implementation in short steps.</p>
-
-<ol>
-  <li><strong>Learn the Model</strong> — Start by understanding why the Loop Revenue System exists, how it compares to funnels and flywheels, and why it matters now.</li>
-  <li><strong>Follow Your Path</strong> — Get guidance for your specific role. See what to care about, which loops to focus on, and which pages to read in what order.</li>
-  <li><strong>Apply and Improve</strong> — Ready to build? The playbooks walk you through concrete workflows, metrics, and experiments you can implement today.</li>
-</ol>
-
-<p><em>The pattern stays the same: Learn a piece of the system. Apply it in your context. Watch what happens. Adjust. Then move to the next piece.</em></p>
-
-<h2>Choose Your Next Step</h2>
-
-<p>You came here for a reason. Maybe you want more predictable revenue. Maybe you want less friction between teams. Maybe you want your data and tools to finally feel like they belong to one system.</p>
-
-<p>You do not need a hundred new ideas. You need one clear next move.</p>
-
-<p><a href="/overview/loop-revenue-system">Understand the Full Model</a> — If you want to understand the system before you change anything, start with the complete overview.</p>
-
-<p><a href="/roles/start-here">Get a Guided Path</a> — If you know your role and want a path that speaks directly to your work, start here.</p>
-
-<p><em>Pick the path that feels most useful right now. You can explore the rest of the Loop Revenue System once you have taken that next step.</em></p>
-`
-
-// Section structure for home page with rich content
-const homePageSections = [
-  {
-    id: 'home-content-1',
-    type: 'content',
-    props: {
-      body: homePageContent,
-      maxWidth: 'default'
-    }
-  }
-]
+// NOTE: Home page does NOT use CMS sections - it has a dedicated designed component
+// We only store SEO metadata for the home page in the CMS
 
 // What Is the Loop Revenue System page content
 const whatIsLoopContent = `
@@ -349,7 +258,8 @@ const whatIsLoopSections = [
 ]
 
 const pages = [
-  // Home - with pre-populated content
+  // Home - uses dedicated designed component, NOT CMS sections
+  // Only SEO metadata is stored in CMS for the home page
   {
     slug: '',
     title: 'Loop Revenue System',
@@ -357,7 +267,7 @@ const pages = [
     showInMainNav: false,
     navOrder: 0,
     parentSlug: null,
-    sections: homePageSections,
+    // NO sections - home page has a dedicated React component with designed layout
     metaTitle: 'Loop Revenue System | Build a Revenue System That Learns',
     metaDescription: 'The Loop Revenue System helps you run your entire go-to-market engine as one connected, learning system. Free playbooks, templates, and guides.',
   },
@@ -446,6 +356,12 @@ export async function POST() {
         const shouldUpdateSections = page.sections &&
           (!existing.sections || (Array.isArray(existing.sections) && existing.sections.length === 0))
 
+        // Special case: home page should NEVER have sections (uses dedicated component)
+        // Clear any existing sections that may have been added previously
+        const isHomePage = page.slug === ''
+        const shouldClearSections = isHomePage && existing.sections &&
+          Array.isArray(existing.sections) && existing.sections.length > 0
+
         await prisma.page.update({
           where: { slug: page.slug },
           data: {
@@ -455,14 +371,14 @@ export async function POST() {
             showInFooterNav: page.showInFooterNav || false,
             navOrder: page.navOrder || 0,
             parentSlug: page.parentSlug,
-            // Only update sections if they're predefined and existing is empty
-            ...(shouldUpdateSections && { sections: page.sections }),
+            // Clear sections for home page, otherwise only update if predefined and existing is empty
+            ...(shouldClearSections ? { sections: [] } : shouldUpdateSections ? { sections: page.sections } : {}),
             // Update SEO if not already set
             ...(page.metaTitle && !existing.metaTitle && { metaTitle: page.metaTitle }),
             ...(page.metaDescription && !existing.metaDescription && { metaDescription: page.metaDescription }),
           }
         })
-        results.push({ page: page.title, status: 'updated' })
+        results.push({ page: page.title, status: shouldClearSections ? 'fixed' : 'updated' })
       }
     }
 
