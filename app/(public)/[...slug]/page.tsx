@@ -10,12 +10,14 @@ interface PageProps {
   params: Promise<{ slug: string[] }>
 }
 
-// Generate static params for all pages
+// Generate static params for all pages (excluding home page which has its own route)
 export async function generateStaticParams() {
   const pages = await getAllPages()
-  return pages.map((page) => ({
-    slug: page.slug.split('/'),
-  }))
+  return pages
+    .filter((page) => page.slug !== '') // Home page is handled by app/(public)/page.tsx
+    .map((page) => ({
+      slug: page.slug.split('/'),
+    }))
 }
 
 // Generate metadata
