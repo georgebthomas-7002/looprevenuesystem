@@ -3,88 +3,741 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Start Here - Coming Soon">
+    <meta name="description" content="Start Here - Pick your role and find your path through the Loop Revenue System. Quick guides for CEOs, RevOps, Marketing, Sales, Service, and Admins.">
     <title>Start Here - Loop Revenue System</title>
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
     <link rel="stylesheet" href="/src/css/styles.css">
+    <style>
+        /* Start Here page specific styles */
+        .starthere-hero {
+            background: linear-gradient(135deg, var(--brand-aqua) 0%, #ffffff 100%);
+            padding: 4rem 0;
+            border-bottom: 4px solid var(--brand-teal);
+        }
+        .starthere-hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .starthere-hero h1 {
+            color: var(--brand-navy);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .starthere-hero h2 {
+            color: var(--brand-blue);
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        .starthere-hero p {
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .starthere-hero .questions {
+            font-weight: 500;
+            color: var(--brand-navy);
+            margin: 1.5rem 0;
+        }
+        .starthere-hero .questions span {
+            display: block;
+            padding: 0.3rem 0;
+        }
+        .starthere-visual {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 2px solid var(--brand-light-blue);
+        }
+        .role-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .role-chip {
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: white;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .role-chip:nth-child(1) { background: var(--brand-teal); }
+        .role-chip:nth-child(2) { background: var(--brand-blue); }
+        .role-chip:nth-child(3) { background: var(--brand-teal); }
+        .role-chip:nth-child(4) { background: var(--brand-orange); }
+        .role-chip:nth-child(5) { background: var(--brand-peach); color: var(--brand-navy); }
+        .role-chip:nth-child(6) { background: var(--brand-blue); }
+        .role-chip:nth-child(7) { background: var(--brand-light-blue); color: var(--brand-navy); }
+        .starthere-section {
+            padding: 4rem 0;
+        }
+        .starthere-section-alt {
+            background: var(--brand-aqua);
+        }
+        .starthere-section h2 {
+            color: var(--brand-navy);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 4px solid var(--brand-light-blue);
+        }
+        .starthere-section h3 {
+            color: var(--brand-navy);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+        .starthere-intro {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+        /* How to use section */
+        .howto-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .howto-content p {
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .howto-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .howto-content ul li {
+            color: #444;
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .howto-content ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+            width: 8px;
+            height: 8px;
+            background: var(--brand-teal);
+            border-radius: 50%;
+        }
+        .quick-links-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid var(--brand-teal);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .quick-links-card h4 {
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .quick-links-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .quick-links-card ul li {
+            padding: 0.4rem 0;
+        }
+        .quick-links-card ul li a {
+            color: var(--brand-teal);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .quick-links-card ul li a:hover {
+            color: var(--brand-navy);
+            text-decoration: underline;
+        }
+        /* Role cards */
+        .role-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-top: 5px solid var(--brand-light-blue);
+        }
+        .starthere-section-alt .role-card {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        .role-card[data-role="ceo"] { border-top-color: var(--brand-teal); }
+        .role-card[data-role="revops"] { border-top-color: var(--brand-blue); }
+        .role-card[data-role="marketing"] { border-top-color: var(--brand-teal); }
+        .role-card[data-role="sales"] { border-top-color: var(--brand-orange); }
+        .role-card[data-role="service"] { border-top-color: var(--brand-peach); }
+        .role-card[data-role="admins"] { border-top-color: var(--brand-blue); }
+        .role-card[data-role="many-hats"] { border-top-color: var(--brand-light-blue); }
+        .role-card h2 {
+            border-top: none;
+            padding-top: 0;
+            margin-bottom: 1rem;
+        }
+        .role-card .role-intro {
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .role-card h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+        }
+        .role-card[data-role="ceo"] h3 { color: var(--brand-teal); }
+        .role-card[data-role="revops"] h3 { color: var(--brand-blue); }
+        .role-card[data-role="marketing"] h3 { color: var(--brand-teal); }
+        .role-card[data-role="sales"] h3 { color: var(--brand-orange); }
+        .role-card[data-role="service"] h3 { color: #c47f3a; }
+        .role-card[data-role="admins"] h3 { color: var(--brand-blue); }
+        .role-card[data-role="many-hats"] h3 { color: var(--brand-blue); }
+        .role-card ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        .role-card ol li {
+            color: #444;
+            padding: 0.5rem 0;
+            line-height: 1.6;
+        }
+        .role-card ol li strong {
+            color: var(--brand-navy);
+        }
+        .role-card ol li a {
+            color: var(--brand-teal);
+            text-decoration: none;
+        }
+        .role-card ol li a:hover {
+            text-decoration: underline;
+        }
+        .role-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0;
+        }
+        .role-card ul li {
+            color: #444;
+            padding: 0.3rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        .role-card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--brand-navy);
+        }
+        .role-card ul li a {
+            color: var(--brand-teal);
+            text-decoration: none;
+        }
+        .role-card ul li a:hover {
+            text-decoration: underline;
+        }
+        .role-card p {
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .role-card p a {
+            color: var(--brand-teal);
+            text-decoration: none;
+        }
+        .role-card p a:hover {
+            text-decoration: underline;
+        }
+        .first-move {
+            background: var(--brand-aqua);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+        }
+        .starthere-section-alt .first-move {
+            background: white;
+        }
+        .first-move h3 {
+            margin-top: 0 !important;
+            margin-bottom: 1rem;
+        }
+        .first-move p {
+            margin-bottom: 0.75rem;
+        }
+        .first-move p:last-child {
+            margin-bottom: 0;
+        }
+        /* Wrap up section */
+        .wrapup-paths {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .wrapup-path {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .wrapup-path h4 {
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .wrapup-path ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .wrapup-path ul li {
+            padding: 0.4rem 0;
+        }
+        .wrapup-path ul li a {
+            color: var(--brand-teal);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .wrapup-path ul li a:hover {
+            text-decoration: underline;
+        }
+        .final-thought {
+            background: var(--brand-aqua);
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid var(--brand-teal);
+            margin-top: 2rem;
+        }
+        .final-thought h4 {
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+        }
+        .final-thought p {
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .final-thought p:last-child {
+            margin-bottom: 0;
+        }
+        .final-thought strong {
+            color: var(--brand-navy);
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .starthere-hero-grid,
+            .howto-grid {
+                grid-template-columns: 1fr;
+            }
+            .wrapup-paths {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
-        <div class="container">
-            <nav class="nav">
-                <div class="logo"><a href="/"><img src="/src/images/logo/Loop-Revenue-System-Logo-400.png" alt="Loop Revenue System" /></a></div>
-                <ul class="nav-menu">
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Overview</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/overview/loop-revenue-system">What Is the Loop Revenue System</a></li>
-                            <li><a href="/overview/stages">Stages: Express, Tailor, Amplify, Evolve</a></li>
-                            <li><a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a></li>
+        <nav class="container nav-container">
+            <a href="/" class="logo">
+                <img src="/src/images/logos/Loop-Revenue-Logo.svg" alt="Loop Revenue System" style="height: 48px;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/overview/loop-revenue-system">Overview</a></li>
+                <li><a href="/overview/stages">Stages</a></li>
+                <li><a href="/loops/four-loops">Loops</a></li>
+                <li><a href="/playbooks/system">Playbooks</a></li>
+                <li><a href="/resources/templates-checklists">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="starthere-hero">
+            <div class="container">
+                <div class="starthere-hero-grid">
+                    <div class="starthere-hero-content">
+                        <h1>Start Here</h1>
+                        <h2>Pick Your Role. Pick Your Next Step.</h2>
+                        <p>The Loop Revenue System has a lot of depth. You do not need all of it at once.</p>
+                        <p>This page helps you answer three questions fast.</p>
+                        <p class="questions">
+                            <span>Am I in the right place?</span>
+                            <span>How does this help someone in my role?</span>
+                            <span>What should I read and do first?</span>
+                        </p>
+                        <p>Scroll until you see yourself. Then follow a simple path of two or three pages and one small action.</p>
+                        <p>You can always come back here and choose another path when you are ready.</p>
+                    </div>
+                    <div class="starthere-visual">
+                        <div class="role-stack">
+                            <div class="role-chip">CEO / Founder</div>
+                            <div class="role-chip">RevOps</div>
+                            <div class="role-chip">Marketing</div>
+                            <div class="role-chip">Sales</div>
+                            <div class="role-chip">Service / CX</div>
+                            <div class="role-chip">Admins / CRM</div>
+                            <div class="role-chip">Many Hats</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How To Use Section -->
+        <section class="starthere-section">
+            <div class="container">
+                <h2>How To Use This Page</h2>
+                <div class="howto-grid">
+                    <div class="howto-content">
+                        <p>You can use this page in two ways.</p>
+                        <p>You can skim the role cards and jump into the one that feels closest to your world.</p>
+                        <p>You can also scan the suggested learning paths and decide which one fits the problem you are trying to solve right now.</p>
+                        <p>The paths are short on purpose. Each one points to:</p>
+                        <ul>
+                            <li>A high level "what is this?" page.</li>
+                            <li>One loop or stage page that matches your role.</li>
+                            <li>One practical page to help you act, not just understand.</li>
                         </ul>
-                    </li>
-                    <li class="dropdown"><a href="/loops" class="dropdown-toggle">Loops</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/loops">Four Loops Overview</a></li>
+                        <p>You do not have to be exact. If you lead more than one area, pick the path that feels most urgent, then come back for another.</p>
+                    </div>
+                    <div class="quick-links-card">
+                        <h4>Quick Links To Roles</h4>
+                        <ul>
+                            <li><a href="#start-here-ceo">CEO / Founder / Owner</a></li>
+                            <li><a href="#start-here-revops">RevOps / Revenue Operations</a></li>
+                            <li><a href="#start-here-marketing">Marketing Leaders And Teams</a></li>
+                            <li><a href="#start-here-sales">Sales Leaders And Teams</a></li>
+                            <li><a href="#start-here-service">Service / CX Leaders And Teams</a></li>
+                            <li><a href="#start-here-admins">Admins / CRM / HubSpot Owners</a></li>
+                            <li><a href="#start-here-many-hats">I Wear Many Hats</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CEO Section -->
+        <section id="start-here-ceo" class="starthere-section">
+            <div class="container">
+                <div class="role-card" data-role="ceo">
+                    <h2>For CEOs, Founders, And Owners</h2>
+                    <p class="role-intro">You care about revenue that is healthy, predictable, and human.</p>
+                    <p class="role-intro">You want marketing, sales, service, and ops to stop pulling against each other. You want fewer surprises, clearer dashboards, and a way to talk about the whole system without drowning in jargon.</p>
+                    <p class="role-intro">The Loop Revenue System gives you a shared language and a simple model to rally your leaders around.</p>
+
+                    <h3>Your Quick Path</h3>
+                    <ol>
+                        <li><strong>Get the big picture:</strong><br>Read <a href="/overview/loop-revenue-system">What Is The Loop Revenue System</a> for a clear, non technical overview.</li>
+                        <li><strong>See how the parts connect:</strong><br>Read <a href="/loops/four-loops">Four Loops Overview</a> to understand how Marketing, Sales, Service, and Ops act as loops.</li>
+                        <li><strong>Learn the rhythm:</strong><br>Skim <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> to see the four stage pattern that repeats in every loop.</li>
+                        <li><strong>Decide where to focus:</strong><br>Read the loop page that matches your biggest pain:
+                            <ul>
+                                <li>Pipeline and growth: <a href="/loops/sales">Loop Sales</a></li>
+                                <li>Demand and message: <a href="/loops/marketing">Loop Marketing</a></li>
+                                <li>Retention and churn: <a href="/loops/service">Loop Service</a></li>
+                                <li>Data and stack sprawl: <a href="/loops/ops">Loop Ops</a></li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <div class="first-move">
+                        <h3>Your First Move</h3>
+                        <p>Ask your leadership team one question in your next meeting:</p>
+                        <p><em>"If we had to pick one loop and one stage to improve this quarter, which would do the most to help our customers and our revenue flourish?"</em></p>
+                        <p>Write down the answer. Then use the <a href="/playbooks/system">System Playbooks</a> page to choose one small play in that loop and stage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RevOps Section -->
+        <section id="start-here-revops" class="starthere-section starthere-section-alt">
+            <div class="container">
+                <div class="role-card" data-role="revops">
+                    <h2>For RevOps And Revenue Operations Leaders</h2>
+                    <p class="role-intro">You sit in the middle of everything.</p>
+                    <p class="role-intro">People bring you problems that sound like "the CRM is wrong," "we need a new tool," or "we can not see what is happening." You want a way to design the system with intent, not just react to tickets.</p>
+                    <p class="role-intro">The Loop Revenue System gives you a blueprint for process, data, and tooling across the whole revenue engine.</p>
+
+                    <h3>Your Quick Path</h3>
+                    <ol>
+                        <li><strong>Anchor in the model:</strong><br>Read <a href="/loops/four-loops">Four Loops Overview</a> to see the loops you support.</li>
+                        <li><strong>See your loop:</strong><br>Read <a href="/loops/ops">Loop Ops</a> with a pen in hand. Mark everywhere you recognize your day to day reality.</li>
+                        <li><strong>Understand the stages:</strong><br>Read <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and note which stage your current projects support.</li>
+                        <li><strong>Connect to systems:</strong><br>Depending on your stack, go to:
+                            <ul>
+                                <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
+                                <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Tighten the foundation:</strong><br>Read <a href="/overview/data-metrics-governance">Data, Metrics, And Governance</a> for guardrails you can apply.</li>
+                    </ol>
+
+                    <div class="first-move">
+                        <h3>Your First Move</h3>
+                        <p>Pick one flow to clean up, such as inbound leads or closed won to onboarding.</p>
+                        <p>Map it against the four stages in a quick doc. Then open <a href="/playbooks/system">System Playbooks</a> and choose one play in Express and one in Tailor for that flow.</p>
+                        <p>Use that to define your next small project instead of another random "CRM fix."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marketing Section -->
+        <section id="start-here-marketing" class="starthere-section">
+            <div class="container">
+                <div class="role-card" data-role="marketing">
+                    <h2>For Marketing Leaders And Teams</h2>
+                    <p class="role-intro">You are the voice and signal of the business.</p>
+                    <p class="role-intro">You juggle campaigns, content, channels, and requests from every direction. You want your work to feel connected, not scattered. You want clear handoffs with sales and honest expectations for service.</p>
+                    <p class="role-intro">The Loop Revenue System helps you treat marketing as a loop that learns, instead of a campaign calendar that never ends.</p>
+
+                    <h3>Your Quick Path</h3>
+                    <ol>
+                        <li><strong>Get the system view:</strong><br>Read <a href="/loops/four-loops">Four Loops Overview</a> to see how marketing feeds and learns from other loops.</li>
+                        <li><strong>Go deep on your loop:</strong><br>Read <a href="/loops/marketing">Loop Marketing</a> slowly. This is your home base.</li>
+                        <li><strong>Learn the stages in your context:</strong><br>Revisit <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and connect each stage to your current work.</li>
+                        <li><strong>Turn ideas into plays:</strong><br>Go to <a href="/playbooks/system">System Playbooks</a> and focus first on the Express and Tailor plays for Loop Marketing.</li>
+                    </ol>
+
+                    <div class="first-move">
+                        <h3>Your First Move</h3>
+                        <p>Choose one audience you care about.</p>
+                        <p>Use the Express and Tailor sections of <a href="/loops/marketing">Loop Marketing</a> to write a one page brief that describes:</p>
+                        <p>Who they are. What they are trying to solve. What you want to express to them right now.</p>
+                        <p>Then update one key asset or sequence with that clarity before you launch the next new thing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sales Section -->
+        <section id="start-here-sales" class="starthere-section starthere-section-alt">
+            <div class="container">
+                <div class="role-card" data-role="sales">
+                    <h2>For Sales Leaders And Teams</h2>
+                    <p class="role-intro">You live where decisions are made.</p>
+                    <p class="role-intro">You feel pressure from every side: more pipeline, better win rates, shorter cycles. You want to spend more time helping good fit buyers, less time wrestling tools or chasing noise leads.</p>
+                    <p class="role-intro">The Loop Revenue System helps you see sales as a repeatable learning loop, not a series of unrelated deals.</p>
+
+                    <h3>Your Quick Path</h3>
+                    <ol>
+                        <li><strong>See your place in the system:</strong><br>Read <a href="/loops/four-loops">Four Loops Overview</a> to understand how sales depends on marketing, service, and ops.</li>
+                        <li><strong>Go deep on your loop:</strong><br>Read <a href="/loops/sales">Loop Sales</a> and note where your current process matches or fights this picture.</li>
+                        <li><strong>Learn the stages from a sales angle:</strong><br>Skim <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> with "our sales motion" in mind.</li>
+                        <li><strong>Turn that into action:</strong><br>On <a href="/playbooks/system">System Playbooks</a>, focus first on Express and Tailor plays for Loop Sales.</li>
+                    </ol>
+
+                    <div class="first-move">
+                        <h3>Your First Move</h3>
+                        <p>Pick one segment or deal type where you want better outcomes.</p>
+                        <p>Use the Express section of <a href="/loops/sales">Loop Sales</a> to clarify what "good fit" looks like there. Then change one thing:</p>
+                        <p>Your entry criteria for that stage. Your discovery questions. Or your reason codes in the CRM.</p>
+                        <p>Run that change for a few weeks. Review what happens with your team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section -->
+        <section id="start-here-service" class="starthere-section">
+            <div class="container">
+                <div class="role-card" data-role="service">
+                    <h2>For Service And Customer Experience Leaders</h2>
+                    <p class="role-intro">You live closest to the customer's real experience.</p>
+                    <p class="role-intro">You see where promises match reality and where they do not. You handle tension when things go wrong. You want fewer avoidable issues, better handoffs, and more time for meaningful work.</p>
+                    <p class="role-intro">The Loop Revenue System helps you turn support and success into a loop of learning that feeds the whole business.</p>
+
+                    <h3>Your Quick Path</h3>
+                    <ol>
+                        <li><strong>See the system's back half:</strong><br>Read <a href="/loops/four-loops">Four Loops Overview</a> and pay special attention to how Loop Service connects to marketing, sales, and ops.</li>
+                        <li><strong>Deep dive on your loop:</strong><br>Read <a href="/loops/service">Loop Service</a> and compare it to how your team operates today.</li>
+                        <li><strong>Add the stage lens:</strong><br>Review <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and jot down examples of each stage in your current service motion.</li>
+                        <li><strong>Move toward playbooks:</strong><br>On <a href="/playbooks/system">System Playbooks</a>, focus on Tailor and Amplify plays for Loop Service first.</li>
+                    </ol>
+
+                    <div class="first-move">
+                        <h3>Your First Move</h3>
+                        <p>Pick one recurring customer issue.</p>
+                        <p>Use the Tailor and Amplify sections of <a href="/loops/service">Loop Service</a> to ask:</p>
+                        <p>Are we tailoring how we respond based on who this affects? Have we amplified a good answer into a reusable resource?</p>
+                        <p>Then take one step, such as writing a better article, creating a short video, or updating how you document the issue for other loops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admins Section -->
+        <section id="start-here-admins" class="starthere-section starthere-section-alt">
+            <div class="container">
+                <div class="role-card" data-role="admins">
+                    <h2>For Admins, CRM Owners, And HubSpot Super Admins</h2>
+                    <p class="role-intro">You are the quiet backbone.</p>
+                    <p class="role-intro">People come to you when fields are missing, workflows misfire, or reports do not add up. You want fewer random requests, more clear requirements, and a way to design the system instead of only patching it.</p>
+                    <p class="role-intro">The Loop Revenue System helps you connect technical work to business outcomes across loops and stages.</p>
+
+                    <h3>Your Quick Path</h3>
+                    <ol>
+                        <li><strong>Understand the loops you support:</strong><br>Read <a href="/loops/four-loops">Four Loops Overview</a> to see the big picture.</li>
+                        <li><strong>See your loop:</strong><br>Read <a href="/loops/ops">Loop Ops</a> through the lens of your admin work.</li>
+                        <li><strong>Connect to tools:</strong><br>Depending on your stack, go to:
+                            <ul>
+                                <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
+                                <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Anchor in governance:</strong><br>Read <a href="/overview/data-metrics-governance">Data, Metrics, And Governance</a> and note what you already do and what is missing.</li>
+                    </ol>
+
+                    <div class="first-move">
+                        <h3>Your First Move</h3>
+                        <p>Pick one area where people constantly ask you for manual fixes, such as lead routing, data cleaning, or reporting.</p>
+                        <p>Use <a href="/playbooks/system">System Playbooks</a> and <a href="/loops/ops">Loop Ops</a> to ask:</p>
+                        <p>Which loop and stage does this really belong to? What small change in Express, Tailor, or Amplify could prevent these tickets?</p>
+                        <p>Propose one small experiment to a loop owner. Let the system carry some of the load.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Many Hats Section -->
+        <section id="start-here-many-hats" class="starthere-section">
+            <div class="container">
+                <div class="role-card" data-role="many-hats">
+                    <h2>For "I Wear Many Hats" Roles</h2>
+                    <p class="role-intro">You might be the owner, marketer, seller, and support rep, all before lunch.</p>
+                    <p class="role-intro">You do not have time for complex frameworks. You want a simple way to see your revenue engine and make better choices with the time and tools you already have.</p>
+                    <p class="role-intro">The Loop Revenue System can help you without adding layers of complexity.</p>
+
+                    <h3>Your Quick Path</h3>
+                    <ol>
+                        <li><strong>Get the simplest picture:</strong><br>Read <a href="/overview/loop-revenue-system">What Is The Loop Revenue System</a> and stop there for a moment.</li>
+                        <li><strong>Learn the stages in simple terms:</strong><br>Read <a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a> and think about how each stage shows up in your week.</li>
+                        <li><strong>Choose one primary loop:</strong><br>Right now, what matters most?
+                            <ul>
+                                <li>Getting more of the right people to you: <a href="/loops/marketing">Loop Marketing</a></li>
+                                <li>Closing more good fit deals: <a href="/loops/sales">Loop Sales</a></li>
+                                <li>Keeping customers happy and around: <a href="/loops/service">Loop Service</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Find one play you can actually run:</strong><br>Go to <a href="/playbooks/system">System Playbooks</a> and choose a single play that feels light enough to start this month.</li>
+                    </ol>
+
+                    <div class="first-move">
+                        <h3>Your First Move</h3>
+                        <p>Write down your answer to two questions:</p>
+                        <p><em>Which loop is my biggest lever right now?</em><br><em>Which stage feels the most broken or unclear?</em></p>
+                        <p>That is your starting point. Pick one play that matches it. Run it in a small way. You can come back for more once you see the first bit of progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wrap Up Section -->
+        <section class="starthere-section" style="border-top: 4px solid var(--brand-light-blue);">
+            <div class="container">
+                <h2>Your Next Step From Here</h2>
+                <p class="starthere-intro">You do not need to memorize the whole Loop Revenue System to start using it. Pick one of these paths now.</p>
+
+                <div class="wrapup-paths">
+                    <div class="wrapup-path">
+                        <h4>Understand The Model</h4>
+                        <ul>
+                            <li><a href="/overview/loop-revenue-system">What Is The Loop Revenue System</a></li>
+                            <li><a href="/loops/four-loops">Four Loops Overview</a></li>
+                            <li><a href="/overview/stages">Stages - Express, Tailor, Amplify, Evolve</a></li>
+                        </ul>
+                    </div>
+                    <div class="wrapup-path">
+                        <h4>Design Or Clean Up Your System</h4>
+                        <ul>
+                            <li><a href="/overview/data-metrics-governance">Data, Metrics, And Governance</a></li>
+                            <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
+                            <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
+                        </ul>
+                    </div>
+                    <div class="wrapup-path">
+                        <h4>Act With Your Team</h4>
+                        <ul>
+                            <li><a href="/playbooks/system">System Playbooks</a></li>
+                            <li><a href="/resources/templates-checklists">Templates And Checklists</a></li>
+                            <li><a href="/resources/workshops-exercises">Workshops And Exercises</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="final-thought">
+                    <h4>Last Thought</h4>
+                    <p><strong>Choose one loop.</strong><br><strong>Choose one stage.</strong><br><strong>Choose one play.</strong></p>
+                    <p>Run it. Learn from it. Then let that learning guide what you do next, so your team, your customers, and your revenue can all move toward something that feels a lot more like flourishing.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/src/images/logos/Loop-Revenue-Logo.svg" alt="Loop Revenue System" style="height: 40px; margin-bottom: 1rem;">
+                    <p>A system for sustainable revenue growth.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Overview</h4>
+                        <ul>
+                            <li><a href="/overview/loop-revenue-system">Loop Revenue System</a></li>
+                            <li><a href="/overview/stages">Stages</a></li>
+                            <li><a href="/overview/data-metrics-governance">Data, Metrics, Governance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Loops</h4>
+                        <ul>
+                            <li><a href="/loops/four-loops">Four Loops Overview</a></li>
                             <li><a href="/loops/marketing">Loop Marketing</a></li>
                             <li><a href="/loops/sales">Loop Sales</a></li>
                             <li><a href="/loops/service">Loop Service</a></li>
                             <li><a href="/loops/ops">Loop Ops</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Playbooks</a>
-                        <ul class="dropdown-menu">
+                    </div>
+                    <div class="footer-column">
+                        <h4>Playbooks</h4>
+                        <ul>
                             <li><a href="/playbooks/system">System Playbooks</a></li>
                             <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
-                            <li><a href="/playbooks/no-hubspot">No HubSpot Implementation</a></li>
-                            <li><a href="/playbooks/ai-and-humans">AI and Humans</a></li>
+                            <li><a href="/playbooks/no-hubspot">Non HubSpot Implementation</a></li>
+                            <li><a href="/playbooks/ai-and-humans">AI And Humans</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Roles</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/roles/start-here">Start Here</a></li>
-                            <li><a href="/roles/leadership-revops">Leadership and RevOps</a></li>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/resources/templates-checklists">Templates & Checklists</a></li>
+                            <li><a href="/resources/workshops-exercises">Workshops & Exercises</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Resources</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/resources/templates-checklists">Templates and Checklists</a></li>
-                            <li><a href="/resources/prompts-workflows">Prompts and Workflows</a></li>
-                            <li><a href="/resources/case-studies">Case Studies</a></li>
-                            <li><a href="/resources/workshops-exercises">Workshops and Exercises</a></li>
-                            <li><a href="/resources/faq">FAQ</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section class="coming-soon-hero">
-            <div class="coming-soon-container">
-                <div class="coming-soon-visual">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="100" cy="100" r="60" fill="none" stroke="#028393" stroke-width="4" opacity="0.6"/>
-                        <circle cx="100" cy="100" r="15" fill="#028393" opacity="0.8"/>
-                        <line x1="100" y1="100" x2="140" y2="70" stroke="#028393" stroke-width="3" opacity="0.5"/>
-                        <line x1="100" y1="100" x2="140" y2="130" stroke="#028393" stroke-width="3" opacity="0.5"/>
-                    </svg>
+                    </div>
                 </div>
-                <h1 class="coming-soon-title">Start Here</h1>
-                <p class="coming-soon-subtitle">Find your place in the Loop.</p>
-                <p class="coming-soon-text">Whether you're in marketing, sales, service, ops, or leadership, discover how your role contributes to the revenue engine and where to begin with the Loop.</p>
-                <a href="/" class="btn btn-primary">Return Home</a>
             </div>
-        </section>
-    </main>
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2024 Loop Revenue System. All rights reserved.</p>
-            <p style="margin-top: 0.5rem;">
-                <a href="/privacy" style="color: var(--brand-light-blue); margin: 0 1rem;">Privacy Policy</a>
-                <a href="/terms" style="color: var(--brand-light-blue); margin: 0 1rem;">Terms of Use</a>
-            </p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Loop Revenue System. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-    <script src="/src/js/main.js"></script>
 </body>
 </html>
