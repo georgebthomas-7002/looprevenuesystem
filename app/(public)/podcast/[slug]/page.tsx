@@ -32,9 +32,9 @@ export default async function PodcastEpisodePage({ params }: PageProps) {
     notFound()
   }
 
-  const sections = (episode.sections as Section[]) || []
+  const sections = (episode.sections as unknown as Section[]) || []
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://looprevenuesystem.com'
-  const faqItems = episode.faqItems as { question: string; answer: string }[] | null
+  const faqItems = episode.faqItems as unknown as { question: string; answer: string }[] | null
 
   return (
     <article className="bg-bg">

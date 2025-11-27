@@ -32,9 +32,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound()
   }
 
-  const sections = (post.sections as Section[]) || []
+  const sections = (post.sections as unknown as Section[]) || []
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://looprevenuesystem.com'
-  const faqItems = post.faqItems as { question: string; answer: string }[] | null
+  const faqItems = post.faqItems as unknown as { question: string; answer: string }[] | null
 
   return (
     <article className="bg-bg">

@@ -51,7 +51,7 @@ const defaultHomeSections: Section[] = [
 export default async function HomePage() {
   // Try to fetch home page from CMS
   const page = await getPageBySlug('home')
-  const sections = (page?.sections as Section[]) || defaultHomeSections
+  const sections = (page?.sections as unknown as Section[]) || defaultHomeSections
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://looprevenuesystem.com'
 

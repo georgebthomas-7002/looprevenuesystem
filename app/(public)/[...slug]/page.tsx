@@ -40,9 +40,9 @@ export default async function DynamicPage({ params }: PageProps) {
     notFound()
   }
 
-  const sections = (page.sections as Section[]) || []
+  const sections = (page.sections as unknown as Section[]) || []
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://looprevenuesystem.com'
-  const faqItems = page.faqItems as { question: string; answer: string }[] | null
+  const faqItems = page.faqItems as unknown as { question: string; answer: string }[] | null
 
   return (
     <>
