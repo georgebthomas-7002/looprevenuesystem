@@ -8,321 +8,6 @@
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
     <link rel="stylesheet" href="/src/css/styles.css">
-    <style>
-        /* No HubSpot Implementation specific styles */
-        .nohub-hero {
-            background: linear-gradient(135deg, var(--brand-aqua) 0%, #ffffff 100%);
-            padding: 4rem 0;
-            border-bottom: 4px solid var(--brand-blue);
-        }
-        .nohub-hero-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        .nohub-hero h1 {
-            color: var(--brand-navy);
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-        }
-        .nohub-hero h2 {
-            color: var(--brand-blue);
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        .nohub-hero p {
-            color: #444;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .nohub-visual {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 2px solid var(--brand-light-blue);
-        }
-        .nohub-visual svg {
-            width: 100%;
-            height: auto;
-        }
-        .nohub-section {
-            padding: 4rem 0;
-        }
-        .nohub-section-alt {
-            background: var(--brand-aqua);
-        }
-        .nohub-section h2 {
-            color: var(--brand-navy);
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            padding-top: 1rem;
-            border-top: 4px solid var(--brand-light-blue);
-        }
-        .nohub-intro {
-            font-size: 1.1rem;
-            color: #444;
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-        .model-callout {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            border-left: 4px solid var(--brand-teal);
-            margin: 2rem 0;
-        }
-        .model-callout h4 {
-            color: var(--brand-teal);
-            margin-bottom: 0.75rem;
-        }
-        .model-callout p {
-            color: #555;
-            margin: 0;
-        }
-        .blocks-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .blocks-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .nohub-section-alt .blocks-card {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-        .blocks-card h4 {
-            color: var(--brand-teal);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        .blocks-card ul {
-            margin: 0;
-            padding-left: 1.25rem;
-        }
-        .blocks-card li {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
-        }
-        .loop-tool-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .loop-tool-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border-top: 4px solid var(--brand-light-blue);
-        }
-        .loop-tool-card[data-loop="marketing"] { border-top-color: var(--brand-teal); }
-        .loop-tool-card[data-loop="sales"] { border-top-color: var(--brand-orange); }
-        .loop-tool-card[data-loop="service"] { border-top-color: var(--brand-peach); }
-        .loop-tool-card[data-loop="ops"] { border-top-color: var(--brand-blue); }
-        .loop-tool-card h3 {
-            color: var(--brand-navy);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        .loop-tool-card p {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        .loop-tool-card ul {
-            margin: 0 0 1rem 0;
-            padding-left: 1.25rem;
-        }
-        .loop-tool-card li {
-            color: #555;
-            font-size: 0.9rem;
-            margin-bottom: 0.4rem;
-        }
-        .stage-tool-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border-left: 4px solid var(--brand-light-blue);
-        }
-        .nohub-section-alt .stage-tool-card {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-        .stage-tool-card[data-stage="express"] { border-left-color: var(--brand-teal); }
-        .stage-tool-card[data-stage="tailor"] { border-left-color: var(--brand-peach); }
-        .stage-tool-card[data-stage="amplify"] { border-left-color: var(--brand-orange); }
-        .stage-tool-card[data-stage="evolve"] { border-left-color: var(--brand-blue); }
-        .stage-tool-card h3 {
-            color: var(--brand-navy);
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-        }
-        .stage-tool-card p {
-            color: #555;
-            margin-bottom: 1rem;
-        }
-        .stage-tool-card ul {
-            margin: 0;
-            padding-left: 1.5rem;
-        }
-        .stage-tool-card li {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-        .roadmap-container {
-            margin: 2rem 0;
-        }
-        .roadmap-step {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            position: relative;
-            padding-left: 3rem;
-        }
-        .roadmap-step::before {
-            content: '';
-            position: absolute;
-            left: 1rem;
-            top: 2rem;
-            bottom: -1.5rem;
-            width: 3px;
-            background: var(--brand-light-blue);
-        }
-        .roadmap-step:last-child::before {
-            bottom: 2rem;
-        }
-        .roadmap-step-marker {
-            position: absolute;
-            left: 0;
-            top: 1.75rem;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--brand-teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        .roadmap-step:nth-child(2) .roadmap-step-marker { background: var(--brand-orange); }
-        .roadmap-step:nth-child(3) .roadmap-step-marker { background: var(--brand-blue); }
-        .roadmap-step h3 {
-            color: var(--brand-navy);
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
-        }
-        .roadmap-step p {
-            color: #555;
-            margin-bottom: 1rem;
-        }
-        .roadmap-step ul {
-            margin: 0;
-            padding-left: 1.25rem;
-        }
-        .roadmap-step li {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
-        }
-        .governance-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .governance-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border-top: 4px solid var(--brand-light-blue);
-        }
-        .governance-card.helpful { border-top-color: var(--brand-peach); }
-        .governance-card.pitfalls { border-top-color: var(--brand-orange); }
-        .governance-card h4 {
-            color: var(--brand-navy);
-            margin-bottom: 1rem;
-        }
-        .governance-card ul {
-            margin: 0;
-            padding-left: 1.25rem;
-        }
-        .governance-card li {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-        .hubspot-callout {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            text-align: center;
-            margin: 2rem 0;
-        }
-        .hubspot-callout h4 {
-            color: var(--brand-navy);
-            margin-bottom: 1rem;
-        }
-        .hubspot-callout p {
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        .nohub-cta-section {
-            padding: 4rem 0;
-            border-top: 4px solid var(--brand-light-blue);
-        }
-        .nohub-cta-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .nohub-cta-card {
-            background: var(--brand-aqua);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-        }
-        .nohub-cta-card h4 {
-            color: var(--brand-navy);
-            margin-bottom: 0.75rem;
-        }
-        .nohub-cta-card p {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-        }
-        @media (max-width: 768px) {
-            .nohub-hero-grid,
-            .blocks-grid,
-            .loop-tool-grid,
-            .governance-grid,
-            .nohub-cta-grid {
-                grid-template-columns: 1fr;
-            }
-            .nohub-hero h1 {
-                font-size: 1.75rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <header class="site-header">
@@ -376,18 +61,20 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="nohub-hero">
+        <section class="ds-hero">
             <div class="container">
-                <div class="nohub-hero-grid">
-                    <div class="nohub-hero-content">
+                <div class="ds-grid-asymmetric">
+                    <div class="ds-hero-content">
                         <h1>Implementing The Loop Revenue System Without HubSpot</h1>
                         <h2>Make Your Existing Stack Act Like One Looped System</h2>
-                        <p>You do not need HubSpot to use the Loop Revenue System.</p>
-                        <p>You might have a different CRM, a separate marketing platform, a help desk, a sales engagement tool, and a pile of spreadsheets. That is normal. This page is here to help you turn what you already have into a system that behaves like four connected loops.</p>
-                        <p>You will see how to map loops and stages to common tool types, not brand names. You will also see a simple roadmap so you can start where you are, not where some ideal stack says you should be.</p>
-                        <p style="font-weight: 500; color: var(--brand-navy);">The goal is simple. Your tools should help your business and your customers flourish, not pull them in different directions.</p>
+                        <div class="ds-hero-text">
+                            <p>You do not need HubSpot to use the Loop Revenue System.</p>
+                            <p>You might have a different CRM, a separate marketing platform, a help desk, a sales engagement tool, and a pile of spreadsheets. That is normal. This page is here to help you turn what you already have into a system that behaves like four connected loops.</p>
+                            <p>You will see how to map loops and stages to common tool types, not brand names. You will also see a simple roadmap so you can start where you are, not where some ideal stack says you should be.</p>
+                            <p style="font-weight: 500;">The goal is simple. Your tools should help your business and your customers flourish, not pull them in different directions.</p>
+                        </div>
                     </div>
-                    <div class="nohub-visual">
+                    <div class="ds-hero-visual">
                         <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
                             <!-- Central loop -->
                             <circle cx="140" cy="100" r="50" fill="none" stroke="#98C1D9" stroke-width="2" stroke-dasharray="8,4"/>
@@ -432,10 +119,13 @@
         </section>
 
         <!-- Role of Tools Section -->
-        <section class="nohub-section">
+        <section class="ds-section">
             <div class="container">
-                <h2>Tools Support The System. They Are Not The System.</h2>
-                <p class="nohub-intro">The Loop Revenue System is a way of seeing and running your revenue engine.</p>
+                <div class="ds-section-header">
+                    <h2>Tools Support The System. They Are Not The System.</h2>
+                    <p>The Loop Revenue System is a way of seeing and running your revenue engine.</p>
+                </div>
+
                 <p>It gives you four loops: marketing, sales, service, ops. It gives you four stages inside each loop: Express, Tailor, Amplify, Evolve. It gives you system playbooks and data habits.</p>
                 <p>Your tools should support that system.</p>
                 <p>So instead of asking "What can this platform do?" you start by asking:</p>
@@ -446,7 +136,7 @@
                 </ul>
                 <p>Once that is clear, you look at your stack and ask "Where can this live?" and "How do these tools need to connect?"</p>
 
-                <div class="model-callout">
+                <div class="ds-callout">
                     <h4>Model → Playbooks → Tools</h4>
                     <p>This order matters. If you let the tools define the system, you get workflows that look impressive and feel fragile. If you let the system define the tools, you get workflows that feel simple and useful.</p>
                 </div>
@@ -454,13 +144,15 @@
         </section>
 
         <!-- Building Blocks Section -->
-        <section class="nohub-section nohub-section-alt">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>Core Building Blocks In A Non HubSpot Stack</h2>
-                <p class="nohub-intro">Even without an all in one platform, most stacks share the same basic parts.</p>
+                <div class="ds-section-header">
+                    <h2>Core Building Blocks In A Non HubSpot Stack</h2>
+                    <p>Even without an all in one platform, most stacks share the same basic parts.</p>
+                </div>
 
-                <div class="blocks-grid">
-                    <div class="blocks-card">
+                <div class="ds-grid-2">
+                    <div class="ds-card">
                         <h4>Core Records</h4>
                         <ul>
                             <li>People (contacts, leads, users, subscribers)</li>
@@ -470,7 +162,7 @@
                             <li>Custom records (subscriptions, locations, contracts, assets)</li>
                         </ul>
                     </div>
-                    <div class="blocks-card">
+                    <div class="ds-card">
                         <h4>Common Tool Types</h4>
                         <ul>
                             <li>CRM or sales system of record</li>
@@ -485,7 +177,7 @@
                     </div>
                 </div>
 
-                <p>Your job is not to replace all of these with one thing. Your job is to decide:</p>
+                <p class="ds-mt-2">Your job is not to replace all of these with one thing. Your job is to decide:</p>
                 <ul style="margin: 1rem 0 2rem 1.5rem;">
                     <li style="margin-bottom: 0.5rem;">Which tool will be the main system of record for people and organizations?</li>
                     <li style="margin-bottom: 0.5rem;">Where will we track opportunities and support work?</li>
@@ -497,13 +189,15 @@
         </section>
 
         <!-- Mapping Loops to Tools Section -->
-        <section class="nohub-section">
+        <section class="ds-section">
             <div class="container">
-                <h2>Mapping Loops To Common Tool Types</h2>
-                <p class="nohub-intro">You can run each loop with different brands of tools. What matters is that you give each loop a clear home and a way to connect.</p>
+                <div class="ds-section-header">
+                    <h2>Mapping Loops To Common Tool Types</h2>
+                    <p>You can run each loop with different brands of tools. What matters is that you give each loop a clear home and a way to connect.</p>
+                </div>
 
-                <div class="loop-tool-grid">
-                    <div class="loop-tool-card" data-loop="marketing">
+                <div class="ds-grid-2">
+                    <div class="ds-card-featured marketing">
                         <h3>Loop Marketing Without HubSpot</h3>
                         <p>Loop Marketing usually lives across:</p>
                         <ul>
@@ -516,7 +210,7 @@
                         <p style="font-size: 0.9rem; color: #666;">Marketing still needs the CRM to understand who it is talking to and what happens after someone engages. Connect: Website and forms → CRM contacts. Email and campaigns → CRM activities. Ad and event data → CRM campaigns or custom fields.</p>
                     </div>
 
-                    <div class="loop-tool-card" data-loop="sales">
+                    <div class="ds-card-featured sales">
                         <h3>Loop Sales Without HubSpot</h3>
                         <p>Loop Sales usually lives across:</p>
                         <ul>
@@ -528,7 +222,7 @@
                         <p style="font-size: 0.9rem; color: #666;">Sales needs to see marketing and service signals inside that CRM. Connect: Marketing email and web activity → CRM timelines. Support and usage data → account and opportunity records. Calendar and call records → CRM activities.</p>
                     </div>
 
-                    <div class="loop-tool-card" data-loop="service">
+                    <div class="ds-card-featured service">
                         <h3>Loop Service Without HubSpot</h3>
                         <p>Loop Service usually lives across:</p>
                         <ul>
@@ -540,7 +234,7 @@
                         <p style="font-size: 0.9rem; color: #666;">Service needs a link back to accounts, contacts, and deals. Connect: Tickets → CRM contacts, companies, and products. Knowledge articles → support categories or tags. Feedback and survey tools → CRM fields or a data store.</p>
                     </div>
 
-                    <div class="loop-tool-card" data-loop="ops">
+                    <div class="ds-card-featured ops">
                         <h3>Loop Ops Without HubSpot</h3>
                         <p>Loop Ops usually lives across:</p>
                         <ul>
@@ -553,17 +247,19 @@
                     </div>
                 </div>
 
-                <p>Your stack can be simple or complex. The loops can still run.</p>
+                <p class="ds-mt-2">Your stack can be simple or complex. The loops can still run.</p>
             </div>
         </section>
 
         <!-- Mapping Stages Section -->
-        <section class="nohub-section nohub-section-alt">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>Mapping Stages To Generic Tools</h2>
-                <p class="nohub-intro">The four stages do not belong to any vendor. They show up in your stack as patterns of work.</p>
+                <div class="ds-section-header">
+                    <h2>Mapping Stages To Generic Tools</h2>
+                    <p>The four stages do not belong to any vendor. They show up in your stack as patterns of work.</p>
+                </div>
 
-                <div class="stage-tool-card" data-stage="express">
+                <div class="ds-stage-card express ds-mb-2">
                     <h3>Express In A Mixed Stack</h3>
                     <p>Express work shows up as:</p>
                     <ul>
@@ -575,7 +271,7 @@
                     <p style="font-style: italic; color: #666;">You still need to push some of this into the tools as fields, stages, and tags.</p>
                 </div>
 
-                <div class="stage-tool-card" data-stage="tailor">
+                <div class="ds-stage-card tailor ds-mb-2">
                     <h3>Tailor In A Mixed Stack</h3>
                     <p>Tailor work shows up as:</p>
                     <ul>
@@ -587,7 +283,7 @@
                     <p style="font-style: italic; color: #666;">The important part is that segments and rules line up with your Express definitions.</p>
                 </div>
 
-                <div class="stage-tool-card" data-stage="amplify">
+                <div class="ds-stage-card amplify ds-mb-2">
                     <h3>Amplify In A Mixed Stack</h3>
                     <p>Amplify work shows up as:</p>
                     <ul>
@@ -599,7 +295,7 @@
                     <p style="font-style: italic; color: #666;">You use whatever automation and scheduling your stack offers, as long as it reinforces the loop instead of spamming people.</p>
                 </div>
 
-                <div class="stage-tool-card" data-stage="evolve">
+                <div class="ds-stage-card evolve">
                     <h3>Evolve In A Mixed Stack</h3>
                     <p>Evolve work shows up as:</p>
                     <ul>
@@ -614,92 +310,107 @@
         </section>
 
         <!-- Implementation Roadmap Section -->
-        <section class="nohub-section">
+        <section class="ds-section">
             <div class="container">
-                <h2>A Simple Implementation Roadmap For Mixed Stacks</h2>
-                <p class="nohub-intro">You can apply the Loop Revenue System with a non HubSpot stack in three practical steps.</p>
+                <div class="ds-section-header">
+                    <h2>A Simple Implementation Roadmap For Mixed Stacks</h2>
+                    <p>You can apply the Loop Revenue System with a non HubSpot stack in three practical steps.</p>
+                </div>
 
-                <div class="roadmap-container">
-                    <div class="roadmap-step">
-                        <div class="roadmap-step-marker">1</div>
-                        <h3>Step 1 - Choose Your System Of Record</h3>
-                        <p>Decide where the truth lives.</p>
-                        <p>Pick one system as your main source of truth for people and organizations. For most teams, this is the CRM. Your help desk and marketing tools then connect to it.</p>
-                        <p>In this step, you:</p>
-                        <ul>
-                            <li>Clean your contact and account data in that system.</li>
-                            <li>Define lifecycle and pipeline stages there first.</li>
-                            <li>Map key fields like ICP, segment, and status.</li>
-                        </ul>
-                        <p style="font-style: italic; color: #666;">Everything else can orbit around this.</p>
-                    </div>
-
-                    <div class="roadmap-step">
-                        <div class="roadmap-step-marker">2</div>
-                        <h3>Step 2 - Run Stage Based Projects</h3>
-                        <p>Instead of "fix the stack," run smaller projects tied to stages.</p>
-                        <p><strong>For Express:</strong> Align lifecycle and stages in your CRM, help desk, and marketing tool with the same words and meanings. Update core templates and scripts so they match your Express decisions.</p>
-                        <p><strong>For Tailor:</strong> Build a small number of meaningful segments in your marketing and CRM tools. Create views and filters for reps and agents that reflect those segments.</p>
-                        <p><strong>For Amplify:</strong> Automate one or two high friction processes end to end, such as inbound lead handling, or closed won to onboarding. Repurpose one great asset across channels.</p>
-                        <p><strong>For Evolve:</strong> Stand up one shared dashboard or report per loop. Start an experiment log and a system change log, even if they are simple docs.</p>
-                        <p style="font-style: italic; color: #666;">You do not need fancy. You need consistent.</p>
-                    </div>
-
-                    <div class="roadmap-step">
-                        <div class="roadmap-step-marker">3</div>
-                        <h3>Step 3 - Run Experiments And Clean Up</h3>
-                        <p>As the model takes hold:</p>
-                        <ul>
-                            <li>Use the System Playbooks to run experiments in each loop.</li>
-                            <li>Review what works and what breaks.</li>
-                            <li>Shut down tools and workflows that no longer serve the loops.</li>
-                            <li>Consolidate where it reduces friction and confusion.</li>
-                        </ul>
-                        <p style="font-style: italic; color: #666;">Your stack may still be multi tool. That is fine. The important part is that it feels like one system to your team and your customers.</p>
-                    </div>
+                <div class="ds-numbered-list">
+                    <li>
+                        <div class="list-content">
+                            <strong>Step 1 - Choose Your System Of Record</strong>
+                            <p>Decide where the truth lives.</p>
+                            <p>Pick one system as your main source of truth for people and organizations. For most teams, this is the CRM. Your help desk and marketing tools then connect to it.</p>
+                            <p>In this step, you:</p>
+                            <ul style="margin: 0.5rem 0 0 1.25rem;">
+                                <li>Clean your contact and account data in that system.</li>
+                                <li>Define lifecycle and pipeline stages there first.</li>
+                                <li>Map key fields like ICP, segment, and status.</li>
+                            </ul>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">Everything else can orbit around this.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Step 2 - Run Stage Based Projects</strong>
+                            <p>Instead of "fix the stack," run smaller projects tied to stages.</p>
+                            <p><strong>For Express:</strong> Align lifecycle and stages in your CRM, help desk, and marketing tool with the same words and meanings. Update core templates and scripts so they match your Express decisions.</p>
+                            <p><strong>For Tailor:</strong> Build a small number of meaningful segments in your marketing and CRM tools. Create views and filters for reps and agents that reflect those segments.</p>
+                            <p><strong>For Amplify:</strong> Automate one or two high friction processes end to end, such as inbound lead handling, or closed won to onboarding. Repurpose one great asset across channels.</p>
+                            <p><strong>For Evolve:</strong> Stand up one shared dashboard or report per loop. Start an experiment log and a system change log, even if they are simple docs.</p>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">You do not need fancy. You need consistent.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Step 3 - Run Experiments And Clean Up</strong>
+                            <p>As the model takes hold:</p>
+                            <ul style="margin: 0.5rem 0 0 1.25rem;">
+                                <li>Use the System Playbooks to run experiments in each loop.</li>
+                                <li>Review what works and what breaks.</li>
+                                <li>Shut down tools and workflows that no longer serve the loops.</li>
+                                <li>Consolidate where it reduces friction and confusion.</li>
+                            </ul>
+                            <p style="font-style: italic; color: #666; margin-top: 1rem;">Your stack may still be multi tool. That is fine. The important part is that it feels like one system to your team and your customers.</p>
+                        </div>
+                    </li>
                 </div>
             </div>
         </section>
 
         <!-- AI Section -->
-        <section class="nohub-section nohub-section-alt">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>AI And Hybrid Teams In A Non HubSpot Stack</h2>
-                <p class="nohub-intro">You can use AI in a non HubSpot stack the same way you use it anywhere else, as a helper.</p>
+                <div class="ds-section-header">
+                    <h2>AI And Hybrid Teams In A Non HubSpot Stack</h2>
+                    <p>You can use AI in a non HubSpot stack the same way you use it anywhere else, as a helper.</p>
+                </div>
 
-                <div class="ai-humans-detail">
-                    <div class="ai-detail-card">
-                        <h4>AI Tools Can</h4>
-                        <ul>
-                            <li>Summarize call recordings, ticket threads, and interview notes.</li>
-                            <li>Draft outreach, content, or internal docs from your Express briefs.</li>
-                            <li>Suggest segments or patterns to explore in your data.</li>
-                            <li>Help you prototype new workflows in your automation tool.</li>
-                        </ul>
+                <div class="ds-grid-2">
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar">
+                            <h3>AI Tools Can</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Summarize call recordings, ticket threads, and interview notes.</li>
+                                <li>Draft outreach, content, or internal docs from your Express briefs.</li>
+                                <li>Suggest segments or patterns to explore in your data.</li>
+                                <li>Help you prototype new workflows in your automation tool.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="humans-detail-card">
-                        <h4>Humans Must Still</h4>
-                        <ul>
-                            <li>Decide what data is ethical to use and how to collect consent.</li>
-                            <li>Approve or edit any AI generated content that faces customers.</li>
-                            <li>Choose which AI suggestions to trust, ignore, or investigate.</li>
-                            <li>Hold responsibility for outcomes inside each loop.</li>
-                        </ul>
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar blue">
+                            <h3>Humans Must Still</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Decide what data is ethical to use and how to collect consent.</li>
+                                <li>Approve or edit any AI generated content that faces customers.</li>
+                                <li>Choose which AI suggestions to trust, ignore, or investigate.</li>
+                                <li>Hold responsibility for outcomes inside each loop.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <p style="font-weight: 600; color: var(--brand-navy); margin-top: 2rem;">Your stack might be a mix of tools. Your AI might be a mix of copilots. The principles stay the same. AI assists. Humans lead.</p>
+                <p class="ds-mt-2" style="font-weight: 600;">Your stack might be a mix of tools. Your AI might be a mix of copilots. The principles stay the same. AI assists. Humans lead.</p>
             </div>
         </section>
 
         <!-- Governance Section -->
-        <section class="nohub-section">
+        <section class="ds-section">
             <div class="container">
-                <h2>Governance And Common Pitfalls In Multi Tool Environments</h2>
-                <p class="nohub-intro">Mixed stacks need governance even more than all in one platforms.</p>
+                <div class="ds-section-header">
+                    <h2>Governance And Common Pitfalls In Multi Tool Environments</h2>
+                    <p>Mixed stacks need governance even more than all in one platforms.</p>
+                </div>
 
-                <div class="governance-grid">
-                    <div class="governance-card helpful">
+                <div class="ds-grid-2">
+                    <div class="ds-highlight-box peach">
                         <h4>Habits That Keep Stacks Sane</h4>
                         <ul>
                             <li>One clear owner for the CRM and data model.</li>
@@ -709,7 +420,7 @@
                             <li>Shared documentation for how data moves between tools.</li>
                         </ul>
                     </div>
-                    <div class="governance-card pitfalls">
+                    <div class="ds-highlight-box orange">
                         <h4>Pitfalls That Turn Stacks Into Chaos</h4>
                         <ul>
                             <li>Letting every team pick its own core tools without integration plans.</li>
@@ -721,15 +432,18 @@
                     </div>
                 </div>
 
-                <p style="margin-top: 2rem;"><strong>A good rule:</strong> you do not have to fix everything overnight. You do have to stop making it more complex by accident.</p>
+                <p class="ds-mt-2"><strong>A good rule:</strong> you do not have to fix everything overnight. You do have to stop making it more complex by accident.</p>
             </div>
         </section>
 
         <!-- HubSpot Comparison Section -->
-        <section class="nohub-section nohub-section-alt">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>How This Relates To The HubSpot Implementation Path</h2>
-                <p class="nohub-intro">The Loop Revenue System is neutral about brands.</p>
+                <div class="ds-section-header">
+                    <h2>How This Relates To The HubSpot Implementation Path</h2>
+                    <p>The Loop Revenue System is neutral about brands.</p>
+                </div>
+
                 <p>If you use HubSpot as your main platform, the HubSpot Implementation page will show you how to map loops and stages directly into that world.</p>
                 <p>If you use another stack today, this page gives you the same model with a different set of examples.</p>
                 <p>You can:</p>
@@ -739,7 +453,7 @@
                     <li style="margin-bottom: 0.5rem;">Mix tools, as long as the model, data, and governance stay clear.</li>
                 </ul>
 
-                <div class="hubspot-callout">
+                <div class="ds-callout ds-mt-2 ds-mb-2">
                     <h4>Using HubSpot?</h4>
                     <p>If you want to see how the same concepts map when HubSpot is your center of gravity, visit the companion page.</p>
                     <a href="/playbooks/hubspot" class="btn btn-secondary">View HubSpot Implementation</a>
@@ -750,31 +464,31 @@
         </section>
 
         <!-- Next Steps Section -->
-        <section class="nohub-cta-section">
+        <section class="ds-cta-banner">
             <div class="container">
                 <h2>Where To Go Next</h2>
-                <p class="nohub-intro">Your stack is what it is today. That does not stop you from using the Loop Revenue System.</p>
+                <p>Your stack is what it is today. That does not stop you from using the Loop Revenue System.</p>
 
-                <div class="nohub-cta-grid">
-                    <div class="nohub-cta-card">
+                <div class="ds-grid-3 ds-mt-2">
+                    <div class="ds-card">
                         <h4>System Playbooks</h4>
                         <p>Get concrete plays you can run inside any tool.</p>
                         <a href="/playbooks/system" class="btn btn-primary">View Playbooks</a>
                     </div>
-                    <div class="nohub-cta-card">
+                    <div class="ds-card">
                         <h4>Data, Metrics & Governance</h4>
                         <p>Tighten your data and change habits around your existing stack.</p>
                         <a href="/overview/data-metrics-governance" class="btn btn-secondary">View Guide</a>
                     </div>
-                    <div class="nohub-cta-card">
+                    <div class="ds-card">
                         <h4>Workshops & Templates</h4>
                         <p>Turn this into working sessions with your team.</p>
                         <a href="/resources/templates-checklists" class="btn btn-secondary">View Resources</a>
                     </div>
                 </div>
 
-                <p style="margin-top: 3rem; font-size: 1.1rem; font-weight: 500; color: var(--brand-navy); text-align: center;">Choose one loop, one stage, and one part of your stack. Make a small change that brings your tools closer to the system you want. Watch what you learn. Then let the loops keep spinning.</p>
-                <p style="font-size: 1rem; color: #555; text-align: center; margin-top: 1rem;">The tools you use matter less than the way you use them. When your stack serves your loops, your customers and your business have a better chance to flourish.</p>
+                <p class="ds-mt-3 ds-text-center" style="font-size: 1.1rem; font-weight: 500;">Choose one loop, one stage, and one part of your stack. Make a small change that brings your tools closer to the system you want. Watch what you learn. Then let the loops keep spinning.</p>
+                <p class="ds-text-center" style="margin-top: 1rem;">The tools you use matter less than the way you use them. When your stack serves your loops, your customers and your business have a better chance to flourish.</p>
             </div>
         </section>
     </main>
