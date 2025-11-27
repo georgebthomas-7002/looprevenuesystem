@@ -1,0 +1,219 @@
+// Prisma Schema for Loop Revenue System CMS
+// Database: PostgreSQL (Vercel Postgres)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // Connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // Direct connection for migrations
+}
+
+// ============================================
+// NAVIGATION & SITEMAP
+// ============================================
+
+model NavigationItem {
+  id            String   @id @default(cuid())
+  label         String
+  href          String
+  order         Int      @default(0)
+  showInHeader  Boolean  @default(true)
+  showInFooter  Boolean  @default(false)
+  parentId      String?
+  parent        NavigationItem?  @relation("NavigationChildren", fields: [parentId], references: [id], onDelete: Cascade)
+  children      NavigationItem[] @relation("NavigationChildren")
+  pageId        String?  @unique
+  page          Page?    @relation(fields: [pageId], references: [id], onDelete: SetNull)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// ============================================
+// CONTENT MODELS
+// ============================================
+
+model Page {
+  id                  String   @id @default(cuid())
+  slug                String   @unique
+  title               String
+  description         String?  @db.Text
+  // Sections stored as JSON (block-based content)
+  sections            Json     @default("[]")
+  // Navigation settings
+  showInMainNav       Boolean  @default(false)
+  showInFooterNav     Boolean  @default(false)
+  navOrder            Int      @default(0)
+  parentSlug          String?
+  // SEO Fields
+  metaTitle           String?
+  metaDescription     String?  @db.Text
+  canonicalUrl        String?
+  ogTitle             String?
+  ogDescription       String?  @db.Text
+  ogImage             String?
+  // AEO (Answer Engine Optimization) Fields
+  schemaType          String   @default("WebPage")
+  faqItems            Json?    // Array of {question, answer}
+  speakableSections   Json?    // Array of section IDs
+  // Status
+  status              String   @default("draft") // draft, published
+  publishedAt         DateTime?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  // Relations
+  navigationItem      NavigationItem?
+}
+
+model BlogPost {
+  id                  String   @id @default(cuid())
+  slug                String   @unique
+  title               String
+  excerpt             String?  @db.Text
+  heroImage           String?
+  body                String   @db.Text
+  // Author & Dates
+  author              String?
+  publishedAt         DateTime?
+  // Sections for block-based content (optional, for rich layouts)
+  sections            Json     @default("[]")
+  // SEO Fields
+  metaTitle           String?
+  metaDescription     String?  @db.Text
+  canonicalUrl        String?
+  ogTitle             String?
+  ogDescription       String?  @db.Text
+  ogImage             String?
+  // AEO Fields
+  schemaType          String   @default("BlogPosting")
+  faqItems            Json?
+  speakableSections   Json?
+  // Status
+  status              String   @default("draft")
+  featured            Boolean  @default(false)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  // Relations
+  categories          CategoriesOnBlogPosts[]
+  tags                TagsOnBlogPosts[]
+}
+
+model PodcastEpisode {
+  id                  String   @id @default(cuid())
+  slug                String   @unique
+  title               String
+  episodeNumber       Int?
+  description         String?  @db.Text
+  showNotes           String   @db.Text
+  audioUrl            String
+  videoUrl            String?
+  duration            String?  // Format: "HH:MM:SS" or "MM:SS"
+  publishedAt         DateTime?
+  // Sections for block-based content (optional)
+  sections            Json     @default("[]")
+  // SEO Fields
+  metaTitle           String?
+  metaDescription     String?  @db.Text
+  canonicalUrl        String?
+  ogTitle             String?
+  ogDescription       String?  @db.Text
+  ogImage             String?
+  // AEO Fields
+  schemaType          String   @default("PodcastEpisode")
+  faqItems            Json?
+  speakableSections   Json?
+  // Status
+  status              String   @default("draft")
+  featured            Boolean  @default(false)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  // Relations
+  categories          CategoriesOnPodcastEpisodes[]
+  tags                TagsOnPodcastEpisodes[]
+}
+
+model Category {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  description   String?  @db.Text
+  // Which content types this category applies to
+  appliesToBlog     Boolean @default(true)
+  appliesToPodcast  Boolean @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  // Relations
+  blogPosts     CategoriesOnBlogPosts[]
+  podcastEpisodes CategoriesOnPodcastEpisodes[]
+}
+
+model Tag {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  // Relations
+  blogPosts     TagsOnBlogPosts[]
+  podcastEpisodes TagsOnPodcastEpisodes[]
+}
+
+// ============================================
+// JOIN TABLES
+// ============================================
+
+model CategoriesOnBlogPosts {
+  blogPost      BlogPost @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
+  blogPostId    String
+  category      Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId    String
+  assignedAt    DateTime @default(now())
+
+  @@id([blogPostId, categoryId])
+}
+
+model TagsOnBlogPosts {
+  blogPost      BlogPost @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
+  blogPostId    String
+  tag           Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  tagId         String
+  assignedAt    DateTime @default(now())
+
+  @@id([blogPostId, tagId])
+}
+
+model CategoriesOnPodcastEpisodes {
+  podcastEpisode    PodcastEpisode @relation(fields: [podcastEpisodeId], references: [id], onDelete: Cascade)
+  podcastEpisodeId  String
+  category          Category       @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId        String
+  assignedAt        DateTime       @default(now())
+
+  @@id([podcastEpisodeId, categoryId])
+}
+
+model TagsOnPodcastEpisodes {
+  podcastEpisode    PodcastEpisode @relation(fields: [podcastEpisodeId], references: [id], onDelete: Cascade)
+  podcastEpisodeId  String
+  tag               Tag            @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  tagId             String
+  assignedAt        DateTime       @default(now())
+
+  @@id([podcastEpisodeId, tagId])
+}
+
+// ============================================
+// AUTHENTICATION (NextAuth)
+// ============================================
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String    // Hashed password
+  role          String    @default("admin")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
