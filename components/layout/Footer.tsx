@@ -63,48 +63,43 @@ const defaultColumns: FooterColumn[] = [
 ]
 
 export function Footer({ columns = defaultColumns }: FooterProps) {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="bg-brand-navy text-white">
-      <div className="max-w-wide mx-auto px-5 md:px-6 py-16">
-        {/* CTA Section */}
-        <div className="mb-12 pb-12 border-b border-white/10">
-          <div className="max-w-2xl">
-            <h3 className="font-display text-2xl md:text-3xl font-semibold mb-4">
-              Ready to build your Loop Revenue System?
-            </h3>
-            <p className="text-white/70 mb-6">
-              Start with the model or jump straight to your role-based path.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/overview/loop-revenue-system"
-                className="btn bg-white text-brand-navy hover:bg-white/90"
-              >
-                Learn the Model
-              </Link>
-              <Link
-                href="/roles/start-here"
-                className="btn border-2 border-white text-white hover:bg-white hover:text-brand-navy"
-              >
-                Start Here
-              </Link>
-            </div>
+    <footer className="bg-brand-navy">
+      {/* Main Navigation */}
+      <div className="max-w-wide mx-auto px-5 md:px-6 py-12 md:py-16">
+        {/* Logo and Tagline - Top Section */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-10 mb-10 border-b border-white/10">
+          <div className="flex items-center gap-4">
+            <Link href="/" className="block">
+              <Image
+                src="/images/logo/Loop-Revenue-logo-white.png"
+                alt="Loop Revenue System"
+                width={180}
+                height={45}
+                className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </Link>
           </div>
+          <p className="font-display text-lg text-white/60 italic">
+            One system. Four loops. Continuous learning.
+          </p>
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
           {columns.map((column) => (
             <div key={column.title}>
-              <h4 className="font-body text-sm font-semibold uppercase tracking-wider text-white/50 mb-4">
+              <h4 className="font-body text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
                 {column.title}
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {column.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/70 hover:text-white transition-colors"
+                      className="block text-sm text-white/70 hover:text-white transition-colors leading-relaxed"
                     >
                       {link.label}
                     </Link>
@@ -114,34 +109,29 @@ export function Footer({ columns = defaultColumns }: FooterProps) {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Bottom Section */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <Link href="/">
-              <Image
-                src="/images/logo/Loop-Revenue-logo-white.png"
-                alt="Loop Revenue System"
-                width={160}
-                height={40}
-                className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </Link>
-            <p className="text-sm text-white/50">
-              One system. Four loops. Continuous learning.
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-wide mx-auto px-5 md:px-6 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            {/* Copyright */}
+            <p className="text-sm text-white/40 order-2 md:order-1">
+              &copy; {currentYear} Loop Revenue System. All rights reserved.
             </p>
-          </div>
 
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <p className="text-sm text-white/50">
-              &copy; {new Date().getFullYear()} Loop Revenue System. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4 text-sm text-white/50">
-              <Link href="/privacy" className="hover:text-white transition-colors">
+            {/* Legal Links */}
+            <div className="flex items-center gap-6 order-1 md:order-2">
+              <Link
+                href="/privacy"
+                className="text-sm text-white/50 hover:text-white transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <span>&bull;</span>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link
+                href="/terms"
+                className="text-sm text-white/50 hover:text-white transition-colors"
+              >
                 Terms of Use
               </Link>
             </div>
