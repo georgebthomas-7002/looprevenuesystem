@@ -8,268 +8,6 @@
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
     <link rel="stylesheet" href="/src/css/styles.css">
-    <style>
-        /* Playbook-specific styles */
-        .playbook-hero {
-            background: linear-gradient(135deg, var(--brand-aqua) 0%, #ffffff 100%);
-            padding: 4rem 0;
-            border-bottom: 4px solid var(--brand-navy);
-        }
-        .playbook-hero-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        .playbook-hero h1 {
-            color: var(--brand-navy);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .playbook-hero h2 {
-            color: var(--brand-blue);
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        .playbook-hero p {
-            color: #444;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .stage-lanes-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        .stage-lane {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .stage-lane-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .stage-lane-icon svg {
-            width: 20px;
-            height: 20px;
-        }
-        .stage-lane[data-stage="express"] .stage-lane-icon { background: var(--brand-teal); }
-        .stage-lane[data-stage="tailor"] .stage-lane-icon { background: var(--brand-peach); }
-        .stage-lane[data-stage="amplify"] .stage-lane-icon { background: var(--brand-orange); }
-        .stage-lane[data-stage="evolve"] .stage-lane-icon { background: var(--brand-blue); }
-        .stage-lane-label {
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        .stage-lane[data-stage="express"] .stage-lane-label { color: var(--brand-teal); }
-        .stage-lane[data-stage="tailor"] .stage-lane-label { color: var(--brand-peach); }
-        .stage-lane[data-stage="amplify"] .stage-lane-label { color: var(--brand-orange); }
-        .stage-lane[data-stage="evolve"] .stage-lane-label { color: var(--brand-blue); }
-
-        .playbook-section {
-            padding: 4rem 0;
-        }
-        .playbook-section-alt {
-            background: var(--brand-aqua);
-        }
-        .playbook-section h2 {
-            color: var(--brand-navy);
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            padding-top: 1rem;
-            border-top: 4px solid var(--brand-light-blue);
-        }
-        .playbook-section[data-stage="express"] h2 { border-top-color: var(--brand-teal); }
-        .playbook-section[data-stage="tailor"] h2 { border-top-color: var(--brand-peach); }
-        .playbook-section[data-stage="amplify"] h2 { border-top-color: var(--brand-orange); }
-        .playbook-section[data-stage="evolve"] h2 { border-top-color: var(--brand-blue); }
-
-        .playbook-intro {
-            font-size: 1.1rem;
-            color: #444;
-            margin-bottom: 2.5rem;
-            max-width: 800px;
-        }
-        .play-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border-left: 4px solid var(--brand-light-blue);
-        }
-        .playbook-section[data-stage="express"] .play-card { border-left-color: var(--brand-teal); }
-        .playbook-section[data-stage="tailor"] .play-card { border-left-color: var(--brand-peach); }
-        .playbook-section[data-stage="amplify"] .play-card { border-left-color: var(--brand-orange); }
-        .playbook-section[data-stage="evolve"] .play-card { border-left-color: var(--brand-blue); }
-        .playbook-section-alt .play-card {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-        .play-card h3 {
-            color: var(--brand-navy);
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .play-card h3::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .playbook-section[data-stage="express"] .play-card h3::before { background: var(--brand-teal); }
-        .playbook-section[data-stage="tailor"] .play-card h3::before { background: var(--brand-peach); }
-        .playbook-section[data-stage="amplify"] .play-card h3::before { background: var(--brand-orange); }
-        .playbook-section[data-stage="evolve"] .play-card h3::before { background: var(--brand-blue); }
-        .play-card p {
-            color: #444;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .play-card ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-        .play-card li {
-            color: #444;
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-        .path-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .path-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            text-align: center;
-        }
-        .path-card h4 {
-            color: var(--brand-navy);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        .path-card p {
-            color: #555;
-            line-height: 1.6;
-        }
-        .experiment-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border: 2px solid var(--brand-light-blue);
-        }
-        .experiment-steps {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        .experiment-step {
-            background: var(--brand-aqua);
-            padding: 0.75rem 1.25rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--brand-navy);
-        }
-        .tool-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .tool-card {
-            background: var(--brand-aqua);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-        }
-        .tool-card h4 {
-            color: var(--brand-navy);
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
-        .tool-card p {
-            color: #555;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        .playbook-cta-section {
-            padding: 4rem 0;
-            border-top: 4px solid var(--brand-light-blue);
-        }
-        .playbook-cta-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .playbook-cta-card {
-            background: var(--brand-aqua);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-        }
-        .playbook-cta-card h4 {
-            color: var(--brand-navy);
-            margin-bottom: 0.75rem;
-        }
-        .playbook-cta-card p {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-        .playbook-cta-card ul {
-            text-align: left;
-            padding-left: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-        .playbook-cta-card li {
-            color: #555;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        .playbook-cta-card li a {
-            color: var(--brand-teal);
-            text-decoration: none;
-        }
-        .playbook-cta-card li a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .playbook-hero-grid {
-                grid-template-columns: 1fr;
-            }
-            .path-cards,
-            .tool-cards,
-            .playbook-cta-grid {
-                grid-template-columns: 1fr;
-            }
-            .experiment-steps {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
 <body>
     <header class="site-header">
@@ -323,65 +61,58 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="playbook-hero">
+        <section class="ds-hero">
             <div class="container">
-                <div class="playbook-hero-grid">
-                    <div class="playbook-hero-content">
+                <div class="ds-grid-asymmetric">
+                    <div class="ds-hero-content">
                         <h1>System Playbooks</h1>
                         <h2>Turn The Loop Revenue System Into Concrete Next Steps</h2>
-                        <p>The Loop Revenue System gives you a clear way to think about revenue: four loops and four stages. That is the model.</p>
-                        <p>System playbooks are how you make that model real.</p>
-                        <p>On this page, you will see simple, practical plays for each stage across marketing, sales, service, and ops. You can start with the stage that feels weakest or with the loop that matters most right now and still make progress.</p>
-                        <p>You do not need to do everything at once. You need to choose one play, run it, learn, and then keep the loop spinning.</p>
-                    </div>
-                    <div class="playbook-hero-visual">
-                        <div class="stage-lanes-visual">
-                            <div class="stage-lane" data-stage="express">
-                                <div class="stage-lane-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                                    </svg>
-                                </div>
-                                <span class="stage-lane-label">Express - Get Clear</span>
-                            </div>
-                            <div class="stage-lane" data-stage="tailor">
-                                <div class="stage-lane-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                        <circle cx="12" cy="7" r="4"/>
-                                    </svg>
-                                </div>
-                                <span class="stage-lane-label">Tailor - Make It Personal</span>
-                            </div>
-                            <div class="stage-lane" data-stage="amplify">
-                                <div class="stage-lane-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                                    </svg>
-                                </div>
-                                <span class="stage-lane-label">Amplify - Scale What Works</span>
-                            </div>
-                            <div class="stage-lane" data-stage="evolve">
-                                <div class="stage-lane-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                        <polyline points="23 4 23 10 17 10"/>
-                                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-                                    </svg>
-                                </div>
-                                <span class="stage-lane-label">Evolve - Learn On Purpose</span>
-                            </div>
+                        <div class="ds-hero-text">
+                            <p>The Loop Revenue System gives you a clear way to think about revenue: four loops and four stages. That is the model.</p>
+                            <p>System playbooks are how you make that model real.</p>
+                            <p>On this page, you will see simple, practical plays for each stage across marketing, sales, service, and ops. You can start with the stage that feels weakest or with the loop that matters most right now and still make progress.</p>
+                            <p>You do not need to do everything at once. You need to choose one play, run it, learn, and then keep the loop spinning.</p>
                         </div>
+                    </div>
+                    <div class="ds-hero-visual">
+                        <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Express -->
+                            <g>
+                                <rect x="20" y="30" width="240" height="30" rx="4" fill="rgba(2,131,147,0.1)" stroke="#028393" stroke-width="2"/>
+                                <circle cx="35" cy="45" r="8" fill="#028393"/>
+                                <text x="55" y="50" fill="#028393" font-size="14" font-weight="600">Express - Get Clear</text>
+                            </g>
+                            <!-- Tailor -->
+                            <g>
+                                <rect x="20" y="75" width="240" height="30" rx="4" fill="rgba(250,170,104,0.1)" stroke="#faaa68" stroke-width="2"/>
+                                <circle cx="35" cy="90" r="8" fill="#faaa68"/>
+                                <text x="55" y="95" fill="#c47f3a" font-size="14" font-weight="600">Tailor - Make It Personal</text>
+                            </g>
+                            <!-- Amplify -->
+                            <g>
+                                <rect x="20" y="120" width="240" height="30" rx="4" fill="rgba(246,86,37,0.1)" stroke="#f65625" stroke-width="2"/>
+                                <circle cx="35" cy="135" r="8" fill="#f65625"/>
+                                <text x="55" y="140" fill="#f65625" font-size="14" font-weight="600">Amplify - Scale What Works</text>
+                            </g>
+                            <!-- Evolve -->
+                            <g>
+                                <rect x="20" y="165" width="240" height="30" rx="4" fill="rgba(61,90,128,0.1)" stroke="#3D5A80" stroke-width="2"/>
+                                <circle cx="35" cy="180" r="8" fill="#3D5A80"/>
+                                <text x="55" y="185" fill="#3D5A80" font-size="14" font-weight="600">Evolve - Learn On Purpose</text>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- What and Why Section -->
-        <section class="playbook-section">
+        <section class="ds-section">
             <div class="container">
-                <h2>What A System Playbook Is And Why It Matters</h2>
-                <p class="playbook-intro">A system playbook is a small set of repeatable actions that move your loops forward by stage. It turns questions like "How do we improve Express?" into concrete moves your team can actually make. It gives you a way to answer, "What does this look like in marketing, sales, service, and ops?" without guessing.</p>
+                <div class="ds-section-header">
+                    <h2>What A System Playbook Is And Why It Matters</h2>
+                    <p>A system playbook is a small set of repeatable actions that move your loops forward by stage. It turns questions like "How do we improve Express?" into concrete moves your team can actually make. It gives you a way to answer, "What does this look like in marketing, sales, service, and ops?" without guessing.</p>
+                </div>
 
                 <p>Good playbooks:</p>
                 <ul style="margin: 1rem 0 2rem 1.5rem;">
@@ -396,33 +127,37 @@
         </section>
 
         <!-- How to Use Section -->
-        <section class="playbook-section playbook-section-alt">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>How To Use This Page</h2>
-                <p class="playbook-intro">There are two easy ways to use this page.</p>
+                <div class="ds-section-header">
+                    <h2>How To Use This Page</h2>
+                    <p>There are two easy ways to use this page.</p>
+                </div>
 
-                <div class="path-cards">
-                    <div class="path-card">
+                <div class="ds-grid-2">
+                    <div class="ds-card">
                         <h4>Start By Stage</h4>
                         <p>Pick Express, Tailor, Amplify, or Evolve and see example plays for marketing, sales, service, and ops. This is a good path if you know, for example, that your Tailor stage is weak across the board.</p>
                     </div>
-                    <div class="path-card">
+                    <div class="ds-card">
                         <h4>Start By Loop</h4>
                         <p>Read each stage play for your world, such as Loop Marketing or Loop Sales, and choose one or two plays to run first. This is a good path if you lead one department and want to improve it without waiting for a full company rollout.</p>
                     </div>
                 </div>
 
-                <p>Either way, move slowly enough that your team can keep up, and fast enough that you actually feel momentum.</p>
+                <p class="ds-mt-2">Either way, move slowly enough that your team can keep up, and fast enough that you actually feel momentum.</p>
             </div>
         </section>
 
         <!-- Express Playbook Section -->
-        <section class="playbook-section" data-stage="express">
+        <section class="ds-section">
             <div class="container">
-                <h2>Express Playbook - Get Clear Before You Scale</h2>
-                <p class="playbook-intro">Express is about clarity. Before you push harder on personalization, automation, or optimization, you need to know what you stand for, who you are serving, and how your process works. You can treat Express as a "clarity sprint" for each loop.</p>
+                <div class="ds-section-header">
+                    <h2>Express Playbook - Get Clear Before You Scale</h2>
+                    <p>Express is about clarity. Before you push harder on personalization, automation, or optimization, you need to know what you stand for, who you are serving, and how your process works. You can treat Express as a "clarity sprint" for each loop.</p>
+                </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card express ds-mb-2">
                     <h3>Express Play - Loop Marketing</h3>
                     <p>Choose one core audience you care about. Spend a week listening carefully.</p>
                     <ul>
@@ -433,7 +168,7 @@
                     <p>Use that brief to update one key asset: your main page for that audience, a core landing page, or a foundational blog article.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card express ds-mb-2">
                     <h3>Express Play - Loop Sales</h3>
                     <p>Sit down with a few of your most experienced reps and a few newer reps.</p>
                     <ul>
@@ -444,7 +179,7 @@
                     <p>Write this into a one page Express guide for sales. Use it in your next pipeline review and coaching sessions.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card express ds-mb-2">
                     <h3>Express Play - Loop Service</h3>
                     <p>Take your main product or offer and ask one question.</p>
                     <p><strong>What does "success" look like for a customer 90 days after they buy?</strong></p>
@@ -452,7 +187,7 @@
                     <p>Use that journey to update your onboarding emails, kickoff calls, or in app guidance.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card express">
                     <h3>Express Play - Loop Ops</h3>
                     <p>Bring one leader from marketing, sales, and service together.</p>
                     <ul>
@@ -466,12 +201,14 @@
         </section>
 
         <!-- Tailor Playbook Section -->
-        <section class="playbook-section playbook-section-alt" data-stage="tailor">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>Tailor Playbook - Make It Personal And Contextual</h2>
-                <p class="playbook-intro">Tailor is about relevance. Once you are clear on Express, you can adjust your messages, flows, and systems to match what real people need. This is where a lot of simple personalization goes wrong. The goal is not to use every data point. The goal is to be more helpful.</p>
+                <div class="ds-section-header">
+                    <h2>Tailor Playbook - Make It Personal And Contextual</h2>
+                    <p>Tailor is about relevance. Once you are clear on Express, you can adjust your messages, flows, and systems to match what real people need. This is where a lot of simple personalization goes wrong. The goal is not to use every data point. The goal is to be more helpful.</p>
+                </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card tailor ds-mb-2">
                     <h3>Tailor Play - Loop Marketing</h3>
                     <p>Pick one high value segment, such as customers in a specific industry or role.</p>
                     <p>Audit one of your main journeys for that segment, such as a nurture sequence or a content path on your site. Ask three questions:</p>
@@ -483,7 +220,7 @@
                     <p>Make two improvements. Adjust language in one key asset and change one rule in your nurture or content logic to better fit this segment.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card tailor ds-mb-2">
                     <h3>Tailor Play - Loop Sales</h3>
                     <p>Choose one target segment where your win rate should be higher.</p>
                     <p>Before each meeting, review the account's firmographics, digital behavior, and any support or product usage for existing contacts.</p>
@@ -496,7 +233,7 @@
                     <p>Ask reps to use these in their next set of calls and record what changes in the conversation.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card tailor ds-mb-2">
                     <h3>Tailor Play - Loop Service</h3>
                     <p>Identify a group of customers who often struggle early, such as smaller teams or customers in a specific vertical.</p>
                     <p>Look at their first thirty days:</p>
@@ -508,7 +245,7 @@
                     <p>Create a simple, tailored onboarding add-on for this group, such as an extra check in call, a short video, or a targeted checklist. Track whether this changes their early experience.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card tailor">
                     <h3>Tailor Play - Loop Ops</h3>
                     <p>Pick one process where people complain about "too many clicks" or "having to repeat information."</p>
                     <p>Follow a handful of records through that process. Ask:</p>
@@ -523,12 +260,14 @@
         </section>
 
         <!-- Amplify Playbook Section -->
-        <section class="playbook-section" data-stage="amplify">
+        <section class="ds-section">
             <div class="container">
-                <h2>Amplify Playbook - Scale What Works Without Burning Out</h2>
-                <p class="playbook-intro">Amplify is where you take what is working in one corner and make it easier for more people to use. You do not start Amplify with random tactics. You start it with something that has already shown promise in Express and Tailor.</p>
+                <div class="ds-section-header">
+                    <h2>Amplify Playbook - Scale What Works Without Burning Out</h2>
+                    <p>Amplify is where you take what is working in one corner and make it easier for more people to use. You do not start Amplify with random tactics. You start it with something that has already shown promise in Express and Tailor.</p>
+                </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card amplify ds-mb-2">
                     <h3>Amplify Play - Loop Marketing</h3>
                     <p>Find one asset that consistently performs well. It might be a blog post, a webinar, a playbook, or a video.</p>
                     <p>Turn it into:</p>
@@ -540,7 +279,7 @@
                     <p>Do not change the core idea. Change the format and channels.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card amplify ds-mb-2">
                     <h3>Amplify Play - Loop Sales</h3>
                     <p>Identify a rep, message, or motion that outperforms the team average.</p>
                     <p>Capture the specifics. Record a call (with consent), copy the exact email language, and document the sequence of steps.</p>
@@ -553,7 +292,7 @@
                     <p>Encourage reps to try this play in the right scenarios, not everywhere.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card amplify ds-mb-2">
                     <h3>Amplify Play - Loop Service</h3>
                     <p>Find a question your team answers at least five times a week.</p>
                     <ul>
@@ -564,7 +303,7 @@
                     <p>Over time, track how often this resource is used and whether related ticket volume drops.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card amplify">
                     <h3>Amplify Play - Loop Ops</h3>
                     <p>Identify one manual process that is boring, predictable, and rule based.</p>
                     <ul>
@@ -578,12 +317,14 @@
         </section>
 
         <!-- Evolve Playbook Section -->
-        <section class="playbook-section playbook-section-alt" data-stage="evolve">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>Evolve Playbook - Learn On Purpose, Not By Accident</h2>
-                <p class="playbook-intro">Evolve turns motion into improvement. This is where you look back at the plays you ran in Express, Tailor, and Amplify and decide what to keep, what to change, and what to drop.</p>
+                <div class="ds-section-header">
+                    <h2>Evolve Playbook - Learn On Purpose, Not By Accident</h2>
+                    <p>Evolve turns motion into improvement. This is where you look back at the plays you ran in Express, Tailor, and Amplify and decide what to keep, what to change, and what to drop.</p>
+                </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card evolve ds-mb-2">
                     <h3>Evolve Play - Loop Marketing</h3>
                     <p>Choose one campaign, content series, or nurture sequence you have been running.</p>
                     <p>Ask:</p>
@@ -596,7 +337,7 @@
                     <p>Capture a short narrative of what you learned.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card evolve ds-mb-2">
                     <h3>Evolve Play - Loop Sales</h3>
                     <p>Look at the last month or quarter of deals for a specific segment.</p>
                     <ul>
@@ -607,7 +348,7 @@
                     <p>Update your reason picklist or tags so they match reality. Use this new view in your next leadership meeting and in your next sales training.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card evolve ds-mb-2">
                     <h3>Evolve Play - Loop Service</h3>
                     <p>Take a period of time, like the last 60 or 90 days.</p>
                     <p>Look at:</p>
@@ -620,7 +361,7 @@
                     <p>Review the impact after another cycle.</p>
                 </div>
 
-                <div class="play-card">
+                <div class="ds-stage-card evolve">
                     <h3>Evolve Play - Loop Ops</h3>
                     <p>Review your system change log for the last quarter.</p>
                     <ul>
@@ -634,13 +375,15 @@
         </section>
 
         <!-- Experiments Section -->
-        <section class="playbook-section">
+        <section class="ds-section">
             <div class="container">
-                <h2>Experiments And Iteration Inside Playbooks</h2>
-                <p class="playbook-intro">Every play on this page can be run as a small experiment. You do not have to commit forever up front.</p>
+                <div class="ds-section-header">
+                    <h2>Experiments And Iteration Inside Playbooks</h2>
+                    <p>Every play on this page can be run as a small experiment. You do not have to commit forever up front.</p>
+                </div>
 
-                <div class="experiment-card">
-                    <p>You can:</p>
+                <div class="ds-highlight-box">
+                    <h4>You can:</h4>
                     <ul>
                         <li>Write a simple hypothesis.</li>
                         <li>Name the loop and stage.</li>
@@ -648,83 +391,95 @@
                         <li>Timebox the experiment, such as four or eight weeks.</li>
                     </ul>
 
-                    <div class="experiment-steps">
-                        <span class="experiment-step">Hypothesis</span>
-                        <span class="experiment-step">Stage</span>
-                        <span class="experiment-step">Loop</span>
-                        <span class="experiment-step">Metric</span>
-                        <span class="experiment-step">Timebox</span>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
+                        <span style="background: var(--brand-aqua); padding: 0.75rem 1.25rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--brand-navy);">Hypothesis</span>
+                        <span style="background: var(--brand-aqua); padding: 0.75rem 1.25rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--brand-navy);">Stage</span>
+                        <span style="background: var(--brand-aqua); padding: 0.75rem 1.25rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--brand-navy);">Loop</span>
+                        <span style="background: var(--brand-aqua); padding: 0.75rem 1.25rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--brand-navy);">Metric</span>
+                        <span style="background: var(--brand-aqua); padding: 0.75rem 1.25rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--brand-navy);">Timebox</span>
                     </div>
                 </div>
 
-                <p style="margin-top: 2rem;">At the end of the timebox, review what happened, decide what to keep, and move on. This way, the Loop Revenue System does not turn into a big, fixed program. It becomes a rhythm of smaller experiments, grounded in the same model, that help your whole business adjust and flourish over time.</p>
+                <p class="ds-mt-2">At the end of the timebox, review what happened, decide what to keep, and move on. This way, the Loop Revenue System does not turn into a big, fixed program. It becomes a rhythm of smaller experiments, grounded in the same model, that help your whole business adjust and flourish over time.</p>
             </div>
         </section>
 
         <!-- AI and Humans Section -->
-        <section class="playbook-section playbook-section-alt">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>Where AI Fits In These Playbooks And Where Humans Lead</h2>
-                <p class="playbook-intro">AI can make most of these plays faster and more comfortable to run.</p>
+                <div class="ds-section-header">
+                    <h2>Where AI Fits In These Playbooks And Where Humans Lead</h2>
+                    <p>AI can make most of these plays faster and more comfortable to run.</p>
+                </div>
 
-                <div class="ai-humans-detail">
-                    <div class="ai-detail-card">
-                        <h4>AI Can Accelerate</h4>
-                        <ul>
-                            <li>Summarize calls, scan feedback, and draft Express briefs.</li>
-                            <li>Generate segment specific language and test variations in Tailor.</li>
-                            <li>Repurpose content and orchestrate automation in Amplify.</li>
-                            <li>Spot patterns in data during Evolve.</li>
-                        </ul>
+                <div class="ds-grid-2">
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar">
+                            <h3>AI Can Accelerate</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Summarize calls, scan feedback, and draft Express briefs.</li>
+                                <li>Generate segment specific language and test variations in Tailor.</li>
+                                <li>Repurpose content and orchestrate automation in Amplify.</li>
+                                <li>Spot patterns in data during Evolve.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="humans-detail-card">
-                        <h4>Humans Must Decide</h4>
-                        <ul>
-                            <li>Choose which problems to focus on.</li>
-                            <li>Set boundaries for personalization and automation.</li>
-                            <li>Decide which plays to keep and which to stop.</li>
-                            <li>Own the impact of changes on customers and teams.</li>
-                        </ul>
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar blue">
+                            <h3>Humans Must Decide</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Choose which problems to focus on.</li>
+                                <li>Set boundaries for personalization and automation.</li>
+                                <li>Decide which plays to keep and which to stop.</li>
+                                <li>Own the impact of changes on customers and teams.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <p style="margin-top: 2rem;">If you want a deeper dive on how AI and humans share the work, you can explore the dedicated page: <a href="/playbooks/ai-and-humans" style="color: var(--brand-teal); font-weight: 500;">AI And Humans</a></p>
+                <p class="ds-mt-2">If you want a deeper dive on how AI and humans share the work, you can explore the dedicated page: <a href="/playbooks/ai-and-humans" style="color: var(--brand-teal); font-weight: 500;">AI And Humans</a></p>
             </div>
         </section>
 
         <!-- Tools Connection Section -->
-        <section class="playbook-section">
+        <section class="ds-section">
             <div class="container">
-                <h2>Connecting Playbooks To Your Tools</h2>
-                <p class="playbook-intro">The playbooks on this page are tool agnostic on purpose. You can run them with HubSpot at the center, with another CRM and support stack, or with a simpler setup that uses spreadsheets and a few focused tools.</p>
+                <div class="ds-section-header">
+                    <h2>Connecting Playbooks To Your Tools</h2>
+                    <p>The playbooks on this page are tool agnostic on purpose. You can run them with HubSpot at the center, with another CRM and support stack, or with a simpler setup that uses spreadsheets and a few focused tools.</p>
+                </div>
 
-                <div class="tool-cards">
-                    <div class="tool-card">
+                <div class="ds-grid-2">
+                    <div class="ds-card">
                         <h4>With HubSpot</h4>
                         <p>Map plays to CRM objects, properties, lists, workflows, sequences, tickets, pipelines, playbooks, reports, and dashboards.</p>
                         <a href="/playbooks/hubspot" class="btn btn-secondary">View HubSpot Playbook</a>
                     </div>
-                    <div class="tool-card">
+                    <div class="ds-card">
                         <h4>Without HubSpot</h4>
                         <p>Map plays to similar concepts in your tools, whether it is another CRM, support platform, or simpler stack.</p>
                         <a href="/playbooks/no-hubspot" class="btn btn-secondary">View No HubSpot Playbook</a>
                     </div>
                 </div>
 
-                <p style="margin-top: 2rem;">Those pages do not add new strategy. They help you translate these plays into your actual systems.</p>
+                <p class="ds-mt-2">Those pages do not add new strategy. They help you translate these plays into your actual systems.</p>
             </div>
         </section>
 
         <!-- Next Steps Section -->
-        <section class="playbook-cta-section">
+        <section class="ds-cta-banner">
             <div class="container">
                 <h2>Where To Go Next</h2>
-                <p class="playbook-intro">You now have a set of plays you can run across Express, Tailor, Amplify, and Evolve. Next, pick one of these paths.</p>
+                <p>You now have a set of plays you can run across Express, Tailor, Amplify, and Evolve. Next, pick one of these paths.</p>
 
-                <div class="playbook-cta-grid">
-                    <div class="playbook-cta-card">
+                <div class="ds-grid-3 ds-mt-2">
+                    <div class="ds-link-card">
                         <h4>Understand Each Loop</h4>
-                        <p>Go deeper on marketing, sales, service, or ops before running plays.</p>
+                        <p style="color: #555; margin-bottom: 1rem;">Go deeper on marketing, sales, service, or ops before running plays.</p>
                         <ul>
                             <li><a href="/loops">Four Loops Overview</a></li>
                             <li><a href="/loops/marketing">Loop Marketing</a></li>
@@ -733,17 +488,17 @@
                             <li><a href="/loops/ops">Loop Ops</a></li>
                         </ul>
                     </div>
-                    <div class="playbook-cta-card">
+                    <div class="ds-link-card">
                         <h4>Revisit The Stages</h4>
-                        <p>Tighten your understanding of Express, Tailor, Amplify, and Evolve.</p>
+                        <p style="color: #555; margin-bottom: 1rem;">Tighten your understanding of Express, Tailor, Amplify, and Evolve.</p>
                         <ul>
                             <li><a href="/overview/stages">Stages Overview</a></li>
                         </ul>
                         <a href="/overview/stages" class="btn btn-primary" style="margin-top: 1rem;">View Stages</a>
                     </div>
-                    <div class="playbook-cta-card">
+                    <div class="ds-link-card">
                         <h4>Move To Practice</h4>
-                        <p>Get concrete tools to run your first play.</p>
+                        <p style="color: #555; margin-bottom: 1rem;">Get concrete tools to run your first play.</p>
                         <ul>
                             <li><a href="/resources/templates-checklists">Templates & Checklists</a></li>
                             <li><a href="/resources/workshops-exercises">Workshops & Exercises</a></li>
@@ -751,7 +506,7 @@
                     </div>
                 </div>
 
-                <p style="margin-top: 3rem; font-size: 1.1rem; font-weight: 500; color: var(--brand-navy); text-align: center;">Do not wait for the perfect moment. Choose one stage, one loop, and one play. Run it. Learn. Then let the loop keep turning.</p>
+                <p class="ds-mt-3 ds-text-center" style="font-size: 1.1rem; font-weight: 500;">Do not wait for the perfect moment. Choose one stage, one loop, and one play. Run it. Learn. Then let the loop keep turning.</p>
             </div>
         </section>
     </main>

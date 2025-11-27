@@ -3,632 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI And Humans - How AI assists and humans lead in the Loop Revenue System. Design a hybrid operating model that helps your business and customers flourish.">
-    <title>AI And Humans - Loop Revenue System</title>
+    <meta name="description" content="AI and Humans in the Loop Revenue System - Build hybrid loop teams where AI assists and humans lead across Express, Tailor, Amplify, and Evolve.">
+    <title>AI and Humans - Loop Revenue System</title>
     <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="/src/images/favicon/Loop-Revenue-Favicon.png">
     <link rel="stylesheet" href="/src/css/styles.css">
-    <style>
-        /* AI And Humans page specific styles */
-        .aihumans-hero {
-            background: linear-gradient(135deg, var(--brand-aqua) 0%, #ffffff 100%);
-            padding: 4rem 0;
-            border-bottom: 4px solid var(--brand-teal);
-        }
-        .aihumans-hero-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        .aihumans-hero h1 {
-            color: var(--brand-navy);
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-        }
-        .aihumans-hero h2 {
-            color: var(--brand-blue);
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        .aihumans-hero p {
-            color: #444;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .aihumans-hero .principle-statement {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--brand-navy);
-            margin: 1.5rem 0;
-        }
-        .aihumans-visual {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 2px solid var(--brand-light-blue);
-        }
-        .aihumans-visual svg {
-            width: 100%;
-            height: auto;
-        }
-        .aihumans-section {
-            padding: 4rem 0;
-        }
-        .aihumans-section-alt {
-            background: var(--brand-aqua);
-        }
-        .aihumans-section h2 {
-            color: var(--brand-navy);
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            padding-top: 1rem;
-            border-top: 4px solid var(--brand-light-blue);
-        }
-        .aihumans-section h3 {
-            color: var(--brand-navy);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
-        .aihumans-intro {
-            font-size: 1.1rem;
-            color: #444;
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-        /* Two column layout */
-        .hybrid-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-        .hybrid-content p {
-            color: #444;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .hybrid-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-        .hybrid-content ul li {
-            color: #444;
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        .hybrid-content ul li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.9rem;
-            width: 8px;
-            height: 8px;
-            background: var(--brand-teal);
-            border-radius: 50%;
-        }
-        .risk-callout {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            border-left: 4px solid var(--brand-orange);
-        }
-        .aihumans-section-alt .risk-callout {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-        .risk-callout h4 {
-            color: var(--brand-orange);
-            margin-bottom: 1rem;
-        }
-        .risk-callout ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .risk-callout ul li {
-            color: #555;
-            padding: 0.4rem 0;
-            padding-left: 1.25rem;
-            position: relative;
-        }
-        .risk-callout ul li::before {
-            content: "!";
-            position: absolute;
-            left: 0;
-            font-weight: 700;
-            color: var(--brand-orange);
-        }
-        /* Strengths columns */
-        .strengths-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .strength-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-        .strength-card.ai-card {
-            border-top: 4px solid var(--brand-teal);
-        }
-        .strength-card.human-card {
-            border-top: 4px solid var(--brand-blue);
-        }
-        .strength-card h3 {
-            margin-top: 0;
-            margin-bottom: 1.25rem;
-        }
-        .strength-card.ai-card h3 {
-            color: var(--brand-teal);
-        }
-        .strength-card.human-card h3 {
-            color: var(--brand-blue);
-        }
-        .strength-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .strength-card ul li {
-            color: #444;
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.6;
-        }
-        .strength-card.ai-card ul li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.85rem;
-            width: 8px;
-            height: 8px;
-            background: var(--brand-teal);
-            border-radius: 50%;
-        }
-        .strength-card.human-card ul li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.85rem;
-            width: 8px;
-            height: 8px;
-            background: var(--brand-blue);
-            border-radius: 50%;
-        }
-        /* Loop cards grid */
-        .loop-ai-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .loop-ai-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border-top: 4px solid var(--brand-light-blue);
-        }
-        .loop-ai-card[data-loop="marketing"] {
-            border-top-color: var(--brand-teal);
-        }
-        .loop-ai-card[data-loop="sales"] {
-            border-top-color: var(--brand-orange);
-        }
-        .loop-ai-card[data-loop="service"] {
-            border-top-color: var(--brand-peach);
-        }
-        .loop-ai-card[data-loop="ops"] {
-            border-top-color: var(--brand-blue);
-        }
-        .loop-ai-card h3 {
-            color: var(--brand-navy);
-            font-size: 1.2rem;
-            margin-top: 0;
-            margin-bottom: 1.25rem;
-        }
-        .loop-ai-card h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-            margin-top: 1.25rem;
-        }
-        .loop-ai-card h4.ai-label {
-            color: var(--brand-teal);
-        }
-        .loop-ai-card h4.human-label {
-            color: var(--brand-blue);
-        }
-        .loop-ai-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .loop-ai-card ul li {
-            color: #555;
-            font-size: 0.95rem;
-            padding: 0.35rem 0;
-            padding-left: 1.25rem;
-            position: relative;
-            line-height: 1.5;
-        }
-        .loop-ai-card ul.ai-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.7rem;
-            width: 6px;
-            height: 6px;
-            background: var(--brand-teal);
-            border-radius: 50%;
-        }
-        .loop-ai-card ul.human-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.7rem;
-            width: 6px;
-            height: 6px;
-            background: var(--brand-blue);
-            border-radius: 50%;
-        }
-        /* Stage bands */
-        .stage-ai-bands {
-            margin: 2rem 0;
-        }
-        .stage-ai-band {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            border-left: 4px solid var(--brand-light-blue);
-        }
-        .stage-ai-band[data-stage="express"] {
-            border-left-color: var(--brand-teal);
-        }
-        .stage-ai-band[data-stage="tailor"] {
-            border-left-color: var(--brand-peach);
-        }
-        .stage-ai-band[data-stage="amplify"] {
-            border-left-color: var(--brand-orange);
-        }
-        .stage-ai-band[data-stage="evolve"] {
-            border-left-color: var(--brand-blue);
-        }
-        .stage-ai-band h3 {
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-        }
-        .stage-ai-band[data-stage="express"] h3 { color: var(--brand-teal); }
-        .stage-ai-band[data-stage="tailor"] h3 { color: #c47f3a; }
-        .stage-ai-band[data-stage="amplify"] h3 { color: var(--brand-orange); }
-        .stage-ai-band[data-stage="evolve"] h3 { color: var(--brand-blue); }
-        .stage-ai-band .stage-intro {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-        .stage-ai-band .ai-human-columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .stage-ai-band h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-        .stage-ai-band h4.ai-label {
-            color: var(--brand-teal);
-        }
-        .stage-ai-band h4.human-label {
-            color: var(--brand-blue);
-        }
-        .stage-ai-band ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .stage-ai-band ul li {
-            color: #555;
-            font-size: 0.95rem;
-            padding: 0.35rem 0;
-            padding-left: 1.25rem;
-            position: relative;
-            line-height: 1.5;
-        }
-        .stage-ai-band ul.ai-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.7rem;
-            width: 6px;
-            height: 6px;
-            background: var(--brand-teal);
-            border-radius: 50%;
-        }
-        .stage-ai-band ul.human-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.7rem;
-            width: 6px;
-            height: 6px;
-            background: var(--brand-blue);
-            border-radius: 50%;
-        }
-        /* Pattern cards */
-        .pattern-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .pattern-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .pattern-card:nth-child(odd) {
-            border-top: 4px solid var(--brand-teal);
-        }
-        .pattern-card:nth-child(even) {
-            border-top: 4px solid var(--brand-blue);
-        }
-        .pattern-card h3 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        .pattern-card:nth-child(odd) h3 {
-            color: var(--brand-teal);
-        }
-        .pattern-card:nth-child(even) h3 {
-            color: var(--brand-blue);
-        }
-        .pattern-card p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-        }
-        .pattern-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0.75rem 0 0 0;
-        }
-        .pattern-card ul li {
-            color: #555;
-            font-size: 0.95rem;
-            padding: 0.3rem 0;
-            padding-left: 1.25rem;
-            position: relative;
-        }
-        .pattern-card ul li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--brand-navy);
-        }
-        /* Risk and guardrail cards */
-        .risk-guard-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .risk-guard-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-        .risk-guard-card.risks {
-            border-left: 4px solid var(--brand-orange);
-        }
-        .risk-guard-card.guardrails {
-            border-left: 4px solid var(--brand-teal);
-        }
-        .risk-guard-card h3 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-        .risk-guard-card.risks h3 {
-            color: var(--brand-orange);
-        }
-        .risk-guard-card.guardrails h3 {
-            color: var(--brand-teal);
-        }
-        .risk-guard-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .risk-guard-card ul li {
-            color: #555;
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.6;
-        }
-        .risk-guard-card.risks ul li::before {
-            content: "!";
-            position: absolute;
-            left: 0;
-            font-weight: 700;
-            color: var(--brand-orange);
-        }
-        .risk-guard-card.guardrails ul li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.85rem;
-            width: 8px;
-            height: 8px;
-            background: var(--brand-teal);
-            border-radius: 50%;
-        }
-        /* Governance checklist */
-        .governance-callout {
-            background: var(--brand-aqua);
-            border-radius: 12px;
-            padding: 2rem;
-            border-left: 4px solid var(--brand-blue);
-            margin: 2rem 0;
-        }
-        .governance-callout h4 {
-            color: var(--brand-blue);
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-        .governance-callout p {
-            color: #555;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .governance-callout p strong {
-            color: var(--brand-navy);
-        }
-        /* Link cards */
-        .link-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .link-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-decoration: none;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            border-top: 3px solid var(--brand-teal);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .link-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        }
-        .link-card h4 {
-            color: var(--brand-navy);
-            margin: 0 0 0.5rem 0;
-            font-size: 1rem;
-        }
-        .link-card p {
-            color: #666;
-            font-size: 0.9rem;
-            margin: 0;
-            line-height: 1.5;
-        }
-        /* CTA cards */
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .cta-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .cta-card h4 {
-            color: var(--brand-navy);
-            margin: 0 0 0.75rem 0;
-        }
-        .cta-card p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-            line-height: 1.5;
-        }
-        .cta-card .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
-        .cta-card .btn-primary {
-            background: var(--brand-orange);
-            color: white;
-        }
-        .cta-card .btn-primary:hover {
-            background: #d94d1a;
-        }
-        .cta-card .btn-secondary {
-            background: white;
-            color: var(--brand-navy);
-            border: 2px solid var(--brand-navy);
-        }
-        .cta-card .btn-secondary:hover {
-            background: var(--brand-navy);
-            color: white;
-        }
-        .takeaway-box {
-            background: var(--brand-aqua);
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            border-left: 4px solid var(--brand-teal);
-            margin-bottom: 2rem;
-        }
-        .takeaway-box p {
-            color: var(--brand-navy);
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 0;
-        }
-        /* Responsive */
-        @media (max-width: 900px) {
-            .aihumans-hero-grid,
-            .hybrid-grid,
-            .strengths-grid,
-            .loop-ai-grid,
-            .pattern-grid,
-            .link-cards-grid,
-            .cta-grid {
-                grid-template-columns: 1fr;
-            }
-            .stage-ai-band .ai-human-columns {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <header class="site-header">
         <div class="container">
             <nav class="nav">
-                <div class="logo">
-                    <a href="/">
-                        <img src="/src/images/logo/Loop-Revenue-System-Logo-400.png" alt="Loop Revenue System" />
-                    </a>
-                </div>
+                <div class="logo"><a href="/"><img src="/src/images/logo/Loop-Revenue-System-Logo-400.png" alt="Loop Revenue System" /></a></div>
                 <ul class="nav-menu">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Overview</a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle">Overview</a>
                         <ul class="dropdown-menu">
                             <li><a href="/overview/loop-revenue-system">What Is the Loop Revenue System</a></li>
                             <li><a href="/overview/stages">Stages: Express, Tailor, Amplify, Evolve</a></li>
                             <li><a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="/loops" class="dropdown-toggle">Loops</a>
+                    <li class="dropdown"><a href="/loops" class="dropdown-toggle">Loops</a>
                         <ul class="dropdown-menu">
                             <li><a href="/loops">Four Loops Overview</a></li>
                             <li><a href="/loops/marketing">Loop Marketing</a></li>
@@ -637,8 +31,7 @@
                             <li><a href="/loops/ops">Loop Ops</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Playbooks</a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle">Playbooks</a>
                         <ul class="dropdown-menu">
                             <li><a href="/playbooks/system">System Playbooks</a></li>
                             <li><a href="/playbooks/hubspot">HubSpot Implementation</a></li>
@@ -646,15 +39,13 @@
                             <li><a href="/playbooks/ai-and-humans">AI and Humans</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Roles</a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle">Roles</a>
                         <ul class="dropdown-menu">
                             <li><a href="/roles/start-here">Start Here</a></li>
                             <li><a href="/roles/leadership-revops">Leadership and RevOps</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Resources</a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle">Resources</a>
                         <ul class="dropdown-menu">
                             <li><a href="/resources/templates-checklists">Templates and Checklists</a></li>
                             <li><a href="/resources/prompts-workflows">Prompts and Workflows</a></li>
@@ -670,512 +61,562 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="aihumans-hero">
+        <section class="ds-hero">
             <div class="container">
-                <div class="aihumans-hero-grid">
-                    <div class="aihumans-hero-content">
+                <div class="ds-grid-asymmetric">
+                    <div class="ds-hero-content">
                         <h1>AI And Humans In The Loop Revenue System</h1>
-                        <h2>Let AI Help Your Loops Spin, While Humans Stay In Charge</h2>
-                        <p>AI can make your loops faster, smarter, and more consistent. It can also make mistakes at scale if you let it run without guardrails.</p>
-                        <p>This page is about a simple idea.</p>
-                        <p class="principle-statement">AI assists. Humans lead.</p>
-                        <p>You will see how AI fits into the Loop Revenue System across marketing, sales, service, and ops. You will see where AI does its best work, where humans must stay in control, and how to design a hybrid operating model that helps your business and your customers flourish.</p>
+                        <h2>Build Hybrid Loop Teams Where AI Assists And Humans Lead</h2>
+                        <div class="ds-hero-text">
+                            <p>The Loop Revenue System is designed to help businesses and customers flourish. That outcome depends on good judgment, trust, and care.</p>
+                            <p>AI can help you work faster, but it cannot hold those responsibilities for you. This page explains how AI fits into Express, Tailor, Amplify, and Evolve, and where human leadership remains non negotiable.</p>
+                            <p>What you will see here is a hybrid approach: AI as a collaborator, humans as decision makers, and loops as the shared framework that guides both.</p>
+                            <p style="font-weight: 500;">The goal is not to replace people. The goal is to help people do the hardest parts of their work more effectively, with care and clarity.</p>
+                        </div>
                     </div>
-                    <div class="aihumans-visual">
-                        <svg viewBox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Central loop representing the four stages -->
-                            <circle cx="150" cy="140" r="60" stroke="#98C1D9" stroke-width="3" fill="none" stroke-dasharray="8 4"/>
+                    <div class="ds-hero-visual">
+                        <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Human side -->
+                            <circle cx="70" cy="100" r="40" fill="rgba(2,131,147,0.1)" stroke="#028393" stroke-width="2"/>
+                            <text x="70" y="97" text-anchor="middle" fill="#028393" font-size="9" font-weight="600">Human</text>
+                            <text x="70" y="110" text-anchor="middle" fill="#028393" font-size="7">Decides</text>
 
-                            <!-- Stage markers on the loop -->
-                            <circle cx="150" cy="80" r="8" fill="#028393"/>
-                            <circle cx="210" cy="140" r="8" fill="#faaa68"/>
-                            <circle cx="150" cy="200" r="8" fill="#f65625"/>
-                            <circle cx="90" cy="140" r="8" fill="#3D5A80"/>
+                            <!-- AI side -->
+                            <circle cx="210" cy="100" r="40" fill="rgba(61,90,128,0.1)" stroke="#3D5A80" stroke-width="2"/>
+                            <text x="210" y="97" text-anchor="middle" fill="#3D5A80" font-size="9" font-weight="600">AI</text>
+                            <text x="210" y="110" text-anchor="middle" fill="#3D5A80" font-size="7">Assists</text>
 
-                            <!-- Stage labels -->
-                            <text x="150" y="62" text-anchor="middle" fill="#028393" font-size="10" font-weight="600">Express</text>
-                            <text x="235" y="144" text-anchor="start" fill="#c47f3a" font-size="10" font-weight="600">Tailor</text>
-                            <text x="150" y="225" text-anchor="middle" fill="#f65625" font-size="10" font-weight="600">Amplify</text>
-                            <text x="65" y="144" text-anchor="end" fill="#3D5A80" font-size="10" font-weight="600">Evolve</text>
+                            <!-- Connection -->
+                            <line x1="110" y1="100" x2="170" y2="100" stroke="#98C1D9" stroke-width="2" stroke-dasharray="4,2"/>
+                            <polygon points="165,95 175,100 165,105" fill="#98C1D9"/>
 
-                            <!-- AI icon (circuit/spark) orbiting -->
-                            <g>
-                                <animateTransform attributeName="transform" type="rotate" from="0 150 140" to="360 150 140" dur="20s" repeatCount="indefinite"/>
-                                <circle cx="150" cy="40" r="20" fill="#028393" opacity="0.15"/>
-                                <circle cx="150" cy="40" r="14" fill="white" stroke="#028393" stroke-width="2"/>
-                                <!-- Circuit pattern inside -->
-                                <circle cx="150" cy="40" r="4" fill="#028393"/>
-                                <line x1="146" y1="40" x2="138" y2="40" stroke="#028393" stroke-width="1.5"/>
-                                <line x1="154" y1="40" x2="162" y2="40" stroke="#028393" stroke-width="1.5"/>
-                                <line x1="150" y1="36" x2="150" y2="28" stroke="#028393" stroke-width="1.5"/>
-                                <line x1="150" y1="44" x2="150" y2="52" stroke="#028393" stroke-width="1.5"/>
-                            </g>
+                            <!-- System label -->
+                            <rect x="115" y="85" width="50" height="30" rx="4" fill="rgba(250,170,104,0.2)" stroke="#faaa68" stroke-width="1.5"/>
+                            <text x="140" y="98" text-anchor="middle" fill="#c47f3a" font-size="6" font-weight="600">Loop</text>
+                            <text x="140" y="107" text-anchor="middle" fill="#c47f3a" font-size="5">System</text>
 
-                            <!-- Human icon (silhouette) orbiting opposite direction -->
-                            <g>
-                                <animateTransform attributeName="transform" type="rotate" from="180 150 140" to="-180 150 140" dur="25s" repeatCount="indefinite"/>
-                                <circle cx="150" cy="40" r="20" fill="#3D5A80" opacity="0.15"/>
-                                <circle cx="150" cy="40" r="14" fill="white" stroke="#3D5A80" stroke-width="2"/>
-                                <!-- Simple person silhouette -->
-                                <circle cx="150" cy="36" r="4" fill="#3D5A80"/>
-                                <path d="M144 48 L150 42 L156 48" stroke="#3D5A80" stroke-width="2" fill="none" stroke-linecap="round"/>
-                            </g>
+                            <!-- Bottom labels -->
+                            <text x="70" y="160" text-anchor="middle" fill="#142d63" font-size="7">Strategy</text>
+                            <text x="70" y="172" text-anchor="middle" fill="#666" font-size="6">Ethics</text>
+                            <text x="70" y="184" text-anchor="middle" fill="#666" font-size="6">Trust</text>
 
-                            <!-- Center text -->
-                            <text x="150" y="136" text-anchor="middle" fill="#142d63" font-size="11" font-weight="700">LOOPS</text>
-                            <text x="150" y="150" text-anchor="middle" fill="#666" font-size="9">Hybrid Model</text>
-
-                            <!-- Connection lines showing collaboration -->
-                            <path d="M150 80 Q 180 110, 150 140" stroke="#028393" stroke-width="1" fill="none" opacity="0.4" stroke-dasharray="3 3">
-                                <animate attributeName="stroke-dashoffset" from="0" to="12" dur="2s" repeatCount="indefinite"/>
-                            </path>
-                            <path d="M150 80 Q 120 110, 150 140" stroke="#3D5A80" stroke-width="1" fill="none" opacity="0.4" stroke-dasharray="3 3">
-                                <animate attributeName="stroke-dashoffset" from="0" to="12" dur="2s" repeatCount="indefinite"/>
-                            </path>
+                            <text x="210" y="160" text-anchor="middle" fill="#142d63" font-size="7">Speed</text>
+                            <text x="210" y="172" text-anchor="middle" fill="#666" font-size="6">Scale</text>
+                            <text x="210" y="184" text-anchor="middle" fill="#666" font-size="6">Patterns</text>
                         </svg>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Why Hybrid Section -->
-        <section class="aihumans-section">
+        <!-- Core Principle Section -->
+        <section class="ds-section">
             <div class="container">
-                <h2>Why A Hybrid Approach Matters</h2>
-                <div class="hybrid-grid">
-                    <div class="hybrid-content">
-                        <p>You do not want a fully manual system. People get tired. They forget things. They struggle to see patterns in thousands of data points or conversations.</p>
-                        <p>You also do not want a fully automated system. AI does not carry your values. It does not feel what your customers feel. It does not sit in leadership meetings and own outcomes.</p>
-                        <p>The Loop Revenue System assumes you want both speed and responsibility.</p>
-                        <p><strong>AI is good at</strong> pattern spotting, summarizing, and drafting.<br>
-                        <strong>Humans are good at</strong> judgment, care, and long term thinking.</p>
-                        <p>Hybrid means you:</p>
-                        <ul>
-                            <li>Let AI handle work that is heavy, repetitive, or analytical.</li>
-                            <li>Ask humans to design the loops, set the rules, and make the final calls.</li>
-                        </ul>
-                        <p>Done well, this makes your team feel more capable, not more replaceable.</p>
-                    </div>
-                    <div class="risk-callout">
-                        <h4>If AI Is The Only Brain...</h4>
-                        <ul>
-                            <li>Mistakes scale as fast as successes.</li>
-                            <li>Values and judgment drift without anyone noticing.</li>
-                            <li>Customers sense the absence of human care.</li>
-                        </ul>
-                    </div>
+                <div class="ds-section-header">
+                    <h2>The Core Principle: Hybrid Loop Teams</h2>
+                    <p>The Loop Revenue System supports hybrid teams where humans and AI play different, complementary roles.</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- AI vs Human Strengths Section -->
-        <section class="aihumans-section aihumans-section-alt">
-            <div class="container">
-                <h2>What AI Is Good At And What Humans Are Good At</h2>
-                <div class="strengths-grid">
-                    <div class="strength-card ai-card">
-                        <h3>AI Is Well Suited For...</h3>
-                        <ul>
-                            <li>Read a lot of text and pull out themes.</li>
-                            <li>Summarize calls, tickets, and feedback.</li>
-                            <li>Draft outlines, first drafts, and variations.</li>
-                            <li>Suggest next steps based on patterns in data.</li>
-                            <li>Watch metrics and alerts and surface what looks unusual.</li>
-                        </ul>
-                    </div>
-                    <div class="strength-card human-card">
-                        <h3>Humans Are Essential For...</h3>
-                        <ul>
-                            <li>Decide what the business stands for and what it will not do.</li>
-                            <li>Hold empathy in tricky conversations and decisions.</li>
-                            <li>Weigh trade offs between short term gains and long term trust.</li>
-                            <li>Interpret patterns with context that lives outside the tools.</li>
-                            <li>Own the impact of changes on real people and teams.</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="aihumans-intro">The loops need both sets of strengths. The art is deciding who does what, when.</p>
-            </div>
-        </section>
-
-        <!-- AI By Loop Section -->
-        <section class="aihumans-section">
-            <div class="container">
-                <h2>How AI Fits Across The Four Loops</h2>
-                <div class="loop-ai-grid">
-                    <!-- Marketing -->
-                    <div class="loop-ai-card" data-loop="marketing">
-                        <h3>AI In Loop Marketing</h3>
-                        <h4 class="ai-label">AI can help marketing:</h4>
-                        <ul class="ai-list">
-                            <li>Summarize customer interviews and call transcripts to find themes.</li>
-                            <li>Scan reviews, chat logs, and search queries for common questions.</li>
-                            <li>Draft outlines, headlines, and first drafts for content.</li>
-                            <li>Generate variations for subject lines, hooks, or social posts.</li>
-                        </ul>
-                        <h4 class="human-label">Humans in marketing must:</h4>
-                        <ul class="human-list">
-                            <li>Define the point of view and the lines you will not cross.</li>
-                            <li>Choose which topics matter and which do not.</li>
-                            <li>Edit AI output so it sounds like your brand and tells the truth.</li>
-                            <li>Decide how far personalization should go for each audience.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Sales -->
-                    <div class="loop-ai-card" data-loop="sales">
-                        <h3>AI In Loop Sales</h3>
-                        <h4 class="ai-label">AI can help sales:</h4>
-                        <ul class="ai-list">
-                            <li>Log and summarize calls and meetings.</li>
-                            <li>Suggest follow up emails and next best actions.</li>
-                            <li>Highlight deals at risk based on behavior and pipeline data.</li>
-                            <li>Surface common objections and winning talk tracks.</li>
-                        </ul>
-                        <h4 class="human-label">Humans in sales must:</h4>
-                        <ul class="human-list">
-                            <li>Build trust in real time with buyers.</li>
-                            <li>Decide when to press forward, pause, or walk away.</li>
-                            <li>Hold the line on honest promises and fit.</li>
-                            <li>Use AI suggestions as inputs, not orders.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service -->
-                    <div class="loop-ai-card" data-loop="service">
-                        <h3>AI In Loop Service</h3>
-                        <h4 class="ai-label">AI can help service:</h4>
-                        <ul class="ai-list">
-                            <li>Suggest relevant help articles or canned replies.</li>
-                            <li>Power simple, clearly scoped chatbots for common questions.</li>
-                            <li>Summarize long ticket histories for faster handoffs.</li>
-                            <li>Flag unusual spikes in certain ticket types or segments.</li>
-                        </ul>
-                        <h4 class="human-label">Humans in service must:</h4>
-                        <ul class="human-list">
-                            <li>Handle complex, emotional, or sensitive situations.</li>
-                            <li>Decide when to go beyond the script to do what is right.</li>
-                            <li>Turn patterns into product improvements and process changes.</li>
-                            <li>Protect privacy and data when customers are most vulnerable.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Ops -->
-                    <div class="loop-ai-card" data-loop="ops">
-                        <h3>AI In Loop Ops</h3>
-                        <h4 class="ai-label">AI can help ops:</h4>
-                        <ul class="ai-list">
-                            <li>Scan your data for duplicates, gaps, and anomalies.</li>
-                            <li>Recommend field normalization and enrichment.</li>
-                            <li>Watch workflow logs and surface error patterns.</li>
-                            <li>Prototype new workflows or data structures in natural language.</li>
-                        </ul>
-                        <h4 class="human-label">Humans in ops must:</h4>
-                        <ul class="human-list">
-                            <li>Design the lifecycle and data model.</li>
-                            <li>Set access, privacy, and compliance rules.</li>
-                            <li>Choose which AI recommendations to accept or reject.</li>
-                            <li>Communicate changes and train teams on new ways of working.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI By Stage Section -->
-        <section class="aihumans-section aihumans-section-alt">
-            <div class="container">
-                <h2>How AI Fits Across The Four Stages</h2>
-                <p class="aihumans-intro">The same four stages show up in every loop. AI plays a different role in each.</p>
-
-                <div class="stage-ai-bands">
-                    <!-- Express -->
-                    <div class="stage-ai-band" data-stage="express">
-                        <h3>AI In Express</h3>
-                        <p class="stage-intro">Express is about clarity and direction. AI should support, not steer.</p>
-                        <div class="ai-human-columns">
-                            <div>
-                                <h4 class="ai-label">AI can:</h4>
-                                <ul class="ai-list">
-                                    <li>Summarize research, interviews, and feedback into digestible themes.</li>
-                                    <li>Help you explore different ways to phrase your point of view.</li>
-                                    <li>Compare your current messaging to what customers say they care about.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="human-label">Humans must:</h4>
-                                <ul class="human-list">
-                                    <li>Decide what you believe, who you are for, and how you want to sound.</li>
-                                    <li>Resolve conflicts between what is popular and what is right for your brand.</li>
-                                    <li>Choose which positioning and narratives you will stand behind.</li>
-                                </ul>
-                            </div>
+                <div class="ds-grid-2">
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar">
+                            <h3>AI Helps You</h3>
+                        </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>Move faster through repeatable, rule based work.</li>
+                                <li>Summarize large amounts of data into patterns you can read.</li>
+                                <li>Draft content and messages based on templates and examples.</li>
+                                <li>Catch signals or anomalies that slip past manual reviews.</li>
+                            </ul>
                         </div>
                     </div>
-
-                    <!-- Tailor -->
-                    <div class="stage-ai-band" data-stage="tailor">
-                        <h3>AI In Tailor</h3>
-                        <p class="stage-intro">Tailor is about relevance and context.</p>
-                        <div class="ai-human-columns">
-                            <div>
-                                <h4 class="ai-label">AI can:</h4>
-                                <ul class="ai-list">
-                                    <li>Suggest segments or clusters in your data for humans to validate.</li>
-                                    <li>Generate tailored email or message drafts for specific roles or industries.</li>
-                                    <li>Recommend content or next steps based on behavior and profile data.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="human-label">Humans must:</h4>
-                                <ul class="human-list">
-                                    <li>Define which segments matter and why.</li>
-                                    <li>Set boundaries for what data is ethical to use for personalization.</li>
-                                    <li>Approve or edit AI suggestions before they go to high value audiences.</li>
-                                </ul>
-                            </div>
+                    <div class="ds-content-card">
+                        <div class="ds-content-card-sidebar blue">
+                            <h3>Humans Own</h3>
                         </div>
-                    </div>
-
-                    <!-- Amplify -->
-                    <div class="stage-ai-band" data-stage="amplify">
-                        <h3>AI In Amplify</h3>
-                        <p class="stage-intro">Amplify is about scale.</p>
-                        <div class="ai-human-columns">
-                            <div>
-                                <h4 class="ai-label">AI can:</h4>
-                                <ul class="ai-list">
-                                    <li>Repurpose a single strong piece of content into multiple formats.</li>
-                                    <li>Help create variations for ads, posts, and nurture assets.</li>
-                                    <li>Assist with bulk updates or migrations that follow clear rules.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="human-label">Humans must:</h4>
-                                <ul class="human-list">
-                                    <li>Choose which ideas deserve amplification.</li>
-                                    <li>Guard against over-automation that overwhelms people.</li>
-                                    <li>Check that amplified content still reflects your values and intent.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Evolve -->
-                    <div class="stage-ai-band" data-stage="evolve">
-                        <h3>AI In Evolve</h3>
-                        <p class="stage-intro">Evolve is about learning.</p>
-                        <div class="ai-human-columns">
-                            <div>
-                                <h4 class="ai-label">AI can:</h4>
-                                <ul class="ai-list">
-                                    <li>Scan dashboards and data for patterns and anomalies.</li>
-                                    <li>Group feedback and tickets into themes faster than humans can.</li>
-                                    <li>Suggest possible reasons for shifts in performance.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="human-label">Humans must:</h4>
-                                <ul class="human-list">
-                                    <li>Decide which patterns matter and which are noise.</li>
-                                    <li>Design experiments based on data and strategy, not only AI guesses.</li>
-                                    <li>Turn insights into actual changes in loops and stages.</li>
-                                </ul>
-                            </div>
+                        <div class="ds-content-card-main">
+                            <ul>
+                                <li>The decisions that shape your loops and stages.</li>
+                                <li>The ethical boundaries of what AI is allowed to do.</li>
+                                <li>The judgment calls that matter most to customers and teams.</li>
+                                <li>The responsibility for outcomes, wins, losses, and harm.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+
+                <div class="ds-callout ds-mt-2">
+                    <h4>Clear Line Of Responsibility</h4>
+                    <p>The line is simple. AI can suggest. Humans must approve or reject. AI can analyze. Humans must decide what that analysis means. AI can assist with scale. Humans must ensure that scale does not run over care.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Collaboration Patterns Section -->
-        <section class="aihumans-section">
+        <!-- Why Hybrid Matters Section -->
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>Practical Collaboration Patterns For AI And Humans</h2>
-                <p class="aihumans-intro">You do not need an advanced framework to start using AI with intent. A few simple patterns go a long way.</p>
+                <div class="ds-section-header">
+                    <h2>Why Hybrid Teams Matter For Revenue Systems</h2>
+                    <p>Revenue systems depend on trust. Trust comes from consistency, care, and clarity.</p>
+                </div>
 
-                <div class="pattern-grid">
-                    <div class="pattern-card">
-                        <h3>Pattern 1 - Human Sets The Brief, AI Explores</h3>
-                        <p>You start with a clear prompt:</p>
-                        <ul>
-                            <li>The loop and stage.</li>
-                            <li>The audience or segment.</li>
-                            <li>The problem or question.</li>
-                        </ul>
-                        <p>AI explores options, gathers inputs, or drafts first versions. Humans then choose and refine. This works well for Express and Tailor work.</p>
+                <p>If you try to run your revenue loops with only humans, you risk:</p>
+                <ul style="margin: 1rem 0 1rem 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">Burning out your team with too much manual, repetitive work.</li>
+                    <li style="margin-bottom: 0.5rem;">Losing data signals that matter because people cannot review everything.</li>
+                    <li style="margin-bottom: 0.5rem;">Slowing down at the exact moment customers expect speed.</li>
+                </ul>
+
+                <p class="ds-mt-2">If you try to automate everything with AI and skip human oversight, you risk:</p>
+                <ul style="margin: 1rem 0 2rem 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">Producing content that feels hollow, wrong, or tone deaf.</li>
+                    <li style="margin-bottom: 0.5rem;">Making decisions that are efficient but unfair, biased, or harmful.</li>
+                    <li style="margin-bottom: 0.5rem;">Breaking the trust that holds your customers and your team together.</li>
+                </ul>
+
+                <div class="ds-highlight-box">
+                    <h4>Hybrid Teams Balance Speed And Care</h4>
+                    <p>You can move fast without cutting corners. You can scale without losing context. You can learn from AI-generated insights without handing over judgment.</p>
+                    <p>The Loop Revenue System gives you the model. Hybrid teams give you the mechanism to execute that model responsibly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI in Express Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>AI And Humans In Express: Get Clear</h2>
+                    <p>Express is about defining what you stand for, who you serve, and how your process works. This stage requires strategic judgment.</p>
+                </div>
+
+                <div class="ds-stage-card express ds-mb-2">
+                    <h3>What AI Can Do In Express</h3>
+                    <ul>
+                        <li>Summarize interviews, customer calls, and feedback logs so you see patterns faster.</li>
+                        <li>Draft positioning statements from your notes and examples.</li>
+                        <li>Analyze open ended survey responses or ticket descriptions to surface common themes.</li>
+                        <li>Generate candidate lifecycle or pipeline stage names based on your process description.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666; margin-top: 1rem;">AI helps you compress hours of synthesis into minutes. It does not decide what matters.</p>
+                </div>
+
+                <div class="ds-stage-card express">
+                    <h3>What Humans Must Do In Express</h3>
+                    <ul>
+                        <li>Decide which customers and problems you will focus on.</li>
+                        <li>Choose the words and frames that define your loops and stages.</li>
+                        <li>Hold the final call on your ICP, positioning, and process design.</li>
+                        <li>Check AI outputs for bias, misinterpretation, or oversimplification.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666; margin-top: 1rem;">Express is where you set the rules. AI can draft. You decide.</p>
+                </div>
+
+                <div class="ds-callout ds-mt-2">
+                    <h4>Example: Using AI To Build An Express Brief</h4>
+                    <p>You run ten customer interviews. AI summarizes those transcripts and pulls recurring phrases. It drafts a one page brief that names your target audience, their core problem, and how you solve it. You review the draft. You adjust words that feel off, add context the AI missed, and confirm the final framing with your team. You own the brief. AI helped you write it faster.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI in Tailor Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>AI And Humans In Tailor: Make It Personal</h2>
+                    <p>Tailor is about relevance and context. AI excels at personalization. Humans must set boundaries so personalization does not become creepy or harmful.</p>
+                </div>
+
+                <div class="ds-stage-card tailor ds-mb-2">
+                    <h3>What AI Can Do In Tailor</h3>
+                    <ul>
+                        <li>Segment your audience based on behavior, firmographics, or engagement patterns.</li>
+                        <li>Suggest email subject lines, message variants, or content recommendations for each segment.</li>
+                        <li>Adjust content, calls, or workflows dynamically based on real time signals.</li>
+                        <li>Pre-fill forms or suggest next actions based on past activity.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666; margin-top: 1rem;">AI makes it easier to treat people differently in ways that help them.</p>
+                </div>
+
+                <div class="ds-stage-card tailor">
+                    <h3>What Humans Must Do In Tailor</h3>
+                    <ul>
+                        <li>Set rules for which data you can ethically use for segmentation and personalization.</li>
+                        <li>Approve AI-generated content before it goes to customers.</li>
+                        <li>Decide when personalization crosses the line from helpful to intrusive.</li>
+                        <li>Own the customer experience and respond when something feels wrong.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666; margin-top: 1rem;">Tailor is where trust lives. AI can suggest. You approve.</p>
+                </div>
+
+                <div class="ds-callout ds-mt-2">
+                    <h4>Example: AI Powered Segment Messaging</h4>
+                    <p>You have three core customer segments. AI drafts email subject lines and opening paragraphs for each segment based on examples you provided. You review them. One draft sounds too salesy. Another misses an industry-specific term. You edit those lines. The third looks good, so you approve it. The segment-specific campaign goes out with your voice, not a generic AI voice.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI in Amplify Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>AI And Humans In Amplify: Scale What Works</h2>
+                    <p>Amplify is about making proven plays easier to run at scale. AI is built for this. Humans must ensure that scale does not break quality or care.</p>
+                </div>
+
+                <div class="ds-stage-card amplify ds-mb-2">
+                    <h3>What AI Can Do In Amplify</h3>
+                    <ul>
+                        <li>Automate routine tasks like lead routing, follow up reminders, and status updates.</li>
+                        <li>Repurpose strong content into different formats for different channels.</li>
+                        <li>Orchestrate multi-step workflows across marketing, sales, and service.</li>
+                        <li>Run experiments at scale by testing variants and measuring performance.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666; margin-top: 1rem;">AI handles the mechanics of scale. It frees humans to focus on strategy and exceptions.</p>
+                </div>
+
+                <div class="ds-stage-card amplify">
+                    <h3>What Humans Must Do In Amplify</h3>
+                    <ul>
+                        <li>Decide which plays are worth amplifying in the first place.</li>
+                        <li>Set guardrails so automation does not spam people or create bad experiences.</li>
+                        <li>Monitor what AI is doing and step in when something goes wrong.</li>
+                        <li>Own the outcomes of scaled campaigns, sequences, and workflows.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666; margin-top: 1rem;">Amplify is where good ideas meet execution at scale. AI amplifies. You choose what to amplify and when to stop.</p>
+                </div>
+
+                <div class="ds-callout ds-mt-2">
+                    <h4>Example: Scaling A Winning Sequence</h4>
+                    <p>You have a sales sequence that works well with a specific segment. AI helps you turn that sequence into a template, adjusts timing based on engagement signals, and rolls it out to more reps. You set a rule: no more than three touches per week. You review the first week's data. One message is getting high unsubscribe rates. You pause the sequence, adjust the message, and relaunch. AI scales. You guide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI in Evolve Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>AI And Humans In Evolve: Learn On Purpose</h2>
+                    <p>Evolve is about learning from what you have done and deciding what to change. AI is powerful at spotting patterns in data. Humans must interpret what those patterns mean and decide how to act.</p>
+                </div>
+
+                <div class="ds-stage-card evolve ds-mb-2">
+                    <h3>What AI Can Do In Evolve</h3>
+                    <ul>
+                        <li>Analyze win loss data and surface patterns you might miss manually.</li>
+                        <li>Flag anomalies in performance, such as sudden drops in engagement or spikes in churn.</li>
+                        <li>Cluster customer feedback or support tickets into themes.</li>
+                        <li>Test multiple hypotheses at once and show which experiments performed best.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666; margin-top: 1rem;">AI can tell you what happened and where patterns exist. It cannot tell you what to do about it.</p>
+                </div>
+
+                <div class="ds-stage-card evolve">
+                    <h3>What Humans Must Do In Evolve</h3>
+                    <ul>
+                        <li>Decide which insights matter and which are noise.</li>
+                        <li>Interpret the "why" behind patterns AI surfaces.</li>
+                        <li>Choose which changes to make, which to test further, and which to ignore.</li>
+                        <li>Own the narrative of what your business is learning and where it is heading.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #666; margin-top: 1rem;">Evolve is where judgment turns data into direction. AI surfaces. You decide.</p>
+                </div>
+
+                <div class="ds-callout ds-mt-2">
+                    <h4>Example: Reviewing A Quarter With AI Support</h4>
+                    <p>AI analyzes your last quarter of closed deals. It surfaces that deals from a specific industry close 30% faster but have a higher churn rate in the first 90 days. You bring that insight to your leadership meeting. You discuss what it means. Maybe you are attracting the wrong fit. Maybe onboarding is weak for that segment. You decide to run a small Tailor play: improve onboarding for that industry. AI found the pattern. You chose the response.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ethical Boundaries Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Ethical Boundaries For AI In Revenue Systems</h2>
+                    <p>Hybrid teams only work if you set clear ethical boundaries.</p>
+                </div>
+
+                <p>Here are core principles to guide your use of AI across loops and stages.</p>
+
+                <div class="ds-numbered-list">
+                    <li>
+                        <div class="list-content">
+                            <strong>Consent And Transparency</strong>
+                            <p>If you use AI to analyze customer conversations, behavior, or data, customers should know. If you use AI to generate content that faces customers, they should be able to tell or ask. Transparency builds trust. Hiding AI breaks it.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Fairness And Bias</strong>
+                            <p>AI learns from data. If your data reflects bias, your AI will too. You must actively check that your segments, scoring, and predictions do not unfairly harm or exclude groups of people. Humans own the responsibility to catch and correct bias.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Human Oversight For High Stakes Decisions</strong>
+                            <p>AI should not make final decisions on hiring, firing, disqualifying deals, denying service, or other high impact outcomes without human review. These are judgment calls that require context, care, and accountability.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Right To Explanation And Appeal</strong>
+                            <p>If AI influences a decision that affects a customer or team member, they should be able to ask why and appeal to a human. Do not hide behind "the algorithm said so." Own the outcome.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Care Over Efficiency</strong>
+                            <p>If using AI at scale harms trust, customer experience, or team morale, slow down. Efficiency matters, but not at the cost of the values that hold your loops together.</p>
+                        </div>
+                    </li>
+                </div>
+
+                <p class="ds-mt-2">These boundaries are not obstacles. They are guardrails that let you move faster, safely.</p>
+            </div>
+        </section>
+
+        <!-- Practical Roles Section -->
+        <section class="ds-section ds-section-alt">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Practical Roles: Who Does What In A Hybrid Loop Team</h2>
+                    <p>Clear roles help hybrid teams work well.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-card">
+                        <h4>Marketing</h4>
+                        <p><strong>AI assists with:</strong> Content drafting, audience segmentation, performance analysis, campaign optimization.</p>
+                        <p><strong>Humans lead on:</strong> Brand voice, positioning, ethical use of data, approving customer facing messages.</p>
                     </div>
-
-                    <div class="pattern-card">
-                        <h3>Pattern 2 - AI Drafts, Humans Edit</h3>
-                        <p>Let AI write the first pass for:</p>
-                        <ul>
-                            <li>Emails, call recaps, or summaries.</li>
-                            <li>Outlines or content based on your briefs.</li>
-                            <li>Internal documentation that follows a simple structure.</li>
-                        </ul>
-                        <p>Humans then check for accuracy, tone, and fit. Nothing goes customer facing without a human owning it.</p>
+                    <div class="ds-card">
+                        <h4>Sales</h4>
+                        <p><strong>AI assists with:</strong> Lead scoring, outreach sequences, call transcription, pipeline forecasting.</p>
+                        <p><strong>Humans lead on:</strong> Discovery calls, relationship building, deal negotiation, qualification decisions.</p>
                     </div>
-
-                    <div class="pattern-card">
-                        <h3>Pattern 3 - AI Monitors, Humans Respond</h3>
-                        <p>Set AI up to watch:</p>
-                        <ul>
-                            <li>Key metrics for unusual spikes or drops.</li>
-                            <li>Ticket or feedback patterns that change suddenly.</li>
-                            <li>Workflow errors or integration failures.</li>
-                        </ul>
-                        <p>AI sends alerts and short summaries. Humans decide what to investigate and what to change. This pattern fits Evolve in ops, service, and revenue leadership.</p>
+                    <div class="ds-card">
+                        <h4>Service</h4>
+                        <p><strong>AI assists with:</strong> Ticket categorization, response suggestions, knowledge base search, sentiment analysis.</p>
+                        <p><strong>Humans lead on:</strong> Complex problem solving, empathy, de-escalation, deciding when to escalate or refund.</p>
                     </div>
+                    <div class="ds-card">
+                        <h4>Ops</h4>
+                        <p><strong>AI assists with:</strong> Data quality checks, workflow automation, integration monitoring, anomaly detection.</p>
+                        <p><strong>Humans lead on:</strong> System design, governance rules, change decisions, owning data privacy and compliance.</p>
+                    </div>
+                </div>
 
-                    <div class="pattern-card">
-                        <h3>Pattern 4 - Human Decides, AI Documents</h3>
-                        <p>When humans make decisions about strategy, process, or tests, you can:</p>
-                        <ul>
-                            <li>Ask AI to summarize meeting notes and decisions.</li>
-                            <li>Turn decisions into clear SOPs or checklists.</li>
-                            <li>Create training materials or internal FAQs faster.</li>
-                        </ul>
-                        <p>This pattern reduces the friction between knowing what to do and actually updating how people work.</p>
+                <p class="ds-mt-2">These roles are not rigid. They are starting points. Adjust them to match your team and your values.</p>
+            </div>
+        </section>
+
+        <!-- Common Mistakes Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>Common Mistakes When Adding AI To Revenue Systems</h2>
+                    <p>Many teams stumble in predictable ways. Here is what to watch for.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-highlight-box orange">
+                        <h4>Mistake 1: Automating Before Defining</h4>
+                        <p>You skip Express and jump straight to Amplify. You automate a messy process and scale the mess. Always get clear first. Then use AI to support that clarity.</p>
+                    </div>
+                    <div class="ds-highlight-box orange">
+                        <h4>Mistake 2: Trusting AI Outputs Blindly</h4>
+                        <p>You let AI draft all your content, score all your leads, or route all your tickets without checking the results. AI makes mistakes. Humans must review.</p>
+                    </div>
+                    <div class="ds-highlight-box orange">
+                        <h4>Mistake 3: Over Personalizing</h4>
+                        <p>You use every data point you have to personalize every message. Customers feel watched. Personalization is helpful until it becomes creepy. Set boundaries.</p>
+                    </div>
+                    <div class="ds-highlight-box orange">
+                        <h4>Mistake 4: Ignoring Bias</h4>
+                        <p>You assume AI is neutral. It is not. It reflects the data it learns from. Check for bias in scoring, segmentation, and recommendations. Adjust your data and models.</p>
+                    </div>
+                    <div class="ds-highlight-box orange">
+                        <h4>Mistake 5: Skipping Human Oversight</h4>
+                        <p>You set up workflows and never look at them again. AI drifts, tools change, and edge cases appear. Schedule regular reviews.</p>
+                    </div>
+                    <div class="ds-highlight-box orange">
+                        <h4>Mistake 6: Treating AI As The Strategy</h4>
+                        <p>You let AI decide what matters. AI is a tool. The Loop Revenue System is the strategy. Humans own the strategy.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Risks and Guardrails Section -->
-        <section class="aihumans-section aihumans-section-alt">
+        <!-- Future of Hybrid Teams Section -->
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>Risks, Ethics, And Guardrails For AI Assisted Loops</h2>
-                <p class="aihumans-intro">AI brings real risks if you let it run your loops without care.</p>
+                <div class="ds-section-header">
+                    <h2>The Future Of Hybrid Loop Teams</h2>
+                    <p>AI will get better. Your hybrid team structure should stay steady.</p>
+                </div>
 
-                <div class="risk-guard-stack">
-                    <div class="risk-guard-card risks">
-                        <h3>Risks To Watch</h3>
-                        <ul>
-                            <li><strong>Consent and privacy.</strong> Using data in ways customers did not agree to or would not expect.</li>
-                            <li><strong>Bias and fairness.</strong> Repeating or amplifying unfair patterns in your data.</li>
-                            <li><strong>Hallucination.</strong> Confidently wrong answers, especially in support or sales.</li>
-                            <li><strong>Over-automation.</strong> Sequences, workflows, or bots that keep going when they should stop.</li>
-                            <li><strong>De-skilling.</strong> Teams relying on AI so much that they lose their own judgment and craft.</li>
-                        </ul>
+                <p>As AI evolves, it will handle more work that feels complex today. It will summarize faster. It will draft better. It will spot patterns more reliably. That is good.</p>
+                <p>What should not change:</p>
+                <ul style="margin: 1rem 0 2rem 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">Humans set the goals and the ethical boundaries.</li>
+                    <li style="margin-bottom: 0.5rem;">Humans decide what matters and what to ignore.</li>
+                    <li style="margin-bottom: 0.5rem;">Humans own responsibility for outcomes.</li>
+                </ul>
+
+                <div class="ds-callout ds-mt-2">
+                    <h4>Evolve Your Use Of AI, Not Your Values</h4>
+                    <p>The Loop Revenue System is built to adapt. As AI capabilities grow, you will find new ways to use it inside Express, Tailor, Amplify, and Evolve. Your hybrid team structure and your ethical boundaries should guide those choices, not follow them.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools and Platforms Section -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-section-header">
+                    <h2>AI Tools And Platforms Inside Loop Revenue Systems</h2>
+                    <p>You can use AI in many ways. Here are common patterns.</p>
+                </div>
+
+                <div class="ds-grid-2">
+                    <div class="ds-card">
+                        <h4>Built In AI</h4>
+                        <p>Many CRMs, marketing platforms, and help desks now include AI features. These tools can summarize, suggest, score, and route. Use them when they align with your loops and ethics.</p>
                     </div>
-
-                    <div class="risk-guard-card guardrails">
-                        <h3>Guardrails To Set</h3>
-                        <ul>
-                            <li>Clear rules about what data can and cannot feed AI systems.</li>
-                            <li>A review step for any AI output that reaches customers or big accounts.</li>
-                            <li>Simple "kill switches" for campaigns, bots, or workflows when something looks off.</li>
-                            <li>Regular checks on AI influenced outcomes for bias and unintended effects.</li>
-                            <li>Training for teams on how to question AI, not just how to prompt it.</li>
-                        </ul>
+                    <div class="ds-card">
+                        <h4>Standalone AI Tools</h4>
+                        <p>You might use AI copilots for writing, meeting transcription, data analysis, or research. These tools plug into your workflows. They are helpers, not replacements.</p>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Custom AI Solutions</h4>
+                        <p>Some teams build custom models or integrations for scoring, recommendations, or predictions. This requires strong ops and data governance. Only go custom if built in tools cannot meet your needs.</p>
+                    </div>
+                    <div class="ds-card">
+                        <h4>AI In Reporting And BI</h4>
+                        <p>AI can power dashboards, spot trends, and suggest next actions. This fits naturally into Evolve. Use it to surface insights, but let humans interpret and decide.</p>
                     </div>
                 </div>
 
-                <p class="aihumans-intro">Your goal is not zero risk. Your goal is to see the risk clearly and keep humans accountable.</p>
+                <p class="ds-mt-2">Your AI stack can be simple or sophisticated. What matters is that every tool respects your hybrid team structure.</p>
             </div>
         </section>
 
         <!-- Governance Section -->
-        <section class="aihumans-section">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>Governance And QA For AI Assisted Work</h2>
-                <p class="aihumans-intro">AI governance does not have to be heavy or scary. It does have to be real.</p>
+                <div class="ds-section-header">
+                    <h2>Governance For AI In Your Loops</h2>
+                    <p>Good hybrid teams need clear governance.</p>
+                </div>
 
-                <div class="governance-callout">
-                    <h4>A Simple Approach</h4>
-                    <p><strong>Name owners.</strong> For each loop, decide who owns AI assisted work. It might be a leader plus an ops partner.</p>
-                    <p><strong>Define use cases.</strong> Write down where you will use AI and where you will not. Start small.</p>
-                    <p><strong>Log important prompts.</strong> For higher impact use cases, keep a record of prompts and patterns that produce good results.</p>
-                    <p><strong>Review outcomes.</strong> On a regular basis, sample AI assisted work. Look at quality, tone, and impact. Adjust or pull back as needed.</p>
-                    <p><strong>Keep a change log.</strong> When AI influences a change in process, content, or targeting, note it. This makes it easier to debug issues later.</p>
-                    <p>Tie this back to your <a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a> practices. AI should live inside those rules, not outside them.</p>
+                <div class="ds-numbered-list">
+                    <li>
+                        <div class="list-content">
+                            <strong>Document Your AI Use Cases</strong>
+                            <p>Keep a simple list of where you use AI, which stage it supports, and who owns oversight. This makes it easier to review and adjust.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Set Approval Processes</strong>
+                            <p>Decide who can approve new AI tools, new use cases, and changes to how AI is used. Do not let every team spin up AI experiments without coordination.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Run Regular Reviews</strong>
+                            <p>Check in on your AI use quarterly. Ask: Is it working? Is it ethical? Are we seeing bias? Are customers comfortable? Are we still in control?</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Train Your Team</strong>
+                            <p>Help people understand when to use AI, when to review AI outputs, and when to escalate to a human. Do not assume everyone knows how to work with AI responsibly.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-content">
+                            <strong>Track Outcomes, Not Just Efficiency</strong>
+                            <p>Do not just measure "AI saved us X hours." Measure whether customers are happier, whether deals close better, whether teams feel supported. Efficiency without impact is waste.</p>
+                        </div>
+                    </li>
                 </div>
             </div>
         </section>
 
-        <!-- Links Section -->
-        <section class="aihumans-section aihumans-section-alt">
+        <!-- Real World Examples Section -->
+        <section class="ds-section">
             <div class="container">
-                <h2>How This Connects To Playbooks And Implementation</h2>
-                <p class="aihumans-intro">You do not need a separate "AI strategy" that sits off to the side. The fastest way to use AI well is to layer it onto work you already plan to do with the Loop Revenue System.</p>
-
-                <p class="aihumans-intro">Use the System Playbooks to define your plays. Then ask:</p>
-                <ul style="color: #444; margin-bottom: 2rem; padding-left: 1.5rem;">
-                    <li style="margin-bottom: 0.5rem;">Where could AI help us research or summarize in Express?</li>
-                    <li style="margin-bottom: 0.5rem;">Where could AI help us generate and test variations in Tailor?</li>
-                    <li style="margin-bottom: 0.5rem;">Where could AI help us repurpose or automate in Amplify?</li>
-                    <li style="margin-bottom: 0.5rem;">Where could AI help us see patterns or anomalies in Evolve?</li>
-                </ul>
-
-                <div class="link-cards-grid">
-                    <a href="/playbooks/system" class="link-card">
-                        <h4>System Playbooks</h4>
-                        <p>Concrete plays for each stage across all four loops.</p>
-                    </a>
-                    <a href="/playbooks/hubspot" class="link-card">
-                        <h4>HubSpot Implementation</h4>
-                        <p>Map plays into HubSpot hubs, tools, and workflows.</p>
-                    </a>
-                    <a href="/playbooks/no-hubspot" class="link-card">
-                        <h4>Non HubSpot Implementation</h4>
-                        <p>Map plays into mixed stacks and alternative tools.</p>
-                    </a>
+                <div class="ds-section-header">
+                    <h2>Real World Examples Of Hybrid Loop Teams</h2>
+                    <p>Here are three practical scenarios where AI and humans share the work.</p>
                 </div>
 
-                <p class="aihumans-intro" style="margin-top: 2rem;">AI does not replace these pages. It rides along with them.</p>
+                <div class="ds-grid-3">
+                    <div class="ds-card">
+                        <h4>Scenario 1: Marketing Campaign</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Express:</strong> You define your target segment and campaign goal.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Tailor:</strong> AI drafts email subject lines and body copy for three sub-segments. You review and edit.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Amplify:</strong> AI automates the send, tracks engagement, and adjusts timing. You monitor results.</p>
+                        <p style="font-size: 0.9rem;"><strong>Evolve:</strong> AI surfaces which segment performed best. You decide whether to expand or adjust.</p>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Scenario 2: Sales Discovery</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Express:</strong> You define your discovery questions and qualification criteria.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Tailor:</strong> AI pre-fills research on the prospect's company and recent activity. Your rep reviews it before the call.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Amplify:</strong> AI transcribes the call and suggests next steps. The rep confirms and logs them.</p>
+                        <p style="font-size: 0.9rem;"><strong>Evolve:</strong> AI flags common objections across calls. You adjust your playbook.</p>
+                    </div>
+                    <div class="ds-card">
+                        <h4>Scenario 3: Support Ticket</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Express:</strong> You define ticket categories and SLAs.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Tailor:</strong> AI categorizes the ticket and suggests a knowledge base article. Your agent reviews and decides if it fits.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Amplify:</strong> If the article solves the issue, AI auto-responds. If not, the agent takes over.</p>
+                        <p style="font-size: 0.9rem;"><strong>Evolve:</strong> AI flags a spike in a specific ticket type. You investigate and fix the root cause.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Next Steps Section -->
-        <section class="aihumans-section" style="border-top: 4px solid var(--brand-light-blue);">
+        <section class="ds-cta-banner">
             <div class="container">
                 <h2>Where To Go Next</h2>
+                <p>You now have a framework for building hybrid loop teams. The next step is to start small.</p>
 
-                <div class="takeaway-box">
-                    <p>If you take one idea from this page, let it be this: AI is a powerful assistant, not a new boss.</p>
-                </div>
-
-                <p class="aihumans-intro">Next steps if you want to put this into practice:</p>
-
-                <div class="cta-grid">
-                    <div class="cta-card">
+                <div class="ds-grid-3 ds-mt-2">
+                    <div class="ds-card">
                         <h4>System Playbooks</h4>
-                        <p>Concrete, stage based actions where AI can plug in.</p>
+                        <p>See how AI fits into concrete plays across all four stages.</p>
                         <a href="/playbooks/system" class="btn btn-primary">View Playbooks</a>
                     </div>
-                    <div class="cta-card">
-                        <h4>Data, Metrics, And Governance</h4>
-                        <p>Better oversight around AI assisted work.</p>
-                        <a href="/overview/data-metrics-governance" class="btn btn-secondary">Learn More</a>
+                    <div class="ds-card">
+                        <h4>Governance Resources</h4>
+                        <p>Get templates for documenting and reviewing AI use in your loops.</p>
+                        <a href="/overview/data-metrics-governance" class="btn btn-secondary">View Guide</a>
                     </div>
-                    <div class="cta-card">
-                        <h4>Templates And Checklists</h4>
-                        <p>Tools you can use with your team.</p>
-                        <a href="/resources/templates-checklists" class="btn btn-secondary">Get Resources</a>
+                    <div class="ds-card">
+                        <h4>Workshops</h4>
+                        <p>Run sessions with your team to define hybrid roles and ethical boundaries.</p>
+                        <a href="/resources/workshops-exercises" class="btn btn-secondary">View Workshops</a>
                     </div>
                 </div>
 
-                <p style="color: #444; line-height: 1.7; margin-top: 2rem; max-width: 800px;">Pick one loop, one stage, and one use case where AI could remove friction or uncover insight. Design the collaboration pattern. Set the guardrails. Run the play.</p>
-                <p style="color: #444; line-height: 1.7; max-width: 800px;">Then let your team, your customers, and your loops tell you what should change next, so everyone has a better chance to flourish.</p>
+                <p class="ds-mt-3 ds-text-center" style="font-size: 1.1rem; font-weight: 500;">Choose one loop. Pick one stage. Add one piece of AI support with clear human oversight. Watch what happens. Learn. Adjust. Then let the loop keep turning.</p>
+                <p class="ds-text-center" style="margin-top: 1rem;">AI and humans work best when the system is clear, the roles are defined, and the responsibility stays with people. That is how your customers and your business flourish.</p>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-cta">
-                    <h3>Ready to build your Loop Revenue System?</h3>
-                    <p>Start with the model or jump straight to your role-based path.</p>
-                    <div class="footer-buttons">
-                        <a href="/overview/loop-revenue-system" class="btn btn-primary">Learn the Model</a>
-                        <a href="/roles/start-here" class="btn btn-secondary">Start Here</a>
-                    </div>
-                </div>
-                <div class="footer-links">
+            <div class="footer-content">
+                <div class="footer-columns">
                     <div class="footer-column">
-                        <h4>Overview</h4>
+                        <h4>The System</h4>
                         <ul>
                             <li><a href="/overview/loop-revenue-system">What Is the Loop Revenue System</a></li>
                             <li><a href="/overview/stages">Stages: Express, Tailor, Amplify, Evolve</a></li>

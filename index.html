@@ -72,88 +72,68 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="hero-section">
+        <section class="ds-hero">
             <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-content">
+                <div class="ds-hero-content">
+                    <div class="ds-hero-text">
+                        <span class="ds-hero-label">Revenue That Learns</span>
                         <h1>Build a Revenue System That Learns From Every Conversation</h1>
                         <h2>Turn Marketing, Sales, Service, and Ops Into One Continuous Loop</h2>
-                        <div class="hero-buttons">
+                        <div class="ds-hero-buttons">
                             <a href="/overview/loop-revenue-system" class="btn btn-primary">What Is the Loop Revenue System</a>
                             <a href="/roles/start-here" class="btn btn-secondary">Start Here</a>
                         </div>
                     </div>
-                    <div class="hero-visual">
+                    <div class="ds-hero-visual">
                         <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <!-- Gradients for each loop -->
                                 <radialGradient id="mktGradient">
-                                    <stop offset="0%" style="stop-color:#028393;stop-opacity:0.4"/>
-                                    <stop offset="100%" style="stop-color:#028393;stop-opacity:0.2"/>
+                                    <stop offset="0%" style="stop-color:#fff;stop-opacity:0.5"/>
+                                    <stop offset="100%" style="stop-color:#028393;stop-opacity:0.3"/>
                                 </radialGradient>
                                 <radialGradient id="salesGradient">
-                                    <stop offset="0%" style="stop-color:#3D5A80;stop-opacity:0.4"/>
-                                    <stop offset="100%" style="stop-color:#3D5A80;stop-opacity:0.2"/>
+                                    <stop offset="0%" style="stop-color:#fff;stop-opacity:0.5"/>
+                                    <stop offset="100%" style="stop-color:#3D5A80;stop-opacity:0.3"/>
                                 </radialGradient>
                                 <radialGradient id="serviceGradient">
-                                    <stop offset="0%" style="stop-color:#f65625;stop-opacity:0.4"/>
-                                    <stop offset="100%" style="stop-color:#f65625;stop-opacity:0.2"/>
+                                    <stop offset="0%" style="stop-color:#fff;stop-opacity:0.5"/>
+                                    <stop offset="100%" style="stop-color:#f65625;stop-opacity:0.3"/>
                                 </radialGradient>
                                 <radialGradient id="opsGradient">
-                                    <stop offset="0%" style="stop-color:#faaa68;stop-opacity:0.4"/>
-                                    <stop offset="100%" style="stop-color:#faaa68;stop-opacity:0.2"/>
+                                    <stop offset="0%" style="stop-color:#fff;stop-opacity:0.5"/>
+                                    <stop offset="100%" style="stop-color:#faaa68;stop-opacity:0.3"/>
                                 </radialGradient>
                             </defs>
 
                             <!-- Four overlapping circles in Venn diagram style -->
-                            <!-- Top Left - Marketing -->
-                            <circle cx="120" cy="120" r="90" fill="url(#mktGradient)" stroke="#028393" stroke-width="3" class="venn-circle"/>
-
-                            <!-- Top Right - Sales -->
-                            <circle cx="220" cy="120" r="90" fill="url(#salesGradient)" stroke="#3D5A80" stroke-width="3" class="venn-circle"/>
-
-                            <!-- Bottom Right - Service -->
-                            <circle cx="220" cy="220" r="90" fill="url(#serviceGradient)" stroke="#f65625" stroke-width="3" class="venn-circle"/>
-
-                            <!-- Bottom Left - Ops -->
-                            <circle cx="120" cy="220" r="90" fill="url(#opsGradient)" stroke="#faaa68" stroke-width="3" class="venn-circle"/>
+                            <circle cx="120" cy="120" r="90" fill="url(#mktGradient)" stroke="rgba(255,255,255,0.6)" stroke-width="3" class="venn-circle"/>
+                            <circle cx="220" cy="120" r="90" fill="url(#salesGradient)" stroke="rgba(255,255,255,0.6)" stroke-width="3" class="venn-circle"/>
+                            <circle cx="220" cy="220" r="90" fill="url(#serviceGradient)" stroke="rgba(255,255,255,0.6)" stroke-width="3" class="venn-circle"/>
+                            <circle cx="120" cy="220" r="90" fill="url(#opsGradient)" stroke="rgba(255,255,255,0.6)" stroke-width="3" class="venn-circle"/>
 
                             <!-- Central overlap indicator - Human Avatar -->
                             <g transform="translate(170, 170)">
-                                <!-- Background circle -->
                                 <circle cx="0" cy="0" r="20" fill="rgba(255, 255, 255, 0.95)" stroke="#028393" stroke-width="2.5"/>
-
-                                <!-- Human icon - head -->
                                 <circle cx="0" cy="-5" r="5" fill="#028393"/>
-
-                                <!-- Human icon - body/shoulders -->
-                                <path d="M -8 8 Q -8 0, 0 0 Q 8 0, 8 8"
-                                      fill="none"
-                                      stroke="#028393"
-                                      stroke-width="2.5"
-                                      stroke-linecap="round"/>
-
-                                <!-- Arms -->
+                                <path d="M -8 8 Q -8 0, 0 0 Q 8 0, 8 8" fill="none" stroke="#028393" stroke-width="2.5" stroke-linecap="round"/>
                                 <line x1="-8" y1="8" x2="-11" y2="12" stroke="#028393" stroke-width="2.5" stroke-linecap="round"/>
                                 <line x1="8" y1="8" x2="11" y2="12" stroke="#028393" stroke-width="2.5" stroke-linecap="round"/>
                             </g>
 
-                            <!-- Labels with backgrounds for better readability -->
+                            <!-- Labels with backgrounds -->
                             <g>
                                 <circle cx="120" cy="90" r="22" fill="rgba(255, 255, 255, 0.95)" stroke="#028393" stroke-width="2"/>
                                 <text x="120" y="95" text-anchor="middle" fill="#028393" font-size="14" font-weight="700">MKT</text>
                             </g>
-
                             <g>
                                 <circle cx="220" cy="90" r="28" fill="rgba(255, 255, 255, 0.95)" stroke="#3D5A80" stroke-width="2"/>
                                 <text x="220" y="95" text-anchor="middle" fill="#3D5A80" font-size="14" font-weight="700">SALES</text>
                             </g>
-
                             <g>
                                 <circle cx="220" cy="250" r="32" fill="rgba(255, 255, 255, 0.95)" stroke="#f65625" stroke-width="2"/>
                                 <text x="220" y="255" text-anchor="middle" fill="#f65625" font-size="13" font-weight="700">SERVICE</text>
                             </g>
-
                             <g>
                                 <circle cx="120" cy="250" r="22" fill="rgba(255, 255, 255, 0.95)" stroke="#faaa68" stroke-width="2"/>
                                 <text x="120" y="255" text-anchor="middle" fill="#faaa68" font-size="14" font-weight="700">OPS</text>
@@ -165,326 +145,169 @@
         </section>
 
         <!-- You Are In The Right Place Section -->
-        <section id="you-are-in-the-right-place" class="right-place-section">
+        <section class="ds-section">
             <div class="container">
-                <h2>You Are in the Right Place if You Own Revenue</h2>
-                <p class="intro-text">You care about revenue, relationships, and repeatable growth. You are tired of seeing marketing, sales, service, and ops pull in different directions.</p>
+                <div class="ds-section-header">
+                    <h2>You Are in the Right Place if You Own Revenue</h2>
+                    <p>You care about revenue, relationships, and repeatable growth. You are tired of seeing marketing, sales, service, and ops pull in different directions.</p>
+                </div>
 
-                <p>You might be a CEO who wants a system that makes revenue more predictable and less reactive. You might own RevOps and feel stuck translating between teams and tools. You might run marketing, sales, or service and feel that your part of the engine works, but the whole machine still jerks and stalls.</p>
-
-                <p>You could be the HubSpot admin or systems builder who lives in the CRM all day and wishes there were a clearer blueprint behind every field, workflow, and dashboard.</p>
-
-                <p class="call-out">If you see yourself in any of that, this site is for you.</p>
-
-                <div class="role-grid">
-                    <div class="role-card">
-                        <h4>For Leaders</h4>
-                        <p>You will learn how to talk about revenue as one system, not separate departments. You will see how to set direction, define shared metrics, and sponsor change without getting lost in tool jargon.</p>
+                <div class="ds-two-col">
+                    <div class="ds-two-col-content">
+                        <p>You might be a CEO who wants a system that makes revenue more predictable and less reactive. You might own RevOps and feel stuck translating between teams and tools. You might run marketing, sales, or service and feel that your part of the engine works, but the whole machine still jerks and stalls.</p>
+                        <p>You could be the HubSpot admin or systems builder who lives in the CRM all day and wishes there were a clearer blueprint behind every field, workflow, and dashboard.</p>
+                        <div class="ds-callout ds-mt-2">
+                            <h4>If you see yourself in any of that, this site is for you.</h4>
+                        </div>
                     </div>
-                    <div class="role-card">
-                        <h4>For Admins</h4>
-                        <p>You will get practical guidance on data models, lifecycle stages, automation, and governance. You will see how to connect what the business wants to what the tools actually do.</p>
-                    </div>
-                    <div class="role-card">
-                        <h4>For Teams</h4>
-                        <p>You will find plain language playbooks you can apply in your next campaign, deal cycle, or onboarding sequence, without waiting for a full reorg.</p>
+                    <div>
+                        <div class="ds-grid-3" style="grid-template-columns: 1fr;">
+                            <div class="ds-card">
+                                <div class="ds-icon-badge teal">&#128188;</div>
+                                <h4>For Leaders</h4>
+                                <p>You will learn how to talk about revenue as one system, not separate departments. You will see how to set direction, define shared metrics, and sponsor change without getting lost in tool jargon.</p>
+                            </div>
+                            <div class="ds-card">
+                                <div class="ds-icon-badge blue">&#128295;</div>
+                                <h4>For Admins</h4>
+                                <p>You will get practical guidance on data models, lifecycle stages, automation, and governance. You will see how to connect what the business wants to what the tools actually do.</p>
+                            </div>
+                            <div class="ds-card">
+                                <div class="ds-icon-badge orange">&#128101;</div>
+                                <h4>For Teams</h4>
+                                <p>You will find plain language playbooks you can apply in your next campaign, deal cycle, or onboarding sequence, without waiting for a full reorg.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- What Is Loop Section -->
-        <section id="what-is-loop" class="what-is-loop-section">
+        <section class="ds-section ds-section-alt">
             <div class="container">
-                <h2>What Is the Loop Revenue System</h2>
-
-                <div class="loop-intro">
-                    <p class="intro-text">The Loop Revenue System is a way to run revenue as a continuous loop instead of a one way funnel. It brings four loops together.</p>
-
-                    <p>Loop Marketing discovers what to say, who to say it to, and where to show up. Loop Sales helps the right people decide with confidence. Loop Service keeps customers successful, supported, and ready to stay. Loop Ops connects the tools, data, and processes that make all of this possible.</p>
-
-                    <p><strong>Each loop moves through the same four stages.</strong></p>
+                <div class="ds-section-header">
+                    <h2>What Is the Loop Revenue System</h2>
+                    <p>A way to run revenue as a continuous loop instead of a one way funnel. It brings four loops together.</p>
                 </div>
 
-                <div class="loop-diagram-container">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="four-loops-diagram">
-                        <!-- Four circles arranged in a square -->
-                        <circle cx="100" cy="100" r="50" fill="none" stroke="#028393" stroke-width="3"/>
-                        <circle cx="300" cy="100" r="50" fill="none" stroke="#028393" stroke-width="3"/>
-                        <circle cx="300" cy="200" r="50" fill="none" stroke="#028393" stroke-width="3"/>
-                        <circle cx="100" cy="200" r="50" fill="none" stroke="#028393" stroke-width="3"/>
+                <p class="ds-intro-text ds-text-center ds-mb-3">Loop Marketing discovers what to say, who to say it to, and where to show up. Loop Sales helps the right people decide with confidence. Loop Service keeps customers successful, supported, and ready to stay. Loop Ops connects the tools, data, and processes that make all of this possible.</p>
 
-                        <!-- Connecting arrows forming a loop -->
-                        <defs>
-                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                                <polygon points="0 0, 10 3, 0 6" fill="#028393" opacity="0.7"/>
-                            </marker>
-                        </defs>
-                        <path d="M 150 100 L 250 100" stroke="#028393" stroke-width="2" marker-end="url(#arrow)" opacity="0.5"/>
-                        <path d="M 300 150 L 300 150" stroke="#028393" stroke-width="2" opacity="0.5"/>
-                        <path d="M 250 200 L 150 200" stroke="#028393" stroke-width="2" marker-end="url(#arrow)" opacity="0.5"/>
-                        <path d="M 100 150 L 100 150" stroke="#028393" stroke-width="2" opacity="0.5"/>
-
-                        <!-- Loop around all -->
-                        <path d="M 160 60 Q 200 40, 240 60 L 340 100 Q 360 150, 340 200 L 240 240 Q 200 260, 160 240 L 60 200 Q 40 150, 60 100 Z"
-                              fill="none" stroke="#028393" stroke-width="2" stroke-dasharray="5,5" opacity="0.3">
-                            <animate attributeName="stroke-dashoffset" values="0;-10" dur="1s" repeatCount="indefinite"/>
-                        </path>
-
-                        <!-- Labels -->
-                        <text x="100" y="105" text-anchor="middle" fill="#028393" font-size="16" font-weight="700">MKT</text>
-                        <text x="300" y="105" text-anchor="middle" fill="#028393" font-size="16" font-weight="700">SALES</text>
-                        <text x="300" y="205" text-anchor="middle" fill="#028393" font-size="16" font-weight="700">SERVICE</text>
-                        <text x="100" y="205" text-anchor="middle" fill="#028393" font-size="16" font-weight="700">OPS</text>
-                    </svg>
-                </div>
-
-                <div class="stages-grid">
-                    <div class="stage-card" data-stage="express">
-                        <h3>Express: Decide how you show up</h3>
-                        <p>In Express, each team gets clear on its strategy, voice, and process. Marketing defines its point of view and core messages. Sales defines its ideal customer, talk tracks, and stages. Service defines the customer journey after the sale. Ops defines lifecycle stages, data standards, and guardrails.</p>
-                        <p class="stage-summary">Express is where you decide who you serve, what you say, and how your system should work.</p>
+                <div class="ds-grid-4 ds-mb-3">
+                    <div class="ds-stage-card express">
+                        <h3>Express</h3>
+                        <p>Decide how you show up. Each team gets clear on its strategy, voice, and process.</p>
+                        <p><strong>Express is where you decide who you serve, what you say, and how your system should work.</strong></p>
                     </div>
-
-                    <div class="stage-card" data-stage="tailor">
-                        <h3>Tailor: Make it personal and contextual</h3>
-                        <p>In Tailor, you stop acting like every contact is the same. You use what you know about a person or account to shape how you help.</p>
-                        <p>Marketing speaks to real goals and worries instead of generic personas. Sales adjusts questions, examples, and offers to match the buyer in front of them. Service adapts support to the customer's context and history. Ops tunes routing, fields, and workflows so the system fits the business, not the other way around.</p>
+                    <div class="ds-stage-card tailor">
+                        <h3>Tailor</h3>
+                        <p>Make it personal and contextual. You stop acting like every contact is the same.</p>
+                        <p><strong>Use what you know about a person or account to shape how you help.</strong></p>
                     </div>
-
-                    <div class="stage-card" data-stage="amplify">
-                        <h3>Amplify: Scale what works</h3>
-                        <p>In Amplify, you take what is working and help it reach more people.</p>
-                        <p>Marketing repurposes strong ideas across channels and formats. Sales shares winning messages and sequences so the whole team can use them. Service turns one helpful answer into a knowledge base article or training asset. Ops uses automation and integrations so the system can handle more volume without burning people out.</p>
+                    <div class="ds-stage-card amplify">
+                        <h3>Amplify</h3>
+                        <p>Scale what works. Take what is working and help it reach more people.</p>
+                        <p><strong>Repurpose, share, and automate so the system handles more without burning people out.</strong></p>
                     </div>
-
-                    <div class="stage-card" data-stage="evolve">
-                        <h3>Evolve: Learn and improve every cycle</h3>
-                        <p>In Evolve, you look honestly at what happened and change the system so the next loop is stronger.</p>
-                        <p>Marketing watches performance and adjusts content, offers, and channels. Sales studies win and loss patterns and refines its process. Service listens to feedback, tracks retention, and improves the experience. Ops reads the data, finds bottlenecks, and drives system level changes.</p>
-                        <p class="stage-summary">Nothing stays frozen. Each turn of the loop teaches you something new.</p>
+                    <div class="ds-stage-card evolve">
+                        <h3>Evolve</h3>
+                        <p>Learn and improve every cycle. Look honestly at what happened and change the system.</p>
+                        <p><strong>Nothing stays frozen. Each turn of the loop teaches you something new.</strong></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- AI and Humans Section -->
-        <section id="ai-and-humans" class="ai-humans-section">
+        <section class="ds-section">
             <div class="container">
-                <div class="ai-grid">
-                    <div class="ai-content">
-                        <h2>Built for AI and Humans, Not One or the Other</h2>
-                        <p>AI is part of the world your revenue engine now lives in. Ignoring it slows you down. Trusting it blindly puts your customers and your brand at risk.</p>
-                        <p class="highlight-text">The Loop Revenue System helps you find the balance.</p>
-                        <p>AI can help you research faster, spot patterns in your data, personalize at scale, and keep an eye on your numbers in the background. Humans set the strategy, choose the trade offs, handle exceptions, and build the relationships.</p>
+                <div class="ds-section-header">
+                    <h2>Built for AI and Humans, Not One or the Other</h2>
+                    <p>AI is part of the world your revenue engine now lives in. Ignoring it slows you down. Trusting it blindly puts your customers and your brand at risk.</p>
+                </div>
 
-                        <div class="ai-visual">
-                        <div class="balance-equation">
-                            <!-- AI Component Card -->
-                            <div class="equation-card ai-card-component">
-                                <div class="card-glow ai-glow"></div>
-                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="component-icon">
-                                    <defs>
-                                        <radialGradient id="aiGlow" cx="50%" cy="50%">
-                                            <stop offset="0%" style="stop-color:#028393;stop-opacity:0.3"/>
-                                            <stop offset="100%" style="stop-color:#028393;stop-opacity:0"/>
-                                        </radialGradient>
-                                        <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#028393"/>
-                                            <stop offset="100%" style="stop-color:#3D5A80"/>
-                                        </linearGradient>
-                                    </defs>
-
-                                    <!-- Background glow -->
-                                    <circle cx="100" cy="100" r="90" fill="url(#aiGlow)"/>
-
-                                    <!-- Brain/Neural network representation -->
-                                    <circle cx="100" cy="100" r="50" fill="url(#aiGradient)" opacity="0.2"/>
-
-                                    <!-- Central processor -->
-                                    <rect x="80" y="80" width="40" height="40" rx="8" fill="url(#aiGradient)"/>
-                                    <circle cx="100" cy="100" r="8" fill="#fff" opacity="0.9"/>
-
-                                    <!-- Neural connections -->
-                                    <g opacity="0.7">
-                                        <!-- Top left node -->
-                                        <circle cx="60" cy="60" r="6" fill="#028393"/>
-                                        <line x1="86" y1="86" x2="66" y2="66" stroke="#028393" stroke-width="2"/>
-
-                                        <!-- Top right node -->
-                                        <circle cx="140" cy="60" r="6" fill="#028393"/>
-                                        <line x1="114" y1="86" x2="134" y2="66" stroke="#028393" stroke-width="2"/>
-
-                                        <!-- Bottom left node -->
-                                        <circle cx="60" cy="140" r="6" fill="#028393"/>
-                                        <line x1="86" y1="114" x2="66" y2="134" stroke="#028393" stroke-width="2"/>
-
-                                        <!-- Bottom right node -->
-                                        <circle cx="140" cy="140" r="6" fill="#028393"/>
-                                        <line x1="114" y1="114" x2="134" y2="134" stroke="#028393" stroke-width="2"/>
-
-                                        <!-- Secondary nodes -->
-                                        <circle cx="40" cy="100" r="4" fill="#3D5A80"/>
-                                        <circle cx="160" cy="100" r="4" fill="#3D5A80"/>
-                                        <circle cx="100" cy="40" r="4" fill="#3D5A80"/>
-                                        <circle cx="100" cy="160" r="4" fill="#3D5A80"/>
-                                    </g>
-                                </svg>
-                                <h3 class="component-label">AI Assists</h3>
-                                <p class="component-desc">Speed & Scale</p>
-                            </div>
-
-                            <!-- Plus Connector -->
-                            <div class="equation-connector">
-                                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="plusGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#98C1D9"/>
-                                            <stop offset="100%" style="stop-color:#028393"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <circle cx="40" cy="40" r="35" fill="rgba(152, 193, 217, 0.15)" stroke="url(#plusGradient)" stroke-width="2"/>
-                                    <line x1="40" y1="20" x2="40" y2="60" stroke="url(#plusGradient)" stroke-width="5" stroke-linecap="round"/>
-                                    <line x1="20" y1="40" x2="60" y2="40" stroke="url(#plusGradient)" stroke-width="5" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-
-                            <!-- Human Component Card -->
-                            <div class="equation-card human-card-component">
-                                <div class="card-glow human-glow"></div>
-                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="component-icon">
-                                    <defs>
-                                        <radialGradient id="humanGlow" cx="50%" cy="50%">
-                                            <stop offset="0%" style="stop-color:#f65625;stop-opacity:0.3"/>
-                                            <stop offset="100%" style="stop-color:#f65625;stop-opacity:0"/>
-                                        </radialGradient>
-                                        <linearGradient id="humanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#f65625"/>
-                                            <stop offset="100%" style="stop-color:#faaa68"/>
-                                        </linearGradient>
-                                    </defs>
-
-                                    <!-- Background glow -->
-                                    <circle cx="100" cy="100" r="90" fill="url(#humanGlow)"/>
-
-                                    <!-- Heart/human center -->
-                                    <circle cx="100" cy="100" r="50" fill="url(#humanGradient)" opacity="0.2"/>
-
-                                    <!-- Human figure -->
-                                    <g fill="url(#humanGradient)">
-                                        <!-- Head -->
-                                        <circle cx="100" cy="75" r="20"/>
-
-                                        <!-- Body -->
-                                        <ellipse cx="100" cy="120" rx="25" ry="35"/>
-
-                                        <!-- Arms -->
-                                        <ellipse cx="70" cy="110" rx="8" ry="25" transform="rotate(-20 70 110)"/>
-                                        <ellipse cx="130" cy="110" rx="8" ry="25" transform="rotate(20 130 110)"/>
-                                    </g>
-
-                                    <!-- Heart detail -->
-                                    <path d="M 100 85 Q 95 82, 92 85 Q 89 88, 92 91 L 100 98 L 108 91 Q 111 88, 108 85 Q 105 82, 100 85"
-                                          fill="#fff" opacity="0.9"/>
-                                </svg>
-                                <h3 class="component-label">Humans Decide</h3>
-                                <p class="component-desc">Strategy & Judgment</p>
-                            </div>
-
-                            <!-- Equals Arrow -->
-                            <div class="equation-arrow">
-                                <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="arrowGradient" x1="0%" y1="50%" x2="100%" y2="50%">
-                                            <stop offset="0%" style="stop-color:#028393"/>
-                                            <stop offset="100%" style="stop-color:#3D5A80"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <line x1="10" y1="20" x2="70" y2="20" stroke="url(#arrowGradient)" stroke-width="3"/>
-                                    <line x1="10" y1="30" x2="70" y2="30" stroke="url(#arrowGradient)" stroke-width="3"/>
-                                    <polygon points="70,15 70,35 90,25" fill="url(#arrowGradient)"/>
-                                </svg>
-                            </div>
-
-                            <!-- Result Card -->
-                            <div class="equation-result">
-                                <div class="result-glow"></div>
-                                <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" class="result-icon">
-                                    <defs>
-                                        <linearGradient id="resultGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#028393"/>
-                                            <stop offset="50%" style="stop-color:#3D5A80"/>
-                                            <stop offset="100%" style="stop-color:#f65625"/>
-                                        </linearGradient>
-                                        <radialGradient id="resultGlow" cx="50%" cy="50%">
-                                            <stop offset="0%" style="stop-color:#028393;stop-opacity:0.3"/>
-                                            <stop offset="100%" style="stop-color:#028393;stop-opacity:0"/>
-                                        </radialGradient>
-                                    </defs>
-
-                                    <!-- Glow background -->
-                                    <ellipse cx="120" cy="60" rx="110" ry="50" fill="url(#resultGlow)"/>
-
-                                    <!-- Trophy/award icon -->
-                                    <path d="M 80 40 L 80 60 Q 80 75, 95 75 L 145 75 Q 160 75, 160 60 L 160 40 Q 160 30, 150 30 L 90 30 Q 80 30, 80 40"
-                                          fill="none" stroke="url(#resultGradient)" stroke-width="3"/>
-                                    <rect x="105" y="75" width="30" height="15" fill="url(#resultGradient)" opacity="0.7"/>
-                                    <rect x="95" y="90" width="50" height="8" rx="4" fill="url(#resultGradient)"/>
-
-                                    <!-- Star on trophy -->
-                                    <polygon points="120,45 123,52 131,53 125,58 127,66 120,62 113,66 115,58 109,53 117,52"
-                                             fill="#f65625" opacity="0.9"/>
-
-                                    <!-- Handles -->
-                                    <path d="M 75 40 Q 65 40, 65 50 Q 65 60, 75 60" fill="none" stroke="url(#resultGradient)" stroke-width="2.5"/>
-                                    <path d="M 165 40 Q 175 40, 175 50 Q 175 60, 165 60" fill="none" stroke="url(#resultGradient)" stroke-width="2.5"/>
-                                </svg>
-                                <h3 class="result-label">Better Results</h3>
-                                <p class="result-desc">Faster Growth • Stronger Relationships • Smarter Decisions</p>
-                            </div>
-                        </div>
-                        </div>
-
-                        <p>This site will show you where AI can safely assist in each stage of each loop, and where a human must stay in the loop.</p>
-                        <p>You will also see examples for both worlds. If you use HubSpot, you will see how to map the loops and stages to hubs, objects, and workflows. If you use another CRM, a help desk, or just spreadsheets, you will see how to start with what you have today.</p>
-                        <p class="closing-emphasis">The system comes first. AI and tools serve the system, not the other way around.</p>
+                <div class="ds-grid-2 ds-mb-3">
+                    <div class="ds-card ds-card-featured marketing">
+                        <h3>&#129302; AI Can Assist With</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; color: #444;">Research faster, spot patterns in your data</li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; color: #444;">Personalize at scale</li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; color: #444;">Draft content and outreach</li>
+                            <li style="padding: 0.75rem 0; color: #444;">Keep an eye on your numbers in the background</li>
+                        </ul>
                     </div>
+                    <div class="ds-card ds-card-featured sales">
+                        <h3>&#128100; Humans Lead With</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; color: #444;">Setting the strategy and choosing the trade offs</li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; color: #444;">Handling exceptions and judgment calls</li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; color: #444;">Building real relationships</li>
+                            <li style="padding: 0.75rem 0; color: #444;">Deciding what AI suggestions to accept or reject</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ds-callout ds-text-center">
+                    <p><strong>The system comes first. AI and tools serve the system, not the other way around.</strong></p>
+                    <p>This site will show you where AI can safely assist in each stage of each loop, and where a human must stay in the loop.</p>
                 </div>
             </div>
         </section>
 
         <!-- How To Use Section -->
-        <section id="how-to-use" class="how-to-use-section">
+        <section class="ds-section ds-section-gradient">
             <div class="container">
-                <h2>How to Use This Site</h2>
-                <p class="intro-text">You do not need to read every page before you act. This site is built so you can move from insight to implementation in short steps.</p>
+                <div class="ds-section-header">
+                    <h2>How to Use This Site</h2>
+                    <p>You do not need to read every page before you act. This site is built so you can move from insight to implementation in short steps.</p>
+                </div>
 
-                <div class="usage-grid">
-                    <div class="usage-card">
+                <div class="ds-grid-3">
+                    <div class="ds-card">
+                        <div class="ds-card-icon">&#128218;</div>
                         <h3>Learn the Model</h3>
                         <p>If you want the big picture, start by reading about the model itself. That will show you why the Loop Revenue System exists, how it compares to funnels and flywheels, and why it matters now.</p>
                     </div>
-                    <div class="usage-card">
+                    <div class="ds-card">
+                        <div class="ds-card-icon blue">&#128204;</div>
                         <h3>Follow Your Path</h3>
                         <p>If you want guidance for your specific role, use the role based path. You will see what to care about, which loops and stages to focus on, and which pages to read in what order.</p>
                     </div>
-                    <div class="usage-card">
+                    <div class="ds-card">
+                        <div class="ds-card-icon orange">&#128640;</div>
                         <h3>Apply and Improve</h3>
                         <p>If you are ready to build, the playbooks and implementation pages will walk you through concrete workflows, metrics, and experiments.</p>
                     </div>
                 </div>
 
-                <p class="pattern-text">The pattern stays the same. Learn a piece of the system. Apply it in your context. Watch what happens. Adjust. Then move to the next piece.</p>
+                <p class="ds-intro-text ds-text-center ds-mt-3"><strong>The pattern stays the same.</strong> Learn a piece of the system. Apply it in your context. Watch what happens. Adjust. Then move to the next piece.</p>
             </div>
         </section>
 
+        <!-- Final CTA -->
+        <section class="ds-section">
+            <div class="container">
+                <div class="ds-cta-banner">
+                    <h4>Ready to Start?</h4>
+                    <div class="ds-cta-choices">
+                        <span class="ds-cta-choice">Learn the Model</span>
+                        <span class="ds-cta-choice">Find Your Path</span>
+                        <span class="ds-cta-choice">Start Building</span>
+                    </div>
+                    <p>The Loop Revenue System helps your team, your customers, and your revenue move toward something that feels a lot more like flourishing.</p>
+                    <div class="cta-buttons">
+                        <a href="/overview/loop-revenue-system" class="btn btn-primary">What Is the Loop Revenue System</a>
+                        <a href="/roles/start-here" class="btn btn-secondary">Start Here</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Footer CTA -->
                 <div class="footer-cta">
                     <h3>Ready to build your Loop Revenue System?</h3>
                     <p>Start with the model or jump straight to your role-based path.</p>
@@ -493,8 +316,6 @@
                         <a href="/roles/start-here" class="btn btn-secondary">Start Here</a>
                     </div>
                 </div>
-
-                <!-- Footer Links -->
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Overview</h4>
@@ -504,7 +325,6 @@
                             <li><a href="/overview/data-metrics-governance">Data, Metrics, and Governance</a></li>
                         </ul>
                     </div>
-
                     <div class="footer-column">
                         <h4>The Four Loops</h4>
                         <ul>
@@ -515,7 +335,6 @@
                             <li><a href="/loops/ops">Loop Ops</a></li>
                         </ul>
                     </div>
-
                     <div class="footer-column">
                         <h4>Playbooks</h4>
                         <ul>
@@ -525,7 +344,6 @@
                             <li><a href="/playbooks/ai-and-humans">AI and Humans</a></li>
                         </ul>
                     </div>
-
                     <div class="footer-column">
                         <h4>By Role</h4>
                         <ul>
@@ -542,8 +360,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="footer-logo">
                     <a href="/">
