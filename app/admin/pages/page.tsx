@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { prisma } from '@/lib/prisma'
-import { Plus, Edit, Trash2, Eye, EyeOff } from 'lucide-react'
+import { Plus, Edit, Eye, EyeOff } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
 
 async function getPages() {
   try {
+    const { prisma } = await import('@/lib/prisma')
     return await prisma.page.findMany({
       orderBy: { updatedAt: 'desc' },
     })
