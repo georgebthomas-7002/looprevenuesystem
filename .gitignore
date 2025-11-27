@@ -3,6 +3,10 @@ node_modules/
 package-lock.json
 yarn.lock
 
+# Next.js
+.next/
+out/
+
 # Build outputs
 dist/
 build/
@@ -12,6 +16,10 @@ build/
 .env
 .env.local
 .env.*.local
+
+# Prisma
+prisma/*.db
+prisma/*.db-journal
 
 # IDE
 .vscode/
@@ -27,3 +35,10 @@ Thumbs.db
 # Temporary files
 *.tmp
 .cache/
+
+# Vercel
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts

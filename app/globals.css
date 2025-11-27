@@ -1,0 +1,340 @@
+/* Google Fonts Import - Fraunces (display) + Source Sans 3 (body) */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-bg text-text-primary font-body text-base antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold text-text-primary;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl leading-snug;
+  }
+
+  h3 {
+    @apply text-2xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl leading-normal;
+  }
+
+  p {
+    @apply leading-loose text-text-secondary;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* ============================================
+   COMPONENT PATTERNS
+   ============================================ */
+
+@layer components {
+  /* Container */
+  .container-content {
+    @apply max-w-content mx-auto px-5 md:px-6;
+  }
+
+  .container-narrow {
+    @apply max-w-narrow mx-auto px-5 md:px-6;
+  }
+
+  .container-wide {
+    @apply max-w-wide mx-auto px-5 md:px-6;
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .section-padding-sm {
+    @apply py-12 md:py-16;
+  }
+
+  .section-padding-lg {
+    @apply py-24 md:py-32;
+  }
+
+  /* Loop Cards */
+  .loop-card {
+    @apply bg-surface rounded-lg p-6 border-l-4 border-transparent shadow-xs transition-all duration-200 ease-out;
+  }
+
+  .loop-card:hover {
+    @apply shadow-md -translate-y-0.5;
+  }
+
+  .loop-card-marketing {
+    @apply border-l-loop-marketing;
+  }
+
+  .loop-card-marketing:hover {
+    @apply shadow-marketing;
+  }
+
+  .loop-card-sales {
+    @apply border-l-loop-sales;
+  }
+
+  .loop-card-sales:hover {
+    @apply shadow-sales;
+  }
+
+  .loop-card-service {
+    @apply border-l-loop-service;
+  }
+
+  .loop-card-service:hover {
+    @apply shadow-service;
+  }
+
+  .loop-card-ops {
+    @apply border-l-loop-ops;
+  }
+
+  .loop-card-ops:hover {
+    @apply shadow-ops;
+  }
+
+  /* Loop Link Pills */
+  .loop-link {
+    @apply inline-block px-3 py-2 rounded font-body text-sm font-semibold no-underline transition-all duration-200 ease-out;
+  }
+
+  .loop-link-marketing {
+    @apply bg-loop-marketing-tint text-loop-marketing hover:bg-loop-marketing hover:text-text-inverse;
+  }
+
+  .loop-link-sales {
+    @apply bg-loop-sales-tint text-loop-sales hover:bg-loop-sales hover:text-text-inverse;
+  }
+
+  .loop-link-service {
+    @apply bg-loop-service-tint text-loop-service hover:bg-loop-service hover:text-text-inverse;
+  }
+
+  .loop-link-ops {
+    @apply bg-loop-ops-tint text-loop-ops hover:bg-loop-ops hover:text-text-inverse;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 font-body text-base font-semibold no-underline rounded border-2 border-transparent cursor-pointer transition-all duration-200 ease-out;
+  }
+
+  .btn-primary {
+    @apply bg-text-primary text-text-inverse border-text-primary;
+  }
+
+  .btn-primary:hover {
+    @apply bg-transparent text-text-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-text-primary border-text-primary;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-text-primary text-text-inverse;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-text-secondary border-transparent;
+  }
+
+  .btn-ghost:hover {
+    @apply text-text-primary bg-bg-alt;
+  }
+
+  /* Loop-colored buttons */
+  .btn-marketing {
+    @apply bg-loop-marketing text-text-primary border-loop-marketing hover:bg-loop-marketing-hover hover:border-loop-marketing-hover;
+  }
+
+  .btn-sales {
+    @apply bg-loop-sales text-text-inverse border-loop-sales hover:bg-loop-sales-hover hover:border-loop-sales-hover;
+  }
+
+  .btn-service {
+    @apply bg-loop-service text-text-inverse border-loop-service hover:bg-loop-service-hover hover:border-loop-service-hover;
+  }
+
+  .btn-ops {
+    @apply bg-loop-ops text-text-inverse border-loop-ops hover:bg-loop-ops-hover hover:border-loop-ops-hover;
+  }
+
+  /* Link Card */
+  .link-card {
+    @apply flex items-center justify-between p-6 rounded bg-surface border border-border-light no-underline transition-all duration-200 ease-out;
+  }
+
+  .link-card:hover {
+    @apply border-text-primary shadow-sm -translate-y-0.5;
+  }
+
+  /* Callout / Quote Block */
+  .callout {
+    @apply p-6 pl-8 border-l-4 border-text-primary bg-bg-alt rounded-r;
+  }
+
+  .callout-text {
+    @apply font-display text-lg italic leading-relaxed text-text-primary;
+  }
+
+  .callout-marketing {
+    @apply border-l-loop-marketing bg-loop-marketing-light;
+  }
+
+  .callout-sales {
+    @apply border-l-loop-sales bg-loop-sales-light;
+  }
+
+  .callout-service {
+    @apply border-l-loop-service bg-loop-service-light;
+  }
+
+  .callout-ops {
+    @apply border-l-loop-ops bg-loop-ops-light;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    @apply flex items-center gap-2 font-body text-sm text-text-muted;
+  }
+
+  .breadcrumb-link {
+    @apply text-text-muted no-underline transition-colors duration-200 hover:text-text-primary;
+  }
+
+  /* Label / Eyebrow */
+  .label {
+    @apply font-body text-xs font-semibold tracking-wider uppercase text-text-muted;
+  }
+
+  /* Stage Cards */
+  .stage-card {
+    @apply bg-surface rounded p-4 border border-border-light;
+  }
+
+  .stage-card-title {
+    @apply font-body text-sm font-semibold uppercase tracking-wide mb-2;
+  }
+
+  .stage-card-express .stage-card-title {
+    @apply text-brand-teal;
+  }
+
+  .stage-card-tailor .stage-card-title {
+    @apply text-brand-peach;
+  }
+
+  .stage-card-amplify .stage-card-title {
+    @apply text-brand-orange;
+  }
+
+  .stage-card-evolve .stage-card-title {
+    @apply text-brand-blue;
+  }
+
+  /* Navigation Card */
+  .nav-card {
+    @apply bg-surface border border-border-light rounded-md p-6 transition-all duration-200 ease-out;
+  }
+
+  .nav-card:hover {
+    @apply border-border-dark shadow-sm;
+  }
+
+  /* Comparison Box */
+  .comparison-box {
+    @apply bg-surface rounded-md p-6 text-center border border-border-light;
+  }
+
+  /* Connection Card */
+  .connection-card {
+    @apply p-5 rounded border-l-4;
+  }
+
+  .connection-card-marketing {
+    @apply bg-loop-marketing-light border-l-loop-marketing;
+  }
+
+  .connection-card-sales {
+    @apply bg-loop-sales-light border-l-loop-sales;
+  }
+
+  .connection-card-service {
+    @apply bg-loop-service-light border-l-loop-service;
+  }
+
+  .connection-card-ops {
+    @apply bg-loop-ops-light border-l-loop-ops;
+  }
+
+  /* AI Card */
+  .ai-card {
+    @apply bg-surface rounded-md p-5 border border-border-light;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@layer utilities {
+  /* Fade in animation */
+  .fade-in {
+    @apply opacity-0 translate-y-5 transition-all duration-slow ease-out;
+  }
+
+  .fade-in.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Arrow animation for links */
+  .arrow-link::after {
+    content: '>';
+    @apply ml-2 inline-block transition-transform duration-200 ease-out;
+  }
+
+  .arrow-link:hover::after {
+    @apply translate-x-1;
+  }
+}
+
+/* ============================================
+   RESPECT REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
