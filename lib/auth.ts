@@ -9,7 +9,7 @@ async function verifyPassword(password: string, hashedPassword: string): Promise
 }
 
 export const authOptions: NextAuthOptions = {
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.lrs_NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === 'development',
   providers: [
     CredentialsProvider({
@@ -24,8 +24,8 @@ export const authOptions: NextAuthOptions = {
         }
 
         // First, check against environment variables (simple auth for v1)
-        const adminEmail = process.env.ADMIN_EMAIL
-        const adminPassword = process.env.ADMIN_PASSWORD
+        const adminEmail = process.env.lrs_ADMIN_EMAIL
+        const adminPassword = process.env.lrs_ADMIN_PASSWORD
 
         if (credentials.email === adminEmail && credentials.password === adminPassword) {
           return {
