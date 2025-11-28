@@ -52,6 +52,7 @@ export const DESIGNED_PAGE_SLUGS = [
 
   // Resources section
   'resources/templates-checklists', // Templates & Checklists page
+  'resources/prompts-workflows', // Prompts & Workflows page
 
   // Add more designed pages here as they are created
   // etc.
