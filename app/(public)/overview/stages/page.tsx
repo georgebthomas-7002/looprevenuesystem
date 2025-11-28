@@ -13,54 +13,53 @@ export const metadata: Metadata = {
   },
 }
 
-// Stage colors
-const stageColors = {
-  express: { accent: 'brand-teal', bg: 'bg-brand-teal/10', border: 'border-brand-teal', text: 'text-brand-teal' },
-  tailor: { accent: 'brand-peach', bg: 'bg-brand-peach/10', border: 'border-brand-peach', text: 'text-brand-peach' },
-  amplify: { accent: 'brand-orange', bg: 'bg-brand-orange/10', border: 'border-brand-orange', text: 'text-brand-orange' },
-  evolve: { accent: 'brand-blue', bg: 'bg-brand-blue/10', border: 'border-brand-blue', text: 'text-brand-blue' },
-}
-
-// Stages Diagram SVG
+// Stage Diagram - Horizontal flow with loop back
 function StagesDiagram() {
   return (
-    <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[500px] mx-auto">
-      {/* Connection line */}
-      <path d="M50 60 L350 60" stroke="#E0FBFC" strokeWidth="8" fill="none" />
+    <svg viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[600px] mx-auto">
+      {/* Background track */}
+      <path d="M60 70 L440 70" stroke="#E0FBFC" strokeWidth="12" fill="none" strokeLinecap="round" />
 
-      {/* Arrows between stages */}
+      {/* Loop back arrow at top */}
+      <path
+        d="M440 70 Q 470 70 470 45 Q 470 20 250 20 Q 30 20 30 45 Q 30 70 60 70"
+        stroke="#98C1D9"
+        strokeWidth="2"
+        fill="none"
+        strokeDasharray="6 4"
+      />
+      <polygon points="55,65 65,70 55,75" fill="#98C1D9"/>
+
+      {/* Flow arrows */}
+      <path d="M115 70 L155 70" stroke="#94A3B8" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+      <path d="M225 70 L265 70" stroke="#94A3B8" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+      <path d="M335 70 L375 70" stroke="#94A3B8" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+
       <defs>
-        <marker id="stage-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
-          <polygon points="0 0, 10 4, 0 8" fill="#94A3B8"/>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#94A3B8"/>
         </marker>
       </defs>
-      <path d="M95 60 L130 60" stroke="#94A3B8" strokeWidth="2" fill="none" markerEnd="url(#stage-arrow)"/>
-      <path d="M185 60 L220 60" stroke="#94A3B8" strokeWidth="2" fill="none" markerEnd="url(#stage-arrow)"/>
-      <path d="M275 60 L310 60" stroke="#94A3B8" strokeWidth="2" fill="none" markerEnd="url(#stage-arrow)"/>
-
-      {/* Loop back arrow */}
-      <path d="M360 60 Q 380 60 380 40 Q 380 20 200 20 Q 20 20 20 40 Q 20 60 40 60"
-            stroke="#94A3B8" strokeWidth="2" fill="none" strokeDasharray="4 2" markerEnd="url(#stage-arrow)"/>
 
       {/* Express */}
-      <circle cx="60" cy="60" r="30" fill="rgba(2,131,147,0.15)" stroke="#028393" strokeWidth="3" />
-      <text x="60" y="56" textAnchor="middle" fill="#028393" fontSize="10" fontWeight="600">Express</text>
-      <text x="60" y="68" textAnchor="middle" fill="#028393" fontSize="7">Define</text>
+      <circle cx="80" cy="70" r="35" fill="rgba(2,131,147,0.15)" stroke="#028393" strokeWidth="3"/>
+      <text x="80" y="66" textAnchor="middle" fill="#028393" fontSize="11" fontWeight="600">Express</text>
+      <text x="80" y="80" textAnchor="middle" fill="#028393" fontSize="8">Define</text>
 
       {/* Tailor */}
-      <circle cx="155" cy="60" r="30" fill="rgba(250,170,104,0.15)" stroke="#faaa68" strokeWidth="3" />
-      <text x="155" y="56" textAnchor="middle" fill="#d97706" fontSize="10" fontWeight="600">Tailor</text>
-      <text x="155" y="68" textAnchor="middle" fill="#d97706" fontSize="7">Personalize</text>
+      <circle cx="190" cy="70" r="35" fill="rgba(250,170,104,0.15)" stroke="#faaa68" strokeWidth="3"/>
+      <text x="190" y="66" textAnchor="middle" fill="#d97706" fontSize="11" fontWeight="600">Tailor</text>
+      <text x="190" y="80" textAnchor="middle" fill="#d97706" fontSize="8">Personalize</text>
 
       {/* Amplify */}
-      <circle cx="250" cy="60" r="30" fill="rgba(246,86,37,0.15)" stroke="#f65625" strokeWidth="3" />
-      <text x="250" y="56" textAnchor="middle" fill="#f65625" fontSize="10" fontWeight="600">Amplify</text>
-      <text x="250" y="68" textAnchor="middle" fill="#f65625" fontSize="7">Scale</text>
+      <circle cx="300" cy="70" r="35" fill="rgba(246,86,37,0.15)" stroke="#f65625" strokeWidth="3"/>
+      <text x="300" y="66" textAnchor="middle" fill="#f65625" fontSize="11" fontWeight="600">Amplify</text>
+      <text x="300" y="80" textAnchor="middle" fill="#f65625" fontSize="8">Scale</text>
 
       {/* Evolve */}
-      <circle cx="345" cy="60" r="30" fill="rgba(61,90,128,0.15)" stroke="#3D5A80" strokeWidth="3" />
-      <text x="345" y="56" textAnchor="middle" fill="#3D5A80" fontSize="10" fontWeight="600">Evolve</text>
-      <text x="345" y="68" textAnchor="middle" fill="#3D5A80" fontSize="7">Learn</text>
+      <circle cx="410" cy="70" r="35" fill="rgba(61,90,128,0.15)" stroke="#3D5A80" strokeWidth="3"/>
+      <text x="410" y="66" textAnchor="middle" fill="#3D5A80" fontSize="11" fontWeight="600">Evolve</text>
+      <text x="410" y="80" textAnchor="middle" fill="#3D5A80" fontSize="8">Learn</text>
     </svg>
   )
 }
@@ -68,7 +67,7 @@ function StagesDiagram() {
 // Hero Section
 function HeroSection() {
   return (
-    <section className="section-padding-lg bg-gradient-to-b from-brand-cyan/20 to-bg border-b border-border-light">
+    <section className="section-padding-lg bg-gradient-to-b from-brand-cyan/30 to-bg border-b border-border-light">
       <div className="container-content">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <p className="font-body text-sm font-semibold text-brand-teal uppercase tracking-wider mb-4">
@@ -77,7 +76,7 @@ function HeroSection() {
           <h1 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight text-brand-navy mb-6">
             The Four Stages of the Loop Revenue System
           </h1>
-          <p className="font-display text-xl italic text-text-secondary mb-8">
+          <p className="font-display text-xl italic text-text-secondary">
             One simple pattern for every loop in your revenue engine.
           </p>
         </div>
@@ -94,6 +93,9 @@ function HeroSection() {
             <p>
               The Loop Revenue System answers those questions with four stages that repeat inside every loop. <strong className="text-text-primary">Express</strong>, <strong className="text-text-primary">Tailor</strong>, <strong className="text-text-primary">Amplify</strong>, and <strong className="text-text-primary">Evolve</strong> give you a common language for the work marketing, sales, service, and ops all do&mdash;even when their day-to-day tasks look very different.
             </p>
+            <p>
+              This page is your guide to those stages. Once you understand them, you can look at any part of your revenue engine and say, &ldquo;Here is what Express looks like for us. Here is where Tailor breaks. Here is how Amplify helps. Here is how we Evolve.&rdquo;
+            </p>
           </div>
         </div>
       </div>
@@ -106,9 +108,9 @@ function WhyStagesMatterSection() {
   return (
     <section className="section-padding bg-surface border-b border-border-light">
       <div className="container-content">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="font-display text-3xl font-medium text-text-primary mb-6">
+            <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
               Why Stages Matter More Than Departments
             </h2>
             <div className="font-body text-base text-text-secondary leading-loose space-y-4">
@@ -116,7 +118,7 @@ function WhyStagesMatterSection() {
                 Most companies organize around departments. Marketing over here, sales over there, service at the end, ops in the background. Each team uses its own playbook, tools, and vocabulary.
               </p>
               <p>
-                The result is familiar. Work feels busy but not aligned. Handoffs between teams feel clunky. It&apos;s hard to tell if a problem is a marketing issue, a sales issue, a service issue, or a tool issue.
+                The result is familiar. Work feels busy, but not always aligned. Handoffs between teams feel clunky. It is hard to tell if a problem is a marketing issue, a sales issue, a service issue, or a tool issue.
               </p>
               <p>
                 <strong className="text-text-primary">Stages give you a different way to see the work.</strong>
@@ -127,27 +129,32 @@ function WhyStagesMatterSection() {
             </div>
           </div>
 
-          <div className="bg-bg-alt rounded-lg p-8">
+          <div className="bg-bg-alt rounded-lg p-8 border-t-4 border-brand-teal">
             <h3 className="font-display text-lg font-semibold text-text-primary mb-6">
-              Better Questions to Ask
+              When you look at your business by stage, you can ask cleaner questions:
             </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">?</span>
+                <span className="w-2 h-2 rounded-full bg-brand-teal mt-2 flex-shrink-0"></span>
                 <span className="font-body text-text-secondary">Are we clear enough in <strong className="text-brand-teal">Express</strong>?</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-brand-peach/20 text-brand-peach flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">?</span>
+                <span className="w-2 h-2 rounded-full bg-brand-peach mt-2 flex-shrink-0"></span>
                 <span className="font-body text-text-secondary">Are we truly <strong className="text-brand-peach">tailoring</strong> or just segmenting by job title?</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">?</span>
-                <span className="font-body text-text-secondary">Are we <strong className="text-brand-orange">amplifying</strong> the right things, or just adding noise?</span>
+                <span className="w-2 h-2 rounded-full bg-brand-orange mt-2 flex-shrink-0"></span>
+                <span className="font-body text-text-secondary">Are we <strong className="text-brand-orange">amplifying</strong> the right things, or just adding more noise?</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-brand-blue/20 text-brand-blue flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">?</span>
-                <span className="font-body text-text-secondary">Are we <strong className="text-brand-blue">evolving</strong>, or repeating the same motions?</span>
+                <span className="w-2 h-2 rounded-full bg-brand-blue mt-2 flex-shrink-0"></span>
+                <span className="font-body text-text-secondary">Are we <strong className="text-brand-blue">evolving</strong>, or repeating the same motions and hoping for different results?</span>
               </div>
+            </div>
+            <div className="mt-6 pt-6 border-t border-border-light">
+              <p className="font-body text-sm text-text-muted italic">
+                Those questions guide better decisions than &ldquo;Should this live in marketing or sales?&rdquo;
+              </p>
             </div>
           </div>
         </div>
@@ -161,39 +168,43 @@ function StagesOverviewSection() {
   const stages = [
     {
       name: 'Express',
-      tagline: 'Define how you show up',
-      description: 'Decide who you serve, what problems you solve, how you speak, and what your process looks like.',
-      color: stageColors.express,
       icon: '✦',
+      color: 'brand-teal',
+      borderColor: 'border-brand-teal',
+      bgColor: 'bg-brand-teal/10',
+      description: 'Express is where you define how you show up in the market and with your customers. You decide who you serve, what problems you solve, how you speak, and what your process looks like.',
     },
     {
       name: 'Tailor',
-      tagline: 'Make it personal',
-      description: 'Use data, context, and empathy to adjust your approach for real people, accounts, and situations.',
-      color: stageColors.tailor,
       icon: '◈',
+      color: 'brand-peach',
+      borderColor: 'border-brand-peach',
+      bgColor: 'bg-brand-peach/10',
+      description: 'Tailor is where you take that clear expression and adjust it for real people, accounts, and situations. You use what you know to make every touch feel relevant, timely, and human.',
     },
     {
       name: 'Amplify',
-      tagline: 'Scale what works',
-      description: 'Repurpose strong ideas, share winning plays, and extend your reach without losing your voice.',
-      color: stageColors.amplify,
       icon: '◉',
+      color: 'brand-orange',
+      borderColor: 'border-brand-orange',
+      bgColor: 'bg-brand-orange/10',
+      description: 'Amplify is where you scale what works. You repurpose strong ideas, share winning plays, and use automation and channels to extend your reach without losing your voice.',
     },
     {
       name: 'Evolve',
-      tagline: 'Learn and adjust',
-      description: 'Read the results, listen to feedback, and make changes so the next cycle is more effective.',
-      color: stageColors.evolve,
       icon: '↻',
+      color: 'brand-blue',
+      borderColor: 'border-brand-blue',
+      bgColor: 'bg-brand-blue/10',
+      description: 'Evolve is where you learn and adjust. You read the results, listen to feedback, and make changes so the next cycle of the loop is more aligned and more effective.',
     },
   ]
 
   return (
-    <section className="section-padding bg-brand-cyan/10 border-b border-border-light">
+    <section className="section-padding bg-brand-cyan/20 border-b border-border-light">
       <div className="container-content">
         <div className="text-center mb-12">
-          <h2 className="font-display text-3xl font-medium text-text-primary mb-4">
+          <h2 className="font-display text-3xl font-medium text-brand-navy mb-4">
             The Four Stages at a Glance
           </h2>
           <p className="font-body text-lg text-text-secondary max-w-2xl mx-auto">
@@ -207,18 +218,15 @@ function StagesOverviewSection() {
               key={stage.name}
               className={cn(
                 'bg-surface rounded-lg p-6 border-t-4 shadow-sm',
-                stage.color.border
+                stage.borderColor
               )}
             >
-              <div className={cn('text-3xl mb-3', stage.color.text)}>
+              <div className={cn('text-3xl mb-4', `text-${stage.color}`)}>
                 {stage.icon}
               </div>
-              <h3 className={cn('font-display text-xl font-semibold mb-1', stage.color.text)}>
+              <h3 className={cn('font-display text-xl font-semibold mb-3', `text-${stage.color}`)}>
                 {stage.name}
               </h3>
-              <p className="font-display text-sm font-medium text-text-primary mb-3">
-                {stage.tagline}
-              </p>
               <p className="font-body text-sm text-text-secondary leading-relaxed">
                 {stage.description}
               </p>
@@ -232,58 +240,11 @@ function StagesOverviewSection() {
 
 // Express Across Loops Section
 function ExpressSection() {
-  const loops = [
-    {
-      name: 'Marketing',
-      color: 'loop-marketing',
-      items: [
-        'A clear point of view about your market and problems you solve',
-        'Defined ideal customer profiles, not just generic industries',
-        'Core messages, storylines, and content pillars',
-        'A simple map of your main campaigns and offers',
-      ],
-      outcome: 'Content and campaigns feel like they come from one confident voice.',
-    },
-    {
-      name: 'Sales',
-      color: 'loop-sales',
-      items: [
-        'A clearly defined sales process with meaningful stages',
-        'Shared definitions of a good-fit opportunity',
-        'Documented talk tracks, discovery questions, and key stories',
-        'Alignment on what a "win" means beyond a signed contract',
-      ],
-      outcome: 'Deals move smoothly and reps know how to show up in conversations.',
-    },
-    {
-      name: 'Service',
-      color: 'loop-service',
-      items: [
-        'A clear service philosophy for support and education',
-        'Mapped post-sale journeys for onboarding and adoption',
-        'A simple explanation of "what good looks like" for outcomes',
-        'Principles for how your team responds when things go wrong',
-      ],
-      outcome: 'Customers know what to expect after they buy.',
-    },
-    {
-      name: 'Ops',
-      color: 'loop-ops',
-      items: [
-        'Agreed lifecycle stages and status definitions',
-        'A documented data model for contacts, companies, deals',
-        'Rules for what gets tracked, who owns it, and why',
-        'A vision for how tools support the other loops',
-      ],
-      outcome: 'Everyone uses the CRM similarly and dashboards tell a coherent story.',
-    },
-  ]
-
   return (
     <section className="section-padding bg-surface border-b border-border-light">
       <div className="container-content">
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-12 rounded-full bg-brand-teal/20 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-full bg-brand-teal/20 flex items-center justify-center">
             <span className="text-brand-teal text-2xl">✦</span>
           </div>
           <div>
@@ -295,35 +256,129 @@ function ExpressSection() {
         </div>
 
         <div className="max-w-3xl mb-10">
-          <p className="font-body text-lg text-text-secondary leading-relaxed">
-            Express gives shape and direction to your work. It&apos;s where you answer key questions about identity, focus, and process before you try to personalize, automate, or optimize anything. <strong className="text-text-primary">If Express is fuzzy, everything that follows feels noisy.</strong>
+          <h3 className="font-display text-xl font-medium text-text-primary mb-4">
+            What Express Really Does
+          </h3>
+          <p className="font-body text-base text-text-secondary leading-relaxed mb-4">
+            Express gives shape and direction to your work. It is where you answer key questions about identity, focus, and process before you try to personalize, automate, or optimize anything.
+          </p>
+          <p className="font-body text-base text-text-secondary leading-relaxed">
+            <strong className="text-text-primary">If Express is fuzzy, everything that follows feels noisy.</strong> Teams pull in different directions because they hold different pictures in their heads of what &ldquo;good&rdquo; looks like.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {loops.map((loop) => (
-            <div
-              key={loop.name}
-              className={cn('rounded-lg p-6 border-l-4 bg-bg-alt', `border-${loop.color}`)}
-            >
-              <h3 className={cn('font-display text-lg font-semibold mb-4', `text-${loop.color}`)}>
-                Express in Loop {loop.name}
-              </h3>
-              <ul className="space-y-2 mb-4">
-                {loop.items.map((item, i) => (
-                  <li key={i} className="font-body text-sm text-text-secondary flex items-start gap-2">
-                    <span className="text-brand-teal mt-0.5">→</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="pt-3 border-t border-border-light">
-                <p className="font-body text-xs text-text-muted italic">
-                  When strong: {loop.outcome}
-                </p>
-              </div>
-            </div>
-          ))}
+          {/* Marketing */}
+          <div className="rounded-lg p-6 border-l-4 border-loop-marketing bg-bg-alt">
+            <h4 className="font-display text-lg font-semibold text-loop-marketing mb-4">
+              Express in Loop Marketing
+            </h4>
+            <ul className="space-y-2 mb-4">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>A clear point of view about your market and the problems you help solve</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Defined ideal customer profiles, not just generic industries</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Core messages, storylines, and content pillars you return to on purpose</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>A simple map of your main campaigns and offers</span>
+              </li>
+            </ul>
+            <p className="font-body text-xs text-text-muted italic pt-3 border-t border-border-light">
+              When strong: Content and campaigns feel like they come from one confident voice.
+            </p>
+          </div>
+
+          {/* Sales */}
+          <div className="rounded-lg p-6 border-l-4 border-loop-sales bg-bg-alt">
+            <h4 className="font-display text-lg font-semibold text-loop-sales mb-4">
+              Express in Loop Sales
+            </h4>
+            <ul className="space-y-2 mb-4">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>A clearly defined sales process with meaningful stages</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Shared definitions of a good-fit opportunity</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Documented talk tracks, discovery questions, and key stories</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Alignment on what a &ldquo;win&rdquo; means beyond just a signed contract</span>
+              </li>
+            </ul>
+            <p className="font-body text-xs text-text-muted italic pt-3 border-t border-border-light">
+              When strong: Deals move smoothly and reps know how to show up in conversations.
+            </p>
+          </div>
+
+          {/* Service */}
+          <div className="rounded-lg p-6 border-l-4 border-loop-service bg-bg-alt">
+            <h4 className="font-display text-lg font-semibold text-loop-service mb-4">
+              Express in Loop Service
+            </h4>
+            <ul className="space-y-2 mb-4">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>A clear service philosophy for how you support and educate customers</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Mapped post-sale journeys for onboarding, adoption, and expansion</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>A simple explanation of &ldquo;what good looks like&rdquo; for customer outcomes</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Principles for how your team responds when things go wrong</span>
+              </li>
+            </ul>
+            <p className="font-body text-xs text-text-muted italic pt-3 border-t border-border-light">
+              When strong: Customers feel like they know what to expect after they buy.
+            </p>
+          </div>
+
+          {/* Ops */}
+          <div className="rounded-lg p-6 border-l-4 border-loop-ops bg-bg-alt">
+            <h4 className="font-display text-lg font-semibold text-loop-ops mb-4">
+              Express in Loop Ops
+            </h4>
+            <ul className="space-y-2 mb-4">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Agreed lifecycle stages and status definitions across the business</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>A documented data model for contacts, companies, deals, and tickets</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>Rules for what gets tracked, who owns it, and why</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-teal mt-0.5">→</span>
+                <span>A vision for how tools and automation should support the other loops</span>
+              </li>
+            </ul>
+            <p className="font-body text-xs text-text-muted italic pt-3 border-t border-border-light">
+              When strong: Everyone uses the CRM in a similar way and dashboards tell a coherent story.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -332,50 +387,11 @@ function ExpressSection() {
 
 // Tailor Across Loops Section
 function TailorSection() {
-  const loops = [
-    {
-      name: 'Marketing',
-      items: [
-        'Segmenting by real behavior and needs, not just job title',
-        'Adjusting content, offers, and timing based on journey stage',
-        'Speaking in the language customers actually use',
-      ],
-      outcome: 'Content feels written for someone specific, even at scale.',
-    },
-    {
-      name: 'Sales',
-      items: [
-        'Researching accounts instead of running the same script',
-        'Shaping questions and recommendations to context',
-        'Documenting learnings so next interactions start right',
-      ],
-      outcome: 'Buyers feel listened to and guided, not pitched at.',
-    },
-    {
-      name: 'Service',
-      items: [
-        'Responding with full context from customer history',
-        'Proactively reaching out at early signs of friction',
-        'Adjusting onboarding based on how each customer learns',
-      ],
-      outcome: 'Customers feel known. They don\'t repeat their story.',
-    },
-    {
-      name: 'Ops',
-      items: [
-        'Configuring fields and routing that match actual process',
-        'Creating views and automations tailored to each team',
-        'Respecting privacy while enabling personalization',
-      ],
-      outcome: 'The system supports nuance instead of forcing sameness.',
-    },
-  ]
-
   return (
-    <section className="section-padding bg-brand-cyan/10 border-b border-border-light">
+    <section className="section-padding bg-brand-cyan/20 border-b border-border-light">
       <div className="container-content">
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-12 rounded-full bg-brand-peach/20 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-full bg-brand-peach/20 flex items-center justify-center">
             <span className="text-brand-peach text-2xl">◈</span>
           </div>
           <div>
@@ -388,33 +404,98 @@ function TailorSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
-            <p className="font-body text-lg text-text-secondary leading-relaxed mb-6">
-              Tailor turns a clear plan into a human experience. It uses data, context, and empathy to answer: <strong className="text-text-primary">&ldquo;What does this person need right now?&rdquo;</strong>
-            </p>
-            <p className="font-body text-base text-text-secondary leading-relaxed">
-              The goal isn&apos;t to use as many personalization tokens as possible. The goal is to make sure the person on the other side feels understood and supported.
-            </p>
+            <h3 className="font-display text-xl font-medium text-text-primary mb-4">
+              What Tailor Really Does
+            </h3>
+            <div className="font-body text-base text-text-secondary leading-relaxed space-y-4">
+              <p>
+                Tailor turns a clear plan into a human experience.
+              </p>
+              <p>
+                It uses data, context, and empathy to answer questions like: <strong className="text-text-primary">&ldquo;What does this person need right now?&rdquo;</strong> and <strong className="text-text-primary">&ldquo;What would be most helpful in this moment?&rdquo;</strong>
+              </p>
+              <p>
+                Tailor is where personalization lives, but personalization is not the whole story. The goal is not to use as many tokens as possible. The goal is to make sure the person on the other side feels understood and supported.
+              </p>
+            </div>
           </div>
 
           <div className="space-y-4">
-            {loops.map((loop) => (
-              <div key={loop.name} className="bg-surface rounded-lg p-5 border border-border-light">
-                <h3 className="font-display text-base font-semibold text-text-primary mb-3">
-                  Tailor in Loop {loop.name}
-                </h3>
-                <ul className="space-y-1 mb-3">
-                  {loop.items.map((item, i) => (
-                    <li key={i} className="font-body text-sm text-text-secondary flex items-start gap-2">
-                      <span className="text-brand-peach mt-0.5">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="font-body text-xs text-brand-peach italic">
-                  {loop.outcome}
-                </p>
-              </div>
-            ))}
+            <div className="bg-surface rounded-lg p-5 border border-border-light">
+              <h4 className="font-display text-base font-semibold text-loop-marketing mb-3">Tailor in Loop Marketing</h4>
+              <ul className="space-y-1 mb-3">
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Segmenting by real behavior and needs, not just job title and industry</span>
+                </li>
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Adjusting content, offers, and timing based on where someone is in their journey</span>
+                </li>
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Speaking in the language your customers actually use, not internal jargon</span>
+                </li>
+              </ul>
+              <p className="font-body text-xs text-brand-peach italic">When strong: Content feels like it was written for someone specific, even at scale.</p>
+            </div>
+
+            <div className="bg-surface rounded-lg p-5 border border-border-light">
+              <h4 className="font-display text-base font-semibold text-loop-sales mb-3">Tailor in Loop Sales</h4>
+              <ul className="space-y-1 mb-3">
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Researching accounts and contacts instead of running the same script every time</span>
+                </li>
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Shaping questions, stories, and recommendations to the person and context</span>
+                </li>
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Documenting what you learn so the next interaction starts in the right place</span>
+                </li>
+              </ul>
+              <p className="font-body text-xs text-brand-peach italic">When strong: Buyers feel listened to and guided, not pitched at.</p>
+            </div>
+
+            <div className="bg-surface rounded-lg p-5 border border-border-light">
+              <h4 className="font-display text-base font-semibold text-loop-service mb-3">Tailor in Loop Service</h4>
+              <ul className="space-y-1 mb-3">
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Responding with full context from the customer&apos;s history and setup</span>
+                </li>
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Proactively reaching out when you see early signs of friction or risk</span>
+                </li>
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Adjusting onboarding and education based on how each customer learns</span>
+                </li>
+              </ul>
+              <p className="font-body text-xs text-brand-peach italic">When strong: Customers feel known. They do not have to repeat their story.</p>
+            </div>
+
+            <div className="bg-surface rounded-lg p-5 border border-border-light">
+              <h4 className="font-display text-base font-semibold text-loop-ops mb-3">Tailor in Loop Ops</h4>
+              <ul className="space-y-1 mb-3">
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Configuring fields, pipelines, and routing rules that match your actual process</span>
+                </li>
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Creating views, reports, and automations tailored to each team&apos;s responsibilities</span>
+                </li>
+                <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                  <span className="text-brand-peach mt-0.5">•</span>
+                  <span>Respecting consent and privacy while still enabling effective personalization</span>
+                </li>
+              </ul>
+              <p className="font-body text-xs text-brand-peach italic">When strong: The system supports nuance instead of forcing every situation into the same shape.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -424,46 +505,11 @@ function TailorSection() {
 
 // Amplify Across Loops Section
 function AmplifySection() {
-  const loops = [
-    {
-      name: 'Marketing',
-      items: [
-        'Turn one strong article into many smaller assets',
-        'Share high-performing ideas across channels',
-        'Use automation to keep helpful content in circulation',
-      ],
-    },
-    {
-      name: 'Sales',
-      items: [
-        'Capture winning templates and talk tracks',
-        'Share them in playbooks so more reps can use them',
-        'Create decks and one-pagers that land with buyers',
-      ],
-    },
-    {
-      name: 'Service',
-      items: [
-        'Turn repeated questions into knowledge base articles',
-        'Use in-app guidance to share solutions proactively',
-        'Build communities where customers help each other',
-      ],
-    },
-    {
-      name: 'Ops',
-      items: [
-        'Use automation and integrations to cut manual work',
-        'Standardize effective processes across teams',
-        'Scale reporting so everyone sees the same truths',
-      ],
-    },
-  ]
-
   return (
     <section className="section-padding bg-surface border-b border-border-light">
       <div className="container-content">
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-12 rounded-full bg-brand-orange/20 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-full bg-brand-orange/20 flex items-center justify-center">
             <span className="text-brand-orange text-2xl">◉</span>
           </div>
           <div>
@@ -475,32 +521,91 @@ function AmplifySection() {
         </div>
 
         <div className="max-w-3xl mb-10">
-          <p className="font-body text-lg text-text-secondary leading-relaxed">
-            Amplify takes what&apos;s working and helps it reach further. <strong className="text-text-primary">The goal is not more noise&mdash;it&apos;s more of the right signal</strong>, shared in more places, with more consistency. Amplify turns individual wins into shared assets.
+          <h3 className="font-display text-xl font-medium text-text-primary mb-4">
+            What Amplify Really Does
+          </h3>
+          <p className="font-body text-base text-text-secondary leading-relaxed">
+            Amplify takes what is working and helps it reach further. <strong className="text-text-primary">The goal is not more noise. It is more of the right signal</strong>, shared in more places, with more consistency. Amplify turns individual wins into shared assets.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {loops.map((loop) => (
-            <div key={loop.name} className="bg-bg-alt rounded-lg p-5">
-              <h3 className="font-display text-base font-semibold text-brand-orange mb-4">
-                {loop.name}
-              </h3>
-              <ul className="space-y-2">
-                {loop.items.map((item, i) => (
-                  <li key={i} className="font-body text-sm text-text-secondary flex items-start gap-2">
-                    <span className="text-brand-orange mt-0.5">↗</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div className="bg-bg-alt rounded-lg p-5">
+            <h4 className="font-display text-base font-semibold text-brand-orange mb-4">Marketing</h4>
+            <ul className="space-y-2">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Turn one strong article or video into many smaller assets</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Share high-performing ideas across email, search, social, and events</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Use smart automation to keep helpful content in circulation</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-bg-alt rounded-lg p-5">
+            <h4 className="font-display text-base font-semibold text-brand-orange mb-4">Sales</h4>
+            <ul className="space-y-2">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Capture winning email templates, call flows, and talk tracks</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Share them in playbooks and sequences so more reps can use them</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Create simple decks and one-pagers that land with buyers</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-bg-alt rounded-lg p-5">
+            <h4 className="font-display text-base font-semibold text-brand-orange mb-4">Service</h4>
+            <ul className="space-y-2">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Turn repeated questions into knowledge base articles and videos</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Use in-app guidance or email to share solutions before issues appear</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Build communities or forums where customers help each other</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-bg-alt rounded-lg p-5">
+            <h4 className="font-display text-base font-semibold text-brand-orange mb-4">Ops</h4>
+            <ul className="space-y-2">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Use automation and integrations to cut manual work</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Standardize effective processes so teams do not reinvent the wheel</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-orange mt-0.5">↗</span>
+                <span>Scale reporting so leaders and front-line teams see the same truths</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-10 callout callout-sales">
+        <div className="callout callout-sales max-w-3xl mx-auto">
           <p className="callout-text">
-            When Amplify is strong, you don&apos;t depend on a few all-stars. The whole team gains from what works.
+            When Amplify is strong, you do not depend on a few all-star reps. The whole team gains from what works. Your best ideas do not die as single posts or campaigns.
           </p>
         </div>
       </div>
@@ -510,46 +615,11 @@ function AmplifySection() {
 
 // Evolve Across Loops Section
 function EvolveSection() {
-  const loops = [
-    {
-      name: 'Marketing',
-      items: [
-        'Review channel and content performance regularly',
-        'Test new ideas in small experiments, then roll out winners',
-        'Connect marketing metrics to real revenue and retention',
-      ],
-    },
-    {
-      name: 'Sales',
-      items: [
-        'Study win/loss patterns and share findings',
-        'Adjust qualification and proposals based on learnings',
-        'Update training and coaching with fresh examples',
-      ],
-    },
-    {
-      name: 'Service',
-      items: [
-        'Track satisfaction, retention, and reasons for churn',
-        'Use insight to improve onboarding and the product',
-        'Close the loop with marketing and sales on expectations',
-      ],
-    },
-    {
-      name: 'Ops',
-      items: [
-        'Watch system-level metrics: conversion, cycle time, data quality',
-        'Spot bottlenecks and friction points early',
-        'Prioritize and ship changes to process and tools',
-      ],
-    },
-  ]
-
   return (
-    <section className="section-padding bg-brand-cyan/10 border-b border-border-light">
+    <section className="section-padding bg-brand-cyan/20 border-b border-border-light">
       <div className="container-content">
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-12 rounded-full bg-brand-blue/20 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-full bg-brand-blue/20 flex items-center justify-center">
             <span className="text-brand-blue text-2xl">↻</span>
           </div>
           <div>
@@ -562,15 +632,23 @@ function EvolveSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
           <div>
-            <p className="font-body text-lg text-text-secondary leading-relaxed mb-4">
-              Evolve is where the system actually becomes a loop. It&apos;s the stage where you stop and ask, <strong className="text-text-primary">&ldquo;What did we learn?&rdquo;</strong> and <strong className="text-text-primary">&ldquo;What will we change next time?&rdquo;</strong>
-            </p>
-            <p className="font-body text-base text-text-secondary leading-relaxed">
-              Without Evolve, you stay busy but stuck. With Evolve, every cycle teaches you something.
-            </p>
+            <h3 className="font-display text-xl font-medium text-text-primary mb-4">
+              What Evolve Really Does
+            </h3>
+            <div className="font-body text-base text-text-secondary leading-relaxed space-y-4">
+              <p>
+                Evolve is where the system actually becomes a loop.
+              </p>
+              <p>
+                It is the stage where you stop and ask, <strong className="text-text-primary">&ldquo;What did we learn?&rdquo;</strong> and <strong className="text-text-primary">&ldquo;What will we change next time?&rdquo;</strong>
+              </p>
+              <p>
+                Without Evolve, you stay busy but stuck. With Evolve, every cycle teaches you something.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-surface rounded-lg p-6 border border-brand-blue/30">
+          <div className="bg-surface rounded-lg p-8 border border-brand-blue/30">
             <blockquote className="font-display text-xl text-brand-navy leading-relaxed">
               &ldquo;When your revenue engine Evolves well, it gets cleaner and more reliable over time.&rdquo;
             </blockquote>
@@ -578,21 +656,77 @@ function EvolveSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {loops.map((loop) => (
-            <div key={loop.name} className="bg-surface rounded-lg p-5 border border-border-light">
-              <h3 className="font-display text-base font-semibold text-brand-blue mb-4">
-                {loop.name}
-              </h3>
-              <ul className="space-y-2">
-                {loop.items.map((item, i) => (
-                  <li key={i} className="font-body text-sm text-text-secondary flex items-start gap-2">
-                    <span className="text-brand-blue mt-0.5">↺</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="bg-surface rounded-lg p-5 border border-border-light">
+            <h4 className="font-display text-base font-semibold text-brand-blue mb-4">Marketing</h4>
+            <ul className="space-y-2">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Review channel and content performance regularly</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Test new ideas in small experiments, then roll out winners</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Connect marketing metrics to real revenue and retention</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-surface rounded-lg p-5 border border-border-light">
+            <h4 className="font-display text-base font-semibold text-brand-blue mb-4">Sales</h4>
+            <ul className="space-y-2">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Study win and loss patterns and share the findings</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Adjust qualification, discovery, and proposals based on what you learn</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Update training and coaching with fresh examples</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-surface rounded-lg p-5 border border-border-light">
+            <h4 className="font-display text-base font-semibold text-brand-blue mb-4">Service</h4>
+            <ul className="space-y-2">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Track satisfaction, retention, and reasons for churn</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Use that insight to improve onboarding, education, and the product</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Close the loop with marketing and sales so expectations match reality</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-surface rounded-lg p-5 border border-border-light">
+            <h4 className="font-display text-base font-semibold text-brand-blue mb-4">Ops</h4>
+            <ul className="space-y-2">
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Watch system-level metrics like conversion rates, cycle time, and data quality</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Spot bottlenecks, friction points, and breakage early</span>
+              </li>
+              <li className="font-body text-sm text-text-secondary flex items-start gap-2">
+                <span className="text-brand-blue mt-0.5">↺</span>
+                <span>Prioritize and ship changes to process, tools, and data</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -603,27 +737,31 @@ function EvolveSection() {
 function AiHumansSection() {
   const stages = [
     {
-      stage: 'Express',
-      color: stageColors.express,
+      name: 'Express',
+      color: 'brand-teal',
+      bgColor: 'bg-brand-teal/10',
       ai: 'Summarize research, customer feedback, and call transcripts',
       human: 'Decide what that information means and what you stand for',
     },
     {
-      stage: 'Tailor',
-      color: stageColors.tailor,
-      ai: 'Suggest segments, recommend content, draft personalized messages',
-      human: 'Set the rules, approve sensitive communication, protect privacy',
+      name: 'Tailor',
+      color: 'brand-peach',
+      bgColor: 'bg-brand-peach/10',
+      ai: 'Suggest segments, recommend content, and draft personalized messages',
+      human: 'Set the rules, approve sensitive communication, and protect privacy',
     },
     {
-      stage: 'Amplify',
-      color: stageColors.amplify,
-      ai: 'Repurpose content, manage distribution, keep automations running',
+      name: 'Amplify',
+      color: 'brand-orange',
+      bgColor: 'bg-brand-orange/10',
+      ai: 'Repurpose content, manage some distribution, and keep automations running',
       human: 'Choose what deserves amplification and watch for overload',
     },
     {
-      stage: 'Evolve',
-      color: stageColors.evolve,
-      ai: 'Scan large data sets, flag trends, surface anomalies',
+      name: 'Evolve',
+      color: 'brand-blue',
+      bgColor: 'bg-brand-blue/10',
+      ai: 'Scan large data sets, flag trends, and surface anomalies',
       human: 'Decide which patterns matter and what changes to make',
     },
   ]
@@ -632,36 +770,36 @@ function AiHumansSection() {
     <section className="section-padding bg-surface border-b border-border-light">
       <div className="container-content">
         <div className="text-center mb-12">
-          <h2 className="font-display text-3xl font-medium text-text-primary mb-4">
+          <h2 className="font-display text-3xl font-medium text-brand-navy mb-4">
             AI and Humans at Each Stage
           </h2>
           <p className="font-body text-lg text-text-secondary max-w-2xl mx-auto">
-            AI doesn&apos;t replace the stages. It supports them. Use AI where it adds speed and reach. Keep humans responsible for direction, judgment, and care.
+            AI does not replace the stages. It supports them. Use AI where it adds speed and reach. Keep humans responsible for direction, judgment, and care.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stages.map((item) => (
-            <div key={item.stage} className="bg-bg-alt rounded-lg overflow-hidden">
-              <div className={cn('px-4 py-3', item.color.bg)}>
-                <h3 className={cn('font-display text-lg font-semibold', item.color.text)}>
-                  {item.stage}
+          {stages.map((stage) => (
+            <div key={stage.name} className="bg-bg-alt rounded-lg overflow-hidden border border-border-light">
+              <div className={cn('px-4 py-3', stage.bgColor)}>
+                <h3 className={cn('font-display text-lg font-semibold', `text-${stage.color}`)}>
+                  {stage.name}
                 </h3>
               </div>
               <div className="p-4 space-y-4">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-6 h-6 rounded-full bg-brand-teal/20 flex items-center justify-center text-brand-teal text-xs font-bold">AI</span>
-                    <span className="font-body text-xs font-semibold text-text-muted uppercase">AI Can Help</span>
+                    <span className="font-body text-xs font-semibold text-text-muted uppercase">AI can help</span>
                   </div>
-                  <p className="font-body text-sm text-text-secondary">{item.ai}</p>
+                  <p className="font-body text-sm text-text-secondary">{stage.ai}</p>
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-6 h-6 rounded-full bg-brand-navy/20 flex items-center justify-center text-brand-navy text-xs font-bold">H</span>
-                    <span className="font-body text-xs font-semibold text-text-muted uppercase">Humans Lead</span>
+                    <span className="font-body text-xs font-semibold text-text-muted uppercase">Humans should lead</span>
                   </div>
-                  <p className="font-body text-sm text-text-secondary">{item.human}</p>
+                  <p className="font-body text-sm text-text-secondary">{stage.human}</p>
                 </div>
               </div>
             </div>
@@ -677,35 +815,39 @@ function HealthCheckSection() {
   const checks = [
     {
       stage: 'Express',
-      color: stageColors.express,
+      color: 'brand-teal',
+      borderColor: 'border-brand-teal',
       question: 'Can everyone explain who we serve, what we promise, and how we work in a simple way?',
     },
     {
       stage: 'Tailor',
-      color: stageColors.tailor,
+      color: 'brand-peach',
+      borderColor: 'border-brand-peach',
       question: 'Do our messages and actions feel specific to real people, or could they go to anyone?',
     },
     {
       stage: 'Amplify',
-      color: stageColors.amplify,
-      question: 'Do we reuse and share what works, or do good ideas die in one channel?',
+      color: 'brand-orange',
+      borderColor: 'border-brand-orange',
+      question: 'Do we reuse and share what works, or do good ideas die in one channel or with one person?',
     },
     {
       stage: 'Evolve',
-      color: stageColors.evolve,
+      color: 'brand-blue',
+      borderColor: 'border-brand-blue',
       question: 'Do we regularly look at results, talk about what they mean, and change our approach?',
     },
   ]
 
   return (
-    <section className="section-padding bg-brand-cyan/10 border-b border-border-light">
+    <section className="section-padding bg-brand-cyan/20 border-b border-border-light">
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="font-display text-3xl font-medium text-text-primary mb-4">
+          <h2 className="font-display text-3xl font-medium text-brand-navy mb-4">
             A Simple Stage Health Check
           </h2>
           <p className="font-body text-lg text-text-secondary">
-            You don&apos;t need a complex scorecard. A few honest questions go a long way.
+            You do not need a complex scorecard to see where your stages need attention. A few honest questions go a long way.
           </p>
         </div>
 
@@ -713,10 +855,10 @@ function HealthCheckSection() {
           {checks.map((check) => (
             <div
               key={check.stage}
-              className={cn('bg-surface rounded-lg p-6 border-l-4', check.color.border)}
+              className={cn('bg-surface rounded-lg p-6 border-l-4', check.borderColor)}
             >
-              <h3 className={cn('font-display text-lg font-semibold mb-3', check.color.text)}>
-                For {check.stage}
+              <h3 className={cn('font-display text-lg font-semibold mb-3', `text-${check.color}`)}>
+                For {check.stage}, ask:
               </h3>
               <p className="font-body text-text-secondary leading-relaxed">
                 {check.question}
@@ -727,7 +869,7 @@ function HealthCheckSection() {
 
         <div className="callout callout-service max-w-3xl mx-auto">
           <p className="callout-text">
-            If you answer &ldquo;not really&rdquo; to any of those, that&apos;s your stage to focus on first. You don&apos;t have to fix everything at once. Improving one weak stage often unlocks progress across the others.
+            If you answer &ldquo;not really&rdquo; to any of those, that is your stage to focus on first. You do not have to fix everything at once. Improving one weak stage often unlocks progress across the others.
           </p>
         </div>
       </div>
@@ -741,16 +883,16 @@ function CtaSection() {
     <section className="section-padding-lg bg-brand-navy text-white">
       <div className="container-content text-center">
         <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-6">
-          Use the Stages in Your World
+          How to Use the Stages in Your Own World
         </h2>
         <p className="font-body text-lg text-white/80 max-w-2xl mx-auto mb-4">
-          Pick one loop&mdash;like marketing or sales. Walk through the stages:
+          Now that you know the four stages, you can look at any part of your revenue engine and see it with fresh eyes. Pick one loop&mdash;like marketing or sales&mdash;and walk through the stages:
         </p>
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          <span className="px-3 py-1 rounded-full bg-brand-teal/30 text-brand-cyan text-sm font-semibold">How clear is our Express?</span>
-          <span className="px-3 py-1 rounded-full bg-brand-peach/30 text-brand-peach text-sm font-semibold">How human is our Tailor?</span>
-          <span className="px-3 py-1 rounded-full bg-brand-orange/30 text-brand-orange text-sm font-semibold">How intentional is our Amplify?</span>
-          <span className="px-3 py-1 rounded-full bg-white/20 text-white text-sm font-semibold">How honest is our Evolve?</span>
+          <span className="px-3 py-1 rounded-full bg-brand-teal/30 text-brand-cyan text-sm font-medium">How clear is our Express?</span>
+          <span className="px-3 py-1 rounded-full bg-brand-peach/30 text-brand-peach text-sm font-medium">How human is our Tailor?</span>
+          <span className="px-3 py-1 rounded-full bg-brand-orange/30 text-brand-orange text-sm font-medium">How intentional is our Amplify?</span>
+          <span className="px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium">How honest is our Evolve?</span>
         </div>
         <p className="font-body text-base text-white/60 max-w-xl mx-auto mb-10">
           Then choose one small improvement to make in the next month.
@@ -762,7 +904,7 @@ function CtaSection() {
               See Loops in Practice
             </h3>
             <p className="font-body text-sm text-text-secondary mb-4">
-              Explore how each loop uses the four stages.
+              Explore how each stage looks inside each loop.
             </p>
             <Link href="/loops" className="btn bg-brand-teal text-white border-brand-teal hover:bg-brand-teal/90 w-full justify-center text-sm">
               The Four Loops
@@ -774,7 +916,7 @@ function CtaSection() {
               Get Ready-Made Playbooks
             </h3>
             <p className="font-body text-sm text-text-secondary mb-4">
-              Checklists and workflows by stage.
+              Checklists and workflows you can apply by stage.
             </p>
             <Link href="/playbooks/system" className="btn btn-secondary w-full justify-center text-sm">
               System Playbooks
@@ -786,7 +928,7 @@ function CtaSection() {
               Find Your Path
             </h3>
             <p className="font-body text-sm text-text-secondary mb-4">
-              Guidance based on your role.
+              Guidance based on your specific role.
             </p>
             <Link href="/roles/start-here" className="btn bg-brand-orange text-white border-brand-orange hover:bg-brand-orange/90 w-full justify-center text-sm">
               Start Here by Role
