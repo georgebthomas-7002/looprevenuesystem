@@ -47,6 +47,19 @@ const config: Config = {
           light: '#8A8A8A',
           inverse: '#FFFFFF',
         },
+        // Spiritual Side of Leadership Colors
+        primary: {
+          DEFAULT: '#2D4A3E',
+          light: '#3D5A4E',
+        },
+        accent: {
+          DEFAULT: '#C9A961',
+          light: '#D9B971',
+          dark: '#B99951',
+        },
+        'warm-white': '#FAF8F5',
+        'warm-black': '#1A1A1A',
+        'warm-gray': '#6B6B6B',
         // Loop Accent Colors
         loop: {
           marketing: {

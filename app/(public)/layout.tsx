@@ -1,9 +1,9 @@
-import { PublicLayout } from '@/components/layout'
+import { SSOLPublicLayout } from '@/components/layout/SSOLPublicLayout'
 
 export default function PublicPagesLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return <PublicLayout>{children}</PublicLayout>
+  return <SSOLPublicLayout>{children}</SSOLPublicLayout>
 }
