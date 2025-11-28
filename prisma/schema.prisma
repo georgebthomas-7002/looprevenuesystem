@@ -43,6 +43,9 @@ model Page {
   sections            Json     @default("[]")
   // Content slots for designed pages (key-value pairs of editable text)
   contentSlots        Json?    // { slotId: "value", ... }
+  // Audio narration for "Read it To Me" feature
+  audioUrl            String?
+  audioTitle          String?
   // Navigation settings
   showInMainNav       Boolean  @default(false)
   showInFooterNav     Boolean  @default(false)
@@ -80,6 +83,9 @@ model BlogPost {
   publishedAt         DateTime?
   // Sections for block-based content (optional, for rich layouts)
   sections            Json     @default("[]")
+  // Audio narration for "Read it To Me" feature
+  audioUrl            String?
+  audioTitle          String?
   // SEO Fields
   metaTitle           String?
   metaDescription     String?  @db.Text
