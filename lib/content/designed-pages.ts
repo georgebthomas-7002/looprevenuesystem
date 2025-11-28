@@ -50,6 +50,9 @@ export const DESIGNED_PAGE_SLUGS = [
   'roles/start-here', // Start Here page (role-based navigation)
   'roles/leadership-revops', // Leadership & RevOps page
 
+  // Resources section
+  'resources/templates-checklists', // Templates & Checklists page
+
   // Add more designed pages here as they are created
   // etc.
 ] as const
