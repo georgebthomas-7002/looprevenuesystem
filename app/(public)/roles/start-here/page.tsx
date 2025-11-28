@@ -70,14 +70,14 @@ const roles: RoleData[] = [
       'Tool stack optimization',
     ],
     quickPath: [
-      { label: 'Loop Ops', href: '/loops/ops' },
+      { label: 'Ops Loop', href: '/loops/ops' },
       { label: 'Data, Metrics & Governance', href: '/overview/data-metrics-governance' },
       { label: 'HubSpot Implementation', href: '/playbooks/hubspot' },
       { label: 'Non-HubSpot Implementation', href: '/playbooks/no-hubspot' },
       { label: 'AI And Humans', href: '/playbooks/ai-and-humans' },
     ],
     firstMove: {
-      text: 'Start with Loop Ops to understand how operations powers every other loop.',
+      text: 'Start with the Ops Loop to understand how operations powers every other loop.',
       href: '/loops/ops',
     },
   },
@@ -95,13 +95,13 @@ const roles: RoleData[] = [
       'Marketing-to-Sales handoff clarity',
     ],
     quickPath: [
-      { label: 'Loop Marketing', href: '/loops/marketing' },
+      { label: 'Marketing Loop', href: '/loops/marketing' },
       { label: 'The Four Stages', href: '/overview/stages' },
       { label: 'System Playbooks', href: '/playbooks/system' },
       { label: 'AI And Humans', href: '/playbooks/ai-and-humans' },
     ],
     firstMove: {
-      text: 'Start with Loop Marketing to see how demand flows into the revenue system.',
+      text: 'Start with the Marketing Loop to see how demand flows into the revenue system.',
       href: '/loops/marketing',
     },
   },
@@ -119,13 +119,13 @@ const roles: RoleData[] = [
       'Handoff quality from Marketing and to Service',
     ],
     quickPath: [
-      { label: 'Loop Sales', href: '/loops/sales' },
+      { label: 'Sales Loop', href: '/loops/sales' },
       { label: 'The Four Stages', href: '/overview/stages' },
       { label: 'System Playbooks', href: '/playbooks/system' },
       { label: 'AI And Humans', href: '/playbooks/ai-and-humans' },
     ],
     firstMove: {
-      text: 'Start with Loop Sales to see how conversations become customers.',
+      text: 'Start with the Sales Loop to see how conversations become customers.',
       href: '/loops/sales',
     },
   },
@@ -143,13 +143,13 @@ const roles: RoleData[] = [
       'Customer health and advocacy',
     ],
     quickPath: [
-      { label: 'Loop Service', href: '/loops/service' },
+      { label: 'Service Loop', href: '/loops/service' },
       { label: 'The Four Stages', href: '/overview/stages' },
       { label: 'System Playbooks', href: '/playbooks/system' },
       { label: 'AI And Humans', href: '/playbooks/ai-and-humans' },
     ],
     firstMove: {
-      text: 'Start with Loop Service to see how customers become advocates.',
+      text: 'Start with the Service Loop to see how customers become advocates.',
       href: '/loops/service',
     },
   },
@@ -169,7 +169,7 @@ const roles: RoleData[] = [
     quickPath: [
       { label: 'HubSpot Implementation', href: '/playbooks/hubspot' },
       { label: 'Non-HubSpot Implementation', href: '/playbooks/no-hubspot' },
-      { label: 'Loop Ops', href: '/loops/ops' },
+      { label: 'Ops Loop', href: '/loops/ops' },
       { label: 'Data, Metrics & Governance', href: '/overview/data-metrics-governance' },
     ],
     firstMove: {

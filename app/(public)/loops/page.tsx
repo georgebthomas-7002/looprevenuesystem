@@ -328,7 +328,7 @@ function LoopMarketingSection() {
             name="Marketing"
             color={LOOP_COLORS.marketing}
             icon="📣"
-            purpose="Learn what to say, who to say it to, and where to show up so the right people find you and feel understood. It's not only about generating leads. It's about building a library of language, stories, and proof that helps your whole company communicate with clarity."
+            purpose="Learn what to say, who to say it to, and where to show up so the right humans find you and feel understood. It's not only about generating leads. It's about building a library of language, stories, and proof that helps your whole company communicate with clarity."
             inputs={[
               'Market research and customer interviews',
               'Website and content analytics',
@@ -350,7 +350,7 @@ function LoopMarketingSection() {
           />
           <div className="mt-6 text-center">
             <Link href="/loops/marketing" className="font-body text-brand-teal hover:underline">
-              Deep dive into Loop Marketing →
+              Deep dive into the Marketing Loop →
             </Link>
           </div>
         </div>
@@ -368,7 +368,7 @@ function LoopSalesSection() {
             name="Sales"
             color={LOOP_COLORS.sales}
             icon="🤝"
-            purpose="Help the right people make clear, confident decisions about working with you. It's not only about closing deals. It's about learning from every conversation and using that learning to improve who you sell to and how you sell."
+            purpose="Help the right humans make clear, confident decisions about working with you. It's not only about closing deals. It's about learning from every conversation and using that learning to improve who you sell to and how you sell."
             inputs={[
               'Qualified interest and context from Marketing',
               'Account and contact data from Ops',
@@ -389,7 +389,7 @@ function LoopSalesSection() {
           />
           <div className="mt-6 text-center">
             <Link href="/loops/sales" className="font-body text-[#f65625] hover:underline">
-              Deep dive into Loop Sales →
+              Deep dive into the Sales Loop →
             </Link>
           </div>
         </div>
@@ -428,7 +428,7 @@ function LoopServiceSection() {
           />
           <div className="mt-6 text-center">
             <Link href="/loops/service" className="font-body text-[#faaa68] hover:underline">
-              Deep dive into Loop Service →
+              Deep dive into the Service Loop →
             </Link>
           </div>
         </div>
@@ -467,7 +467,7 @@ function LoopOpsSection() {
           />
           <div className="mt-6 text-center">
             <Link href="/loops/ops" className="font-body text-[#3D5A80] hover:underline">
-              Deep dive into Loop Ops →
+              Deep dive into the Ops Loop →
             </Link>
           </div>
         </div>
@@ -633,19 +633,19 @@ function CtaSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-8">
           <Link href="/loops/marketing" className="block p-5 rounded-xl text-center text-white transition-transform hover:scale-105" style={{ backgroundColor: '#028393' }}>
             <span className="text-2xl block mb-2">📣</span>
-            <span className="font-display font-semibold">Loop Marketing</span>
+            <span className="font-display font-semibold">Marketing Loop</span>
           </Link>
           <Link href="/loops/sales" className="block p-5 rounded-xl text-center text-white transition-transform hover:scale-105" style={{ backgroundColor: '#f65625' }}>
             <span className="text-2xl block mb-2">🤝</span>
-            <span className="font-display font-semibold">Loop Sales</span>
+            <span className="font-display font-semibold">Sales Loop</span>
           </Link>
           <Link href="/loops/service" className="block p-5 rounded-xl text-center text-white transition-transform hover:scale-105" style={{ backgroundColor: '#faaa68' }}>
             <span className="text-2xl block mb-2">💛</span>
-            <span className="font-display font-semibold">Loop Service</span>
+            <span className="font-display font-semibold">Service Loop</span>
           </Link>
           <Link href="/loops/ops" className="block p-5 rounded-xl text-center text-white transition-transform hover:scale-105" style={{ backgroundColor: '#3D5A80' }}>
             <span className="text-2xl block mb-2">⚙️</span>
-            <span className="font-display font-semibold">Loop Ops</span>
+            <span className="font-display font-semibold">Ops Loop</span>
           </Link>
         </div>
 

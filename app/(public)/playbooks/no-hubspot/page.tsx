@@ -379,7 +379,7 @@ function LoopsToToolsSection() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <LoopToolCard
-              loop="Loop Marketing"
+              loop="Marketing Loop"
               loopKey="marketing"
               tools={[
                 'Your CMS and website builder',
@@ -396,7 +396,7 @@ function LoopsToToolsSection() {
             />
 
             <LoopToolCard
-              loop="Loop Sales"
+              loop="Sales Loop"
               loopKey="sales"
               tools={[
                 'Your CRM',
@@ -412,7 +412,7 @@ function LoopsToToolsSection() {
             />
 
             <LoopToolCard
-              loop="Loop Service"
+              loop="Service Loop"
               loopKey="service"
               tools={[
                 'Help desk or ticketing platform',
@@ -428,7 +428,7 @@ function LoopsToToolsSection() {
             />
 
             <LoopToolCard
-              loop="Loop Ops"
+              loop="Ops Loop"
               loopKey="ops"
               tools={[
                 'CRM admin panel',

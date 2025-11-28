@@ -4,10 +4,10 @@ import type { Metadata } from 'next'
 import { cn } from '@/lib/utils/cn'
 
 export const metadata: Metadata = {
-  title: 'Loop Service | Turn Customer Interactions Into Success | Loop Revenue System',
+  title: 'Service Loop | Turn Customer Interactions Into Success | Loop Revenue System',
   description: 'Learn how to run service as a continuous loop through Express, Tailor, Amplify, and Evolve. Transform every customer interaction into fuel for long-term success.',
   openGraph: {
-    title: 'Loop Service | Loop Revenue System',
+    title: 'Service Loop | Loop Revenue System',
     description: 'Turn every customer interaction into fuel for long-term success. Service as a loop that feeds insight back into the system.',
     type: 'article',
   },
@@ -138,7 +138,7 @@ function StageSection({
             </div>
             <div>
               <p className="font-body text-sm font-semibold uppercase tracking-wider" style={{ color }}>Stage</p>
-              <h2 className="font-display text-3xl font-medium text-brand-navy">{stage} In Loop Service</h2>
+              <h2 className="font-display text-3xl font-medium text-brand-navy">{stage} In the Service Loop</h2>
             </div>
           </div>
 
@@ -188,16 +188,16 @@ function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="font-body text-sm font-semibold text-[#faaa68] uppercase tracking-wider mb-4">
-              Loop Service
+              Service Loop
             </p>
             <h1 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight text-brand-navy mb-6">
               Turn Every Customer Interaction Into Fuel For Long Term Success
             </h1>
             <p className="font-body text-xl text-[#3D5A80] leading-relaxed mb-6">
-              Loop Service is not just a support queue. It&apos;s the loop that takes care of customers after the sale, keeps them successful, and sends priceless insight back into marketing, sales, and ops.
+              Service Loop is not just a support queue. It&apos;s the loop that takes care of customers after the sale, keeps them successful, and sends priceless insight back into marketing, sales, and ops.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              When Loop Service runs well, customers feel guided instead of abandoned. Problems turn into improvements. Wins turn into stories. The rest of the company hears clearly what life is like on the other side of the sale.
+              When Service Loop runs well, customers feel guided instead of abandoned. Problems turn into improvements. Wins turn into stories. The rest of the company hears clearly what life is like on the other side of the sale.
             </p>
             <p className="font-body text-text-secondary leading-relaxed">
               This page shows you how to treat service as a loop that moves through four stages: <span className="text-[#028393] font-semibold">Express</span>, <span className="text-[#faaa68] font-semibold">Tailor</span>, <span className="text-[#f65625] font-semibold">Amplify</span>, and <span className="text-[#3D5A80] font-semibold">Evolve</span>.
@@ -219,10 +219,10 @@ function WhatItIsSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-              What Loop Service Is And Why It Matters
+              What Service Loop Is And Why It Matters
             </h2>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              Loop Service is how you help customers succeed after they buy.
+              Service Loop is how you help customers succeed after they buy.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
               It includes onboarding, training, reactive support, proactive check ins, customer success programs, and communities. It covers all the moments when customers decide whether to stay, grow, or leave.
@@ -231,7 +231,7 @@ function WhatItIsSection() {
               In many companies, service is treated as a cost center. The goal quietly becomes &quot;handle issues fast and cheap.&quot; Tickets get closed, but the same problems keep coming back. Insight stays trapped in the inbox.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-6">
-              <strong className="text-brand-navy">Loop Service changes that.</strong> Every ticket, call, and interaction becomes input. Patterns in questions, outcomes, and frustrations become learning.
+              <strong className="text-brand-navy">Service Loop changes that.</strong> Every ticket, call, and interaction becomes input. Patterns in questions, outcomes, and frustrations become learning.
             </p>
             <p className="font-body text-[#3D5A80] font-medium italic">
               Service matters because it sees the truth. It sees whether your marketing promises and sales stories actually match real life.
@@ -272,10 +272,10 @@ function SystemFitSection() {
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-            Where Loop Service Fits In The System
+            Where Service Loop Fits In The System
           </h2>
           <p className="font-body text-text-secondary leading-relaxed">
-            Loop Service sits after the initial sale, but it&apos;s not the end of the story. It&apos;s the part of the system that decides whether customers stay, expand, refer, or churn.
+            Service Loop sits after the initial sale, but it&apos;s not the end of the story. It&apos;s the part of the system that decides whether customers stay, expand, refer, or churn.
           </p>
         </div>
 
@@ -307,7 +307,7 @@ function SystemFitSection() {
         </div>
 
         <p className="font-body text-text-secondary text-center mt-8 max-w-2xl mx-auto">
-          When Loop Service is treated as part of the same system, customers feel a through line from the first content they see to the help they receive months later.
+          When Service Loop is treated as part of the same system, customers feel a through line from the first content they see to the help they receive months later.
         </p>
       </div>
     </section>
@@ -333,10 +333,10 @@ function InputsOutputsSection() {
       <div className="container-content">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-medium text-brand-navy text-center mb-4">
-            Inputs And Outputs Of Loop Service
+            Inputs And Outputs Of Service Loop
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            Loop Service has to work with what it&apos;s given. It also has a lot to give back. The question is: Are we getting the right inputs? Are we sharing our outputs with anyone who can act on them?
+            Service Loop has to work with what it&apos;s given. It also has a lot to give back. The question is: Are we getting the right inputs? Are we sharing our outputs with anyone who can act on them?
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 items-center">
@@ -403,10 +403,10 @@ function AiHumansSection() {
       <div className="container-content">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-medium text-brand-navy text-center mb-4">
-            AI And Humans Inside Loop Service
+            AI And Humans Inside Service Loop
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            AI can add a lot of leverage to Loop Service, but it must stay in a supporting role.
+            AI can add a lot of leverage to Service Loop, but it must stay in a supporting role.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -446,7 +446,7 @@ function AiHumansSection() {
           </div>
 
           <p className="font-body text-[#3D5A80] font-medium text-center mt-8">
-            In Loop Service, AI saves time. Humans create trust.
+            In the Service Loop, AI saves time. Humans create trust.
           </p>
         </div>
       </div>
@@ -478,7 +478,7 @@ function MetricsPitfallsSection() {
             Simple Metrics And Common Pitfalls
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            You don&apos;t need a wall of dashboards to know whether Loop Service is healthy.
+            You don&apos;t need a wall of dashboards to know whether Service Loop is healthy.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -513,7 +513,7 @@ function MetricsPitfallsSection() {
 
           <div className="mt-8 p-4 bg-gray-50 rounded-lg border border-border-light text-center">
             <p className="font-body text-[#3D5A80] font-medium">
-              A simple test: if your best customers still feel like they&apos;re &quot;figuring it out on their own,&quot; Loop Service needs attention.
+              A simple test: if your best customers still feel like they&apos;re &quot;figuring it out on their own,&quot; Service Loop needs attention.
             </p>
           </div>
         </div>
@@ -528,7 +528,7 @@ function GetStartedSection() {
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-            How To Get Started With Loop Service
+            How To Get Started With Service Loop
           </h2>
           <p className="font-body text-text-secondary leading-relaxed mb-6">
             You don&apos;t have to redesign your whole service org to start treating it like a loop. Start with one area, such as onboarding for a key product or support for a core segment.
@@ -579,12 +579,12 @@ function GetStartedSection() {
             Workshops & Exercises →
           </Link>
           <Link href="/loops/sales" className="font-body text-[#faaa68] hover:underline">
-            Loop Sales →
+            Sales Loop →
           </Link>
         </div>
 
         <p className="font-body text-text-secondary text-center mt-12 max-w-xl mx-auto">
-          Use Loop Service to turn support into a source of learning, loyalty, and momentum. When this loop gets stronger, customers stay longer, refer more, and help your whole revenue system flourish.
+          Use Service Loop to turn support into a source of learning, loyalty, and momentum. When this loop gets stronger, customers stay longer, refer more, and help your whole revenue system flourish.
         </p>
       </div>
     </section>
@@ -599,7 +599,7 @@ export default function LoopServicePage() {
       <JsonLd
         data={[
           generateWebPageSchema({
-            title: 'Loop Service',
+            title: 'Service Loop',
             description: 'Turn every customer interaction into fuel for long-term success through Express, Tailor, Amplify, and Evolve.',
             url: `${siteUrl}/loops/service`,
           }),

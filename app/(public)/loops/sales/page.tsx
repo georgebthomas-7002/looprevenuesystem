@@ -4,10 +4,10 @@ import type { Metadata } from 'next'
 import { cn } from '@/lib/utils/cn'
 
 export const metadata: Metadata = {
-  title: 'Loop Sales | Turn Conversations Into Decisions | Loop Revenue System',
+  title: 'Sales Loop | Turn Conversations Into Decisions | Loop Revenue System',
   description: 'Learn how to run sales as a continuous loop through Express, Tailor, Amplify, and Evolve. Transform every buyer conversation into insight, decisions, and better customers.',
   openGraph: {
-    title: 'Loop Sales | Loop Revenue System',
+    title: 'Sales Loop | Loop Revenue System',
     description: 'Turn every buyer conversation into insight and better customers. Sales as a loop that learns from every deal.',
     type: 'article',
   },
@@ -145,7 +145,7 @@ function StageSection({
             </div>
             <div>
               <p className="font-body text-sm font-semibold uppercase tracking-wider" style={{ color }}>Stage</p>
-              <h2 className="font-display text-3xl font-medium text-brand-navy">{stage} In Loop Sales</h2>
+              <h2 className="font-display text-3xl font-medium text-brand-navy">{stage} In the Sales Loop</h2>
             </div>
           </div>
 
@@ -195,16 +195,16 @@ function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="font-body text-sm font-semibold text-[#f65625] uppercase tracking-wider mb-4">
-              Loop Sales
+              Sales Loop
             </p>
             <h1 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight text-brand-navy mb-6">
               Turn Sales Conversations Into A Learning Loop
             </h1>
             <p className="font-body text-xl text-[#3D5A80] leading-relaxed mb-6">
-              Loop Sales is not just about &quot;closing deals.&quot; It&apos;s the loop that turns every buyer conversation into insight, decisions, and better customers for your business.
+              Sales Loop is not just about &quot;closing deals.&quot; It&apos;s the loop that turns every buyer conversation into insight, decisions, and better customers for your business.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              When Loop Sales runs well, reps know who to focus on, how to help, and when to walk away. Buyers feel guided, not pressured. The rest of the company gets a steady stream of real world feedback from the front lines.
+              When Sales Loop runs well, reps know who to focus on, how to help, and when to walk away. Buyers feel guided, not pressured. The rest of the company gets a steady stream of real world feedback from the front lines.
             </p>
             <p className="font-body text-text-secondary leading-relaxed">
               This page shows you how to treat sales as a loop that moves through four stages: <span className="text-[#028393] font-semibold">Express</span>, <span className="text-[#faaa68] font-semibold">Tailor</span>, <span className="text-[#f65625] font-semibold">Amplify</span>, and <span className="text-[#3D5A80] font-semibold">Evolve</span>.
@@ -226,10 +226,10 @@ function WhatItIsSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-              What Loop Sales Is And Why It Matters
+              What Sales Loop Is And Why It Matters
             </h2>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              Loop Sales is how you help the right people make clear, confident decisions about working with you.
+              Sales Loop is how you help the right humans make clear, confident decisions about working with you.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
               It includes your qualification, discovery, demos, proposals, negotiations, and handoffs. It covers all the moments when buyers decide whether they trust you and whether your solution fits their world.
@@ -238,7 +238,7 @@ function WhatItIsSection() {
               In many companies, sales lives on an island. Reps create their own slides, write their own emails, and carry their own stories. Wins and losses stay inside individual inboxes.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-6">
-              <strong className="text-brand-navy">Loop Sales changes that.</strong> Every call, email, and meeting becomes input. Patterns in questions, objections, and outcomes become shared learning.
+              <strong className="text-brand-navy">Sales Loop changes that.</strong> Every call, email, and meeting becomes input. Patterns in questions, objections, and outcomes become shared learning.
             </p>
             <p className="font-body text-[#3D5A80] font-medium italic">
               Sales matters because it sits at the decision point. If you design that point as a loop, not a one time sprint, your whole revenue system gains clarity.
@@ -274,10 +274,10 @@ function SystemFitSection() {
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-            Where Loop Sales Fits In The System
+            Where Sales Loop Fits In The System
           </h2>
           <p className="font-body text-text-secondary leading-relaxed">
-            Loop Sales sits between Loop Marketing and Loop Service, with Loop Ops underneath supporting everything.
+            The Sales Loop sits between the Marketing Loop and the Service Loop, with the Ops Loop underneath supporting everything.
           </p>
         </div>
 
@@ -288,7 +288,7 @@ function SystemFitSection() {
             <strong className="text-brand-navy">Marketing sends interest, education, and context into the sales loop.</strong> Prospects arrive with some understanding of your story and your value.
           </p>
           <p className="font-body text-text-secondary leading-relaxed mb-8">
-            Loop Sales takes that interest and turns it into decisions. Along the way, sales learns which stories land, which promises backfire, and which buyers turn into the best customers.
+            Sales Loop takes that interest and turns it into decisions. Along the way, sales learns which stories land, which promises backfire, and which buyers turn into the best customers.
           </p>
         </div>
 
@@ -329,10 +329,10 @@ function InputsOutputsSection() {
       <div className="container-content">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-medium text-brand-navy text-center mb-4">
-            Inputs And Outputs Of Loop Sales
+            Inputs And Outputs Of Sales Loop
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            Loop Sales always has something coming in and something going out. Once you see sales as a loop, you stop asking only &quot;Did we hit quota?&quot; and start asking &quot;What did we learn this cycle?&quot;
+            Sales Loop always has something coming in and something going out. Once you see sales as a loop, you stop asking only &quot;Did we hit quota?&quot; and start asking &quot;What did we learn this cycle?&quot;
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 items-center">
@@ -403,10 +403,10 @@ function AiHumansSection() {
       <div className="container-content">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-medium text-brand-navy text-center mb-4">
-            AI And Humans Inside Loop Sales
+            AI And Humans Inside Sales Loop
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            AI can make Loop Sales faster and more consistent, but it cannot replace human judgment or trust.
+            AI can make Sales Loop faster and more consistent, but it cannot replace human judgment or trust.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -478,7 +478,7 @@ function MetricsPitfallsSection() {
             Simple Metrics And Common Pitfalls
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            You don&apos;t need a complicated sales dashboard to run a healthy Loop Sales. You need a few clear signals.
+            You don&apos;t need a complicated sales dashboard to run a healthy Sales Loop. You need a few clear signals.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -528,7 +528,7 @@ function GetStartedSection() {
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-            How To Get Started With Loop Sales
+            How To Get Started With Sales Loop
           </h2>
           <p className="font-body text-text-secondary leading-relaxed mb-6">
             You don&apos;t need to rebuild your sales org to start treating it like a loop. Start with one slice of your world, like inbound deals from a specific segment, or expansion deals in one product line.
@@ -579,12 +579,12 @@ function GetStartedSection() {
             No HubSpot Implementation →
           </Link>
           <Link href="/loops/marketing" className="font-body text-[#f65625] hover:underline">
-            Loop Marketing →
+            Marketing Loop →
           </Link>
         </div>
 
         <p className="font-body text-text-secondary text-center mt-12 max-w-xl mx-auto">
-          Use Loop Sales to build a sales motion that learns from every conversation, supports the other loops, and helps your business flourish in a way that feels good to your team and your buyers.
+          Use Sales Loop to build a sales motion that learns from every conversation, supports the other loops, and helps your business flourish in a way that feels good to your team and your buyers.
         </p>
       </div>
     </section>
@@ -599,7 +599,7 @@ export default function LoopSalesPage() {
       <JsonLd
         data={[
           generateWebPageSchema({
-            title: 'Loop Sales',
+            title: 'Sales Loop',
             description: 'Turn every buyer conversation into insight, decisions, and better customers through Express, Tailor, Amplify, and Evolve.',
             url: `${siteUrl}/loops/sales`,
           }),
@@ -676,7 +676,7 @@ export default function LoopSalesPage() {
         color="#3D5A80"
         bgColor="bg-white border-b border-border-light"
         icon="↻"
-        purpose="Evolve is where Loop Sales actually becomes a loop. It's where you stop and ask, 'What did we learn from our last cycle of deals?' Then you change how you qualify, sell, and enable based on those lessons."
+        purpose="Evolve is where Sales Loop actually becomes a loop. It's where you stop and ask, 'What did we learn from our last cycle of deals?' Then you change how you qualify, sell, and enable based on those lessons."
         work={[
           'Run simple win loss reviews that look for patterns by segment, channel, and deal type',
           'Study how deals move through stages, where they stall, and where they rush',

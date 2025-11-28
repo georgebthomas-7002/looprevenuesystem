@@ -200,7 +200,7 @@ const templates = {
 - Hypothesis:
 - Owner:`,
 
-  marketingCampaignBrief: `## Loop Marketing: Campaign Brief
+  marketingCampaignBrief: `## Marketing Loop: Campaign Brief
 
 **Campaign Name:**
 **Owner:**
@@ -241,7 +241,7 @@ const templates = {
 - SLA for follow-up:
 - Materials for Sales:`,
 
-  salesDealReview: `## Loop Sales: Deal Review Template
+  salesDealReview: `## Sales Loop: Deal Review Template
 
 **Account Name:**
 **Owner:**
@@ -279,7 +279,7 @@ const templates = {
 - Primary reason:
 - Learning for future deals:`,
 
-  serviceOnboardingChecklist: `## Loop Service: Onboarding Checklist
+  serviceOnboardingChecklist: `## Service Loop: Onboarding Checklist
 
 **Customer Name:**
 **Owner:**
@@ -325,7 +325,7 @@ const templates = {
 - Amplify: Did we use our best onboarding motions?
 - Evolve: What do we need to improve for next time?`,
 
-  serviceHealthReview: `## Loop Service: Customer Health Review
+  serviceHealthReview: `## Service Loop: Customer Health Review
 
 **Customer Name:**
 **CSM/Owner:**
@@ -366,7 +366,7 @@ const templates = {
 - Risk level:
 - Prep needed:`,
 
-  opsProcessDoc: `## Loop Ops: Process Documentation
+  opsProcessDoc: `## Ops Loop: Process Documentation
 
 **Process Name:**
 **Owner:**
@@ -418,7 +418,7 @@ const templates = {
 - Amplify: Is it automated where it should be?
 - Evolve: When do we review and improve it?`,
 
-  opsChangeRequest: `## Loop Ops: Change Request
+  opsChangeRequest: `## Ops Loop: Change Request
 
 **Change Name:**
 **Requester:**
@@ -1072,7 +1072,7 @@ export default function TemplatesChecklistsPage() {
             <div>
               <h3 className="text-xl font-display font-bold text-[#028393] mb-4 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#028393]" />
-                Loop Marketing
+                Marketing Loop
               </h3>
               <TemplateBlock
                 title="Campaign Brief"
@@ -1086,7 +1086,7 @@ export default function TemplatesChecklistsPage() {
             <div>
               <h3 className="text-xl font-display font-bold text-[#f65625] mb-4 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#f65625]" />
-                Loop Sales
+                Sales Loop
               </h3>
               <TemplateBlock
                 title="Deal Review Template"
@@ -1100,7 +1100,7 @@ export default function TemplatesChecklistsPage() {
             <div>
               <h3 className="text-xl font-display font-bold text-[#faaa68] mb-4 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#faaa68]" />
-                Loop Service
+                Service Loop
               </h3>
               <div className="space-y-4">
                 <TemplateBlock
@@ -1122,7 +1122,7 @@ export default function TemplatesChecklistsPage() {
             <div>
               <h3 className="text-xl font-display font-bold text-[#3D5A80] mb-4 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#3D5A80]" />
-                Loop Ops
+                Ops Loop
               </h3>
               <div className="space-y-4">
                 <TemplateBlock

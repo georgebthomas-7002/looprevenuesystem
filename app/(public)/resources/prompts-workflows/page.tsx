@@ -782,7 +782,7 @@ export default function PromptsWorkflowsPage() {
             <div>
               <h3 className="text-xl font-display font-bold text-[#028393] mb-4 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#028393]" />
-                Loop Marketing
+                Marketing Loop
               </h3>
               <div className="space-y-4">
                 <PromptBlock
@@ -806,7 +806,7 @@ export default function PromptsWorkflowsPage() {
             <div>
               <h3 className="text-xl font-display font-bold text-[#f65625] mb-4 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#f65625]" />
-                Loop Sales
+                Sales Loop
               </h3>
               <div className="space-y-4">
                 <PromptBlock
@@ -830,7 +830,7 @@ export default function PromptsWorkflowsPage() {
             <div>
               <h3 className="text-xl font-display font-bold text-[#faaa68] mb-4 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#faaa68]" />
-                Loop Service
+                Service Loop
               </h3>
               <div className="space-y-4">
                 <PromptBlock
@@ -854,7 +854,7 @@ export default function PromptsWorkflowsPage() {
             <div>
               <h3 className="text-xl font-display font-bold text-[#3D5A80] mb-4 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#3D5A80]" />
-                Loop Ops
+                Ops Loop
               </h3>
               <div className="space-y-4">
                 <PromptBlock

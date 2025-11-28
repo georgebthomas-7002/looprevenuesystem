@@ -4,10 +4,10 @@ import type { Metadata } from 'next'
 import { cn } from '@/lib/utils/cn'
 
 export const metadata: Metadata = {
-  title: 'Loop Ops | Build Your Revenue Backbone | Loop Revenue System',
+  title: 'Ops Loop | Build Your Revenue Backbone | Loop Revenue System',
   description: 'Learn how to run ops as a continuous loop through Express, Tailor, Amplify, and Evolve. Transform your tools and data into a connected revenue backbone.',
   openGraph: {
-    title: 'Loop Ops | Loop Revenue System',
+    title: 'Ops Loop | Loop Revenue System',
     description: 'Turn your tools and data into a revenue backbone, not a pile of apps. Ops as the connective tissue under your revenue system.',
     type: 'article',
   },
@@ -19,7 +19,7 @@ function OpsBackboneDiagram() {
     <svg viewBox="0 0 320 280" className="w-full max-w-[300px] mx-auto" aria-label="Ops backbone diagram">
       {/* Ops backbone ring at the bottom */}
       <ellipse cx="160" cy="220" rx="140" ry="35" fill="none" stroke="#3D5A80" strokeWidth="4" strokeDasharray="8,4" />
-      <text x="160" y="225" textAnchor="middle" fill="#3D5A80" fontSize="12" fontWeight="700">Loop Ops</text>
+      <text x="160" y="225" textAnchor="middle" fill="#3D5A80" fontSize="12" fontWeight="700">Ops Loop</text>
       <text x="160" y="240" textAnchor="middle" fill="#3D5A80" fontSize="9">The Revenue Backbone</text>
 
       {/* Marketing loop */}
@@ -77,7 +77,7 @@ function SystemPositionDiagram() {
 
       {/* Ops as the backbone underneath */}
       <rect x="40" y="130" width="320" height="60" rx="30" fill="#E8EEF4" stroke="#3D5A80" strokeWidth="4" />
-      <text x="200" y="160" textAnchor="middle" fill="#3D5A80" fontSize="14" fontWeight="700">Loop Ops</text>
+      <text x="200" y="160" textAnchor="middle" fill="#3D5A80" fontSize="14" fontWeight="700">Ops Loop</text>
       <text x="200" y="178" textAnchor="middle" fill="#3D5A80" fontSize="9">Tools • Data • Process • Automation</text>
 
       {/* Connection lines */}
@@ -125,7 +125,7 @@ function StageSection({
             </div>
             <div>
               <p className="font-body text-sm font-semibold uppercase tracking-wider" style={{ color }}>Stage</p>
-              <h2 className="font-display text-3xl font-medium text-brand-navy">{stage} In Loop Ops</h2>
+              <h2 className="font-display text-3xl font-medium text-brand-navy">{stage} In the Ops Loop</h2>
             </div>
           </div>
 
@@ -175,16 +175,16 @@ function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="font-body text-sm font-semibold text-[#3D5A80] uppercase tracking-wider mb-4">
-              Loop Ops
+              Ops Loop
             </p>
             <h1 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight text-brand-navy mb-6">
               Turn Your Tools And Data Into A Revenue Backbone
             </h1>
             <p className="font-body text-xl text-[#3D5A80] leading-relaxed mb-6">
-              Loop Ops is not just &quot;the tech stack.&quot; It&apos;s the loop that designs, connects, and cares for the systems your revenue engine runs on.
+              Ops Loop is not just &quot;the tech stack.&quot; It&apos;s the loop that designs, connects, and cares for the systems your revenue engine runs on.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              When Loop Ops runs well, marketing, sales, and service can see the same truth, follow the same lifecycle, and change the system without breaking it. Your tools feel like one connected platform instead of a junk drawer.
+              When Ops Loop runs well, marketing, sales, and service can see the same truth, follow the same lifecycle, and change the system without breaking it. Your tools feel like one connected platform instead of a junk drawer.
             </p>
             <p className="font-body text-text-secondary leading-relaxed">
               This page shows you how to treat ops as a loop that moves through four stages: <span className="text-[#028393] font-semibold">Express</span>, <span className="text-[#faaa68] font-semibold">Tailor</span>, <span className="text-[#f65625] font-semibold">Amplify</span>, and <span className="text-[#3D5A80] font-semibold">Evolve</span>.
@@ -206,10 +206,10 @@ function WhatItIsSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-              What Loop Ops Is And Why It Matters
+              What Ops Loop Is And Why It Matters
             </h2>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              Loop Ops is how you design and maintain the systems, data, and processes that support your revenue loops.
+              Ops Loop is how you design and maintain the systems, data, and processes that support your revenue loops.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
               It includes your CRM, marketing tools, sales engagement platform, service desk, integrations, data model, automation, and reporting. It also includes the rules for how teams use those systems.
@@ -218,7 +218,7 @@ function WhatItIsSection() {
               In many companies, ops is treated like a help desk. Someone opens a ticket to add a field, build a workflow, or change a report. Ops says yes or no based on time, not on system design.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-6">
-              <strong className="text-brand-navy">Loop Ops changes the posture.</strong> Every request, issue, and insight becomes input. Ops looks at how the whole system behaves, not just one tool.
+              <strong className="text-brand-navy">Ops Loop changes the posture.</strong> Every request, issue, and insight becomes input. Ops looks at how the whole system behaves, not just one tool.
             </p>
             <p className="font-body text-[#3D5A80] font-medium italic">
               Ops matters because it quietly decides how easy or hard it is for your business to change.
@@ -261,10 +261,10 @@ function SystemFitSection() {
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-            Where Loop Ops Fits In The System
+            Where Ops Loop Fits In The System
           </h2>
           <p className="font-body text-text-secondary leading-relaxed">
-            Loop Ops sits under and around the other three loops. Marketing, sales, and service each run their own loop. Ops shapes the tools and processes so the loops can talk to each other.
+            Ops Loop sits under and around the other three loops. Marketing, sales, and service each run their own loop. Ops shapes the tools and processes so the loops can talk to each other.
           </p>
         </div>
 
@@ -324,10 +324,10 @@ function InputsOutputsSection() {
       <div className="container-content">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-medium text-brand-navy text-center mb-4">
-            Inputs And Outputs Of Loop Ops
+            Inputs And Outputs Of Ops Loop
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            Loop Ops doesn&apos;t exist in a vacuum. It reacts to what the business and the other loops need. The question is: What are we feeding it? What is it sending back into the loops?
+            Ops Loop doesn&apos;t exist in a vacuum. It reacts to what the business and the other loops need. The question is: What are we feeding it? What is it sending back into the loops?
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 items-center">
@@ -395,7 +395,7 @@ function AiHumansSection() {
       <div className="container-content">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-medium text-brand-navy text-center mb-4">
-            AI And Humans Inside Loop Ops
+            AI And Humans Inside Ops Loop
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
             Ops is a natural home for AI, but the roles must stay clear.
@@ -438,7 +438,7 @@ function AiHumansSection() {
           </div>
 
           <p className="font-body text-[#3D5A80] font-medium text-center mt-8">
-            In Loop Ops, AI is a powerful assistant. Humans stay responsible for the design and ethics of the system.
+            In the Ops Loop, AI is a powerful assistant. Humans stay responsible for the design and ethics of the system.
           </p>
         </div>
       </div>
@@ -506,7 +506,7 @@ function MetricsPitfallsSection() {
 
           <div className="mt-8 p-4 bg-gray-50 rounded-lg border border-border-light text-center">
             <p className="font-body text-[#3D5A80] font-medium">
-              A simple test: if people say &quot;we don&apos;t trust the data&quot; more than a couple of times a quarter, Loop Ops needs care.
+              A simple test: if people say &quot;we don&apos;t trust the data&quot; more than a couple of times a quarter, Ops Loop needs care.
             </p>
           </div>
         </div>
@@ -521,7 +521,7 @@ function GetStartedSection() {
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-            How To Get Started With Loop Ops
+            How To Get Started With Ops Loop
           </h2>
           <p className="font-body text-text-secondary leading-relaxed mb-6">
             You don&apos;t need a multi-year transformation to start treating ops like a loop. Start small and focused.
@@ -577,7 +577,7 @@ function GetStartedSection() {
         </div>
 
         <p className="font-body text-text-secondary text-center mt-12 max-w-xl mx-auto">
-          Use Loop Ops to quietly make everything else easier. When the ops loop is strong, experiments are safer, data is cleaner, and your whole revenue system can finally act like one system built to help your business and your customers flourish.
+          Use Ops Loop to quietly make everything else easier. When the ops loop is strong, experiments are safer, data is cleaner, and your whole revenue system can finally act like one system built to help your business and your customers flourish.
         </p>
       </div>
     </section>
@@ -592,7 +592,7 @@ export default function LoopOpsPage() {
       <JsonLd
         data={[
           generateWebPageSchema({
-            title: 'Loop Ops',
+            title: 'Ops Loop',
             description: 'Turn your tools and data into a revenue backbone through Express, Tailor, Amplify, and Evolve.',
             url: `${siteUrl}/loops/ops`,
           }),
@@ -671,7 +671,7 @@ export default function LoopOpsPage() {
         color="#3D5A80"
         bgColor="bg-white border-b border-border-light"
         icon="↻"
-        purpose="Evolve is where Loop Ops checks its own work. It's where ops watches how the system behaves, listens to teams, and changes the design so the next cycle is cleaner and more supportive."
+        purpose="Evolve is where Ops Loop checks its own work. It's where ops watches how the system behaves, listens to teams, and changes the design so the next cycle is cleaner and more supportive."
         work={[
           'Monitor system health: data completeness, error rates, workflow failures, integration reliability',
           'Track how quickly and safely changes move from idea to production',

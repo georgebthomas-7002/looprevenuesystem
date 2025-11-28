@@ -271,7 +271,7 @@ function ExpressSection() {
           {/* Marketing */}
           <div className="rounded-lg p-6 border-l-4 border-loop-marketing bg-bg-alt">
             <h4 className="font-display text-lg font-semibold text-loop-marketing mb-4">
-              Express in Loop Marketing
+              Express in the Marketing Loop
             </h4>
             <ul className="space-y-2 mb-4">
               <li className="font-body text-sm text-text-secondary flex items-start gap-2">
@@ -299,7 +299,7 @@ function ExpressSection() {
           {/* Sales */}
           <div className="rounded-lg p-6 border-l-4 border-loop-sales bg-bg-alt">
             <h4 className="font-display text-lg font-semibold text-loop-sales mb-4">
-              Express in Loop Sales
+              Express in the Sales Loop
             </h4>
             <ul className="space-y-2 mb-4">
               <li className="font-body text-sm text-text-secondary flex items-start gap-2">
@@ -327,7 +327,7 @@ function ExpressSection() {
           {/* Service */}
           <div className="rounded-lg p-6 border-l-4 border-loop-service bg-bg-alt">
             <h4 className="font-display text-lg font-semibold text-loop-service mb-4">
-              Express in Loop Service
+              Express in the Service Loop
             </h4>
             <ul className="space-y-2 mb-4">
               <li className="font-body text-sm text-text-secondary flex items-start gap-2">
@@ -355,7 +355,7 @@ function ExpressSection() {
           {/* Ops */}
           <div className="rounded-lg p-6 border-l-4 border-loop-ops bg-bg-alt">
             <h4 className="font-display text-lg font-semibold text-loop-ops mb-4">
-              Express in Loop Ops
+              Express in the Ops Loop
             </h4>
             <ul className="space-y-2 mb-4">
               <li className="font-body text-sm text-text-secondary flex items-start gap-2">
@@ -422,7 +422,7 @@ function TailorSection() {
 
           <div className="space-y-4">
             <div className="bg-surface rounded-lg p-5 border border-border-light">
-              <h4 className="font-display text-base font-semibold text-loop-marketing mb-3">Tailor in Loop Marketing</h4>
+              <h4 className="font-display text-base font-semibold text-loop-marketing mb-3">Tailor in the Marketing Loop</h4>
               <ul className="space-y-1 mb-3">
                 <li className="font-body text-sm text-text-secondary flex items-start gap-2">
                   <span className="text-brand-peach mt-0.5">•</span>
@@ -441,7 +441,7 @@ function TailorSection() {
             </div>
 
             <div className="bg-surface rounded-lg p-5 border border-border-light">
-              <h4 className="font-display text-base font-semibold text-loop-sales mb-3">Tailor in Loop Sales</h4>
+              <h4 className="font-display text-base font-semibold text-loop-sales mb-3">Tailor in the Sales Loop</h4>
               <ul className="space-y-1 mb-3">
                 <li className="font-body text-sm text-text-secondary flex items-start gap-2">
                   <span className="text-brand-peach mt-0.5">•</span>
@@ -460,7 +460,7 @@ function TailorSection() {
             </div>
 
             <div className="bg-surface rounded-lg p-5 border border-border-light">
-              <h4 className="font-display text-base font-semibold text-loop-service mb-3">Tailor in Loop Service</h4>
+              <h4 className="font-display text-base font-semibold text-loop-service mb-3">Tailor in the Service Loop</h4>
               <ul className="space-y-1 mb-3">
                 <li className="font-body text-sm text-text-secondary flex items-start gap-2">
                   <span className="text-brand-peach mt-0.5">•</span>
@@ -479,7 +479,7 @@ function TailorSection() {
             </div>
 
             <div className="bg-surface rounded-lg p-5 border border-border-light">
-              <h4 className="font-display text-base font-semibold text-loop-ops mb-3">Tailor in Loop Ops</h4>
+              <h4 className="font-display text-base font-semibold text-loop-ops mb-3">Tailor in the Ops Loop</h4>
               <ul className="space-y-1 mb-3">
                 <li className="font-body text-sm text-text-secondary flex items-start gap-2">
                   <span className="text-brand-peach mt-0.5">•</span>

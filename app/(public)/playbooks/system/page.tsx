@@ -266,7 +266,7 @@ function HowToUseSection() {
             </div>
             <h3 className="font-display text-xl font-semibold text-brand-navy mb-3">Start by Loop</h3>
             <p className="font-body text-text-secondary mb-4">
-              Read each stage play for your world (e.g., Loop Marketing) and choose one or two plays to run first.
+              Read each stage play for your world (e.g., the Marketing Loop) and choose one or two plays to run first.
             </p>
             <p className="font-body text-sm text-[#3D5A80] italic">
               Good if you lead one department and want to improve it first.
@@ -457,10 +457,10 @@ function NextStepsSection() {
             <h3 className="font-display font-semibold text-brand-navy mb-3">Understand Each Loop</h3>
             <div className="space-y-2 text-sm">
               <Link href="/loops" className="block font-body text-[#028393] hover:underline">Four Loops Overview →</Link>
-              <Link href="/loops/marketing" className="block font-body text-[#028393] hover:underline">Loop Marketing →</Link>
-              <Link href="/loops/sales" className="block font-body text-[#028393] hover:underline">Loop Sales →</Link>
-              <Link href="/loops/service" className="block font-body text-[#028393] hover:underline">Loop Service →</Link>
-              <Link href="/loops/ops" className="block font-body text-[#028393] hover:underline">Loop Ops →</Link>
+              <Link href="/loops/marketing" className="block font-body text-[#028393] hover:underline">Marketing Loop →</Link>
+              <Link href="/loops/sales" className="block font-body text-[#028393] hover:underline">Sales Loop →</Link>
+              <Link href="/loops/service" className="block font-body text-[#028393] hover:underline">Service Loop →</Link>
+              <Link href="/loops/ops" className="block font-body text-[#028393] hover:underline">Ops Loop →</Link>
             </div>
           </div>
 
@@ -499,7 +499,7 @@ export default function SystemPlaybooksPage() {
   // Express plays
   const expressPlays = [
     {
-      loop: 'Loop Marketing',
+      loop: 'Marketing Loop',
       loopColor: '#028393',
       title: 'Audience Clarity Sprint',
       steps: [
@@ -511,7 +511,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Sales',
+      loop: 'Sales Loop',
       loopColor: '#f65625',
       title: 'Good Fit Definition',
       steps: [
@@ -523,7 +523,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Service',
+      loop: 'Service Loop',
       loopColor: '#faaa68',
       title: '90-Day Success Map',
       steps: [
@@ -534,7 +534,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Ops',
+      loop: 'Ops Loop',
       loopColor: '#3D5A80',
       title: 'Lifecycle Sketch',
       steps: [
@@ -550,7 +550,7 @@ export default function SystemPlaybooksPage() {
   // Tailor plays
   const tailorPlays = [
     {
-      loop: 'Loop Marketing',
+      loop: 'Marketing Loop',
       loopColor: '#028393',
       title: 'Segment Journey Audit',
       steps: [
@@ -561,7 +561,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Sales',
+      loop: 'Sales Loop',
       loopColor: '#f65625',
       title: 'Segment-Specific Prep',
       steps: [
@@ -573,7 +573,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Service',
+      loop: 'Service Loop',
       loopColor: '#faaa68',
       title: 'Tailored Onboarding Add-On',
       steps: [
@@ -584,7 +584,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Ops',
+      loop: 'Ops Loop',
       loopColor: '#3D5A80',
       title: 'Friction Reduction',
       steps: [
@@ -599,7 +599,7 @@ export default function SystemPlaybooksPage() {
   // Amplify plays
   const amplifyPlays = [
     {
-      loop: 'Loop Marketing',
+      loop: 'Marketing Loop',
       loopColor: '#028393',
       title: 'Content Atomization',
       steps: [
@@ -609,7 +609,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Sales',
+      loop: 'Sales Loop',
       loopColor: '#f65625',
       title: 'Top Rep Motion Capture',
       steps: [
@@ -621,7 +621,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Service',
+      loop: 'Service Loop',
       loopColor: '#faaa68',
       title: 'FAQ to Knowledge Base',
       steps: [
@@ -633,7 +633,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Ops',
+      loop: 'Ops Loop',
       loopColor: '#3D5A80',
       title: 'Process Automation Template',
       steps: [
@@ -649,7 +649,7 @@ export default function SystemPlaybooksPage() {
   // Evolve plays
   const evolvePlays = [
     {
-      loop: 'Loop Marketing',
+      loop: 'Marketing Loop',
       loopColor: '#028393',
       title: 'Campaign Retro',
       steps: [
@@ -661,7 +661,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Sales',
+      loop: 'Sales Loop',
       loopColor: '#f65625',
       title: 'Win/Loss Pattern Analysis',
       steps: [
@@ -673,7 +673,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Service',
+      loop: 'Service Loop',
       loopColor: '#faaa68',
       title: 'Support Pattern Review',
       steps: [
@@ -685,7 +685,7 @@ export default function SystemPlaybooksPage() {
       ],
     },
     {
-      loop: 'Loop Ops',
+      loop: 'Ops Loop',
       loopColor: '#3D5A80',
       title: 'Change Log Review',
       steps: [

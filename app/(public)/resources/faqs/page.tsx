@@ -137,7 +137,7 @@ export default function FAQsPage() {
             with. The four loops match how most organizations actually operate.
           </p>
           <p>
-            Marketing, Sales, and Service already feel like their own worlds. Loop Ops exists
+            Marketing, Sales, and Service already feel like their own worlds. The Ops Loop exists
             because someone has to design and maintain the systems those worlds share. Four loops
             are just enough to see where problems live without turning every team into a separate
             universe.
@@ -164,7 +164,7 @@ export default function FAQsPage() {
             No. You can use the parts that help and ignore the rest.
           </p>
           <p>
-            Many teams start with one loop, one stage, and one play. For example, "Loop Service,
+            Many teams start with one loop, one stage, and one play. For example, "the Service Loop,
             Evolve stage, fix this one recurring issue." Once they see real progress, they expand.
           </p>
           <p>
@@ -184,10 +184,10 @@ export default function FAQsPage() {
         <FAQItem question="What are the four loops again?">
           <p>The four loops are:</p>
           <ul className="list-disc list-inside space-y-1 ml-2">
-            <li>Loop Marketing</li>
-            <li>Loop Sales</li>
-            <li>Loop Service</li>
-            <li>Loop Ops</li>
+            <li>Marketing Loop</li>
+            <li>Sales Loop</li>
+            <li>Service Loop</li>
+            <li>Ops Loop</li>
           </ul>
           <p>
             Each loop represents a part of the revenue engine with its own motion, but all of them
@@ -323,7 +323,7 @@ export default function FAQsPage() {
             <li>One flow.</li>
           </ul>
           <p>
-            For example, "Loop Sales, Tailor stage, improve how we handle inbound demo requests
+            For example, "the Sales Loop, Tailor stage, improve how we handle inbound demo requests
             in this segment."
           </p>
           <p>
@@ -429,7 +429,7 @@ export default function FAQsPage() {
             not, the model can still help you act like you do.
           </p>
           <p>
-            You can treat "Loop Ops" as a hat someone wears part-time. They will still think about
+            You can treat "the Ops Loop" as a hat someone wears part-time. They will still think about
             data, systems, and handoffs using the same loops and stages.
           </p>
           <p>

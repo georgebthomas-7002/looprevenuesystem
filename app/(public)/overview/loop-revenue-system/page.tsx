@@ -173,34 +173,34 @@ function FunnelProblemSection() {
 function FourLoopsSection() {
   const loops = [
     {
-      name: 'Loop Marketing',
+      name: 'Marketing Loop',
       color: 'loop-marketing',
       borderColor: 'border-loop-marketing',
       bgColor: 'bg-loop-marketing-tint',
       purpose: 'Learn what to say, who to say it to, and where to show up',
-      details: 'Marketing watches the questions people ask, the content they consume, and the messages that land. It then feeds those learnings into sales, service, and ops so the whole company speaks with more clarity and confidence.',
+      details: 'Marketing watches the questions humans ask, the content they consume, and the messages that land. It then feeds those learnings into sales, service, and ops so the whole company speaks with more clarity and confidence.',
       href: '/loops/marketing',
     },
     {
-      name: 'Loop Sales',
+      name: 'Sales Loop',
       color: 'loop-sales',
       borderColor: 'border-loop-sales',
       bgColor: 'bg-loop-sales-tint',
-      purpose: 'Help the right people make clear decisions',
+      purpose: 'Help the right humans make clear decisions',
       details: 'Every conversation is a data point. The questions prospects ask, the objections they raise, and the stories that move them all feed the loop. Sales uses that learning to refine targeting, diagnose problems, and guide customers toward the best fit.',
       href: '/loops/sales',
     },
     {
-      name: 'Loop Service',
+      name: 'Service Loop',
       color: 'loop-service',
       borderColor: 'border-loop-service',
       bgColor: 'bg-loop-service-tint',
       purpose: 'Keep customers successful after they buy',
-      details: 'Support tickets, onboarding calls, and Q&A reveal what customers really experience. Service teams see where things feel confusing, where value lands fast, and where people get stuck. That insight feeds the whole company.',
+      details: 'Support tickets, onboarding calls, and Q&A reveal what customers really experience. Service teams see where things feel confusing, where value lands fast, and where humans get stuck. That insight feeds the whole company.',
       href: '/loops/service',
     },
     {
-      name: 'Loop Ops',
+      name: 'Ops Loop',
       color: 'loop-ops',
       borderColor: 'border-loop-ops',
       bgColor: 'bg-loop-ops-tint',
@@ -410,7 +410,7 @@ function AiHumansSection() {
             AI and Humans Inside The Loop
           </h2>
           <p className="font-body text-lg text-text-secondary max-w-2xl mx-auto">
-            AI changes how fast loops can spin, but it doesn&apos;t replace people.
+            AI changes how fast loops can spin, but it doesn&apos;t replace humans.
           </p>
         </div>
 

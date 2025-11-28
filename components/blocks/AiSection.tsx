@@ -15,10 +15,10 @@ const loopColors: Record<LoopType, string> = {
 }
 
 const loopLabels: Record<LoopType, string> = {
-  marketing: 'Loop Marketing',
-  sales: 'Loop Sales',
-  service: 'Loop Service',
-  ops: 'Loop Ops',
+  marketing: 'Marketing Loop',
+  sales: 'Sales Loop',
+  service: 'Service Loop',
+  ops: 'Ops Loop',
 }
 
 export function AiSection({

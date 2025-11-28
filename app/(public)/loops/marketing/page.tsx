@@ -4,10 +4,10 @@ import type { Metadata } from 'next'
 import { cn } from '@/lib/utils/cn'
 
 export const metadata: Metadata = {
-  title: 'Loop Marketing | Turn Customer Questions Into Content | Loop Revenue System',
+  title: 'Marketing Loop | Turn Customer Questions Into Content | Loop Revenue System',
   description: 'Learn how to run marketing as a continuous loop through Express, Tailor, Amplify, and Evolve. Build content that sounds like your customers and helps your whole revenue engine.',
   openGraph: {
-    title: 'Loop Marketing | Loop Revenue System',
+    title: 'Marketing Loop | Loop Revenue System',
     description: 'Turn real customer questions into a continuous marketing loop. Content that sounds like your customers and feeds your whole revenue engine.',
     type: 'article',
   },
@@ -137,7 +137,7 @@ function StageSection({
             </div>
             <div>
               <p className="font-body text-sm font-semibold uppercase tracking-wider" style={{ color }}>Stage</p>
-              <h2 className="font-display text-3xl font-medium text-brand-navy">{stage} In Loop Marketing</h2>
+              <h2 className="font-display text-3xl font-medium text-brand-navy">{stage} In the Marketing Loop</h2>
             </div>
           </div>
 
@@ -187,16 +187,16 @@ function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="font-body text-sm font-semibold text-[#028393] uppercase tracking-wider mb-4">
-              Loop Marketing
+              Marketing Loop
             </p>
             <h1 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight text-brand-navy mb-6">
               Turn Real Customer Questions Into A Continuous Marketing Loop
             </h1>
             <p className="font-body text-xl text-[#3D5A80] leading-relaxed mb-6">
-              Loop Marketing is not just a department that &quot;gets leads.&quot; It&apos;s the loop that listens to the market, shapes your voice, shares your best ideas, and passes qualified interest and insight into your revenue engine.
+              Marketing Loop is not just a department that &quot;gets leads.&quot; It&apos;s the loop that listens to the market, shapes your voice, shares your best ideas, and passes qualified interest and insight into your revenue engine.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              When Loop Marketing runs well, your content sounds like your customers, your campaigns feel useful, and your sales and service teams say, &quot;This actually helps.&quot;
+              When Marketing Loop runs well, your content sounds like your customers, your campaigns feel useful, and your sales and service teams say, &quot;This actually helps.&quot;
             </p>
             <p className="font-body text-text-secondary leading-relaxed">
               This page shows you how to think about marketing as a loop that moves through four stages: <span className="text-[#028393] font-semibold">Express</span>, <span className="text-[#faaa68] font-semibold">Tailor</span>, <span className="text-[#f65625] font-semibold">Amplify</span>, and <span className="text-[#3D5A80] font-semibold">Evolve</span>.
@@ -218,10 +218,10 @@ function WhatItIsSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-              What Loop Marketing Is And Why It Matters
+              What Marketing Loop Is And Why It Matters
             </h2>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              Loop Marketing is how you learn what to say, who to say it to, and where to show up so the right people find you and feel understood.
+              Marketing Loop is how you learn what to say, who to say it to, and where to show up so the right humans find you and feel understood.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
               It&apos;s the sum of all the ways you show up in public: your website, social posts, videos, emails, events, ads, and the content your team shares in conversations.
@@ -240,7 +240,7 @@ function WhatItIsSection() {
             </div>
 
             <p className="font-body text-[#3D5A80] font-medium italic">
-              Marketing matters because it sets the story everyone else must live with. When Loop Marketing is healthy, the rest of the system has an easier job.
+              Marketing matters because it sets the story everyone else must live with. When Marketing Loop is healthy, the rest of the system has an easier job.
             </p>
           </div>
 
@@ -273,10 +273,10 @@ function SystemFitSection() {
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-            Where Loop Marketing Fits In The System
+            Where Marketing Loop Fits In The System
           </h2>
           <p className="font-body text-text-secondary leading-relaxed">
-            Loop Marketing sits at the front of your visible story, but it&apos;s not only about &quot;top of funnel.&quot; It listens, shapes Express, then runs Tailor, Amplify, and Evolve on repeat.
+            Marketing Loop sits at the front of your visible story, but it&apos;s not only about &quot;top of funnel.&quot; It listens, shapes Express, then runs Tailor, Amplify, and Evolve on repeat.
           </p>
         </div>
 
@@ -292,7 +292,7 @@ function SystemFitSection() {
         </div>
 
         <p className="font-body text-text-secondary text-center mt-8 max-w-2xl mx-auto">
-          Sales, Service, and Ops all send signals back: questions buyers ask, promises that land, issues customers face, system friction. Loop Marketing uses that learning to express more clearly next time.
+          Sales, Service, and Ops all send signals back: questions buyers ask, promises that land, issues customers face, system friction. Marketing Loop uses that learning to express more clearly next time.
         </p>
       </div>
     </section>
@@ -319,10 +319,10 @@ function InputsOutputsSection() {
       <div className="container-content">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-medium text-brand-navy text-center mb-4">
-            Inputs And Outputs Of Loop Marketing
+            Inputs And Outputs Of Marketing Loop
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            Loop Marketing does not start from a blank page. It feeds on real inputs and ships valuable outputs to the rest of the system.
+            Marketing Loop does not start from a blank page. It feeds on real inputs and ships valuable outputs to the rest of the system.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 items-center">
@@ -395,10 +395,10 @@ function AiHumansSection() {
       <div className="container-content">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-medium text-brand-navy text-center mb-4">
-            AI And Humans Inside Loop Marketing
+            AI And Humans Inside Marketing Loop
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            AI can speed up Loop Marketing, but it cannot replace your judgment or your values.
+            AI can speed up Marketing Loop, but it cannot replace your judgment or your values.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -438,7 +438,7 @@ function AiHumansSection() {
           </div>
 
           <p className="font-body text-[#3D5A80] font-medium text-center mt-8">
-            Loop Marketing gets more powerful when AI does its part and people stay accountable for how customers feel.
+            Marketing Loop gets more powerful when AI does its part and humans stay accountable for how customers feel.
           </p>
         </div>
       </div>
@@ -448,8 +448,8 @@ function AiHumansSection() {
 
 function MetricsPitfallsSection() {
   const signals = [
-    'Whether the right people engage with your content, not just anyone',
-    'How often people move from content into meaningful actions',
+    'Whether the right humans engage with your content, not just anyone',
+    'How often humans move from content into meaningful actions',
     'How often Sales and Service actually use your marketing assets',
     'Whether experiments change outcomes, not just vanity numbers',
   ]
@@ -519,7 +519,7 @@ function GetStartedSection() {
       <div className="container-content">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display text-3xl font-medium text-brand-navy mb-6">
-            How To Get Started With Loop Marketing
+            How To Get Started With Marketing Loop
           </h2>
           <p className="font-body text-text-secondary leading-relaxed mb-6">
             You don&apos;t need a brand new strategy deck. Pick one area of your marketing (your blog, main email sequence, or a core campaign) and ask four questions:
@@ -569,7 +569,7 @@ function GetStartedSection() {
         </div>
 
         <p className="font-body text-text-secondary text-center mt-12 max-w-xl mx-auto">
-          Use Loop Marketing to listen better, express more clearly, and pass more value to the rest of your revenue engine. The more this loop improves, the easier it becomes for every other loop to do its job.
+          Use Marketing Loop to listen better, express more clearly, and pass more value to the rest of your revenue engine. The more this loop improves, the easier it becomes for every other loop to do its job.
         </p>
       </div>
     </section>
@@ -584,7 +584,7 @@ export default function LoopMarketingPage() {
       <JsonLd
         data={[
           generateWebPageSchema({
-            title: 'Loop Marketing',
+            title: 'Marketing Loop',
             description: 'Turn real customer questions into a continuous marketing loop through Express, Tailor, Amplify, and Evolve.',
             url: `${siteUrl}/loops/marketing`,
           }),
@@ -664,7 +664,7 @@ export default function LoopMarketingPage() {
         color="#3D5A80"
         bgColor="bg-white border-b border-border-light"
         icon="↻"
-        purpose="Evolve is where Loop Marketing actually becomes a loop. Look at what happened, listen to feedback, change how you express, tailor, and amplify. Without Evolve, you're just shipping and hoping."
+        purpose="Evolve is where Marketing Loop actually becomes a loop. Look at what happened, listen to feedback, change how you express, tailor, and amplify. Without Evolve, you're just shipping and hoping."
         work={[
           'Review performance in a regular rhythm',
           'Ask "What worked and why?" not just "How many?"',
