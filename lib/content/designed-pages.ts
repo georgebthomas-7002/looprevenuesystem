@@ -33,6 +33,9 @@ export const DESIGNED_PAGE_SLUGS = [
   'overview/stages',
   'overview/data-metrics-governance',
 
+  // Loops section
+  'loops', // Four Loops Overview page
+
   // Add more designed pages here as they are created
   // 'loops/marketing',
   // 'loops/sales',
