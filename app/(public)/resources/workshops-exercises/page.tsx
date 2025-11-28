@@ -323,7 +323,7 @@ const exercises = {
     steps: [
       'Name the loop you are discussing (Marketing, Sales, Service, Ops).',
       'Ask: "Which stage are we focused on right now?" (Express, Tailor, Amplify, Evolve)',
-      'Each person shares one sentence: "In this stage, I'm working on ___."',
+      'Each person shares one sentence: "In this stage, I am working on ___."',
       'Note any mismatches—people may be in different stages without realizing it.',
       'Align on one shared stage focus for the meeting or the week.',
     ],
