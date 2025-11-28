@@ -528,7 +528,7 @@ const workflows = {
     description: 'A workflow for RevOps to continuously improve operational processes using data and AI insights.',
     color: '#3D5A80',
     steps: [
-      { title: 'Identify friction point', description: 'Human identifies a process that's causing problems based on feedback or metrics.', actor: 'human' as const },
+      { title: 'Identify friction point', description: 'Human identifies a process that is causing problems based on feedback or metrics.', actor: 'human' as const },
       { title: 'Document current state', description: 'Human maps current process steps, handoffs, and pain points.', actor: 'human' as const },
       { title: 'Analyze and recommend', description: 'AI reviews process documentation and suggests improvements for each stage.', actor: 'ai' as const },
       { title: 'Design improved process', description: 'Human and AI collaborate to design the new process flow.', actor: 'both' as const },
