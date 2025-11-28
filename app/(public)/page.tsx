@@ -414,23 +414,23 @@ function HowToUseSection() {
 // Final CTA Section
 function CtaSection() {
   return (
-    <section className="section-padding-lg bg-brand-navy text-white">
+    <section className="section-padding-lg bg-gradient-to-br from-[#E0FBFC] via-white to-[#98C1D9]/20">
       <div className="container-content text-center">
-        <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-6">
+        <h2 className="font-display text-3xl md:text-4xl font-medium text-brand-navy mb-6">
           Choose Your Next Step
         </h2>
 
         <div className="max-w-2xl mx-auto mb-10">
-          <p className="font-body text-lg text-white/80 leading-relaxed">
+          <p className="font-body text-lg text-text-secondary leading-relaxed">
             You came here for a reason. Maybe you want more predictable revenue. Maybe you want less friction between teams. Maybe you want your data and tools to finally feel like they belong to one system.
           </p>
-          <p className="font-body text-lg text-white/80 leading-relaxed mt-4">
+          <p className="font-body text-lg text-text-secondary leading-relaxed mt-4">
             You do not need a hundred new ideas. You need one clear next move.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          <div className="bg-white rounded-lg p-8 text-left">
+          <div className="bg-white rounded-lg p-8 text-left shadow-sm border border-gray-100">
             <h3 className="font-display text-xl font-medium text-brand-navy mb-3">
               Understand the Full Model
             </h3>
@@ -442,7 +442,7 @@ function CtaSection() {
             </Link>
           </div>
 
-          <div className="bg-white rounded-lg p-8 text-left">
+          <div className="bg-white rounded-lg p-8 text-left shadow-sm border border-gray-100">
             <h3 className="font-display text-xl font-medium text-brand-navy mb-3">
               Get a Guided Path
             </h3>
@@ -455,7 +455,7 @@ function CtaSection() {
           </div>
         </div>
 
-        <p className="font-body text-white/60 mt-10 text-sm">
+        <p className="font-body text-text-muted mt-10 text-sm">
           Pick the path that feels most useful right now. You can explore the rest of the Loop Revenue System once you have taken that next step.
         </p>
       </div>
