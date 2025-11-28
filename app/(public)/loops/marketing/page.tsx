@@ -224,7 +224,7 @@ function WhatItIsSection() {
               Loop Marketing is how you learn what to say, who to say it to, and where to show up so the right people find you and feel understood.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              It&apos;s the sum of all the ways you show up in public—your website, social posts, videos, emails, events, ads, and the content your team shares in conversations.
+              It&apos;s the sum of all the ways you show up in public: your website, social posts, videos, emails, events, ads, and the content your team shares in conversations.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-6">
               <strong className="text-brand-navy">The goal is not to flood channels.</strong> The goal is to run a loop where every campaign, asset, and touch teaches you something.
@@ -292,7 +292,7 @@ function SystemFitSection() {
         </div>
 
         <p className="font-body text-text-secondary text-center mt-8 max-w-2xl mx-auto">
-          Sales, Service, and Ops all send signals back—questions buyers ask, promises that land, issues customers face, system friction. Loop Marketing uses that learning to express more clearly next time.
+          Sales, Service, and Ops all send signals back: questions buyers ask, promises that land, issues customers face, system friction. Loop Marketing uses that learning to express more clearly next time.
         </p>
       </div>
     </section>
@@ -522,7 +522,7 @@ function GetStartedSection() {
             How To Get Started With Loop Marketing
           </h2>
           <p className="font-body text-text-secondary leading-relaxed mb-6">
-            You don&apos;t need a brand new strategy deck. Pick one area of your marketing—your blog, main email sequence, or a core campaign—and ask four questions:
+            You don&apos;t need a brand new strategy deck. Pick one area of your marketing (your blog, main email sequence, or a core campaign) and ask four questions:
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -622,7 +622,7 @@ export default function LoopMarketingPage() {
         color="#faaa68"
         bgColor="bg-white border-b border-border-light"
         icon="◈"
-        purpose="Tailor is where your clear message becomes personal and contextual. Not creepy tracking—being specific enough to be useful. The difference between generic and 'they get me.'"
+        purpose="Tailor is where your clear message becomes personal and contextual. Not creepy tracking, but being specific enough to be useful. The difference between generic and 'they get me.'"
         work={[
           'Segment by meaningful differences (industry, size, role, challenge)',
           'Adjust subject lines, intros, and examples per segment',
@@ -643,13 +643,13 @@ export default function LoopMarketingPage() {
         color="#f65625"
         bgColor="bg-[#E0FBFC]"
         icon="◉"
-        purpose="Amplify is how you scale what works without burning out your team or audience. Not a hundred new ideas—a few strong ideas expressed well, tailored thoughtfully, then amplified across channels."
+        purpose="Amplify is how you scale what works without burning out your team or audience. Not a hundred new ideas, but a few strong ideas expressed well, tailored thoughtfully, then amplified across channels."
         work={[
           'Turn one strong piece into multiple smaller assets',
           'Reuse best explanations in different formats',
           'Use automation so content keeps working',
           'Coach internal experts to share core ideas',
-          'Amplify signal, not noise—based on what you learn',
+          'Amplify signal, not noise, based on what you learn',
         ]}
         support={[
           'Sales has a rich library of content for before and after calls',

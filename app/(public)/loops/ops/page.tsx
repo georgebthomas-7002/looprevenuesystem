@@ -244,7 +244,7 @@ function WhatItIsSection() {
 
 function SystemFitSection() {
   const receives = [
-    { from: 'Marketing, Sales, Service', description: 'Requirements and pain—what the loops need from tools and data.' },
+    { from: 'Marketing, Sales, Service', description: 'Requirements and pain: what the loops need from tools and data.' },
     { from: 'Security, Legal, Finance', description: 'Constraints around privacy, compliance, and budget.' },
     { from: 'Leadership', description: 'What needs to be measured and improved at a strategic level.' },
   ]
@@ -264,7 +264,7 @@ function SystemFitSection() {
             Where Loop Ops Fits In The System
           </h2>
           <p className="font-body text-text-secondary leading-relaxed">
-            Loop Ops sits under and around the other three loops. Marketing, sales, and service each run their own loop—Ops shapes the tools and processes so the loops can talk to each other.
+            Loop Ops sits under and around the other three loops. Marketing, sales, and service each run their own loop. Ops shapes the tools and processes so the loops can talk to each other.
           </p>
         </div>
 
@@ -309,7 +309,7 @@ function InputsOutputsSection() {
   const inputs = [
     'Requests from teams for new fields, reports, automations, or tools',
     'Observations about data quality, process bottlenecks, and system errors',
-    'Strategic goals from leadership—new markets, products, or motions',
+    'Strategic goals from leadership: new markets, products, or motions',
   ]
 
   const outputs = [
@@ -527,7 +527,7 @@ function GetStartedSection() {
             You don&apos;t need a multi-year transformation to start treating ops like a loop. Start small and focused.
           </p>
           <p className="font-body text-text-secondary leading-relaxed mb-8">
-            Pick one narrow area—such as how inbound leads move through marketing and sales, or how a specific product&apos;s customers move from closed won into onboarding. Then ask four questions:
+            Pick one narrow area, such as how inbound leads move through marketing and sales, or how a specific product&apos;s customers move from closed won into onboarding. Then ask four questions:
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -653,10 +653,10 @@ export default function LoopOpsPage() {
         icon="◉"
         purpose="Amplify is how ops scales good process and good data without adding more manual work. Once Express and Tailor are solid, ops can use automation, integrations, and enablement to help the other loops move faster with less friction."
         work={[
-          'Automate routine tasks—lifecycle updates, notifications, and handoffs',
+          'Automate routine tasks: lifecycle updates, notifications, and handoffs',
           'Connect tools so data flows without exports and imports',
           'Template common processes like onboarding, renewals, and pipeline reviews',
-          'Build reusable components—workflow patterns, dashboard templates, naming schemes',
+          'Build reusable components: workflow patterns, dashboard templates, naming schemes',
         ]}
         support={[
           'Marketing can run smarter campaigns without juggling spreadsheets',
@@ -673,7 +673,7 @@ export default function LoopOpsPage() {
         icon="↻"
         purpose="Evolve is where Loop Ops checks its own work. It's where ops watches how the system behaves, listens to teams, and changes the design so the next cycle is cleaner and more supportive."
         work={[
-          'Monitor system health—data completeness, error rates, workflow failures, integration reliability',
+          'Monitor system health: data completeness, error rates, workflow failures, integration reliability',
           'Track how quickly and safely changes move from idea to production',
           'Listen to feedback from teams about friction and confusion in the tools',
           'Maintain a change backlog prioritized by impact on the loops',

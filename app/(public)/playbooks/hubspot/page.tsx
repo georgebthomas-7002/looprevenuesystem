@@ -595,7 +595,7 @@ function AiHybridSection() {
             HubSpot AI Inside A Hybrid Loop Team
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            HubSpot has built-in AI capabilities that fit naturally into the Loop Revenue System—as long as you keep humans in charge.
+            HubSpot has built-in AI capabilities that fit naturally into the Loop Revenue System, as long as you keep humans in charge.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -735,7 +735,7 @@ function NoHubSpotSection() {
           </Link>
 
           <p className="font-body text-sm text-text-secondary mt-6">
-            You can move between these paths as your stack changes. The model doesn&apos;t change—only the implementation details do.
+            You can move between these paths as your stack changes. The model doesn&apos;t change; only the implementation details do.
           </p>
         </div>
       </div>

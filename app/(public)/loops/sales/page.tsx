@@ -264,7 +264,7 @@ function WhatItIsSection() {
 
 function SystemFitSection() {
   const outputs = [
-    { to: 'Service', description: 'New customers and their context—clear notes and expectations for a smooth handoff.' },
+    { to: 'Service', description: 'New customers and their context: clear notes and expectations for a smooth handoff.' },
     { to: 'Marketing', description: 'Win and loss reasons, stories from conversations, and what messages actually land.' },
     { to: 'Ops', description: 'Data needs, process friction, and requirements for better tools and automation.' },
   ]
@@ -302,7 +302,7 @@ function SystemFitSection() {
         </div>
 
         <p className="font-body text-text-secondary text-center mt-8 max-w-2xl mx-auto">
-          Service and Ops send signals back—which deals experience friction, which segments expand or churn, and where the process breaks. In a healthy Loop Revenue System, sales is not a black box.
+          Service and Ops send signals back: which deals experience friction, which segments expand or churn, and where the process breaks. In a healthy Loop Revenue System, sales is not a black box.
         </p>
       </div>
     </section>
@@ -531,7 +531,7 @@ function GetStartedSection() {
             How To Get Started With Loop Sales
           </h2>
           <p className="font-body text-text-secondary leading-relaxed mb-6">
-            You don&apos;t need to rebuild your sales org to start treating it like a loop. Start with one slice of your world—like inbound deals from a specific segment, or expansion deals in one product line.
+            You don&apos;t need to rebuild your sales org to start treating it like a loop. Start with one slice of your world, like inbound deals from a specific segment, or expansion deals in one product line.
           </p>
           <p className="font-body text-text-secondary leading-relaxed mb-8">
             Walk that slice through the four stages:

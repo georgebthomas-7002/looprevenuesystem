@@ -612,7 +612,7 @@ function AiHybridSection() {
             AI And Hybrid Teams In A Mixed Stack
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            You can use AI in a non-HubSpot stack the same way you use it anywhere else—as a helper.
+            You can use AI in a non-HubSpot stack the same way you use it anywhere else: as a helper.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -752,7 +752,7 @@ function HubSpotAlternativeSection() {
           </Link>
 
           <p className="font-body text-sm text-text-secondary mt-6">
-            Think of these pages as two lenses on the same system. The model doesn&apos;t change—only the implementation details do.
+            Think of these pages as two lenses on the same system. The model doesn&apos;t change; only the implementation details do.
           </p>
         </div>
       </div>

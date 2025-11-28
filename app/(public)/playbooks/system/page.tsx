@@ -605,7 +605,7 @@ export default function SystemPlaybooksPage() {
       steps: [
         'Find one asset that consistently performs well',
         'Turn it into: a short email sequence, social posts, and a sales guide',
-        'Don\'t change the core idea—change the format and channels',
+        'Don\'t change the core idea; change the format and channels',
       ],
     },
     {
@@ -727,7 +727,7 @@ export default function SystemPlaybooksPage() {
         stage="Tailor"
         stageKey="tailor"
         tagline="Make It Personal And Contextual"
-        intro="Tailor is about relevance. Once you're clear on Express, you can adjust your messages, flows, and systems to match what real people need. The goal is not to use every data point—the goal is to be more helpful."
+        intro="Tailor is about relevance. Once you're clear on Express, you can adjust your messages, flows, and systems to match what real people need. The goal is not to use every data point; the goal is to be more helpful."
         plays={tailorPlays}
       />
 
@@ -736,7 +736,7 @@ export default function SystemPlaybooksPage() {
         stage="Amplify"
         stageKey="amplify"
         tagline="Scale What Works Without Burning Out"
-        intro="Amplify is where you take what's working in one corner and make it easier for more people to use. You don't start Amplify with random tactics—you start with something that has already shown promise in Express and Tailor."
+        intro="Amplify is where you take what's working in one corner and make it easier for more people to use. You don't start Amplify with random tactics. You start with something that has already shown promise in Express and Tailor."
         plays={amplifyPlays}
       />
 

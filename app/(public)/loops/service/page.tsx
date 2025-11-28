@@ -257,7 +257,7 @@ function WhatItIsSection() {
 
 function SystemFitSection() {
   const receives = [
-    { from: 'Sales', description: 'New customers and context—deal notes, expectations, and key contacts.' },
+    { from: 'Sales', description: 'New customers and context: deal notes, expectations, and key contacts.' },
     { from: 'Marketing', description: 'Content, expectations, and education that customers have already seen.' },
     { from: 'Ops', description: 'Tools, data, and workflows that power tickets, success plans, and feedback.' },
   ]
@@ -531,7 +531,7 @@ function GetStartedSection() {
             How To Get Started With Loop Service
           </h2>
           <p className="font-body text-text-secondary leading-relaxed mb-6">
-            You don&apos;t have to redesign your whole service org to start treating it like a loop. Start with one area—such as onboarding for a key product or support for a core segment.
+            You don&apos;t have to redesign your whole service org to start treating it like a loop. Start with one area, such as onboarding for a key product or support for a core segment.
           </p>
           <p className="font-body text-text-secondary leading-relaxed mb-8">
             Walk that area through the four stages:
@@ -618,7 +618,7 @@ export default function LoopServicePage() {
         icon="✦"
         purpose="Express is where service decides how it will show up for customers. It answers: How do we want customers to feel after they talk with us? What does successful onboarding look like? Which channels will we support?"
         work={[
-          'Define your service philosophy in simple language—helpful, honest, calm',
+          'Define your service philosophy in simple language: helpful, honest, calm',
           'Map the post sale journey from deal close through onboarding, adoption, and renewal',
           'Agree on what success means for different types of customers',
           'Set simple service levels and rules for how issues are handled',
@@ -636,11 +636,11 @@ export default function LoopServicePage() {
         color="#faaa68"
         bgColor="bg-white border-b border-border-light"
         icon="◈"
-        purpose="Tailor is where service moves from generic answers to truly contextual help. It's about seeing the person, not just the ticket—knowing their history, their setup, their goals, and responding in a way that matches."
+        purpose="Tailor is where service moves from generic answers to truly contextual help. It's about seeing the person, not just the ticket: knowing their history, their setup, their goals, and responding in a way that matches."
         work={[
           'Look at customer profile, product usage, and past interactions before you reply',
           'Adjust tone, depth, and format based on who you are talking to',
-          'Offer different paths for different segments—higher touch for strategic accounts',
+          'Offer different paths for different segments, with higher touch for strategic accounts',
           'Proactively reach out when you see risk signals, instead of waiting for complaints',
         ]}
         support={[
@@ -681,7 +681,7 @@ export default function LoopServicePage() {
           'Track signals: onboarding completion, time to first value, satisfaction, retention',
           'Read qualitative feedback from tickets, surveys, and conversations with an open mind',
           'Spot patterns in what confuses customers, what delights them, where they hesitate',
-          'Share patterns with marketing, sales, ops, and product—along with suggestions',
+          'Share patterns with marketing, sales, ops, and product, along with suggestions',
         ]}
         support={[
           'Marketing updates messaging to better match reality and highlight valued moments',

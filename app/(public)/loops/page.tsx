@@ -328,7 +328,7 @@ function LoopMarketingSection() {
             name="Marketing"
             color={LOOP_COLORS.marketing}
             icon="📣"
-            purpose="Learn what to say, who to say it to, and where to show up so the right people find you and feel understood. Not only about generating leads—it's about building a library of language, stories, and proof that helps your whole company communicate with clarity."
+            purpose="Learn what to say, who to say it to, and where to show up so the right people find you and feel understood. It's not only about generating leads. It's about building a library of language, stories, and proof that helps your whole company communicate with clarity."
             inputs={[
               'Market research and customer interviews',
               'Website and content analytics',
@@ -368,7 +368,7 @@ function LoopSalesSection() {
             name="Sales"
             color={LOOP_COLORS.sales}
             icon="🤝"
-            purpose="Help the right people make clear, confident decisions about working with you. Not only about closing deals—it's about learning from every conversation and using that learning to improve who you sell to and how you sell."
+            purpose="Help the right people make clear, confident decisions about working with you. It's not only about closing deals. It's about learning from every conversation and using that learning to improve who you sell to and how you sell."
             inputs={[
               'Qualified interest and context from Marketing',
               'Account and contact data from Ops',

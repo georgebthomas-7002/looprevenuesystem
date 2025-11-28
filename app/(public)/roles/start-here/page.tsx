@@ -367,7 +367,7 @@ export default function StartHerePage() {
               <span className="text-[#028393]">Pick Your Next Step.</span>
             </h1>
             <p className="text-xl text-text-secondary max-w-2xl">
-              The Loop Revenue System works for everyone—but everyone enters differently.
+              The Loop Revenue System works for everyone, but everyone enters differently.
               Find your role below and follow the path that matches your priorities.
             </p>
           </div>
@@ -435,7 +435,7 @@ export default function StartHerePage() {
             </h2>
             <p className="text-text-secondary mb-8">
               Jump into any section that interests you. The Loop Revenue System
-              is interconnected—every page links to related concepts and next steps.
+              is interconnected: every page links to related concepts and next steps.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
