@@ -43,6 +43,8 @@ export const DESIGNED_PAGE_SLUGS = [
   // Playbooks section
   'playbooks/system', // System Playbooks page
   'playbooks/hubspot', // HubSpot Implementation page
+  'playbooks/no-hubspot', // Non-HubSpot Implementation page
+  'playbooks/ai-and-humans', // AI And Humans page
 
   // Add more designed pages here as they are created
   // etc.
