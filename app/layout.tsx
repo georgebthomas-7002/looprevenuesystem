@@ -3,15 +3,15 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Spiritual Side of Leadership',
-    template: '%s | Spiritual Side of Leadership',
+    default: 'Loop Revenue System',
+    template: '%s | Loop Revenue System',
   },
-  description: 'Lead with purpose. Lead with faith. Resources for spiritual leaders.',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://spiritualsideofleadership.com'),
+  description: 'One system. Four loops. Continuous learning. The Loop Revenue System helps organizations align Marketing, Sales, Service, and Ops into one continuous learning engine.',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://looprevenuesystem.com'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Spiritual Side of Leadership',
+    siteName: 'Loop Revenue System',
   },
   twitter: {
     card: 'summary_large_image',
@@ -29,7 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-screen bg-bg antialiased">
+        {children}
+      </body>
     </html>
   )
 }
