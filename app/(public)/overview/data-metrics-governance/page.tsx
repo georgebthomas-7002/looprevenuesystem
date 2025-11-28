@@ -1,7 +1,17 @@
-'use client'
-
 import Link from 'next/link'
+import { JsonLd, generateWebPageSchema } from '@/lib/seo'
+import type { Metadata } from 'next'
 import { cn } from '@/lib/utils/cn'
+
+export const metadata: Metadata = {
+  title: 'Data, Metrics, and Governance | Loop Revenue System',
+  description: 'How to manage data quality, define shared metrics, and establish governance across your revenue loops. The nervous system behind your revenue engine.',
+  openGraph: {
+    title: 'Data, Metrics, and Governance | Loop Revenue System',
+    description: 'The nervous system behind your revenue loops. Learn how to manage data, metrics, and governance for a healthy loop system.',
+    type: 'article',
+  },
+}
 
 // Visual: Four loops connected by a data backbone
 function DataBackboneDiagram() {
@@ -149,6 +159,9 @@ function HeroSection() {
       <div className="container-content">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
+            <p className="font-body text-sm font-semibold text-brand-teal uppercase tracking-wider mb-4">
+              The Foundation
+            </p>
             <h1 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight text-brand-navy mb-6">
               Data, Metrics, And Governance For The Loop Revenue System
             </h1>
@@ -569,14 +582,17 @@ function GovernanceSection() {
     {
       title: 'Have a regular loop review',
       description: 'Once a month or once a quarter, gather representatives from marketing, sales, service, and ops. Look at a small shared scorecard. Talk about what is working, what is stuck, and which stage needs attention next.',
+      icon: '📅',
     },
     {
       title: 'Set clear owners for key objects and metrics',
       description: 'Someone should own the contact model. Someone should own deals and tickets. Someone should own the main dashboards. Ownership does not mean they do all the work. It means they care for the integrity of that part of the system.',
+      icon: '👤',
     },
     {
       title: 'Create a simple change process',
       description: 'When someone wants to add a field, change a lifecycle, or adjust an automation, they should follow a basic pattern: describe the change, link it to a loop and stage, explain what metric it should improve, and note how you will roll it out and review it.',
+      icon: '📋',
     },
   ]
 
@@ -602,9 +618,7 @@ function GovernanceSection() {
           {rituals.map((r, i) => (
             <div key={i} className="bg-white rounded-xl p-6 shadow-sm">
               <div className="w-12 h-12 rounded-full bg-[#028393] flex items-center justify-center mb-4">
-                <span className="text-white text-xl">
-                  {i === 0 ? '📅' : i === 1 ? '👤' : '📋'}
-                </span>
+                <span className="text-white text-xl">{r.icon}</span>
               </div>
               <h3 className="font-display text-lg font-semibold text-brand-navy mb-3">
                 {r.title}
@@ -719,12 +733,12 @@ function CtaSection() {
             href="/resources/workshops-exercises"
             className="font-body text-[#028393] hover:text-brand-navy underline"
           >
-            Explore Workshops And Exercises &rarr;
+            Explore Workshops And Exercises →
           </Link>
         </div>
 
         <p className="font-body text-text-secondary leading-relaxed mt-12 max-w-2xl mx-auto text-center">
-          Use this page as your reference when questions about measurement, data, or change come up. The more your team sees data, metrics, and governance as part of the loop&mdash;not an afterthought&mdash;the easier it becomes to build a system that helps your business flourish.
+          Use this page as your reference when questions about measurement, data, or change come up. The more your team sees data, metrics, and governance as part of the loop—not an afterthought—the easier it becomes to build a system that helps your business flourish.
         </p>
       </div>
     </section>
@@ -732,8 +746,19 @@ function CtaSection() {
 }
 
 export default function DataMetricsGovernancePage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://looprevenuesystem.com'
+
   return (
     <>
+      <JsonLd
+        data={[
+          generateWebPageSchema({
+            title: 'Data, Metrics, and Governance',
+            description: 'How to manage data quality, define shared metrics, and establish governance across your revenue loops.',
+            url: `${siteUrl}/overview/data-metrics-governance`,
+          }),
+        ]}
+      />
       <HeroSection />
       <WhyDataMattersSection />
       <DataFoundationsSection />

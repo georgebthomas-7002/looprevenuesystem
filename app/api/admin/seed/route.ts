@@ -1,10 +1,26 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
+import { DESIGNED_PAGE_SLUGS } from '@/lib/content/designed-pages'
 
-// Pages use dedicated designed React components for content
-// The CMS stores only metadata (title, description, SEO fields, navigation settings)
-// Content sections are NOT stored in the CMS - they are built into the page components
+/**
+ * SEED DATABASE ROUTE
+ *
+ * WHAT THIS DOES:
+ * - Creates/updates page METADATA in the database (titles, descriptions, SEO fields)
+ * - Sets navigation settings (showInMainNav, navOrder, parentSlug)
+ *
+ * WHAT THIS DOES NOT DO:
+ * - Does NOT create or modify page CONTENT
+ * - Does NOT affect designed page components
+ * - Does NOT require rebuilding the app
+ *
+ * PAGE CONTENT ARCHITECTURE:
+ * - Designed pages (What Is, Stages, Data/Metrics) have content hardcoded in React components
+ * - These pages are listed in: lib/content/designed-pages.ts
+ * - To update content on designed pages, edit the page.tsx file and redeploy
+ * - The database only stores metadata for SEO and navigation purposes
+ */
 
 const pages = [
   // Home page - has dedicated designed component at app/(public)/page.tsx
@@ -277,7 +293,7 @@ export async function POST() {
             metaDescription: page.metaDescription || null,
           }
         })
-        results.push({ page: page.title, status: 'created' })
+        results.push({ slug: page.slug, page: page.title, status: 'created' })
       } else {
         // Update existing page metadata
         // Always clear sections - pages should use designed components
@@ -296,13 +312,23 @@ export async function POST() {
             ...(page.metaDescription && !existing.metaDescription && { metaDescription: page.metaDescription }),
           }
         })
-        results.push({ page: page.title, status: 'updated' })
+        results.push({ slug: page.slug, page: page.title, status: 'updated' })
       }
     }
 
+    // Count designed vs placeholder pages
+    const designedCount = results.filter(r => DESIGNED_PAGE_SLUGS.includes(r.slug as any)).length
+    const placeholderCount = results.length - designedCount
+
     return NextResponse.json({
       success: true,
-      message: 'Database seeded successfully',
+      message: 'Page metadata updated successfully',
+      summary: {
+        total: results.length,
+        designedPages: designedCount,
+        placeholderPages: placeholderCount,
+      },
+      note: 'This only updates metadata (titles, descriptions, SEO). Page CONTENT is in React components - edit the page.tsx files to change content.',
       results
     })
   } catch (error) {
