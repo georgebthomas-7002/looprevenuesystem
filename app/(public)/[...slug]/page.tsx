@@ -5,16 +5,19 @@ import { generateMetadata as genMeta } from '@/lib/seo/metadata'
 import { JsonLd, generateWebPageSchema, generateFaqSchema } from '@/lib/seo'
 import type { Metadata } from 'next'
 import { cn } from '@/lib/utils/cn'
+import { DESIGNED_PAGE_SLUGS } from '@/lib/content/designed-pages'
 
 interface PageProps {
   params: Promise<{ slug: string[] }>
 }
 
-// Generate static params for all pages (excluding home page which has its own route)
+// Generate static params for all pages EXCEPT designed pages
+// Designed pages have their own dedicated page.tsx files and should not use this catch-all
 export async function generateStaticParams() {
   const pages = await getAllPages()
   return pages
     .filter((page) => page.slug !== '') // Home page is handled by app/(public)/page.tsx
+    .filter((page) => !DESIGNED_PAGE_SLUGS.includes(page.slug as any)) // Exclude designed pages
     .map((page) => ({
       slug: page.slug.split('/'),
     }))
