@@ -362,7 +362,7 @@ const exercises = {
       'Results: What happened? Share data and stories.',
       'Learnings: What did we learn about our customers? Our process? Our assumptions?',
       'Decision: Keep, iterate, or stop?',
-      'Next: What's the next experiment based on this learning?',
+      'Next: What is the next experiment based on this learning?',
       'Log it: Update your experiment log or playbook notes.',
     ],
   },
