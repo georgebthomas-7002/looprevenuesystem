@@ -146,16 +146,6 @@ const defaultNavigation: NavSection[] = [
         description: 'AI prompts and automation templates'
       },
       {
-        label: 'Case Studies',
-        href: '/resources/case-studies',
-        description: 'Real-world implementation examples'
-      },
-      {
-        label: 'Workshops and Exercises',
-        href: '/resources/workshops-exercises',
-        description: 'Interactive learning activities'
-      },
-      {
         label: 'FAQ',
         href: '/resources/faq',
         description: 'Common questions answered'
