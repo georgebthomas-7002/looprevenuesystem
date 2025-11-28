@@ -46,6 +46,10 @@ export const DESIGNED_PAGE_SLUGS = [
   'playbooks/no-hubspot', // Non-HubSpot Implementation page
   'playbooks/ai-and-humans', // AI And Humans page
 
+  // Roles section
+  'roles/start-here', // Start Here page (role-based navigation)
+  'roles/leadership-revops', // Leadership & RevOps page
+
   // Add more designed pages here as they are created
   // etc.
 ] as const
