@@ -40,6 +40,9 @@ export const DESIGNED_PAGE_SLUGS = [
   'loops/service', // Loop Service page
   'loops/ops', // Loop Ops page
 
+  // Playbooks section
+  'playbooks/system', // System Playbooks page
+
   // Add more designed pages here as they are created
   // etc.
 ] as const
