@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react'
+import { ChevronDown, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
 
 interface NavLink {
@@ -147,62 +147,122 @@ const defaultNavigation: NavSection[] = [
       },
       {
         label: 'FAQ',
-        href: '/resources/faq',
+        href: '/resources/faqs',
         description: 'Common questions answered'
       },
     ],
   },
 ]
 
-// Loop color map
+// Loop color configurations
 const loopColors = {
-  marketing: 'border-l-loop-marketing bg-loop-marketing-light',
-  sales: 'border-l-loop-sales bg-loop-sales-light',
-  service: 'border-l-loop-service bg-loop-service-light',
-  ops: 'border-l-loop-ops bg-loop-ops-light',
+  marketing: {
+    border: 'border-l-[#028393]',
+    bg: 'bg-[#028393]/5',
+    hoverBg: 'hover:bg-[#028393]/10',
+    dot: 'bg-[#028393]',
+  },
+  sales: {
+    border: 'border-l-[#f65625]',
+    bg: 'bg-[#f65625]/5',
+    hoverBg: 'hover:bg-[#f65625]/10',
+    dot: 'bg-[#f65625]',
+  },
+  service: {
+    border: 'border-l-[#faaa68]',
+    bg: 'bg-[#faaa68]/5',
+    hoverBg: 'hover:bg-[#faaa68]/10',
+    dot: 'bg-[#faaa68]',
+  },
+  ops: {
+    border: 'border-l-[#3D5A80]',
+    bg: 'bg-[#3D5A80]/5',
+    hoverBg: 'hover:bg-[#3D5A80]/10',
+    dot: 'bg-[#3D5A80]',
+  },
+}
+
+// Animated hamburger icon component
+function HamburgerIcon({ isOpen, className }: { isOpen: boolean; className?: string }) {
+  return (
+    <div className={cn('relative w-6 h-5 flex flex-col justify-center', className)}>
+      <span
+        className={cn(
+          'absolute h-0.5 w-6 bg-[#142d63] rounded-full transition-all duration-300 ease-out',
+          isOpen ? 'rotate-45 top-1/2 -translate-y-1/2' : 'top-0.5'
+        )}
+      />
+      <span
+        className={cn(
+          'absolute h-0.5 w-6 bg-[#142d63] rounded-full transition-all duration-300 ease-out top-1/2 -translate-y-1/2',
+          isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+        )}
+      />
+      <span
+        className={cn(
+          'absolute h-0.5 w-6 bg-[#142d63] rounded-full transition-all duration-300 ease-out',
+          isOpen ? '-rotate-45 top-1/2 -translate-y-1/2' : 'bottom-0.5'
+        )}
+      />
+    </div>
+  )
 }
 
 export function Header({ navigation = defaultNavigation }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [mobileOpenSection, setMobileOpenSection] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const menuRef = useRef<HTMLDivElement>(null)
 
-  // Handle scroll for header shadow
+  // Handle scroll for header styling
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close mobile menu on resize
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
+  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
         setMobileMenuOpen(false)
+        setMobileOpenSection(null)
       }
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Handle mouse enter with delay
-  const handleMouseEnter = (label: string) => {
+  // Handle mouse enter with immediate open
+  const handleMouseEnter = useCallback((label: string) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current)
     }
     setOpenDropdown(label)
-  }
+  }, [])
 
   // Handle mouse leave with delay
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
       setOpenDropdown(null)
     }, 150)
-  }
+  }, [])
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -215,116 +275,169 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false)
+        setOpenDropdown(null)
+        setMobileOpenSection(null)
+      }
+    }
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [])
+
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false)
+    setMobileOpenSection(null)
+  }, [])
+
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 bg-brand-navy transition-shadow duration-200',
-        isScrolled && 'shadow-lg'
-      )}
-    >
-      <div className="max-w-wide mx-auto px-5 md:px-6">
-        <nav className="flex items-center justify-between h-16 md:h-20" ref={menuRef}>
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 relative z-10">
-            <Image
-              src="/images/logo/Loop-Revenue-System-Logo-400.png"
-              alt="Loop Revenue System"
-              width={180}
-              height={45}
-              className="h-9 md:h-11 w-auto"
-              priority
-            />
-          </Link>
+    <>
+      <header
+        className={cn(
+          'sticky top-0 z-50 transition-all duration-300',
+          isScrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-[0_1px_3px_0_rgb(0,0,0,0.1),0_1px_2px_-1px_rgb(0,0,0,0.1)] border-b border-[#142d63]/5'
+            : 'bg-white border-b border-transparent'
+        )}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center justify-between h-16 lg:h-20" ref={menuRef}>
+            {/* Logo */}
+            <Link href="/" className="flex-shrink-0 relative z-10">
+              <Image
+                src="/images/logo/Loop-Revenue-System-Logo-400.png"
+                alt="Loop Revenue System"
+                width={180}
+                height={45}
+                className="h-8 sm:h-9 lg:h-10 w-auto"
+                priority
+              />
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center">
-            {navigation.map((section) => (
-              <div
-                key={section.label}
-                className="relative"
-                onMouseEnter={() => handleMouseEnter(section.label)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button
-                  type="button"
-                  className={cn(
-                    'flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors',
-                    openDropdown === section.label
-                      ? 'text-white'
-                      : 'text-white/80 hover:text-white'
-                  )}
-                  onClick={() => setOpenDropdown(openDropdown === section.label ? null : section.label)}
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-1">
+              {navigation.map((section) => (
+                <div
+                  key={section.label}
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter(section.label)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  {section.label}
-                  <ChevronDown className={cn(
-                    'w-4 h-4 transition-transform duration-200',
-                    openDropdown === section.label && 'rotate-180'
-                  )} />
-                </button>
+                  <button
+                    type="button"
+                    className={cn(
+                      'group flex items-center gap-1 px-3 xl:px-4 py-2 text-sm font-medium transition-colors relative',
+                      openDropdown === section.label
+                        ? 'text-[#028393]'
+                        : 'text-[#142d63] hover:text-[#028393]'
+                    )}
+                    onClick={() => setOpenDropdown(openDropdown === section.label ? null : section.label)}
+                    aria-expanded={openDropdown === section.label}
+                    aria-haspopup="true"
+                  >
+                    {section.label}
+                    <ChevronDown
+                      className={cn(
+                        'w-4 h-4 transition-transform duration-200',
+                        openDropdown === section.label && 'rotate-180'
+                      )}
+                    />
+                    {/* Hover underline */}
+                    <span
+                      className={cn(
+                        'absolute bottom-0 left-3 right-3 xl:left-4 xl:right-4 h-0.5 bg-[#028393] transform origin-left transition-transform duration-200',
+                        openDropdown === section.label ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      )}
+                    />
+                  </button>
 
-                {/* Mega Menu Dropdown */}
-                {openDropdown === section.label && (
+                  {/* Mega Menu Dropdown */}
                   <div
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+                    className={cn(
+                      'absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200',
+                      openDropdown === section.label
+                        ? 'opacity-100 translate-y-0 pointer-events-auto'
+                        : 'opacity-0 -translate-y-2 pointer-events-none'
+                    )}
                     onMouseEnter={() => handleMouseEnter(section.label)}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <div className="bg-white rounded-xl shadow-xl border border-border-light overflow-hidden min-w-[400px] max-w-[560px]">
-                      {/* Header */}
+                    <div className="bg-white rounded-2xl shadow-[0_20px_40px_-12px_rgba(0,0,0,0.15)] border border-[#142d63]/10 overflow-hidden min-w-[380px] max-w-[520px]">
+                      {/* Section Header */}
                       {section.description && (
-                        <div className="px-6 py-4 bg-bg-alt border-b border-border-light">
-                          <p className="text-sm font-semibold text-text-primary">{section.label}</p>
-                          <p className="text-xs text-text-muted">{section.description}</p>
+                        <div className="px-5 py-4 bg-gradient-to-r from-[#E0FBFC] to-[#E0FBFC]/50 border-b border-[#028393]/10">
+                          <p className="text-sm font-semibold text-[#142d63]">{section.label}</p>
+                          <p className="text-xs text-[#3D5A80] mt-0.5">{section.description}</p>
                         </div>
                       )}
 
-                      <div className="p-4">
+                      <div className="p-3">
                         {/* Featured Card */}
                         {section.featured && (
                           <Link
                             href={section.featured.href}
-                            className="block mb-4 p-4 bg-gradient-to-br from-brand-cyan/20 to-brand-light-blue/10 rounded-lg hover:from-brand-cyan/30 hover:to-brand-light-blue/20 transition-colors group"
+                            className="block mb-3 p-4 bg-gradient-to-br from-[#028393]/5 via-[#E0FBFC]/50 to-[#98C1D9]/20 rounded-xl hover:from-[#028393]/10 hover:via-[#E0FBFC]/70 hover:to-[#98C1D9]/30 transition-all duration-200 group border border-[#028393]/10"
+                            onClick={() => setOpenDropdown(null)}
                           >
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <p className="font-display font-semibold text-brand-navy group-hover:text-brand-teal transition-colors">
-                                  {section.featured.title}
-                                </p>
-                                <p className="text-sm text-text-secondary mt-1">
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2">
+                                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#028393]/10">
+                                    <span className="w-2 h-2 rounded-full bg-[#028393]" />
+                                  </span>
+                                  <p className="font-semibold text-[#142d63] group-hover:text-[#028393] transition-colors">
+                                    {section.featured.title}
+                                  </p>
+                                </div>
+                                <p className="text-sm text-[#3D5A80] mt-2 leading-relaxed">
                                   {section.featured.description}
                                 </p>
                               </div>
-                              <ArrowRight className="w-5 h-5 text-brand-teal opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1" />
+                              <ArrowRight className="w-5 h-5 text-[#028393] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0 mt-1" />
                             </div>
                           </Link>
                         )}
 
-                        {/* Links Grid */}
-                        <div className={cn(
-                          'grid gap-1',
-                          section.links.length > 4 ? 'grid-cols-2' : 'grid-cols-1'
-                        )}>
+                        {/* Links List */}
+                        <div className="space-y-0.5">
                           {section.links.map((link) => (
                             <Link
                               key={link.href}
                               href={link.href}
                               className={cn(
-                                'block p-3 rounded-lg transition-colors group',
+                                'block p-3 rounded-xl transition-all duration-150 group/link',
                                 link.loopType
-                                  ? cn('border-l-4', loopColors[link.loopType])
-                                  : 'hover:bg-bg-alt'
+                                  ? cn(
+                                      'border-l-[3px] pl-4',
+                                      loopColors[link.loopType].border,
+                                      loopColors[link.loopType].bg,
+                                      loopColors[link.loopType].hoverBg
+                                    )
+                                  : 'hover:bg-[#E0FBFC]/50'
                               )}
+                              onClick={() => setOpenDropdown(null)}
                             >
-                              <p className={cn(
-                                'font-medium text-sm transition-colors',
-                                link.loopType
-                                  ? 'text-text-primary'
-                                  : 'text-text-primary group-hover:text-brand-teal'
-                              )}>
-                                {link.label}
-                              </p>
+                              <div className="flex items-center gap-2">
+                                {link.loopType && (
+                                  <span className={cn('w-1.5 h-1.5 rounded-full', loopColors[link.loopType].dot)} />
+                                )}
+                                <p className={cn(
+                                  'font-medium text-sm transition-colors',
+                                  link.loopType
+                                    ? 'text-[#142d63]'
+                                    : 'text-[#142d63] group-hover/link:text-[#028393]'
+                                )}>
+                                  {link.label}
+                                </p>
+                              </div>
                               {link.description && (
-                                <p className="text-xs text-text-muted mt-0.5 line-clamp-1">
+                                <p className={cn(
+                                  'text-xs text-[#3D5A80]/80 mt-1 line-clamp-1',
+                                  link.loopType && 'ml-3.5'
+                                )}>
                                   {link.description}
                                 </p>
                               )}
@@ -334,117 +447,170 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
+                </div>
+              ))}
 
-            {/* CTA Button */}
-            <Link
-              href="/roles/start-here"
-              className="ml-4 px-4 py-2 bg-brand-orange text-white text-sm font-semibold rounded-lg hover:bg-brand-orange/90 transition-colors"
+              {/* CTA Button */}
+              <Link
+                href="/roles/start-here"
+                className="ml-3 px-5 py-2.5 bg-[#f65625] text-white text-sm font-semibold rounded-full hover:bg-[#f65625]/90 hover:shadow-lg hover:shadow-[#f65625]/25 active:scale-[0.98] transition-all duration-200"
+              >
+                Start Here
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              type="button"
+              className="lg:hidden p-2 -mr-2 rounded-xl hover:bg-[#142d63]/5 transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
             >
-              Start Here
-            </Link>
-          </div>
+              <HamburgerIcon isOpen={mobileMenuOpen} />
+            </button>
+          </nav>
+        </div>
+      </header>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </nav>
-      </div>
-
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Overlay */}
       <div
         className={cn(
-          'lg:hidden overflow-hidden transition-all duration-300 ease-in-out',
-          mobileMenuOpen ? 'max-h-[calc(100vh-4rem)] opacity-100' : 'max-h-0 opacity-0'
+          'fixed inset-0 z-40 lg:hidden transition-opacity duration-300',
+          mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         )}
       >
-        <div className="max-w-wide mx-auto px-5 pb-6 bg-brand-navy border-t border-white/10">
-          <div className="space-y-1 pt-4">
-            {navigation.map((section) => (
-              <div key={section.label} className="border-b border-white/5 last:border-0">
-                <button
-                  type="button"
-                  className="flex items-center justify-between w-full px-4 py-3 text-left"
-                  onClick={() => setOpenDropdown(openDropdown === section.label ? null : section.label)}
-                  aria-expanded={openDropdown === section.label}
-                >
-                  <span className="font-medium text-white">{section.label}</span>
-                  <ChevronDown className={cn(
-                    'w-5 h-5 text-white/60 transition-transform duration-200',
-                    openDropdown === section.label && 'rotate-180'
-                  )} />
-                </button>
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-[#142d63]/20 backdrop-blur-sm"
+          onClick={closeMobileMenu}
+          aria-hidden="true"
+        />
 
-                <div className={cn(
-                  'overflow-hidden transition-all duration-200',
-                  openDropdown === section.label ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                )}>
-                  <div className="pb-3 space-y-1">
-                    {/* Featured link for mobile */}
-                    {section.featured && (
-                      <Link
-                        href={section.featured.href}
-                        className="block mx-2 px-4 py-3 bg-white/5 rounded-lg"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="block font-medium text-brand-peach text-sm">
-                          {section.featured.title}
-                        </span>
-                        <span className="block text-xs text-white/60 mt-0.5">
-                          {section.featured.description}
-                        </span>
-                      </Link>
-                    )}
-
-                    {section.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={cn(
-                          'block mx-2 px-4 py-2.5 rounded-lg text-sm transition-colors',
-                          link.loopType
-                            ? cn('border-l-4 ml-4', loopColors[link.loopType].replace('bg-', 'bg-white/5 '))
-                            : 'text-white/80 hover:text-white hover:bg-white/5'
-                        )}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="block font-medium">{link.label}</span>
-                        {link.description && (
-                          <span className="block text-xs text-white/50 mt-0.5">{link.description}</span>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+        {/* Mobile Menu Panel */}
+        <div
+          className={cn(
+            'absolute top-0 right-0 h-full w-full max-w-sm bg-white shadow-2xl transition-transform duration-300 ease-out',
+            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          )}
+        >
+          {/* Mobile Menu Header */}
+          <div className="flex items-center justify-between h-16 px-4 border-b border-[#142d63]/10">
+            <span className="text-sm font-semibold text-[#142d63]">Menu</span>
+            <button
+              type="button"
+              className="p-2 -mr-2 rounded-xl hover:bg-[#142d63]/5 transition-colors"
+              onClick={closeMobileMenu}
+              aria-label="Close menu"
+            >
+              <HamburgerIcon isOpen={true} />
+            </button>
           </div>
 
-          {/* Mobile CTA */}
-          <div className="mt-4 pt-4 border-t border-white/10">
-            <Link
-              href="/roles/start-here"
-              className="block w-full px-4 py-3 bg-brand-orange text-white text-center font-semibold rounded-lg hover:bg-brand-orange/90 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Start Here
-            </Link>
+          {/* Mobile Menu Content */}
+          <div className="h-[calc(100%-4rem)] overflow-y-auto overscroll-contain">
+            <div className="px-4 py-4">
+              {navigation.map((section) => (
+                <div key={section.label} className="border-b border-[#142d63]/5 last:border-0">
+                  <button
+                    type="button"
+                    className="flex items-center justify-between w-full py-4 text-left group"
+                    onClick={() => setMobileOpenSection(mobileOpenSection === section.label ? null : section.label)}
+                    aria-expanded={mobileOpenSection === section.label}
+                  >
+                    <span className="font-semibold text-[#142d63] group-hover:text-[#028393] transition-colors">
+                      {section.label}
+                    </span>
+                    <ChevronDown
+                      className={cn(
+                        'w-5 h-5 text-[#3D5A80] transition-transform duration-200',
+                        mobileOpenSection === section.label && 'rotate-180'
+                      )}
+                    />
+                  </button>
+
+                  {/* Expandable Section */}
+                  <div
+                    className={cn(
+                      'overflow-hidden transition-all duration-300 ease-out',
+                      mobileOpenSection === section.label ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                    )}
+                  >
+                    <div className="pb-4 space-y-1">
+                      {/* Section Description */}
+                      {section.description && (
+                        <p className="text-xs text-[#3D5A80] px-1 pb-2">{section.description}</p>
+                      )}
+
+                      {/* Featured Card for Mobile */}
+                      {section.featured && (
+                        <Link
+                          href={section.featured.href}
+                          className="block p-4 mb-2 bg-gradient-to-br from-[#028393]/5 to-[#E0FBFC]/50 rounded-xl border border-[#028393]/10 active:scale-[0.99] transition-transform"
+                          onClick={closeMobileMenu}
+                        >
+                          <p className="font-semibold text-[#028393] text-sm">
+                            {section.featured.title}
+                          </p>
+                          <p className="text-xs text-[#3D5A80] mt-1 leading-relaxed">
+                            {section.featured.description}
+                          </p>
+                        </Link>
+                      )}
+
+                      {/* Links */}
+                      {section.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className={cn(
+                            'block p-3 rounded-xl active:scale-[0.99] transition-all',
+                            link.loopType
+                              ? cn(
+                                  'border-l-[3px] ml-1',
+                                  loopColors[link.loopType].border,
+                                  loopColors[link.loopType].bg
+                                )
+                              : 'hover:bg-[#E0FBFC]/30'
+                          )}
+                          onClick={closeMobileMenu}
+                        >
+                          <div className="flex items-center gap-2">
+                            {link.loopType && (
+                              <span className={cn('w-2 h-2 rounded-full', loopColors[link.loopType].dot)} />
+                            )}
+                            <span className="font-medium text-sm text-[#142d63]">{link.label}</span>
+                          </div>
+                          {link.description && (
+                            <p className={cn(
+                              'text-xs text-[#3D5A80]/70 mt-1',
+                              link.loopType && 'ml-4'
+                            )}>
+                              {link.description}
+                            </p>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile CTA */}
+            <div className="sticky bottom-0 p-4 bg-gradient-to-t from-white via-white to-white/80 border-t border-[#142d63]/5">
+              <Link
+                href="/roles/start-here"
+                className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#f65625] text-white font-semibold rounded-xl hover:bg-[#f65625]/90 active:scale-[0.98] transition-all shadow-lg shadow-[#f65625]/20"
+                onClick={closeMobileMenu}
+              >
+                Start Here
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </header>
+    </>
   )
 }
