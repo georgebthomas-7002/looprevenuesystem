@@ -35,9 +35,9 @@ export const DESIGNED_PAGE_SLUGS = [
 
   // Loops section
   'loops', // Four Loops Overview page
+  'loops/marketing', // Loop Marketing page
 
   // Add more designed pages here as they are created
-  // 'loops/marketing',
   // 'loops/sales',
   // 'loops/service',
   // 'loops/ops',
