@@ -37,9 +37,9 @@ export const DESIGNED_PAGE_SLUGS = [
   'loops', // Four Loops Overview page
   'loops/marketing', // Loop Marketing page
   'loops/sales', // Loop Sales page
+  'loops/service', // Loop Service page
 
   // Add more designed pages here as they are created
-  // 'loops/service',
   // 'loops/ops',
   // etc.
 ] as const
