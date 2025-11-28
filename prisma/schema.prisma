@@ -41,6 +41,8 @@ model Page {
   description         String?  @db.Text
   // Sections stored as JSON (block-based content)
   sections            Json     @default("[]")
+  // Content slots for designed pages (key-value pairs of editable text)
+  contentSlots        Json?    // { slotId: "value", ... }
   // Navigation settings
   showInMainNav       Boolean  @default(false)
   showInFooterNav     Boolean  @default(false)

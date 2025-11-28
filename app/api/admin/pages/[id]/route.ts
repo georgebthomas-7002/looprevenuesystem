@@ -69,6 +69,8 @@ export async function PUT(
         title: data.title,
         description: data.description,
         sections: sections as object[],
+        // Content slots for designed pages
+        contentSlots: data.contentSlots || null,
         status: data.status,
         showInMainNav: data.showInMainNav,
         showInFooterNav: data.showInFooterNav,

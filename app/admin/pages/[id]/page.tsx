@@ -43,6 +43,8 @@ export default async function EditPagePage({
     showInFooterNav: page.showInFooterNav,
     navOrder: page.navOrder,
     parentSlug: page.parentSlug,
+    // Content slots for designed pages
+    contentSlots: page.contentSlots as Record<string, string | string[]> | null,
     metaTitle: page.metaTitle,
     metaDescription: page.metaDescription,
     canonicalUrl: page.canonicalUrl,
