@@ -55,8 +55,6 @@ const defaultColumns: FooterColumn[] = [
     links: [
       { label: 'Templates and Checklists', href: '/resources/templates-checklists' },
       { label: 'Prompts and Workflows', href: '/resources/prompts-workflows' },
-      { label: 'Case Studies', href: '/resources/case-studies' },
-      { label: 'Workshops and Exercises', href: '/resources/workshops-exercises' },
       { label: 'FAQ', href: '/resources/faq' },
     ],
   },
