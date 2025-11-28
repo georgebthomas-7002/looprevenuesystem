@@ -13,22 +13,22 @@ export const metadata: Metadata = {
 // Loop data for the business view section
 const loopViews = [
   {
-    name: 'Loop Marketing',
+    name: 'Marketing Loop',
     color: '#028393',
     description: 'How clearly and consistently we show up in the market.',
   },
   {
-    name: 'Loop Sales',
+    name: 'Sales Loop',
     color: '#f65625',
-    description: 'How we help the right people make confident decisions to work with us.',
+    description: 'How we help the right humans make confident decisions to work with us.',
   },
   {
-    name: 'Loop Service',
+    name: 'Service Loop',
     color: '#faaa68',
     description: 'How we support and guide customers after the sale so they stay and expand.',
   },
   {
-    name: 'Loop Ops',
+    name: 'Ops Loop',
     color: '#3D5A80',
     description: 'How we design and maintain the systems and data that support everything else.',
   },
@@ -653,7 +653,7 @@ export default function LeadershipRevOpsPage() {
 
           <div className="bg-white rounded-xl p-8">
             <MetricsRow
-              loop="Loop Marketing"
+              loop="Marketing Loop"
               color="#028393"
               metrics={[
                 'Volume of meaningful new conversations or engaged contacts in target segments',
@@ -661,7 +661,7 @@ export default function LeadershipRevOpsPage() {
               ]}
             />
             <MetricsRow
-              loop="Loop Sales"
+              loop="Sales Loop"
               color="#f65625"
               metrics={[
                 'Win rate and sales cycle length by segment, not just overall',
@@ -669,7 +669,7 @@ export default function LeadershipRevOpsPage() {
               ]}
             />
             <MetricsRow
-              loop="Loop Service"
+              loop="Service Loop"
               color="#faaa68"
               metrics={[
                 'Time to first meaningful value for new customers',
@@ -678,7 +678,7 @@ export default function LeadershipRevOpsPage() {
               ]}
             />
             <MetricsRow
-              loop="Loop Ops"
+              loop="Ops Loop"
               color="#3D5A80"
               metrics={[
                 'Data completeness and accuracy for core fields',
@@ -822,7 +822,7 @@ export default function LeadershipRevOpsPage() {
               title="Design your system"
               color="#3D5A80"
               links={[
-                { label: 'Loop Ops', href: '/loops/ops' },
+                { label: 'Ops Loop', href: '/loops/ops' },
                 { label: 'Data, Metrics, And Governance', href: '/overview/data-metrics-governance' },
                 { label: 'HubSpot Implementation', href: '/playbooks/hubspot' },
                 { label: 'Non-HubSpot Implementation', href: '/playbooks/no-hubspot' },

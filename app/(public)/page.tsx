@@ -256,19 +256,19 @@ function LoopSystemSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <div className="loop-card loop-card-marketing text-center p-6">
-            <h3 className="font-display text-lg font-semibold text-loop-marketing mb-2">Loop Marketing</h3>
+            <h3 className="font-display text-lg font-semibold text-loop-marketing mb-2">Marketing Loop</h3>
             <p className="font-body text-sm text-text-secondary">Discovers what to say, who to say it to, and where to show up</p>
           </div>
           <div className="loop-card loop-card-sales text-center p-6">
-            <h3 className="font-display text-lg font-semibold text-loop-sales mb-2">Loop Sales</h3>
-            <p className="font-body text-sm text-text-secondary">Helps the right people decide with confidence</p>
+            <h3 className="font-display text-lg font-semibold text-loop-sales mb-2">Sales Loop</h3>
+            <p className="font-body text-sm text-text-secondary">Helps the right humans decide with confidence</p>
           </div>
           <div className="loop-card loop-card-service text-center p-6">
-            <h3 className="font-display text-lg font-semibold text-loop-service mb-2">Loop Service</h3>
+            <h3 className="font-display text-lg font-semibold text-loop-service mb-2">Service Loop</h3>
             <p className="font-body text-sm text-text-secondary">Keeps customers successful, supported, and ready to stay</p>
           </div>
           <div className="loop-card loop-card-ops text-center p-6">
-            <h3 className="font-display text-lg font-semibold text-loop-ops mb-2">Loop Ops</h3>
+            <h3 className="font-display text-lg font-semibold text-loop-ops mb-2">Ops Loop</h3>
             <p className="font-body text-sm text-text-secondary">Connects the tools, data, and processes that make this possible</p>
           </div>
         </div>

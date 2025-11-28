@@ -64,25 +64,25 @@ const defaultNavigation: NavSection[] = [
         description: 'See how all four loops connect'
       },
       {
-        label: 'Loop Marketing',
+        label: 'Marketing Loop',
         href: '/loops/marketing',
         description: 'Discover what to say and where to show up',
         loopType: 'marketing'
       },
       {
-        label: 'Loop Sales',
+        label: 'Sales Loop',
         href: '/loops/sales',
-        description: 'Help the right people decide with confidence',
+        description: 'Help the right humans decide with confidence',
         loopType: 'sales'
       },
       {
-        label: 'Loop Service',
+        label: 'Service Loop',
         href: '/loops/service',
         description: 'Keep customers successful and supported',
         loopType: 'service'
       },
       {
-        label: 'Loop Ops',
+        label: 'Ops Loop',
         href: '/loops/ops',
         description: 'Connect tools, data, and processes',
         loopType: 'ops'

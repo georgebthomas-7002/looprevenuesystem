@@ -56,10 +56,10 @@ function getRelatedLinks(slug: string) {
 
   if (category === 'loops') {
     links.push(
-      { href: '/loops/marketing', label: 'Loop Marketing' },
-      { href: '/loops/sales', label: 'Loop Sales' },
-      { href: '/loops/service', label: 'Loop Service' },
-      { href: '/loops/ops', label: 'Loop Ops' },
+      { href: '/loops/marketing', label: 'Marketing Loop' },
+      { href: '/loops/sales', label: 'Sales Loop' },
+      { href: '/loops/service', label: 'Service Loop' },
+      { href: '/loops/ops', label: 'Ops Loop' },
     )
   } else if (category === 'overview') {
     links.push(

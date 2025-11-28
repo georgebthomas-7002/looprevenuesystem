@@ -227,7 +227,7 @@ function WhyHybridSection() {
               Why A Hybrid Approach Matters
             </h2>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
-              You don&apos;t want a fully manual system. People get tired. They forget things. They struggle to see patterns in thousands of data points or conversations.
+              You don&apos;t want a fully manual system. Humans get tired. They forget things. They struggle to see patterns in thousands of data points or conversations.
             </p>
             <p className="font-body text-text-secondary leading-relaxed mb-4">
               You also don&apos;t want a fully automated system. AI doesn&apos;t carry your values. It doesn&apos;t feel what your customers feel. It doesn&apos;t sit in leadership meetings and own outcomes.
@@ -286,7 +286,7 @@ function StrengthsSection() {
     'Hold empathy in tricky conversations and decisions',
     'Weigh trade-offs between short-term gains and long-term trust',
     'Interpret patterns with context that lives outside the tools',
-    'Own the impact of changes on real people and teams',
+    'Own the impact of changes on real humans and teams',
   ]
 
   return (
@@ -355,7 +355,7 @@ function AiByLoopSection() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <LoopAiCard
-              loop="AI in Loop Marketing"
+              loop="AI in the Marketing Loop"
               color="#028393"
               aiHelps={[
                 'Summarize customer interviews and call transcripts',
@@ -372,7 +372,7 @@ function AiByLoopSection() {
             />
 
             <LoopAiCard
-              loop="AI in Loop Sales"
+              loop="AI in the Sales Loop"
               color="#f65625"
               aiHelps={[
                 'Log and summarize calls and meetings',
@@ -389,7 +389,7 @@ function AiByLoopSection() {
             />
 
             <LoopAiCard
-              loop="AI in Loop Service"
+              loop="AI in the Service Loop"
               color="#faaa68"
               aiHelps={[
                 'Suggest relevant help articles or canned replies',
@@ -406,7 +406,7 @@ function AiByLoopSection() {
             />
 
             <LoopAiCard
-              loop="AI in Loop Ops"
+              loop="AI in the Ops Loop"
               color="#3D5A80"
               aiHelps={[
                 'Scan data for duplicates, gaps, and anomalies',

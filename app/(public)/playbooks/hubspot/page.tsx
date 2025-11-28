@@ -344,12 +344,12 @@ function LoopsToHubsSection() {
             Mapping Loops To HubSpot Hubs
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            Loop Marketing, Loop Sales, Loop Service, and Loop Ops all live inside the same CRM. Each loop leans on a different set of hubs and tools.
+            The Marketing Loop, Sales Loop, Service Loop, and Ops Loop all live inside the same CRM. Each loop leans on a different set of hubs and tools.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
             <LoopHubCard
-              loop="Loop Marketing"
+              loop="Marketing Loop"
               loopKey="marketing"
               tools={[
                 'Marketing Hub & Content/CMS tools',
@@ -367,7 +367,7 @@ function LoopsToHubsSection() {
             />
 
             <LoopHubCard
-              loop="Loop Sales"
+              loop="Sales Loop"
               loopKey="sales"
               tools={[
                 'Sales Hub',
@@ -385,7 +385,7 @@ function LoopsToHubsSection() {
             />
 
             <LoopHubCard
-              loop="Loop Service"
+              loop="Service Loop"
               loopKey="service"
               tools={[
                 'Service Hub',
@@ -403,7 +403,7 @@ function LoopsToHubsSection() {
             />
 
             <LoopHubCard
-              loop="Loop Ops"
+              loop="Ops Loop"
               loopKey="ops"
               tools={[
                 'Operations Hub',

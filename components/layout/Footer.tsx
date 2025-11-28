@@ -28,10 +28,10 @@ const defaultColumns: FooterColumn[] = [
     title: 'The Four Loops',
     links: [
       { label: 'Four Loops Overview', href: '/loops' },
-      { label: 'Loop Marketing', href: '/loops/marketing' },
-      { label: 'Loop Sales', href: '/loops/sales' },
-      { label: 'Loop Service', href: '/loops/service' },
-      { label: 'Loop Ops', href: '/loops/ops' },
+      { label: 'Marketing Loop', href: '/loops/marketing' },
+      { label: 'Sales Loop', href: '/loops/sales' },
+      { label: 'Service Loop', href: '/loops/service' },
+      { label: 'Ops Loop', href: '/loops/ops' },
     ],
   },
   {
