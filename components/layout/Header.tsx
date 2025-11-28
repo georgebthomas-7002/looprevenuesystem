@@ -369,8 +369,8 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
                       {/* Section Header */}
                       {section.description && (
                         <div className="px-5 py-4 bg-gradient-to-r from-[#E0FBFC] to-[#E0FBFC]/50 border-b border-[#028393]/10">
-                          <p className="text-sm font-semibold text-[#142d63]">{section.label}</p>
-                          <p className="text-xs text-[#3D5A80] mt-0.5">{section.description}</p>
+                          <p className="text-base font-semibold text-[#142d63]">{section.label}</p>
+                          <p className="text-sm text-[#3D5A80] mt-0.5">{section.description}</p>
                         </div>
                       )}
 
@@ -388,7 +388,7 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
                                   <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#028393]/10">
                                     <span className="w-2 h-2 rounded-full bg-[#028393]" />
                                   </span>
-                                  <p className="font-semibold text-[#142d63] group-hover:text-[#028393] transition-colors">
+                                  <p className="text-base font-semibold text-[#142d63] group-hover:text-[#028393] transition-colors">
                                     {section.featured.title}
                                   </p>
                                 </div>
@@ -425,7 +425,7 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
                                   <span className={cn('w-1.5 h-1.5 rounded-full', loopColors[link.loopType].dot)} />
                                 )}
                                 <p className={cn(
-                                  'font-medium text-sm transition-colors',
+                                  'font-medium text-base transition-colors',
                                   link.loopType
                                     ? 'text-[#142d63]'
                                     : 'text-[#142d63] group-hover/link:text-[#028393]'
@@ -435,7 +435,7 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
                               </div>
                               {link.description && (
                                 <p className={cn(
-                                  'text-xs text-[#3D5A80]/80 mt-1 line-clamp-1',
+                                  'text-sm text-[#3D5A80]/80 mt-1 line-clamp-1',
                                   link.loopType && 'ml-3.5'
                                 )}>
                                   {link.description}
@@ -496,7 +496,7 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
         >
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between h-16 px-4 border-b border-[#142d63]/10">
-            <span className="text-sm font-semibold text-[#142d63]">Menu</span>
+            <span className="text-base font-semibold text-[#142d63]">Menu</span>
             <button
               type="button"
               className="p-2 -mr-2 rounded-xl hover:bg-[#142d63]/5 transition-colors"
@@ -539,7 +539,7 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
                     <div className="pb-4 space-y-1">
                       {/* Section Description */}
                       {section.description && (
-                        <p className="text-xs text-[#3D5A80] px-1 pb-2">{section.description}</p>
+                        <p className="text-sm text-[#3D5A80] px-1 pb-2">{section.description}</p>
                       )}
 
                       {/* Featured Card for Mobile */}
@@ -549,10 +549,10 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
                           className="block p-4 mb-2 bg-gradient-to-br from-[#028393]/5 to-[#E0FBFC]/50 rounded-xl border border-[#028393]/10 active:scale-[0.99] transition-transform"
                           onClick={closeMobileMenu}
                         >
-                          <p className="font-semibold text-[#028393] text-sm">
+                          <p className="font-semibold text-[#028393] text-base">
                             {section.featured.title}
                           </p>
-                          <p className="text-xs text-[#3D5A80] mt-1 leading-relaxed">
+                          <p className="text-sm text-[#3D5A80] mt-1 leading-relaxed">
                             {section.featured.description}
                           </p>
                         </Link>
@@ -579,11 +579,11 @@ export function Header({ navigation = defaultNavigation }: HeaderProps) {
                             {link.loopType && (
                               <span className={cn('w-2 h-2 rounded-full', loopColors[link.loopType].dot)} />
                             )}
-                            <span className="font-medium text-sm text-[#142d63]">{link.label}</span>
+                            <span className="font-medium text-base text-[#142d63]">{link.label}</span>
                           </div>
                           {link.description && (
                             <p className={cn(
-                              'text-xs text-[#3D5A80]/70 mt-1',
+                              'text-sm text-[#3D5A80]/70 mt-1',
                               link.loopType && 'ml-4'
                             )}>
                               {link.description}

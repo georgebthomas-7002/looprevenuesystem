@@ -13,18 +13,19 @@ const config: Config = {
         display: ['Fraunces', 'Georgia', 'Times New Roman', 'serif'],
         body: ['Source Sans 3', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
-      // Type Scale (Major Third - 1.25 ratio)
+      // Type Scale - Optimized for readability (min 14px)
       fontSize: {
-        'xs': ['0.8rem', { lineHeight: '1.5' }],      // 12.8px
-        'sm': ['0.875rem', { lineHeight: '1.5' }],   // 14px
-        'base': ['1.0625rem', { lineHeight: '1.6' }], // 17px
-        'lg': ['1.125rem', { lineHeight: '1.6' }],   // 18px
-        'xl': ['1.375rem', { lineHeight: '1.3' }],   // 22px
-        '2xl': ['1.75rem', { lineHeight: '1.2' }],   // 28px
-        '3xl': ['2.25rem', { lineHeight: '1.2' }],   // 36px
-        '4xl': ['2.5rem', { lineHeight: '1.1' }],    // 40px
-        '5xl': ['3rem', { lineHeight: '1.1' }],      // 48px
-        '6xl': ['4rem', { lineHeight: '1.1' }],      // 64px
+        'xs': ['0.875rem', { lineHeight: '1.5' }],    // 14px - minimum readable size
+        'sm': ['0.9375rem', { lineHeight: '1.5' }],   // 15px - small but comfortable
+        'base': ['1rem', { lineHeight: '1.6' }],      // 16px - standard body
+        'lg': ['1.125rem', { lineHeight: '1.6' }],    // 18px - emphasized body
+        'xl': ['1.25rem', { lineHeight: '1.4' }],     // 20px - large text
+        '2xl': ['1.5rem', { lineHeight: '1.3' }],     // 24px - small heading
+        '3xl': ['1.875rem', { lineHeight: '1.25' }],  // 30px - medium heading
+        '4xl': ['2.25rem', { lineHeight: '1.2' }],    // 36px - large heading
+        '5xl': ['3rem', { lineHeight: '1.15' }],      // 48px - display
+        '6xl': ['3.75rem', { lineHeight: '1.1' }],    // 60px - hero
+        '7xl': ['4.5rem', { lineHeight: '1.1' }],     // 72px - jumbo
       },
       // Color Palette
       colors: {

@@ -176,8 +176,8 @@ function LoopCard({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {stages.map((stage) => (
               <div key={stage.name} className="p-3 bg-gray-50 rounded-lg text-center">
-                <p className="font-body font-semibold text-sm" style={{ color: color.bg }}>{stage.name}</p>
-                <p className="font-body text-xs text-text-secondary mt-1">{stage.description}</p>
+                <p className="font-body font-semibold text-base" style={{ color: color.bg }}>{stage.name}</p>
+                <p className="font-body text-sm text-text-secondary mt-1">{stage.description}</p>
               </div>
             ))}
           </div>
@@ -502,8 +502,8 @@ function SharingLearningSection() {
               <div className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold" style={{ backgroundColor: l.color }}>
                 {l.from[0]}
               </div>
-              <p className="font-body text-sm font-semibold text-brand-navy mb-1">{l.from} sees:</p>
-              <p className="font-body text-xs text-text-secondary">{l.sees}</p>
+              <p className="font-body text-base font-semibold text-brand-navy mb-1">{l.from} sees:</p>
+              <p className="font-body text-sm text-text-secondary">{l.sees}</p>
             </div>
           ))}
         </div>

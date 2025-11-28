@@ -89,15 +89,15 @@ export function Footer({ columns = defaultColumns }: FooterProps) {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
           {columns.map((column) => (
             <div key={column.title}>
-              <h4 className="font-body text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
+              <h4 className="font-body text-sm font-semibold uppercase tracking-widest text-white/50 mb-4">
                 {column.title}
               </h4>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="block text-sm text-white/70 hover:text-white transition-colors leading-relaxed"
+                      className="block text-base text-white/70 hover:text-white transition-colors leading-relaxed"
                     >
                       {link.label}
                     </Link>
@@ -114,7 +114,7 @@ export function Footer({ columns = defaultColumns }: FooterProps) {
         <div className="max-w-wide mx-auto px-5 md:px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright */}
-            <p className="text-sm text-white/40 order-2 md:order-1">
+            <p className="text-sm text-white/50 order-2 md:order-1">
               &copy; {currentYear} Loop Revenue System. All rights reserved.
             </p>
 
@@ -122,13 +122,13 @@ export function Footer({ columns = defaultColumns }: FooterProps) {
             <div className="flex items-center gap-6 order-1 md:order-2">
               <Link
                 href="/privacy"
-                className="text-sm text-white/50 hover:text-white transition-colors"
+                className="text-sm text-white/60 hover:text-white transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-sm text-white/50 hover:text-white transition-colors"
+                className="text-sm text-white/60 hover:text-white transition-colors"
               >
                 Terms of Use
               </Link>
