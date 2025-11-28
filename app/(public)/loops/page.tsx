@@ -176,8 +176,8 @@ function LoopCard({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {stages.map((stage) => (
               <div key={stage.name} className="p-3 bg-gray-50 rounded-lg text-center">
-                <p className="font-body font-semibold text-sm" style={{ color: color.bg }}>{stage.name}</p>
-                <p className="font-body text-xs text-text-secondary mt-1">{stage.description}</p>
+                <p className="font-body font-semibold text-base" style={{ color: color.bg }}>{stage.name}</p>
+                <p className="font-body text-sm text-text-secondary mt-1">{stage.description}</p>
               </div>
             ))}
           </div>
@@ -328,7 +328,7 @@ function LoopMarketingSection() {
             name="Marketing"
             color={LOOP_COLORS.marketing}
             icon="📣"
-            purpose="Learn what to say, who to say it to, and where to show up so the right people find you and feel understood. Not only about generating leads—it's about building a library of language, stories, and proof that helps your whole company communicate with clarity."
+            purpose="Learn what to say, who to say it to, and where to show up so the right people find you and feel understood. It's not only about generating leads. It's about building a library of language, stories, and proof that helps your whole company communicate with clarity."
             inputs={[
               'Market research and customer interviews',
               'Website and content analytics',
@@ -368,7 +368,7 @@ function LoopSalesSection() {
             name="Sales"
             color={LOOP_COLORS.sales}
             icon="🤝"
-            purpose="Help the right people make clear, confident decisions about working with you. Not only about closing deals—it's about learning from every conversation and using that learning to improve who you sell to and how you sell."
+            purpose="Help the right people make clear, confident decisions about working with you. It's not only about closing deals. It's about learning from every conversation and using that learning to improve who you sell to and how you sell."
             inputs={[
               'Qualified interest and context from Marketing',
               'Account and contact data from Ops',
@@ -502,8 +502,8 @@ function SharingLearningSection() {
               <div className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold" style={{ backgroundColor: l.color }}>
                 {l.from[0]}
               </div>
-              <p className="font-body text-sm font-semibold text-brand-navy mb-1">{l.from} sees:</p>
-              <p className="font-body text-xs text-text-secondary">{l.sees}</p>
+              <p className="font-body text-base font-semibold text-brand-navy mb-1">{l.from} sees:</p>
+              <p className="font-body text-sm text-text-secondary">{l.sees}</p>
             </div>
           ))}
         </div>

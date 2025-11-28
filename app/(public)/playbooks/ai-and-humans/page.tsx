@@ -205,7 +205,7 @@ function HeroSection() {
               This page is about a simple idea: <strong className="text-brand-navy">AI assists. Humans lead.</strong>
             </p>
             <p className="font-body text-text-secondary leading-relaxed">
-              You&apos;ll see how AI fits into the Loop Revenue System across marketing, sales, service, and ops—where AI does its best work, where humans must stay in control, and how to design a hybrid operating model.
+              You&apos;ll see how AI fits into the Loop Revenue System across marketing, sales, service, and ops: where AI does its best work, where humans must stay in control, and how to design a hybrid operating model.
             </p>
           </div>
           <div className="flex justify-center">
@@ -527,7 +527,7 @@ function CollaborationPatternsSection() {
             <PatternCard
               number="1"
               title="Human Sets The Brief, AI Explores"
-              description="You start with a clear prompt—the loop, stage, audience, and problem. AI explores options or drafts first versions. Humans choose and refine."
+              description="You start with a clear prompt: the loop, stage, audience, and problem. AI explores options or drafts first versions. Humans choose and refine."
               examples={[
                 'Works well for Express and Tailor work',
                 'Human defines constraints, AI generates options',
@@ -603,7 +603,7 @@ function RisksGuardrailsSection() {
             Risks, Ethics, And Guardrails
           </h2>
           <p className="font-body text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            AI brings real risks if you let it run your loops without care. Your goal is not zero risk—it&apos;s to see the risk clearly and keep humans accountable.
+            AI brings real risks if you let it run your loops without care. Your goal is not zero risk; it&apos;s to see the risk clearly and keep humans accountable.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -795,7 +795,7 @@ function NextStepsSection() {
             Pick one loop, one stage, and one use case where AI could remove friction or uncover insight. Design the collaboration pattern. Set the guardrails. Run the play.
           </p>
           <p className="font-body text-[#3D5A80] font-medium mt-4">
-            Then let your team, your customers, and your loops tell you what should change next—so everyone has a better chance to flourish.
+            Then let your team, your customers, and your loops tell you what should change next, so everyone has a better chance to flourish.
           </p>
         </div>
       </div>

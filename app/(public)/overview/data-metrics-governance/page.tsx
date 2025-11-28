@@ -738,7 +738,7 @@ function CtaSection() {
         </div>
 
         <p className="font-body text-text-secondary leading-relaxed mt-12 max-w-2xl mx-auto text-center">
-          Use this page as your reference when questions about measurement, data, or change come up. The more your team sees data, metrics, and governance as part of the loop—not an afterthought—the easier it becomes to build a system that helps your business flourish.
+          Use this page as your reference when questions about measurement, data, or change come up. The more your team sees data, metrics, and governance as part of the loop (not an afterthought), the easier it becomes to build a system that helps your business flourish.
         </p>
       </div>
     </section>

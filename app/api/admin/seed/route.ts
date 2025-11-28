@@ -39,7 +39,7 @@ const pages = [
   {
     slug: 'overview/loop-revenue-system',
     title: 'What Is the Loop Revenue System',
-    description: 'A simple way to run revenue as a continuous learning system. Four connected loops—Marketing, Sales, Service, and Ops—moving through Express, Tailor, Amplify, and Evolve.',
+    description: 'A simple way to run revenue as a continuous learning system. Four connected loops (Marketing, Sales, Service, and Ops) moving through Express, Tailor, Amplify, and Evolve.',
     showInMainNav: false,
     navOrder: 1,
     parentSlug: 'overview',

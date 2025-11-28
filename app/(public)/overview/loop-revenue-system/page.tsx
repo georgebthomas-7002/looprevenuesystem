@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils/cn'
 
 export const metadata: Metadata = {
   title: 'What Is the Loop Revenue System | Complete Overview',
-  description: 'A simple way to run revenue as a continuous learning system. Four connected loops—Marketing, Sales, Service, and Ops—moving through Express, Tailor, Amplify, and Evolve.',
+  description: 'A simple way to run revenue as a continuous learning system. Four connected loops (Marketing, Sales, Service, and Ops) moving through Express, Tailor, Amplify, and Evolve.',
   openGraph: {
     title: 'What Is the Loop Revenue System | Complete Overview',
     description: 'Learn how the Loop Revenue System transforms your revenue engine into four connected loops that share data, insights, and responsibility for revenue.',
@@ -205,7 +205,7 @@ function FourLoopsSection() {
       borderColor: 'border-loop-ops',
       bgColor: 'bg-loop-ops-tint',
       purpose: 'Connect data, tools, and processes',
-      details: 'Operations defines lifecycle stages, owns the CRM, sets up automation, and builds dashboards. When Ops works in a loop, it doesn\'t only fix broken reports—it studies how the system behaves and improves it.',
+      details: 'Operations defines lifecycle stages, owns the CRM, sets up automation, and builds dashboards. When Ops works in a loop, it doesn\'t only fix broken reports. It studies how the system behaves and improves it.',
       href: '/loops/ops',
     },
   ]

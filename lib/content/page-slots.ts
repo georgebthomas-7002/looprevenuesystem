@@ -88,7 +88,7 @@ export const PAGE_SLOT_CONFIGS: PageSlotConfig[] = [
         label: 'Introduction Paragraph',
         type: 'paragraph',
         section: 'Hero',
-        defaultValue: 'Most revenue models were built for a world of straight-line funnels and one-time deals. Buyers don\'t move that way anymore. They learn, compare, talk to peers, ask AI, buy, use, renew, and refer—in loops.',
+        defaultValue: 'Most revenue models were built for a world of straight-line funnels and one-time deals. Buyers don\'t move that way anymore. They learn, compare, talk to peers, ask AI, buy, use, renew, and refer. All in loops.',
       },
       {
         id: 'funnel_section_title',

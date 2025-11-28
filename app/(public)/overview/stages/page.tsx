@@ -291,7 +291,7 @@ function ExpressSection() {
                 <span>A simple map of your main campaigns and offers</span>
               </li>
             </ul>
-            <p className="font-body text-xs text-text-muted italic pt-3 border-t border-border-light">
+            <p className="font-body text-sm text-text-muted italic pt-3 border-t border-border-light">
               When strong: Content and campaigns feel like they come from one confident voice.
             </p>
           </div>
@@ -319,7 +319,7 @@ function ExpressSection() {
                 <span>Alignment on what a &ldquo;win&rdquo; means beyond just a signed contract</span>
               </li>
             </ul>
-            <p className="font-body text-xs text-text-muted italic pt-3 border-t border-border-light">
+            <p className="font-body text-sm text-text-muted italic pt-3 border-t border-border-light">
               When strong: Deals move smoothly and reps know how to show up in conversations.
             </p>
           </div>
@@ -347,7 +347,7 @@ function ExpressSection() {
                 <span>Principles for how your team responds when things go wrong</span>
               </li>
             </ul>
-            <p className="font-body text-xs text-text-muted italic pt-3 border-t border-border-light">
+            <p className="font-body text-sm text-text-muted italic pt-3 border-t border-border-light">
               When strong: Customers feel like they know what to expect after they buy.
             </p>
           </div>
@@ -375,7 +375,7 @@ function ExpressSection() {
                 <span>A vision for how tools and automation should support the other loops</span>
               </li>
             </ul>
-            <p className="font-body text-xs text-text-muted italic pt-3 border-t border-border-light">
+            <p className="font-body text-sm text-text-muted italic pt-3 border-t border-border-light">
               When strong: Everyone uses the CRM in a similar way and dashboards tell a coherent story.
             </p>
           </div>
@@ -437,7 +437,7 @@ function TailorSection() {
                   <span>Speaking in the language your customers actually use, not internal jargon</span>
                 </li>
               </ul>
-              <p className="font-body text-xs text-brand-peach italic">When strong: Content feels like it was written for someone specific, even at scale.</p>
+              <p className="font-body text-sm text-brand-peach italic">When strong: Content feels like it was written for someone specific, even at scale.</p>
             </div>
 
             <div className="bg-surface rounded-lg p-5 border border-border-light">
@@ -456,7 +456,7 @@ function TailorSection() {
                   <span>Documenting what you learn so the next interaction starts in the right place</span>
                 </li>
               </ul>
-              <p className="font-body text-xs text-brand-peach italic">When strong: Buyers feel listened to and guided, not pitched at.</p>
+              <p className="font-body text-sm text-brand-peach italic">When strong: Buyers feel listened to and guided, not pitched at.</p>
             </div>
 
             <div className="bg-surface rounded-lg p-5 border border-border-light">
@@ -475,7 +475,7 @@ function TailorSection() {
                   <span>Adjusting onboarding and education based on how each customer learns</span>
                 </li>
               </ul>
-              <p className="font-body text-xs text-brand-peach italic">When strong: Customers feel known. They do not have to repeat their story.</p>
+              <p className="font-body text-sm text-brand-peach italic">When strong: Customers feel known. They do not have to repeat their story.</p>
             </div>
 
             <div className="bg-surface rounded-lg p-5 border border-border-light">
@@ -494,7 +494,7 @@ function TailorSection() {
                   <span>Respecting consent and privacy while still enabling effective personalization</span>
                 </li>
               </ul>
-              <p className="font-body text-xs text-brand-peach italic">When strong: The system supports nuance instead of forcing every situation into the same shape.</p>
+              <p className="font-body text-sm text-brand-peach italic">When strong: The system supports nuance instead of forcing every situation into the same shape.</p>
             </div>
           </div>
         </div>
